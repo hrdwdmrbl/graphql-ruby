@@ -1,0 +1,76 @@
+query order($id: ID!) {
+  order(id: $id) {
+    app {
+      id
+      name
+      icon {
+        id
+        height
+        width
+        url
+      }
+    }
+    cancelReason
+    cancelledAt
+    channelInformation {
+      id
+      channelId
+      app {
+        id
+        title
+        icon {
+          id
+          height
+          width
+          url
+        }
+      }
+      channelDefinition {
+        id
+        channelName
+        isMarketplace
+        subChannelName
+      }
+    }
+    closed
+    closedAt
+    confirmationNumber
+    confirmed
+    createdAt
+    currencyCode
+    currentTotalWeight
+    discountCode
+    discountCodes
+    displayFinancialStatus
+    displayFulfillmentStatus
+    dutiesIncluded
+    edited
+    fulfillable
+    fullyPaid
+    id
+    name
+    note
+    poNumber
+    presentmentCurrencyCode
+    processedAt
+    publication {
+      id
+    }
+    refundable
+    registeredSourceUrl
+    requiresShipping
+    restockable
+    retailLocation {
+      id
+      name
+    }
+    returnStatus
+    sourceIdentifier
+    sourceName
+    tags
+    test
+    totalWeight
+    unpaid
+    updatedAt
+  }
+}
