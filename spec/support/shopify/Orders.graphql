@@ -1,0 +1,159 @@
+query Orders($first: Int, $last: Int, $before: String, $after: String, $query: String, $sortKey: OrderSortKeys) {
+  orders(first: $first, last: $last, before: $before, after: $after, query: $query, sortKey: $sortKey) {
+    nodes {
+      id
+      app {
+        id
+        name
+        icon {
+          id
+          url
+        }
+      }
+      cancelReason
+      cancelledAt
+      channelInformation {
+        id
+        channelId
+        app {
+          id
+          title
+          icon {
+            id
+            url
+          }
+        }
+        channelDefinition {
+          id
+          channelName
+          isMarketplace
+          subChannelName
+        }
+      }
+      closed
+      closedAt
+      confirmationNumber
+      confirmed
+      createdAt
+      currencyCode
+      currentTotalWeight
+      discountCode
+      discountCodes
+      displayFinancialStatus
+      displayFulfillmentStatus
+      dutiesIncluded
+      edited
+      fulfillable
+      fullyPaid
+      name
+      note
+      poNumber
+      presentmentCurrencyCode
+      processedAt
+      publication {
+        id
+      }
+      refundable
+      registeredSourceUrl
+      requiresShipping
+      restockable
+      retailLocation {
+        id
+        name
+      }
+      returnStatus
+      sourceIdentifier
+      sourceName
+      tags
+      test
+      totalWeight
+      unpaid
+      updatedAt
+      refunds {
+        id
+      }
+      fulfillments {
+        id
+      }
+      lineItems(first: 250) {
+        nodes {
+          id
+
+          currentQuantity
+          fulfillableQuantity
+          fulfillmentStatus
+          isGiftCard
+          merchantEditable
+          name
+          nonFulfillableQuantity
+          quantity
+          refundableQuantity
+          requiresShipping
+          restockable
+          sku
+          taxable
+          title
+          unfulfilledQuantity
+          variantTitle
+          vendor
+          variant {
+            id
+            barcode
+            compareAtPrice
+            createdAt
+            inventoryPolicy
+            inventoryQuantity
+            position
+            price
+            requiresComponents
+            sku
+            taxable
+            title
+            updatedAt
+
+            availableForSale
+            displayName
+            sellableOnlineQuantity
+          }
+          product {
+            combinedListingRole
+            createdAt
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            isGiftCard
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            requiresSellingPlan
+            status
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+          }
+          image {
+            altText
+            height
+            id
+            url
+            width
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

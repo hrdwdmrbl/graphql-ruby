@@ -1,0 +1,77 @@
+query OrderLineItems($orderId: ID!, $first: Int!, $after: String) {
+  order(id: $orderId) {
+    lineItems(first: $first, after: $after) {
+      nodes {
+        id
+
+        currentQuantity
+        fulfillableQuantity
+        fulfillmentStatus
+        isGiftCard
+        merchantEditable
+        name
+        nonFulfillableQuantity
+        quantity
+        refundableQuantity
+        requiresShipping
+        restockable
+        sku
+        taxable
+        title
+        unfulfilledQuantity
+        variantTitle
+        vendor
+        variant {
+          id
+          barcode
+          compareAtPrice
+          createdAt
+          inventoryPolicy
+          inventoryQuantity
+          position
+          price
+          requiresComponents
+          sku
+          taxable
+          title
+          updatedAt
+
+          availableForSale
+          displayName
+          sellableOnlineQuantity
+        }
+        product {
+          combinedListingRole
+          createdAt
+          hasOnlyDefaultVariant
+          hasOutOfStockVariants
+          hasVariantsThatRequiresComponents
+          id
+          isGiftCard
+          onlineStorePreviewUrl
+          onlineStoreUrl
+          productType
+          publishedAt
+          requiresSellingPlan
+          status
+          title
+          totalInventory
+          tracksInventory
+          updatedAt
+          vendor
+        }
+        image {
+          altText
+          height
+          id
+          url
+          width
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
