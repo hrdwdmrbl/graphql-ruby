@@ -4,6 +4,7 @@ require "spec_helper"
 require "graphql/analysis/shopify_complexity"
 require_relative "../../support/shopify_api_client"
 require_relative "../../support/query_file_loader"
+require_relative "../../support/shopify_complexity_result_reporter"
 
 describe "ShopifyComplexity Integration Tests" do
   before do
@@ -25,8 +26,7 @@ describe "ShopifyComplexity Integration Tests" do
     puts "\nLoaded #{queries.size} executable queries for testing"
     skip "No queries available for testing" if queries.empty?
 
-    results = []
-    errors = []
+    reporter = ShopifyComplexityResultReporter.new
 
     queries.each_with_index do |query_info, idx|
       puts "\n[#{idx + 1}/#{queries.size}] Testing: #{query_info[:name]}"
@@ -39,10 +39,7 @@ describe "ShopifyComplexity Integration Tests" do
         query = GraphQL::Query.new(schema, query_info[:content], variables: variables)
         estimate_request_query_cost = GraphQL::Analysis.analyze_query(query, [GraphQL::Analysis::ShopifyComplexity]).first
       rescue => e
-        errors << {
-          name: query_info[:name],
-          error: "Complexity calculation error: #{e.message}"
-        }
+        reporter.add_error(name: query_info[:name], error: "Complexity calculation error: #{e.message}")
         puts "  CALC ERROR: #{e.message}"
         next
       end
@@ -51,10 +48,8 @@ describe "ShopifyComplexity Integration Tests" do
       result = client.execute_query(query_info[:content], variables: variables)
 
       if result[:errors]
-        errors << {
-          name: query_info[:name],
-          error: result[:errors].map { |e| e["message"] }.join(", ")
-        }
+        error_message = result[:errors].map { |e| e["message"] }.join(", ")
+        reporter.add_error(name: query_info[:name], error: error_message)
         puts "  API ERROR: #{result[:errors].first["message"]}"
         next
       end
@@ -63,14 +58,12 @@ describe "ShopifyComplexity Integration Tests" do
       diff = estimate_request_query_cost - actual_cost
       percent_diff = actual_cost > 0 ? ((diff.to_f / actual_cost) * 100).round(1) : 0
 
-      results << {
+      reporter.add_result(
         name: query_info[:name],
         estimated: estimate_request_query_cost,
         actual: actual_cost,
-        diff: diff,
-        percent_diff: percent_diff,
         fields: result[:fields]
-      }
+      )
 
       puts "  Estimated: #{estimate_request_query_cost}, Actual: #{actual_cost}, Diff: #{diff} (#{percent_diff}%)"
 
@@ -78,45 +71,10 @@ describe "ShopifyComplexity Integration Tests" do
       sleep 0.5
     end
 
-    # Print summary table
-    puts "\n" + "=" * 80
-    puts "SUMMARY"
-    puts "=" * 80
-    printf "%-40s %10s %10s %10s %10s\n", "Query", "Estimated", "Actual", "Diff", "Diff %"
-    puts "-" * 80
+    # Print all reports
+    reporter.print_all(queries.size)
 
-    results.each do |r|
-      printf "%-40s %10d %10d %10d %9.1f%%\n",
-             r[:name].slice(0, 40),
-             r[:estimated],
-             r[:actual],
-             r[:diff],
-             r[:percent_diff]
-    end
-
-    if errors.any?
-      puts "\n" + "=" * 80
-      puts "ERRORS (#{errors.size})"
-      puts "=" * 80
-      errors.each do |e|
-        puts "#{e[:name]}: #{e[:error]}"
-      end
-    end
-
-    # Calculate statistics
-    if results.any?
-      avg_diff = (results.sum { |r| r[:diff].abs } / results.size.to_f).round(1)
-      avg_percent_diff = (results.sum { |r| r[:percent_diff].abs } / results.size.to_f).round(1)
-
-      puts "\n" + "=" * 80
-      puts "Average absolute difference: #{avg_diff} (#{avg_percent_diff}%)"
-      puts "Successful queries: #{results.size}/#{queries.size}"
-      puts "=" * 80
-
-      # For now, just ensure we got some results - we'll tighten this threshold later
-      assert results.size > 0
-    else
-      puts "\nNo successful queries to analyze"
-    end
+    # For now, just ensure we got some results - we'll tighten this threshold later
+    assert reporter.results.size > 0
   end
 end
