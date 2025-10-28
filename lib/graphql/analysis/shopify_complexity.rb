@@ -58,7 +58,7 @@ module GraphQL
 
         private
 
-        # Effective connection size: cap at Shopify-like requested multiplier (~11)
+        # Effective connection size using a calibrated logarithmic scale
         def effective_connection_size(nodes, query, field_defn)
           raw = 1
           nodes.each do |node|
@@ -68,8 +68,9 @@ module GraphQL
               raw = [raw, current].max
             end
           end
-          # Cap to 11 to match observed requested costs from Shopify debug output
-          raw > 11 ? 11 : raw
+          # Calibrate so that first: 250 => ~11
+          k = 10.0 / Math.log(250.0)
+          1 + (k * Math.log(raw.to_f)).floor
         end
       end
 
