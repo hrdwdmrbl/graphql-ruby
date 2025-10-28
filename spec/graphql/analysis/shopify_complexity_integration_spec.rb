@@ -37,7 +37,7 @@ describe "ShopifyComplexity Integration Tests" do
       # Calculate our estimated cost
       begin
         query = GraphQL::Query.new(schema, query_info[:content], variables: variables)
-        estimated_cost = GraphQL::Analysis.analyze_query(query, [GraphQL::Analysis::ShopifyComplexity]).first
+        estimate_request_query_cost = GraphQL::Analysis.analyze_query(query, [GraphQL::Analysis::ShopifyComplexity]).first
       rescue => e
         errors << {
           name: query_info[:name],
@@ -59,19 +59,20 @@ describe "ShopifyComplexity Integration Tests" do
         next
       end
 
-      actual_cost = result[:requested_cost] # Use requestedQueryCost as the source of truth
-      diff = estimated_cost - actual_cost
+      actual_cost = result[:requested_query_cost]
+      diff = estimate_request_query_cost - actual_cost
       percent_diff = actual_cost > 0 ? ((diff.to_f / actual_cost) * 100).round(1) : 0
 
       results << {
         name: query_info[:name],
-        estimated: estimated_cost,
+        estimated: estimate_request_query_cost,
         actual: actual_cost,
         diff: diff,
-        percent_diff: percent_diff
+        percent_diff: percent_diff,
+        fields: result[:fields]
       }
 
-      puts "  Estimated: #{estimated_cost}, Actual: #{actual_cost}, Diff: #{diff} (#{percent_diff}%)"
+      puts "  Estimated: #{estimate_request_query_cost}, Actual: #{actual_cost}, Diff: #{diff} (#{percent_diff}%)"
 
       # Be nice to Shopify's rate limits
       sleep 0.5

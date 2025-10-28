@@ -26,6 +26,7 @@ class ShopifyApiClient
     request = Net::HTTP::Post.new(uri.path)
     request["Content-Type"] = "application/json"
     request["X-Shopify-Access-Token"] = @access_token
+    request["Shopify-GraphQL-Cost-Debug"] = "1"
 
     body = { query: query_string }
     body[:variables] = variables unless variables.empty?
@@ -38,9 +39,10 @@ class ShopifyApiClient
     cost = extensions["cost"] || {}
 
     {
-      actual_cost: cost["actualQueryCost"],
-      requested_cost: cost["requestedQueryCost"],
+      actual_query_cost: cost["actualQueryCost"],
+      requested_query_cost: cost["requestedQueryCost"],
       throttle_status: cost["throttleStatus"],
+      fields: cost["fields"],
       data: parsed["data"],
       errors: parsed["errors"]
     }
@@ -49,7 +51,7 @@ class ShopifyApiClient
       actual_cost: nil,
       requested_cost: nil,
       error: e.message,
-      errors: [{ "message" => e.message }]
+      errors: [{ message: e.message }]
     }
   end
 end
