@@ -45,3 +45,4 @@ javascript_client/index*
 *.ri
 AGENTS.md
 .env
+.key
