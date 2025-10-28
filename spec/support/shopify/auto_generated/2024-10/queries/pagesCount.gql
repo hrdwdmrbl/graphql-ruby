@@ -1,0 +1,6 @@
+query pagesCount{
+    pagesCount{
+        count
+        precision
+    }
+}

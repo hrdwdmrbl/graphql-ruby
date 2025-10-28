@@ -1,0 +1,26 @@
+fragment FullFulfillmentOrderPart on FulfillmentOrder {
+  id
+  createdAt
+  updatedAt
+  status
+  requestStatus
+  assignedLocation {
+    location {
+      id
+    }
+  }
+  lineItems(first: 8) {
+    nodes {
+      id
+      totalQuantity
+      remainingQuantity
+      lineItem {
+        id
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

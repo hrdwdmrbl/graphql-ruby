@@ -1,0 +1,31 @@
+query inventoryItem($locationId: ID!, $id: ID!) {
+  inventoryItem(id: $id) {
+    id
+    countryCodeOfOrigin
+    duplicateSkuCount
+    harmonizedSystemCode
+    inventoryHistoryUrl
+    legacyResourceId
+    locationsCount {
+      count
+      precision
+    }
+    measurement {
+      id
+    }
+    provinceCodeOfOrigin
+    requiresShipping
+    sku
+    tracked
+    trackedEditable {
+      locked
+      reason
+    }
+    unitCost {
+      amount
+      currencyCode
+    }
+    updatedAt
+    createdAt
+  }
+}

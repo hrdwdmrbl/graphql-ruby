@@ -1,0 +1,6 @@
+query publishedProductsCount($publicationId: ID!, $limit: Int){
+    publishedProductsCount(publicationId: $publicationId, limit: $limit){
+        count
+        precision
+    }
+}

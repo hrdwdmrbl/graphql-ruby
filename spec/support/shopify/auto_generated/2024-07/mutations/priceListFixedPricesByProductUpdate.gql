@@ -1,0 +1,79 @@
+mutation priceListFixedPricesByProductUpdate($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $truncateAt1: Int, $id1: ID!, $context1: ContextualPublicationContext!, $publicationId1: ID!, $pricesToAdd: [PriceListProductPriceInput!], $pricesToDeleteByProductIds: [ID!], $priceListId: ID!){
+    priceListFixedPricesByProductUpdate(pricesToAdd: $pricesToAdd, pricesToDeleteByProductIds: $pricesToDeleteByProductIds, priceListId: $priceListId){
+        priceList{
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        pricesToAddProducts{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+        pricesToDeleteProducts{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt1)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id1)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context1)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId1)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,13 @@
+mutation urlRedirectBulkDeleteBySavedSearch($savedSearchId: ID!){
+    urlRedirectBulkDeleteBySavedSearch(savedSearchId: $savedSearchId){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

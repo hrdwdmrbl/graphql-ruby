@@ -1,0 +1,41 @@
+mutation productOptionUpdate($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $option: OptionUpdateInput!, $productId: ID!, $optionValuesToAdd: [OptionValueCreateInput!], $optionValuesToUpdate: [OptionValueUpdateInput!], $optionValuesToDelete: [ID!], $variantStrategy: ProductOptionUpdateVariantStrategy){
+    productOptionUpdate(option: $option, productId: $productId, optionValuesToAdd: $optionValuesToAdd, optionValuesToUpdate: $optionValuesToUpdate, optionValuesToDelete: $optionValuesToDelete, variantStrategy: $variantStrategy){
+        product{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

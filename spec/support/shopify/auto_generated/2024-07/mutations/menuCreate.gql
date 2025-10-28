@@ -1,0 +1,15 @@
+mutation menuCreate($title: String!, $handle: String!, $items: [MenuItemCreateInput!]!){
+    menuCreate(title: $title, handle: $handle, items: $items){
+        menu{
+            handle
+            id
+            isDefault
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

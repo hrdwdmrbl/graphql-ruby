@@ -1,0 +1,11 @@
+query customerMergeJobStatus($jobId: ID!){
+    customerMergeJobStatus(jobId: $jobId){
+        customerMergeErrors{
+            errorFields
+            message
+        }
+        jobId
+        resultingCustomerId
+        status
+    }
+}

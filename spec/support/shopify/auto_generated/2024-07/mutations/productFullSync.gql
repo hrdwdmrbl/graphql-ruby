@@ -1,0 +1,9 @@
+mutation productFullSync($beforeUpdatedAt: DateTime, $id: ID!, $updatedAtSince: DateTime){
+    productFullSync(beforeUpdatedAt: $beforeUpdatedAt, id: $id, updatedAtSince: $updatedAtSince){
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

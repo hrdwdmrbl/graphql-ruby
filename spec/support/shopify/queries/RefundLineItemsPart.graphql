@@ -1,0 +1,25 @@
+fragment RefundPart on Refund {
+  id
+  refundLineItems(first: 20) {
+    nodes {
+      id
+      quantity
+      restockType
+      restocked
+      lineItem {
+        id
+      }
+      # Only fetch location if it not exists
+      location {
+        id
+        fulfillmentService {
+          id
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

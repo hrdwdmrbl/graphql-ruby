@@ -1,0 +1,35 @@
+mutation metaobjectBulkDelete($sort: ArticleTagSort, $limit: Int!, $id: ID!, $where: MetaobjectBulkDeleteWhereCondition!){
+    metaobjectBulkDelete(where: $where){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        userErrors{
+            code
+            elementIndex
+            elementKey
+            field
+            message
+        }
+    }
+}

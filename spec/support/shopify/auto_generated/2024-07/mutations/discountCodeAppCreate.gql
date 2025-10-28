@@ -1,0 +1,31 @@
+mutation discountCodeAppCreate($codeAppDiscount: DiscountCodeAppInput!){
+    discountCodeAppCreate(codeAppDiscount: $codeAppDiscount){
+        codeAppDiscount{
+            appliesOncePerCustomer
+            asyncUsageCount
+            createdAt
+            customerSelection{
+                __typename
+                ... on DiscountCustomerAll {
+                    allCustomers
+                }
+            }
+            discountClass
+            discountId
+            endsAt
+            hasTimelineComment
+            recurringCycleLimit
+            startsAt
+            status
+            title
+            updatedAt
+            usageLimit
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

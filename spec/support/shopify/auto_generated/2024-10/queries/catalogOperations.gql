@@ -1,0 +1,11 @@
+query catalogOperations{
+    catalogOperations{
+        id
+        processedRowCount
+        rowCount{
+            count
+            exceedsMax
+        }
+        status
+    }
+}

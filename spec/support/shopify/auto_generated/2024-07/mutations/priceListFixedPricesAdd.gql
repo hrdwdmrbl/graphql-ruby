@@ -1,0 +1,12 @@
+mutation priceListFixedPricesAdd($priceListId: ID!, $prices: [PriceListPriceInput!]!){
+    priceListFixedPricesAdd(priceListId: $priceListId, prices: $prices){
+        prices{
+            originType
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

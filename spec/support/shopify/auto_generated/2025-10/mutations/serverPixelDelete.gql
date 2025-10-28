@@ -1,0 +1,10 @@
+mutation serverPixelDelete{
+    serverPixelDelete{
+        deletedServerPixelId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

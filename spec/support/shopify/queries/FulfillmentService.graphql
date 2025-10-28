@@ -1,0 +1,15 @@
+query FulfillmentService($id: ID!) {
+  fulfillmentService(id: $id) {
+    id
+    fulfillmentOrdersOptIn
+    inventoryManagement
+    location {
+      id
+    }
+    permitsSkuSharing
+    requiresShippingMethod
+    serviceName
+    trackingSupport
+    type
+  }
+}

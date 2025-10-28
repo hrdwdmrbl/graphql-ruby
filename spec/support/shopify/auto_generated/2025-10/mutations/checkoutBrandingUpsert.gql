@@ -1,0 +1,9 @@
+mutation checkoutBrandingUpsert($checkoutProfileId: ID!, $checkoutBrandingInput: CheckoutBrandingInput){
+    checkoutBrandingUpsert(checkoutProfileId: $checkoutProfileId, checkoutBrandingInput: $checkoutBrandingInput){
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

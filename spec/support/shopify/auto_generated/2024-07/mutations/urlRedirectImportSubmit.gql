@@ -1,0 +1,13 @@
+mutation urlRedirectImportSubmit($id: ID!){
+    urlRedirectImportSubmit(id: $id){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

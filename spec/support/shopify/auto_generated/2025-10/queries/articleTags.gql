@@ -1,0 +1,3 @@
+query articleTags($sort: ArticleTagSort, $limit: Int!){
+    articleTags(sort: $sort, limit: $limit)
+}

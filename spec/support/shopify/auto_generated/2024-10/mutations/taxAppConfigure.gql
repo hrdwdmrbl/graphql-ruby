@@ -1,0 +1,12 @@
+mutation taxAppConfigure($ready: Boolean!){
+    taxAppConfigure(ready: $ready){
+        taxAppConfiguration{
+            state
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

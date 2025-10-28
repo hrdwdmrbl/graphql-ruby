@@ -1,0 +1,16 @@
+mutation inventorySetScheduledChanges($input: InventorySetScheduledChangesInput!){
+    inventorySetScheduledChanges(input: $input){
+        scheduledChanges{
+            expectedAt
+            fromName
+            ledgerDocumentUri
+            quantity
+            toName
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

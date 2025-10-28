@@ -1,0 +1,22 @@
+fragment FulfillmentPart on Fulfillment {
+  id
+  events(first: 25) {
+    nodes {
+      ...FulfillmentEventParts
+    }
+  }
+}
+fragment FulfillmentEventParts on FulfillmentEvent {
+  address1
+  city
+  country
+  estimatedDeliveryAt
+  happenedAt
+  id
+  latitude
+  longitude
+  status
+  zip
+  province
+  message
+}

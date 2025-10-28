@@ -1,0 +1,40 @@
+mutation companyLocationAssignStaffMembers($catalogId: ID!, $companyLocationId: ID!, $staffMemberIds: [ID!]!){
+    companyLocationAssignStaffMembers(companyLocationId: $companyLocationId, staffMemberIds: $staffMemberIds){
+        companyLocationStaffMemberAssignments{
+            companyLocation{
+                createdAt
+                currency
+                defaultCursor
+                externalId
+                hasTimelineComment
+                id
+                inCatalog(catalogId: $catalogId)
+                locale
+                name
+                note
+                phone
+                updatedAt
+            }
+            id
+            staffMember{
+                accountType
+                active
+                email
+                exists
+                firstName
+                id
+                initials
+                isShopOwner
+                lastName
+                locale
+                name
+                phone
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

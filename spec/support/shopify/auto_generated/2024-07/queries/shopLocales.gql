@@ -1,0 +1,12 @@
+query shopLocales($published: Boolean){
+    shopLocales(published: $published){
+        locale
+        marketWebPresences{
+            id
+            subfolderSuffix
+        }
+        name
+        primary
+        published
+    }
+}

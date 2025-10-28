@@ -1,0 +1,24 @@
+query subscriptionBillingAttempts($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: SubscriptionBillingAttemptsSortKeys, $query: String){
+    subscriptionBillingAttempts(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            completedAt
+            createdAt
+            errorCode
+            errorMessage
+            id
+            idempotencyKey
+            nextActionUrl
+            originTime
+            ready
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,22 @@
+mutation collectionAddProducts($truncateAt: Int, $id: ID!, $publicationId: ID!, $id1: ID!, $productIds: [ID!]!){
+    collectionAddProducts(id: $id1, productIds: $productIds){
+        collection{
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            handle
+            hasProduct(id: $id)
+            id
+            legacyResourceId
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            sortOrder
+            templateSuffix
+            title
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

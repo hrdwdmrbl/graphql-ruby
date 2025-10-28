@@ -1,0 +1,19 @@
+mutation appSubscriptionTrialExtend($id: ID!, $days: Int!){
+    appSubscriptionTrialExtend(id: $id, days: $days){
+        appSubscription{
+            createdAt
+            currentPeriodEnd
+            id
+            name
+            returnUrl
+            status
+            test
+            trialDays
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

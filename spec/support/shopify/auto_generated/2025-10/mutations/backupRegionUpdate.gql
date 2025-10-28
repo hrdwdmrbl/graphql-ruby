@@ -1,0 +1,13 @@
+mutation backupRegionUpdate($region: BackupRegionUpdateInput){
+    backupRegionUpdate(region: $region){
+        backupRegion{
+            id
+            name
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

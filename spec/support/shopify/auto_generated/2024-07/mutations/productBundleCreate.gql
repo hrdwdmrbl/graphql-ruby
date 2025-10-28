@@ -1,0 +1,12 @@
+mutation productBundleCreate($input: ProductBundleCreateInput!){
+    productBundleCreate(input: $input){
+        productBundleOperation{
+            id
+            status
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

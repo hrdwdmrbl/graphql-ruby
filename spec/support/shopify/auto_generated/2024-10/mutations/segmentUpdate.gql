@@ -1,0 +1,15 @@
+mutation segmentUpdate($id: ID!, $name: String, $query: String){
+    segmentUpdate(id: $id, name: $name, query: $query){
+        segment{
+            creationDate
+            id
+            lastEditDate
+            name
+            query
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

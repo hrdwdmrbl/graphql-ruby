@@ -1,0 +1,26 @@
+{
+  "data": {
+    "publication": {
+      "autoPublish": false,
+      "catalog": {
+        "id": "gid://shopify/AppCatalog/10869801098",
+        "status": "ACTIVE",
+        "title": "Channel Catalog 49838686346 d4ccdfe9-a7cf-4549-b788-0f169ac7295d"
+      },
+      "id": "gid://shopify/Publication/49838686346",
+      "operation": null,
+      "supportsFuturePublishing": true
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 4,
+      "actualQueryCost": 3,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1997,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

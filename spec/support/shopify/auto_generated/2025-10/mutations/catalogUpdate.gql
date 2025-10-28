@@ -1,0 +1,49 @@
+mutation catalogUpdate($id: ID!, $id1: ID!, $input: CatalogUpdateInput!){
+    catalogUpdate(id: $id1, input: $input){
+        catalog{
+            id
+            operations{
+                id
+                processedRowCount
+                status
+            }
+            priceList{
+                currency
+                fixedPricesCount
+                id
+                name
+            }
+            publication{
+                autoPublish
+                hasCollection(id: $id)
+                id
+                operation{
+                    __typename
+                    ... on AddAllProductsOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on CatalogCsvOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on PublicationResourceOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                }
+                supportsFuturePublishing
+            }
+            status
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

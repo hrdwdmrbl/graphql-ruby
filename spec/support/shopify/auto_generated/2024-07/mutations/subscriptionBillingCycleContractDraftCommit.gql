@@ -1,0 +1,19 @@
+mutation subscriptionBillingCycleContractDraftCommit($draftId: ID!){
+    subscriptionBillingCycleContractDraftCommit(draftId: $draftId){
+        contract{
+            appAdminUrl
+            createdAt
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            note
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

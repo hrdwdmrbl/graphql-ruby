@@ -1,0 +1,12 @@
+mutation draftOrderBulkDelete($search: String, $savedSearchId: ID, $ids: [ID!]){
+    draftOrderBulkDelete(search: $search, savedSearchId: $savedSearchId, ids: $ids){
+        job{
+            done
+            id
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

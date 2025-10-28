@@ -1,0 +1,14 @@
+mutation discountCodeRedeemCodeBulkDelete($discountId: ID!, $search: String, $savedSearchId: ID, $ids: [ID!]){
+    discountCodeRedeemCodeBulkDelete(discountId: $discountId, search: $search, savedSearchId: $savedSearchId, ids: $ids){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

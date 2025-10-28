@@ -1,0 +1,53 @@
+query files($maxWidth: Int, $maxHeight: Int, $crop: CropRegion, $scale: Int, $preferredContentType: ImageContentType, $transform: ImageTransformInput, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: FileSortKeys, $query: String, $savedSearchId: ID){
+    files(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+            node{
+                alt
+                createdAt
+                fileErrors{
+                    code
+                    details
+                    message
+                }
+                fileStatus
+                id
+                preview{
+                    status
+                }
+                updatedAt
+            }
+        }
+        nodes{
+            alt
+            createdAt
+            fileErrors{
+                code
+                details
+                message
+            }
+            fileStatus
+            id
+            preview{
+                image{
+                    altText
+                    height
+                    id
+                    originalSrc
+                    src
+                    transformedSrc(maxWidth: $maxWidth, maxHeight: $maxHeight, crop: $crop, scale: $scale, preferredContentType: $preferredContentType)
+                    url(transform: $transform)
+                    width
+                }
+                status
+            }
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,13 @@
+mutation stagedUploadTargetGenerate($input: StagedUploadTargetGenerateInput!){
+    stagedUploadTargetGenerate(input: $input){
+        parameters{
+            name
+            value
+        }
+        url
+        userErrors{
+            field
+            message
+        }
+    }
+}

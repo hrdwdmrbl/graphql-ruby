@@ -1,0 +1,15 @@
+mutation returnRequest($input: ReturnRequestInput!){
+    returnRequest(input: $input){
+        return{
+            id
+            name
+            status
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,41 @@
+query standardMetafieldDefinitionTemplates($constraintSubtype: MetafieldDefinitionConstraintSubtypeIdentifier, $constraintStatus: MetafieldDefinitionConstraintStatus, $excludeActivated: Boolean, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    standardMetafieldDefinitionTemplates(constraintSubtype: $constraintSubtype, constraintStatus: $constraintStatus, excludeActivated: $excludeActivated, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                description
+                id
+                key
+                name
+                namespace
+                ownerTypes
+                visibleToStorefrontApi
+            }
+        }
+        nodes{
+            description
+            id
+            key
+            name
+            namespace
+            ownerTypes
+            type{
+                category
+                name
+                supportsDefinitionMigrations
+            }
+            validations{
+                name
+                type
+                value
+            }
+            visibleToStorefrontApi
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

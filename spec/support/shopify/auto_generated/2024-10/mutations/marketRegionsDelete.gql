@@ -1,0 +1,10 @@
+mutation marketRegionsDelete($ids: [ID!]!){
+    marketRegionsDelete(ids: $ids){
+        deletedIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

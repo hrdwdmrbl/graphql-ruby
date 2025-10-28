@@ -1,0 +1,31 @@
+mutation marketingEngagementCreate($marketingActivityId: ID, $remoteId: String, $channelHandle: String, $marketingEngagement: MarketingEngagementInput!){
+    marketingEngagementCreate(marketingActivityId: $marketingActivityId, remoteId: $remoteId, channelHandle: $channelHandle, marketingEngagement: $marketingEngagement){
+        marketingEngagement{
+            channelHandle
+            clicksCount
+            commentsCount
+            complaintsCount
+            failsCount
+            favoritesCount
+            firstTimeCustomers
+            impressionsCount
+            isCumulative
+            occurredOn
+            orders
+            returningCustomers
+            sendsCount
+            sessionsCount
+            sharesCount
+            uniqueClicksCount
+            uniqueViewsCount
+            unsubscribesCount
+            utcOffset
+            viewsCount
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

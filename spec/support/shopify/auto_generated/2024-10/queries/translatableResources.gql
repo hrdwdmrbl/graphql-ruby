@@ -1,0 +1,68 @@
+query translatableResources($marketId: ID, $locale: String!, $outdated: Boolean, $marketId1: ID, $resourceType: TranslatableResourceType, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $marketId2: ID, $locale1: String!, $outdated1: Boolean, $marketId3: ID, $resourceType1: TranslatableResourceType!, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean){
+    translatableResources(resourceType: $resourceType1, first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+        edges{
+            cursor
+            node{
+                resourceId
+                translatableContent(marketId: $marketId){
+                    digest
+                    key
+                    locale
+                    type
+                    value
+                }
+                translations(locale: $locale, outdated: $outdated, marketId: $marketId1){
+                    key
+                    locale
+                    outdated
+                    updatedAt
+                    value
+                }
+            }
+        }
+        nodes{
+            nestedTranslatableResources(resourceType: $resourceType, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+                edges{
+                    cursor
+                }
+                nodes{
+                    resourceId
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            resourceId
+            translatableContent(marketId: $marketId2){
+                digest
+                key
+                locale
+                type
+                value
+            }
+            translations(locale: $locale1, outdated: $outdated1, marketId: $marketId3){
+                key
+                locale
+                market{
+                    enabled
+                    handle
+                    id
+                    name
+                    primary
+                }
+                outdated
+                updatedAt
+                value
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

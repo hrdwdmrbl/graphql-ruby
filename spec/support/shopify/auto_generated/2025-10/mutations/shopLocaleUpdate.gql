@@ -1,0 +1,18 @@
+mutation shopLocaleUpdate($locale: String!, $shopLocale: ShopLocaleInput!){
+    shopLocaleUpdate(locale: $locale, shopLocale: $shopLocale){
+        shopLocale{
+            locale
+            marketWebPresences{
+                id
+                subfolderSuffix
+            }
+            name
+            primary
+            published
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

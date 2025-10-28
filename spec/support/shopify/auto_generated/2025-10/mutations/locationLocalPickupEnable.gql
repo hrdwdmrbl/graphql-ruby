@@ -1,0 +1,13 @@
+mutation locationLocalPickupEnable($localPickupSettings: DeliveryLocationLocalPickupEnableInput!){
+    locationLocalPickupEnable(localPickupSettings: $localPickupSettings){
+        localPickupSettings{
+            instructions
+            pickupTime
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

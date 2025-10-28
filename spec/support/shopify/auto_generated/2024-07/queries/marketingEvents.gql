@@ -1,0 +1,31 @@
+query marketingEvents($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: MarketingEventSortKeys, $query: String){
+    marketingEvents(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            channelHandle
+            description
+            endedAt
+            id
+            legacyResourceId
+            manageUrl
+            marketingChannelType
+            previewUrl
+            remoteId
+            scheduledToEndAt
+            sourceAndMedium
+            startedAt
+            type
+            utmCampaign
+            utmMedium
+            utmSource
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

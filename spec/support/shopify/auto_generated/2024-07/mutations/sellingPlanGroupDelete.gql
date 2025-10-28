@@ -1,0 +1,10 @@
+mutation sellingPlanGroupDelete($id: ID!){
+    sellingPlanGroupDelete(id: $id){
+        deletedSellingPlanGroupId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

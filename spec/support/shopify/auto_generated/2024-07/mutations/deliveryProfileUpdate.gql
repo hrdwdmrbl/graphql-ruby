@@ -1,0 +1,18 @@
+mutation deliveryProfileUpdate($id: ID!, $profile: DeliveryProfileInput!, $leaveLegacyModeProfiles: Boolean){
+    deliveryProfileUpdate(id: $id, profile: $profile, leaveLegacyModeProfiles: $leaveLegacyModeProfiles){
+        profile{
+            activeMethodDefinitionsCount
+            default
+            id
+            legacyMode
+            locationsWithoutRatesCount
+            name
+            originLocationCount
+            zoneCountryCount
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

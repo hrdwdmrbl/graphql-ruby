@@ -1,0 +1,27 @@
+mutation locationActivate($locationId: ID!){
+    locationActivate(locationId: $locationId){
+        location{
+            activatable
+            addressVerified
+            createdAt
+            deactivatable
+            deactivatedAt
+            deletable
+            fulfillsOnlineOrders
+            hasActiveInventory
+            hasUnfulfilledOrders
+            id
+            isActive
+            isFulfillmentService
+            legacyResourceId
+            name
+            shipsInventory
+            updatedAt
+        }
+        locationActivateUserErrors{
+            code
+            field
+            message
+        }
+    }
+}

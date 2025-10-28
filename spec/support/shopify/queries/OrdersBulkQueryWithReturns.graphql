@@ -1,0 +1,241 @@
+mutation {
+  bulkOperationRunQuery(
+    query: """
+    {
+      orders$arguments {
+        edges {
+          node {
+            id
+            app {
+              id
+              name
+              icon {
+                id
+                height
+                width
+                url
+              }
+            }
+            cancelReason
+            cancelledAt
+            channelInformation {
+              id
+              channelId
+              app {
+                id
+                title
+                icon {
+                  id
+                  height
+                  width
+                  url
+                }
+              }
+              channelDefinition {
+                id
+                channelName
+                isMarketplace
+                subChannelName
+              }
+            }
+            closed
+            closedAt
+            confirmationNumber
+            confirmed
+            createdAt
+            currencyCode
+            currentTotalWeight
+            discountCode
+            discountCodes
+            displayFinancialStatus
+            displayFulfillmentStatus
+            dutiesIncluded
+            edited
+            fulfillable
+            fullyPaid
+            name
+            note
+            poNumber
+            presentmentCurrencyCode
+            processedAt
+            publication {
+              id
+            }
+            refundable
+            registeredSourceUrl
+            requiresShipping
+            restockable
+            retailLocation {
+              id
+              name
+            }
+            returnStatus
+            sourceIdentifier
+            sourceName
+            tags
+            test
+            totalWeight
+            unpaid
+            updatedAt
+            lineItems {
+              edges {
+                node {
+                  id
+
+                  currentQuantity
+                  fulfillableQuantity
+                  fulfillmentStatus
+                  isGiftCard
+                  merchantEditable
+                  name
+                  nonFulfillableQuantity
+                  quantity
+                  refundableQuantity
+                  requiresShipping
+                  restockable
+                  sku
+                  taxable
+                  title
+                  unfulfilledQuantity
+                  variantTitle
+                  vendor
+                  variant {
+                    availableForSale
+                    barcode
+                    compareAtPrice
+                    createdAt
+                    displayName
+                    id
+                    inventoryPolicy
+                    inventoryQuantity
+                    position
+                    price
+                    requiresComponents
+                    sellableOnlineQuantity
+                    sku
+                    taxable
+                    title
+                    updatedAt
+                  }
+                  product {
+                    combinedListingRole
+                    createdAt
+                    giftCardTemplateSuffix
+                    handle
+                    hasOnlyDefaultVariant
+                    hasOutOfStockVariants
+                    hasVariantsThatRequiresComponents
+                    id
+                    isGiftCard
+                    onlineStorePreviewUrl
+                    onlineStoreUrl
+                    productType
+                    publishedAt
+                    requiresSellingPlan
+                    status
+                    tags
+                    templateSuffix
+                    title
+                    totalInventory
+                    tracksInventory
+                    updatedAt
+                    vendor
+                  }
+                  image {
+                    altText
+                    height
+                    id
+                    url
+                    width
+                  }
+                }
+              }
+            }
+            refunds {
+              id
+              createdAt
+              updatedAt
+            }
+            fulfillments {
+              id
+              createdAt
+              updatedAt
+              deliveredAt
+              displayStatus
+              inTransitAt
+              name
+              status
+              requiresShipping
+              service {
+                id
+                serviceName
+                type
+                location {
+                  id
+                }
+              }
+              totalQuantity
+              location {
+                id
+              }
+              trackingInfo {
+                company
+                number
+                url
+              }
+            }
+            fulfillmentOrders {
+              edges {
+                node {
+                  id
+                  createdAt
+                  updatedAt
+                  fulfillAt
+                  status
+                  requestStatus
+                  assignedLocation {
+                    location {
+                      id
+                    }
+                  }
+                  lineItems {
+                    edges {
+                      node {
+                        id
+                        totalQuantity
+                        remainingQuantity
+                        lineItem {
+                          id
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            returns {
+              edges {
+                node {
+                  id
+                  name
+                  status
+                  totalQuantity
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+  ) {
+    bulkOperation {
+      id
+      status
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

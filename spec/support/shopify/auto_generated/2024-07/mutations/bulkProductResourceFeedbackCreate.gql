@@ -1,0 +1,16 @@
+mutation bulkProductResourceFeedbackCreate($feedbackInput: [ProductResourceFeedbackInput!]!){
+    bulkProductResourceFeedbackCreate(feedbackInput: $feedbackInput){
+        feedback{
+            feedbackGeneratedAt
+            messages
+            productId
+            productUpdatedAt
+            state
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

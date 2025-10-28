@@ -1,0 +1,23 @@
+query deletionEvents($subjectTypes: [DeletionEventSubjectType!], $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: DeletionEventSortKeys, $query: String){
+    deletionEvents(subjectTypes: $subjectTypes, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                occurredAt
+                subjectId
+                subjectType
+            }
+        }
+        nodes{
+            occurredAt
+            subjectId
+            subjectType
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

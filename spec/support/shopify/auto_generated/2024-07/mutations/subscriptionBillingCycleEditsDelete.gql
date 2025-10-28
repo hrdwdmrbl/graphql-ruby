@@ -1,0 +1,18 @@
+mutation subscriptionBillingCycleEditsDelete($contractId: ID!, $targetSelection: SubscriptionBillingCyclesTargetSelection!){
+    subscriptionBillingCycleEditsDelete(contractId: $contractId, targetSelection: $targetSelection){
+        billingCycles{
+            billingAttemptExpectedDate
+            cycleEndAt
+            cycleIndex
+            cycleStartAt
+            edited
+            skipped
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

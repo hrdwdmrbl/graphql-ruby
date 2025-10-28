@@ -1,0 +1,70 @@
+mutation subscriptionDraftFreeShippingDiscountUpdate($deliveryAddress: MailingAddressInput, $draftId: ID!, $discountId: ID!, $input: SubscriptionFreeShippingDiscountInput!){
+    subscriptionDraftFreeShippingDiscountUpdate(draftId: $draftId, discountId: $discountId, input: $input){
+        discountUpdated{
+            id
+            recurringCycleLimit
+            rejectionReason
+            targetType
+            title
+            type
+            usageCount
+            value{
+                __typename
+                ... on SubscriptionDiscountFixedAmountValue {
+                    appliesOnEachItem
+                }
+                ... on SubscriptionDiscountPercentageValue {
+                    percentage
+                }
+            }
+        }
+        draft{
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            deliveryOptions(deliveryAddress: $deliveryAddress){
+                __typename
+                ... on SubscriptionDeliveryOptionResultFailure {
+                    message
+                }
+                ... on SubscriptionDeliveryOptionResultSuccess {
+                    deliveryOptions{
+                        __typename
+                        ... on SubscriptionLocalDeliveryOption {
+                            code
+                            description
+                            phoneRequired
+                            presentmentTitle
+                            title
+                        }
+                        ... on SubscriptionPickupOption {
+                            code
+                            description
+                            phoneRequired
+                            pickupTime
+                            presentmentTitle
+                            title
+                        }
+                        ... on SubscriptionShippingOption {
+                            code
+                            description
+                            phoneRequired
+                            presentmentTitle
+                            title
+                        }
+                    }
+                }
+            }
+            id
+            nextBillingDate
+            note
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

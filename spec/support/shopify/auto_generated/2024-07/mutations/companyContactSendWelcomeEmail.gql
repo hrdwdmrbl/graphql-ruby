@@ -1,0 +1,18 @@
+mutation companyContactSendWelcomeEmail($companyContactId: ID!, $email: EmailInput){
+    companyContactSendWelcomeEmail(companyContactId: $companyContactId, email: $email){
+        companyContact{
+            createdAt
+            id
+            isMainContact
+            lifetimeDuration
+            locale
+            title
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

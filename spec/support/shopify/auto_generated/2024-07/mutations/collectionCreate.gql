@@ -1,0 +1,22 @@
+mutation collectionCreate($truncateAt: Int, $id: ID!, $publicationId: ID!, $input: CollectionInput!){
+    collectionCreate(input: $input){
+        collection{
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            handle
+            hasProduct(id: $id)
+            id
+            legacyResourceId
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            sortOrder
+            templateSuffix
+            title
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

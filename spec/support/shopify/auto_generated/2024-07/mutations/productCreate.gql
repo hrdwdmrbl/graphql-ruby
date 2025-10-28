@@ -1,0 +1,70 @@
+mutation productCreate($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $input: ProductInput!, $media: [CreateMediaInput!]){
+    productCreate(input: $input, media: $media){
+        product{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+        shop{
+            checkoutApiSupported
+            contactEmail
+            createdAt
+            currencyCode
+            customerAccounts
+            description
+            email
+            enabledPresentmentCurrencies
+            ianaTimezone
+            id
+            marketingSmsConsentEnabledAtCheckout
+            myshopifyDomain
+            name
+            orderNumberFormatPrefix
+            orderNumberFormatSuffix
+            richTextEditorUrl
+            setupRequired
+            shipsToCountries
+            taxShipping
+            taxesIncluded
+            timezoneAbbreviation
+            timezoneOffset
+            timezoneOffsetMinutes
+            transactionalSmsDisabled
+            unitSystem
+            updatedAt
+            url
+            weightUnit
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

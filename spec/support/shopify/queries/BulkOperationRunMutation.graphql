@@ -1,0 +1,22 @@
+mutation call($mutation: String!, $stagedUploadPath: String!) {
+  bulkOperationRunMutation(groupObjects: true, mutation: $mutation, stagedUploadPath: $stagedUploadPath) {
+    bulkOperation {
+      id
+      completedAt
+      createdAt
+      errorCode
+      fileSize
+      objectCount
+      partialDataUrl
+      query
+      rootObjectCount
+      status
+      type
+      url
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

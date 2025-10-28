@@ -1,0 +1,43 @@
+mutation productDeleteMedia($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $productId: ID!, $mediaIds: [ID!]!){
+    productDeleteMedia(productId: $productId, mediaIds: $mediaIds){
+        deletedMediaIds
+        deletedProductImageIds
+        mediaUserErrors{
+            code
+            field
+            message
+        }
+        product{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+    }
+}

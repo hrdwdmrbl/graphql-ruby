@@ -1,0 +1,45 @@
+mutation shopResourceFeedbackCreate($input: ResourceFeedbackCreateInput!){
+    shopResourceFeedbackCreate(input: $input){
+        feedback{
+            app{
+                apiKey
+                appStoreAppUrl
+                appStoreDeveloperUrl
+                description
+                developerName
+                developerType
+                embedded
+                features
+                handle
+                id
+                installUrl
+                isPostPurchaseAppInUse
+                previouslyInstalled
+                pricingDetails
+                pricingDetailsSummary
+                privacyPolicyUrl
+                publicCategory
+                published
+                shopifyDeveloped
+                title
+                uninstallMessage
+                webhookApiVersion
+            }
+            feedbackGeneratedAt
+            link{
+                label
+                url
+            }
+            messages{
+                field
+                message
+            }
+            state
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

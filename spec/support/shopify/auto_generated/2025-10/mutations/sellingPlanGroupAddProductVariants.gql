@@ -1,0 +1,38 @@
+mutation sellingPlanGroupAddProductVariants($productId: ID!, $productVariantId: ID!, $productId1: ID!, $productId2: ID, $locale: String!, $marketId: ID, $id: ID!, $productVariantIds: [ID!]!){
+    sellingPlanGroupAddProductVariants(id: $id, productVariantIds: $productVariantIds){
+        sellingPlanGroup{
+            appId
+            appliesToProduct(productId: $productId)
+            appliesToProductVariant(productVariantId: $productVariantId)
+            appliesToProductVariants(productId: $productId1)
+            createdAt
+            description
+            id
+            merchantCode
+            name
+            options
+            position
+            productVariantsCount(productId: $productId2){
+                count
+                precision
+            }
+            productsCount{
+                count
+                precision
+            }
+            summary
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

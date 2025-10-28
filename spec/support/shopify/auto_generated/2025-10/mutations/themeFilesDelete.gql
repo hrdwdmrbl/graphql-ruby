@@ -1,0 +1,17 @@
+mutation themeFilesDelete($themeId: ID!, $files: [String!]!){
+    themeFilesDelete(themeId: $themeId, files: $files){
+        deletedThemeFiles{
+            checksumMd5
+            createdAt
+            filename
+            size
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            filename
+            message
+        }
+    }
+}

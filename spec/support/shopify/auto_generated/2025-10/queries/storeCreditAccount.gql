@@ -1,0 +1,77 @@
+query storeCreditAccount($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: TransactionSortKeys, $query: String, $id: ID!){
+    storeCreditAccount(id: $id){
+        balance{
+            amount
+            currencyCode
+        }
+        id
+        transactions(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+            edges{
+                cursor
+            }
+            nodes{
+                createdAt
+                event
+                origin{
+                    __typename
+                    ... on OrderTransaction {
+                        accountNumber
+                        amount
+                        authorizationCode
+                        authorizationExpiresAt
+                        createdAt
+                        errorCode
+                        formattedGateway
+                        gateway
+                        id
+                        kind
+                        manualPaymentGateway
+                        manuallyCapturable
+                        maximumRefundable
+                        multiCapturable
+                        paymentDetails{
+                            __typename
+                            ... on CardPaymentDetails {
+                                avsResultCode
+                                bin
+                                company
+                                cvvResultCode
+                                expirationMonth
+                                expirationYear
+                                name
+                                number
+                                paymentMethodName
+                                wallet
+                            }
+                            ... on LocalPaymentMethodsPaymentDetails {
+                                paymentDescriptor
+                                paymentMethodName
+                            }
+                            ... on PaypalWalletPaymentDetails {
+                                paymentMethodName
+                            }
+                            ... on ShopPayInstallmentsPaymentDetails {
+                                paymentMethodName
+                            }
+                        }
+                        paymentId
+                        paymentMethod
+                        processedAt
+                        receiptJson
+                        settlementCurrency
+                        settlementCurrencyRate
+                        status
+                        test
+                        totalUnsettled
+                    }
+                }
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+    }
+}

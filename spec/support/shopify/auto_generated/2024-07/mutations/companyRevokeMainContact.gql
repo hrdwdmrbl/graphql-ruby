@@ -1,0 +1,21 @@
+mutation companyRevokeMainContact($companyId: ID!){
+    companyRevokeMainContact(companyId: $companyId){
+        company{
+            createdAt
+            customerSince
+            defaultCursor
+            externalId
+            hasTimelineComment
+            id
+            lifetimeDuration
+            name
+            note
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

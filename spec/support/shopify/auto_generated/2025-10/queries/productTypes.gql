@@ -1,0 +1,15 @@
+query productTypes($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    productTypes(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node
+        }
+        nodes
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

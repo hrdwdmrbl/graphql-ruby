@@ -1,0 +1,6 @@
+query pagesCount($limit: Int){
+    pagesCount(limit: $limit){
+        count
+        precision
+    }
+}

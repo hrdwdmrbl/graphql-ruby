@@ -1,0 +1,27 @@
+mutation themeCreate($locale: String!, $marketId: ID, $source: URL!, $name: String, $role: ThemeRole){
+    themeCreate(source: $source, name: $name, role: $role){
+        theme{
+            createdAt
+            id
+            name
+            prefix
+            processing
+            processingFailed
+            role
+            themeStoreId
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

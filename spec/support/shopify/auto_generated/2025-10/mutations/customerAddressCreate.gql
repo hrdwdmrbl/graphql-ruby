@@ -1,0 +1,31 @@
+mutation customerAddressCreate($withName: Boolean, $withCompany: Boolean, $customerId: ID!, $address: MailingAddressInput!, $setAsDefault: Boolean){
+    customerAddressCreate(customerId: $customerId, address: $address, setAsDefault: $setAsDefault){
+        address{
+            address1
+            address2
+            city
+            company
+            coordinatesValidated
+            country
+            countryCodeV2
+            firstName
+            formatted(withName: $withName, withCompany: $withCompany)
+            formattedArea
+            id
+            lastName
+            latitude
+            longitude
+            name
+            phone
+            province
+            provinceCode
+            timeZone
+            validationResultSummary
+            zip
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

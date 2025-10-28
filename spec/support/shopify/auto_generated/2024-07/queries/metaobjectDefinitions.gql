@@ -1,0 +1,22 @@
+query metaobjectDefinitions($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    metaobjectDefinitions(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            description
+            displayNameKey
+            hasThumbnailField
+            id
+            metaobjectsCount
+            name
+            type
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

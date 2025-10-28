@@ -1,0 +1,9 @@
+mutation fulfillmentOrderMerge($fulfillmentOrderMergeInputs: [FulfillmentOrderMergeInput!]!){
+    fulfillmentOrderMerge(fulfillmentOrderMergeInputs: $fulfillmentOrderMergeInputs){
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

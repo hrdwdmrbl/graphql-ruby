@@ -1,0 +1,21 @@
+query segmentValueSuggestions($search: String!, $filterQueryName: String, $functionParameterQueryName: String, $first: Int, $after: String, $last: Int, $before: String){
+    segmentValueSuggestions(search: $search, filterQueryName: $filterQueryName, functionParameterQueryName: $functionParameterQueryName, first: $first, after: $after, last: $last, before: $before){
+        edges{
+            cursor
+            node{
+                localizedValue
+                queryName
+            }
+        }
+        nodes{
+            localizedValue
+            queryName
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

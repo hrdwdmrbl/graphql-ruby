@@ -1,0 +1,86 @@
+query product($id: ID!) {
+  product(id: $id) {
+    availablePublicationsCount {
+      count
+      precision
+    }
+    category {
+      ancestorIds
+      childrenIds
+      fullName
+      id
+      isArchived
+      isLeaf
+      isRoot
+      level
+      name
+      parentId
+    }
+    combinedListingRole
+    createdAt
+    defaultCursor
+    description
+    descriptionHtml
+    featuredMedia {
+      alt
+      id
+      mediaContentType
+      status
+    }
+    feedback {
+      summary
+    }
+    giftCardTemplateSuffix
+    handle
+    hasOnlyDefaultVariant
+    hasOutOfStockVariants
+    hasVariantsThatRequiresComponents
+    id
+    isGiftCard
+    legacyResourceId
+    mediaCount {
+      count
+      precision
+    }
+    onlineStorePreviewUrl
+    onlineStoreUrl
+    options {
+      id
+      name
+      position
+      values
+    }
+    productType
+    publishedAt
+    publishedOnCurrentPublication
+    requiresSellingPlan
+    resourcePublicationOnCurrentPublication {
+      isPublished
+      publishDate
+    }
+    resourcePublicationsCount {
+      count
+      precision
+    }
+    sellingPlanGroupsCount {
+      count
+      precision
+    }
+    seo {
+      description
+      title
+    }
+    status
+    tags
+    templateSuffix
+    title
+    totalInventory
+    tracksInventory
+    updatedAt
+    variantsCount {
+      count
+      precision
+    }
+    vendor
+  }
+}

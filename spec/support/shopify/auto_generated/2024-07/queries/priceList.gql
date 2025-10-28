@@ -1,0 +1,13 @@
+query priceList($id: ID!){
+    priceList(id: $id){
+        catalog{
+            id
+            status
+            title
+        }
+        currency
+        fixedPricesCount
+        id
+        name
+    }
+}

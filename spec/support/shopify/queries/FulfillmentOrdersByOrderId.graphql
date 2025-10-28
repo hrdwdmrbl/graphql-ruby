@@ -1,0 +1,41 @@
+query FulfillmentOrdersByOrderId($orderId: ID!, $first: Int, $after: String) {
+  order(id: $orderId) {
+    fulfillmentOrders(first: $first, after: $after) {
+      nodes {
+        id
+        createdAt
+        updatedAt
+        fulfillAt
+        orderProcessedAt
+        status
+        requestStatus
+        assignedLocation {
+          location {
+            id
+          }
+        }
+        lineItems(first: 25) {
+          nodes {
+            id
+            totalQuantity
+            remainingQuantity
+            lineItem {
+              id
+              variant {
+                id
+              }
+            }
+          }
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

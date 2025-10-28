@@ -1,0 +1,13 @@
+mutation urlRedirectBulkDeleteByIds($ids: [ID!]!){
+    urlRedirectBulkDeleteByIds(ids: $ids){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

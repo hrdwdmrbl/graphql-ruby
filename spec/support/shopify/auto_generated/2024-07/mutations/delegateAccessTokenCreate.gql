@@ -1,0 +1,44 @@
+mutation delegateAccessTokenCreate($input: DelegateAccessTokenInput!){
+    delegateAccessTokenCreate(input: $input){
+        delegateAccessToken{
+            accessScopes
+            accessToken
+            createdAt
+        }
+        shop{
+            checkoutApiSupported
+            contactEmail
+            createdAt
+            currencyCode
+            customerAccounts
+            description
+            email
+            enabledPresentmentCurrencies
+            ianaTimezone
+            id
+            marketingSmsConsentEnabledAtCheckout
+            myshopifyDomain
+            name
+            orderNumberFormatPrefix
+            orderNumberFormatSuffix
+            richTextEditorUrl
+            setupRequired
+            shipsToCountries
+            taxShipping
+            taxesIncluded
+            timezoneAbbreviation
+            timezoneOffset
+            timezoneOffsetMinutes
+            transactionalSmsDisabled
+            unitSystem
+            updatedAt
+            url
+            weightUnit
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

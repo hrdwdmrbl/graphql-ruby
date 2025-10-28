@@ -1,0 +1,26 @@
+mutation collectionUpdate($truncateAt: Int, $id: ID!, $publicationId: ID!, $input: CollectionInput!){
+    collectionUpdate(input: $input){
+        collection{
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            handle
+            hasProduct(id: $id)
+            id
+            legacyResourceId
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            sortOrder
+            templateSuffix
+            title
+            updatedAt
+        }
+        job{
+            done
+            id
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

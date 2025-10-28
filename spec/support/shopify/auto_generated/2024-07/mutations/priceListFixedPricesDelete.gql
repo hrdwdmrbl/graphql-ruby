@@ -1,0 +1,10 @@
+mutation priceListFixedPricesDelete($priceListId: ID!, $variantIds: [ID!]!){
+    priceListFixedPricesDelete(priceListId: $priceListId, variantIds: $variantIds){
+        deletedFixedPriceVariantIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

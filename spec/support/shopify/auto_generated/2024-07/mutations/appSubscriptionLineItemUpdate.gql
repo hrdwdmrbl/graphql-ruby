@@ -1,0 +1,19 @@
+mutation appSubscriptionLineItemUpdate($id: ID!, $cappedAmount: MoneyInput!){
+    appSubscriptionLineItemUpdate(id: $id, cappedAmount: $cappedAmount){
+        appSubscription{
+            createdAt
+            currentPeriodEnd
+            id
+            name
+            returnUrl
+            status
+            test
+            trialDays
+        }
+        confirmationUrl
+        userErrors{
+            field
+            message
+        }
+    }
+}

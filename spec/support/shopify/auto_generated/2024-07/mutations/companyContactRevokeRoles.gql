@@ -1,0 +1,10 @@
+mutation companyContactRevokeRoles($companyContactId: ID!, $roleAssignmentIds: [ID!], $revokeAll: Boolean){
+    companyContactRevokeRoles(companyContactId: $companyContactId, roleAssignmentIds: $roleAssignmentIds, revokeAll: $revokeAll){
+        revokedRoleAssignmentIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

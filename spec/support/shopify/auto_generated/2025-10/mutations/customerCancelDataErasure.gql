@@ -1,0 +1,10 @@
+mutation customerCancelDataErasure($customerId: ID!){
+    customerCancelDataErasure(customerId: $customerId){
+        customerId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

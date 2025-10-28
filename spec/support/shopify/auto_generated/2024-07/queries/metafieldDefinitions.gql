@@ -1,0 +1,25 @@
+query metafieldDefinitions($validationStatus: MetafieldValidationStatus, $key: String, $namespace: String, $ownerType: MetafieldOwnerType!, $pinnedStatus: MetafieldDefinitionPinnedStatus, $constraintSubtype: MetafieldDefinitionConstraintSubtypeIdentifier, $constraintStatus: MetafieldDefinitionConstraintStatus, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: MetafieldDefinitionSortKeys, $query: String){
+    metafieldDefinitions(key: $key, namespace: $namespace, ownerType: $ownerType, pinnedStatus: $pinnedStatus, constraintSubtype: $constraintSubtype, constraintStatus: $constraintStatus, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            description
+            id
+            key
+            metafieldsCount(validationStatus: $validationStatus)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            useAsCollectionCondition
+            validationStatus
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

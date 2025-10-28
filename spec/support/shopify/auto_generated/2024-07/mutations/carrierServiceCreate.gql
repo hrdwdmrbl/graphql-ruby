@@ -1,0 +1,17 @@
+mutation carrierServiceCreate($input: DeliveryCarrierServiceCreateInput!){
+    carrierServiceCreate(input: $input){
+        carrierService{
+            active
+            callbackUrl
+            formattedName
+            id
+            name
+            supportsServiceDiscovery
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

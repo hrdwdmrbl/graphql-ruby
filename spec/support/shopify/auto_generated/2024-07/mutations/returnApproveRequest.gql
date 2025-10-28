@@ -1,0 +1,15 @@
+mutation returnApproveRequest($input: ReturnApproveRequestInput!){
+    returnApproveRequest(input: $input){
+        return{
+            id
+            name
+            status
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

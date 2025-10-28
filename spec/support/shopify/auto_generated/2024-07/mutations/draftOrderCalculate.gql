@@ -1,0 +1,51 @@
+mutation draftOrderCalculate($input: DraftOrderInput!){
+    draftOrderCalculate(input: $input){
+        calculatedDraftOrder{
+            acceptAutomaticDiscounts
+            billingAddressMatchesShippingAddress
+            currencyCode
+            discountCodes
+            marketName
+            marketRegionCountryCode
+            phone
+            presentmentCurrencyCode
+            purchasingEntity{
+                __typename
+                ... on Customer {
+                    canDelete
+                    createdAt
+                    dataSaleOptOut
+                    displayName
+                    email
+                    firstName
+                    hasTimelineComment
+                    id
+                    lastName
+                    legacyResourceId
+                    lifetimeDuration
+                    locale
+                    multipassIdentifier
+                    note
+                    numberOfOrders
+                    phone
+                    productSubscriberStatus
+                    state
+                    tags
+                    taxExempt
+                    taxExemptions
+                    unsubscribeUrl
+                    updatedAt
+                    validEmailAddress
+                    verifiedEmail
+                }
+            }
+            taxesIncluded
+            totalQuantityOfLineItems
+            transformerFingerprint
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

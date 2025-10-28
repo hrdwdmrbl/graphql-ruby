@@ -1,0 +1,42 @@
+query catalog($id: ID!, $id1: ID!){
+    catalog(id: $id1){
+        id
+        operations{
+            id
+            processedRowCount
+            status
+        }
+        priceList{
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        publication{
+            autoPublish
+            hasCollection(id: $id)
+            id
+            operation{
+                __typename
+                ... on AddAllProductsOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on CatalogCsvOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on PublicationResourceOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+            }
+            supportsFuturePublishing
+        }
+        status
+        title
+    }
+}

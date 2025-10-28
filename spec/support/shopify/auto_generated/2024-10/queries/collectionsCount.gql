@@ -1,0 +1,6 @@
+query collectionsCount($query: String, $savedSearchId: ID){
+    collectionsCount(query: $query, savedSearchId: $savedSearchId){
+        count
+        precision
+    }
+}

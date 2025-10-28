@@ -1,0 +1,30 @@
+query marketLocalizableResourcesByIds($marketId: ID!, $resourceIds: [ID!]!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    marketLocalizableResourcesByIds(resourceIds: $resourceIds, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                resourceId
+            }
+        }
+        nodes{
+            marketLocalizableContent{
+                digest
+                key
+                value
+            }
+            marketLocalizations(marketId: $marketId){
+                key
+                outdated
+                updatedAt
+                value
+            }
+            resourceId
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

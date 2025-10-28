@@ -1,0 +1,5 @@
+query OrdersCount($query: String) {
+  ordersCount(query: $query) {
+    count
+  }
+}

@@ -1,0 +1,10 @@
+mutation paymentCustomizationActivation($ids: [ID!]!, $enabled: Boolean!){
+    paymentCustomizationActivation(ids: $ids, enabled: $enabled){
+        ids
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

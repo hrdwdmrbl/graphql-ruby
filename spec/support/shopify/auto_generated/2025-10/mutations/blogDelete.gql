@@ -1,0 +1,10 @@
+mutation blogDelete($id: ID!){
+    blogDelete(id: $id){
+        deletedBlogId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,32 @@
+mutation abandonmentUpdateActivitiesDeliveryStatuses($abandonmentId: ID!, $marketingActivityId: ID!, $deliveryStatus: AbandonmentDeliveryState!, $deliveredAt: DateTime, $deliveryStatusChangeReason: String){
+    abandonmentUpdateActivitiesDeliveryStatuses(abandonmentId: $abandonmentId, marketingActivityId: $marketingActivityId, deliveryStatus: $deliveryStatus, deliveredAt: $deliveredAt, deliveryStatusChangeReason: $deliveryStatusChangeReason){
+        abandonment{
+            abandonmentType
+            cartUrl
+            createdAt
+            customerHasNoDraftOrderSinceAbandonment
+            customerHasNoOrderSinceAbandonment
+            daysSinceLastAbandonmentEmail
+            emailSentAt
+            emailState
+            hoursSinceLastAbandonedCheckout
+            id
+            inventoryAvailable
+            isFromCustomStorefront
+            isFromOnlineStore
+            isFromShopApp
+            isFromShopPay
+            isMostSignificantAbandonment
+            lastBrowseAbandonmentDate
+            lastCartAbandonmentDate
+            lastCheckoutAbandonmentDate
+            mostRecentStep
+            visitStartedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

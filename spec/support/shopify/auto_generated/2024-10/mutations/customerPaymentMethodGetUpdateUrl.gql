@@ -1,0 +1,10 @@
+mutation customerPaymentMethodGetUpdateUrl($customerPaymentMethodId: ID!){
+    customerPaymentMethodGetUpdateUrl(customerPaymentMethodId: $customerPaymentMethodId){
+        updatePaymentMethodUrl
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

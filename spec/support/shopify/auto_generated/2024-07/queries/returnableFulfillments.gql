@@ -1,0 +1,16 @@
+query returnableFulfillments($orderId: ID!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    returnableFulfillments(orderId: $orderId, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            id
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

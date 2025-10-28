@@ -1,0 +1,29 @@
+query Disposition($orderId: ID!, $returnQuery: String!) {
+  order(id: $orderId) {
+    id
+    returns(query: $returnQuery, first: 1) {
+      nodes {
+        id
+        reverseFulfillmentOrders(first: 5) {
+          nodes {
+            id
+            lineItems(first: 250) {
+              nodes {
+                id
+                dispositions {
+                  id
+                  quantity
+                  type
+                  createdAt
+                  location {
+                    id
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

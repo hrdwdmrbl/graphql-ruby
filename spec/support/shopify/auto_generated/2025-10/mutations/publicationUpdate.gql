@@ -1,0 +1,46 @@
+mutation publicationUpdate($id: ID!, $query: String, $savedSearchId: ID, $limit: Int, $id1: ID!, $input: PublicationUpdateInput!){
+    publicationUpdate(id: $id1, input: $input){
+        publication{
+            autoPublish
+            catalog{
+                id
+                status
+                title
+            }
+            hasCollection(id: $id)
+            id
+            includedProductsCount(query: $query, savedSearchId: $savedSearchId, limit: $limit){
+                count
+                precision
+            }
+            operation{
+                __typename
+                ... on AddAllProductsOperation {
+                    id
+                    processedRowCount
+                    rowCount{
+                        count
+                        exceedsMax
+                    }
+                    status
+                }
+                ... on CatalogCsvOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on PublicationResourceOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+            }
+            supportsFuturePublishing
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

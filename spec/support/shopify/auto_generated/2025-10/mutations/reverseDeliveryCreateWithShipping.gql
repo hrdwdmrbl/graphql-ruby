@@ -1,0 +1,31 @@
+mutation reverseDeliveryCreateWithShipping($reverseFulfillmentOrderId: ID!, $reverseDeliveryLineItems: [ReverseDeliveryLineItemInput!]!, $trackingInput: ReverseDeliveryTrackingInput, $labelInput: ReverseDeliveryLabelInput, $notifyCustomer: Boolean){
+    reverseDeliveryCreateWithShipping(reverseFulfillmentOrderId: $reverseFulfillmentOrderId, reverseDeliveryLineItems: $reverseDeliveryLineItems, trackingInput: $trackingInput, labelInput: $labelInput, notifyCustomer: $notifyCustomer){
+        reverseDelivery{
+            deliverable{
+                __typename
+                ... on ReverseDeliveryShippingDeliverable {
+                    label{
+                        createdAt
+                        publicFileUrl
+                        updatedAt
+                    }
+                    tracking{
+                        carrierName
+                        number
+                        url
+                    }
+                }
+            }
+            id
+            reverseFulfillmentOrder{
+                id
+                status
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

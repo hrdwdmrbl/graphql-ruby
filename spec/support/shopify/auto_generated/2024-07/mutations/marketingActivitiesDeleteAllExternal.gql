@@ -1,0 +1,13 @@
+mutation marketingActivitiesDeleteAllExternal{
+    marketingActivitiesDeleteAllExternal{
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

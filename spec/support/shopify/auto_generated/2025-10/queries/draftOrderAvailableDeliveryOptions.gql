@@ -1,0 +1,42 @@
+query draftOrderAvailableDeliveryOptions($input: DraftOrderAvailableDeliveryOptionsInput!, $search: String, $localPickupFrom: Int, $localPickupCount: Int, $sessionToken: String){
+    draftOrderAvailableDeliveryOptions(input: $input, search: $search, localPickupFrom: $localPickupFrom, localPickupCount: $localPickupCount, sessionToken: $sessionToken){
+        availableLocalDeliveryRates{
+            code
+            handle
+            price{
+                amount
+                currencyCode
+            }
+            source
+            title
+        }
+        availableLocalPickupOptions{
+            code
+            distanceFromBuyer{
+                unit
+                value
+            }
+            handle
+            instructions
+            locationId
+            source
+            title
+        }
+        availableShippingRates{
+            code
+            handle
+            price{
+                amount
+                currencyCode
+            }
+            source
+            title
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

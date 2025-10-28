@@ -1,0 +1,17 @@
+mutation privateMetafieldUpsert($input: PrivateMetafieldInput!){
+    privateMetafieldUpsert(input: $input){
+        privateMetafield{
+            createdAt
+            id
+            key
+            namespace
+            updatedAt
+            value
+            valueType
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

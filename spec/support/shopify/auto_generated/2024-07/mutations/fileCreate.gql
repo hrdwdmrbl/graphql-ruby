@@ -1,0 +1,16 @@
+mutation fileCreate($files: [FileCreateInput!]!){
+    fileCreate(files: $files){
+        files{
+            alt
+            createdAt
+            fileStatus
+            id
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

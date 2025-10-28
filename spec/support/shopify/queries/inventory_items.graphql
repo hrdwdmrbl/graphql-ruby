@@ -1,0 +1,40 @@
+query inventoryItems($query: String!, $first: Int!, $after: String) {
+  inventoryItems(query: $query, first: $first, after: $after) {
+    nodes {
+      id
+      countryCodeOfOrigin
+      duplicateSkuCount
+      harmonizedSystemCode
+      inventoryHistoryUrl
+      locationsCount {
+        count
+        precision
+      }
+      measurement {
+        id
+        weight {
+          value
+          unit
+        }
+      }
+      provinceCodeOfOrigin
+      requiresShipping
+      sku
+      tracked
+      trackedEditable {
+        locked
+        reason
+      }
+      unitCost {
+        amount
+        currencyCode
+      }
+      updatedAt
+      createdAt
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

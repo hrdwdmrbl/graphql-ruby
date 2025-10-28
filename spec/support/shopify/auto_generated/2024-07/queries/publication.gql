@@ -1,0 +1,34 @@
+query publication($id: ID!) {
+  publication(id: $id) {
+    autoPublish
+    catalog {
+      id
+      status
+      title
+    }
+    id
+    operation {
+      __typename
+      ... on AddAllProductsOperation {
+        id
+        processedRowCount
+        rowCount {
+          count
+          exceedsMax
+        }
+        status
+      }
+      ... on CatalogCsvOperation {
+        id
+        processedRowCount
+        status
+      }
+      ... on PublicationResourceOperation {
+        id
+        processedRowCount
+        status
+      }
+    }
+    supportsFuturePublishing
+  }
+}

@@ -1,0 +1,42 @@
+mutation publishablePublish($publicationId: ID!, $id: ID!, $input: [PublicationInput!]!){
+    publishablePublish(id: $id, input: $input){
+        publishable{
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+        }
+        shop{
+            checkoutApiSupported
+            contactEmail
+            createdAt
+            currencyCode
+            customerAccounts
+            description
+            email
+            enabledPresentmentCurrencies
+            ianaTimezone
+            id
+            marketingSmsConsentEnabledAtCheckout
+            myshopifyDomain
+            name
+            orderNumberFormatPrefix
+            orderNumberFormatSuffix
+            richTextEditorUrl
+            setupRequired
+            shipsToCountries
+            taxShipping
+            taxesIncluded
+            timezoneAbbreviation
+            timezoneOffset
+            timezoneOffsetMinutes
+            transactionalSmsDisabled
+            unitSystem
+            updatedAt
+            url
+            weightUnit
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

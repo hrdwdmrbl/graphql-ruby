@@ -1,0 +1,112 @@
+{
+  "data": {
+    "product": {
+      "availablePublicationsCount": {
+        "count": 8,
+        "precision": "EXACT"
+      },
+      "category": null,
+      "createdAt": "2020-03-06T00:12:50Z",
+      "defaultCursor": "eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjo0NjUwODI0MjY5OTYyLCJsYXN0X3ZhbHVlIjo0NjUwODI0MjY5OTYyLCJkaXJlY3Rpb24iOiJuZXh0In0=",
+      "description": "",
+      "descriptionHtml": "",
+      "featuredMedia": {
+        "alt": "",
+        "id": "gid://shopify/MediaImage/7114570367114",
+        "mediaContentType": "IMAGE",
+        "status": "READY"
+      },
+      "feedback": null,
+      "giftCardTemplateSuffix": "",
+      "handle": "a",
+      "hasOnlyDefaultVariant": false,
+      "hasOutOfStockVariants": false,
+      "hasVariantsThatRequiresComponents": false,
+      "id": "gid://shopify/Product/4650824269962",
+      "isGiftCard": false,
+      "legacyResourceId": "4650824269962",
+      "mediaCount": {
+        "count": 1,
+        "precision": "EXACT"
+      },
+      "onlineStorePreviewUrl": "https://horse-dev.myshopify.com/products/a",
+      "onlineStoreUrl": "https://horse-dev.myshopify.com/products/a",
+      "options": [
+        {
+          "id": "gid://shopify/ProductOption/6023035322506",
+          "name": "Size",
+          "position": 1,
+          "values": ["4-Pack", "8-Pack"]
+        }
+      ],
+      "productType": "Household Goods",
+      "publishedAt": "2021-05-14T14:43:51Z",
+      "publishedOnCurrentPublication": true,
+      "requiresSellingPlan": false,
+      "resourcePublicationOnCurrentPublication": {
+        "isPublished": true,
+        "publishDate": "2024-09-23T01:18:58Z"
+      },
+      "resourcePublicationsCount": {
+        "count": 8,
+        "precision": "EXACT"
+      },
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/49838686346"
+            },
+            "publishDate": "2021-05-14T14:43:51Z"
+          },
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/74771726474"
+            },
+            "publishDate": "2022-02-02T13:52:33Z"
+          },
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/141770686602"
+            },
+            "publishDate": "2024-09-23T01:18:58Z"
+          }
+        ]
+      },
+      "sellingPlanGroupsCount": {
+        "count": 0,
+        "precision": "EXACT"
+      },
+      "seo": {
+        "description": null,
+        "title": null
+      },
+      "status": "ACTIVE",
+      "tags": ["aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "battery", "from marc"],
+      "templateSuffix": "",
+      "title": "AA Batteries",
+      "totalInventory": 794,
+      "tracksInventory": true,
+      "updatedAt": "2024-09-23T01:18:58Z",
+      "variantsCount": {
+        "count": 2,
+        "precision": "EXACT"
+      },
+      "vendor": "Duracell"
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 28,
+      "actualQueryCost": 18,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1982,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query shopifyqlQuery($query: String!){
+    shopifyqlQuery(query: $query){
+        parseErrors
+        tableData{
+            columns{
+                dataType
+                displayName
+                name
+                subType
+            }
+            rows
+        }
+    }
+}

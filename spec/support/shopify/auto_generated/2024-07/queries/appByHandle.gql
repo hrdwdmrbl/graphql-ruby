@@ -1,0 +1,63 @@
+query appByHandle($transform: ImageTransformInput, $transform1: ImageTransformInput, $transform2: ImageTransformInput, $handle: String!){
+    appByHandle(handle: $handle){
+        apiKey
+        appStoreAppUrl
+        appStoreDeveloperUrl
+        availableAccessScopes{
+            description
+            handle
+        }
+        banner{
+            altText
+            height
+            id
+            url(transform: $transform)
+            width
+        }
+        description
+        developerName
+        developerType
+        embedded
+        failedRequirements{
+            message
+        }
+        features
+        handle
+        icon{
+            altText
+            height
+            id
+            url(transform: $transform1)
+            width
+        }
+        id
+        installUrl
+        installation{
+            id
+            launchUrl
+            uninstallUrl
+        }
+        isPostPurchaseAppInUse
+        previouslyInstalled
+        pricingDetails
+        pricingDetailsSummary
+        privacyPolicyUrl
+        publicCategory
+        published
+        requestedAccessScopes{
+            description
+            handle
+        }
+        screenshots{
+            altText
+            height
+            id
+            url(transform: $transform2)
+            width
+        }
+        shopifyDeveloped
+        title
+        uninstallMessage
+        webhookApiVersion
+    }
+}

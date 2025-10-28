@@ -1,0 +1,40 @@
+mutation orderRiskAssessmentCreate($orderRiskAssessmentInput: OrderRiskAssessmentCreateInput!){
+    orderRiskAssessmentCreate(orderRiskAssessmentInput: $orderRiskAssessmentInput){
+        orderRiskAssessment{
+            facts{
+                description
+                sentiment
+            }
+            provider{
+                apiKey
+                appStoreAppUrl
+                appStoreDeveloperUrl
+                description
+                developerName
+                developerType
+                embedded
+                features
+                handle
+                id
+                installUrl
+                isPostPurchaseAppInUse
+                previouslyInstalled
+                pricingDetails
+                pricingDetailsSummary
+                privacyPolicyUrl
+                publicCategory
+                published
+                shopifyDeveloped
+                title
+                uninstallMessage
+                webhookApiVersion
+            }
+            riskLevel
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

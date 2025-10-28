@@ -1,0 +1,24 @@
+query RefundLineItems($refundId: ID!, $first: Int!, $after: String) {
+  refund(id: $refundId) {
+    id
+    refundLineItems(first: $first, after: $after) {
+      nodes {
+        id
+        quantity
+        restockType
+        restocked
+        lineItem {
+          id
+        }
+        # Only fetch location if it not exists
+        location {
+          id
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

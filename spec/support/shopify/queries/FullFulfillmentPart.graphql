@@ -1,0 +1,25 @@
+fragment FullFulfillmentPart on Fulfillment {
+  id
+  createdAt
+  updatedAt
+  displayStatus
+  name
+  status
+  totalQuantity
+  location {
+    id
+  }
+  fulfillmentLineItems(first: 8) {
+    nodes {
+      id
+      quantity
+      lineItem {
+        id
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

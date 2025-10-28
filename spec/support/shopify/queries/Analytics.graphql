@@ -1,0 +1,14 @@
+query Analytics($shopifyQl: String!) {
+  shopifyqlQuery(query: $shopifyQl) {
+    tableData {
+      columns {
+        dataType
+        displayName
+        name
+        subType
+      }
+      rows
+    }
+    parseErrors
+  }
+}

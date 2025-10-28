@@ -1,0 +1,6 @@
+query companiesCount($limit: Int){
+    companiesCount(limit: $limit){
+        count
+        precision
+    }
+}

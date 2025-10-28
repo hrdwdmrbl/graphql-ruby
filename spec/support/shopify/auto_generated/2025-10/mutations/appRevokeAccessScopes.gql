@@ -1,0 +1,13 @@
+mutation appRevokeAccessScopes($scopes: [String!]!){
+    appRevokeAccessScopes(scopes: $scopes){
+        revoked{
+            description
+            handle
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

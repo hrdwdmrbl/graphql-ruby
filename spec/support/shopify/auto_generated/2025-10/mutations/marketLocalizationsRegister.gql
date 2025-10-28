@@ -1,0 +1,23 @@
+mutation marketLocalizationsRegister($customizationId: ID!, $resourceId: ID!, $marketLocalizations: [MarketLocalizationRegisterInput!]!){
+    marketLocalizationsRegister(resourceId: $resourceId, marketLocalizations: $marketLocalizations){
+        marketLocalizations{
+            key
+            market{
+                assignedCustomization(customizationId: $customizationId)
+                handle
+                id
+                name
+                status
+                type
+            }
+            outdated
+            updatedAt
+            value
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

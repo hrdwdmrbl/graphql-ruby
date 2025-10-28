@@ -1,0 +1,16 @@
+mutation marketCreate($input: MarketCreateInput!){
+    marketCreate(input: $input){
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

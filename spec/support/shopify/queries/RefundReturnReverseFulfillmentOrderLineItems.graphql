@@ -1,0 +1,30 @@
+query RefundReturnReverseFulfillmentOrderLineItems($reverseFulfillmentOrderId: ID!, $first: Int!, $after: String) {
+  reverseFulfillmentOrder(id: $reverseFulfillmentOrderId) {
+    id
+    lineItems(first: $first, after: $after) {
+      nodes {
+        id
+        totalQuantity
+        dispositions {
+          id
+          quantity
+          type
+          createdAt
+          location {
+            id
+          }
+        }
+        fulfillmentLineItem {
+          id
+          lineItem {
+            id
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

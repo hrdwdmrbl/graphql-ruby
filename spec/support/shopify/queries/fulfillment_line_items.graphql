@@ -1,0 +1,18 @@
+query FulfillmentLineItems($fulfillmentId: ID!, $first: Int!, $afterFulfillmentLineItemsCursor: String) {
+  fulfillment(id: $fulfillmentId) {
+    id
+    fulfillmentLineItems(first: $first, after: $afterFulfillmentLineItemsCursor) {
+      nodes {
+        id
+        quantity
+        lineItem {
+          id
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

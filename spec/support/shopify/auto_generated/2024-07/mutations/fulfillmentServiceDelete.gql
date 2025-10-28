@@ -1,0 +1,9 @@
+mutation fulfillmentServiceDelete($id: ID!, $destinationLocationId: ID){
+    fulfillmentServiceDelete(id: $id, destinationLocationId: $destinationLocationId){
+        deletedId
+        userErrors{
+            field
+            message
+        }
+    }
+}

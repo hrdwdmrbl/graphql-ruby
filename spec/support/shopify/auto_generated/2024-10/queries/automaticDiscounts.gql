@@ -1,0 +1,600 @@
+query automaticDiscounts($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: EventSortKeys, $query: String, $maxWidth: Int, $maxHeight: Int, $crop: CropRegion, $scale: Int, $preferredContentType: ImageContentType, $transform: ImageTransformInput, $maxWidth1: Int, $maxHeight1: Int, $crop1: CropRegion, $scale1: Int, $preferredContentType1: ImageContentType, $transform1: ImageTransformInput, $maxWidth2: Int, $maxHeight2: Int, $crop2: CropRegion, $scale2: Int, $preferredContentType2: ImageContentType, $transform2: ImageTransformInput, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $sortKey1: EventSortKeys, $query1: String, $first2: Int, $after2: String, $last2: Int, $before2: String, $reverse2: Boolean, $sortKey2: AutomaticDiscountSortKeys, $query2: String, $savedSearchId: ID){
+    automaticDiscounts(first: $first2, after: $after2, last: $last2, before: $before2, reverse: $reverse2, sortKey: $sortKey2, query: $query2, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+            node{
+                __typename
+                ... on DiscountAutomaticApp {
+                    appDiscountType{
+                        app{
+                            apiKey
+                            appStoreAppUrl
+                            appStoreDeveloperUrl
+                            description
+                            developerName
+                            developerType
+                            developerUrl
+                            embedded
+                            features
+                            handle
+                            id
+                            installUrl
+                            isPostPurchaseAppInUse
+                            launchUrl
+                            previouslyInstalled
+                            pricingDetails
+                            pricingDetailsSummary
+                            privacyPolicyUrl
+                            publicCategory
+                            published
+                            shopifyDeveloped
+                            title
+                            uninstallMessage
+                            uninstallUrl
+                            webhookApiVersion
+                        }
+                        appBridge{
+                            createPath
+                            detailsPath
+                        }
+                        appKey
+                        description
+                        discountClass
+                        functionId
+                        targetType
+                        title
+                    }
+                    appliesOnSubscription
+                    asyncUsageCount
+                    combinesWith{
+                        orderDiscounts
+                        productDiscounts
+                        shippingDiscounts
+                    }
+                    createdAt
+                    discountClass
+                    discountId
+                    endsAt
+                    errorHistory{
+                        errorsFirstOccurredAt
+                        firstOccurredAt
+                        hasBeenSharedSinceLastError
+                        hasSharedRecentErrors
+                    }
+                    recurringCycleLimit
+                    startsAt
+                    status
+                    title
+                    updatedAt
+                }
+                ... on DiscountAutomaticBasic {
+                    asyncUsageCount
+                    combinesWith{
+                        orderDiscounts
+                        productDiscounts
+                        shippingDiscounts
+                    }
+                    createdAt
+                    customerGets{
+                        appliesOnOneTimePurchase
+                        appliesOnSubscription
+                        items{
+                            __typename
+                            ... on AllDiscountItems {
+                                allItems
+                            }
+                        }
+                        value{
+                            __typename
+                            ... on DiscountAmount {
+                                appliesOnEachItem
+                            }
+                            ... on DiscountOnQuantity {
+                                effect{
+                                    __typename
+                                    ... on DiscountAmount {
+                                        appliesOnEachItem
+                                    }
+                                    ... on DiscountPercentage {
+                                        percentage
+                                    }
+                                }
+                            }
+                            ... on DiscountPercentage {
+                                percentage
+                            }
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageCount
+                }
+                ... on DiscountAutomaticBxgy {
+                    asyncUsageCount
+                    combinesWith{
+                        orderDiscounts
+                        productDiscounts
+                        shippingDiscounts
+                    }
+                    createdAt
+                    customerBuys{
+                        items{
+                            __typename
+                            ... on AllDiscountItems {
+                                allItems
+                            }
+                        }
+                        value{
+                            __typename
+                            ... on DiscountPurchaseAmount {
+                                amount
+                            }
+                            ... on DiscountQuantity {
+                                quantity
+                            }
+                        }
+                    }
+                    customerGets{
+                        appliesOnOneTimePurchase
+                        appliesOnSubscription
+                        items{
+                            __typename
+                            ... on AllDiscountItems {
+                                allItems
+                            }
+                        }
+                        value{
+                            __typename
+                            ... on DiscountAmount {
+                                appliesOnEachItem
+                            }
+                            ... on DiscountOnQuantity {
+                                effect{
+                                    __typename
+                                    ... on DiscountAmount {
+                                        appliesOnEachItem
+                                    }
+                                    ... on DiscountPercentage {
+                                        percentage
+                                    }
+                                }
+                            }
+                            ... on DiscountPercentage {
+                                percentage
+                            }
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    events(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+                        edges{
+                            cursor
+                        }
+                        nodes{
+                            action
+                            appTitle
+                            attributeToApp
+                            attributeToUser
+                            createdAt
+                            criticalAlert
+                            id
+                            message
+                        }
+                        pageInfo{
+                            endCursor
+                            hasNextPage
+                            hasPreviousPage
+                            startCursor
+                        }
+                    }
+                    id
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageCount
+                    usesPerOrderLimit
+                }
+                ... on DiscountAutomaticFreeShipping {
+                    appliesOnOneTimePurchase
+                    appliesOnSubscription
+                    asyncUsageCount
+                    combinesWith{
+                        orderDiscounts
+                        productDiscounts
+                        shippingDiscounts
+                    }
+                    createdAt
+                    destinationSelection{
+                        __typename
+                        ... on DiscountCountries {
+                            countries
+                            includeRestOfWorld
+                        }
+                        ... on DiscountCountryAll {
+                            allCountries
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    hasTimelineComment
+                    maximumShippingPrice{
+                        amount
+                        currencyCode
+                    }
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    totalSales{
+                        amount
+                        currencyCode
+                    }
+                    updatedAt
+                }
+            }
+        }
+        nodes{
+            __typename
+            ... on DiscountAutomaticApp {
+                appDiscountType{
+                    app{
+                        apiKey
+                        appStoreAppUrl
+                        appStoreDeveloperUrl
+                        availableAccessScopes{
+                            description
+                            handle
+                        }
+                        banner{
+                            altText
+                            height
+                            id
+                            originalSrc
+                            src
+                            transformedSrc(maxWidth: $maxWidth, maxHeight: $maxHeight, crop: $crop, scale: $scale, preferredContentType: $preferredContentType)
+                            url(transform: $transform)
+                            width
+                        }
+                        description
+                        developerName
+                        developerType
+                        developerUrl
+                        embedded
+                        failedRequirements{
+                            message
+                        }
+                        features
+                        feedback{
+                            feedbackGeneratedAt
+                            state
+                        }
+                        handle
+                        icon{
+                            altText
+                            height
+                            id
+                            originalSrc
+                            src
+                            transformedSrc(maxWidth: $maxWidth1, maxHeight: $maxHeight1, crop: $crop1, scale: $scale1, preferredContentType: $preferredContentType1)
+                            url(transform: $transform1)
+                            width
+                        }
+                        id
+                        installUrl
+                        installation{
+                            id
+                            launchUrl
+                            uninstallUrl
+                        }
+                        isPostPurchaseAppInUse
+                        launchUrl
+                        navigationItems{
+                            id
+                            title
+                            url
+                        }
+                        optionalAccessScopes{
+                            description
+                            handle
+                        }
+                        previouslyInstalled
+                        pricingDetails
+                        pricingDetailsSummary
+                        privacyPolicyUrl
+                        publicCategory
+                        published
+                        requestedAccessScopes{
+                            description
+                            handle
+                        }
+                        screenshots{
+                            altText
+                            height
+                            id
+                            originalSrc
+                            src
+                            transformedSrc(maxWidth: $maxWidth2, maxHeight: $maxHeight2, crop: $crop2, scale: $scale2, preferredContentType: $preferredContentType2)
+                            url(transform: $transform2)
+                            width
+                        }
+                        shopifyDeveloped
+                        title
+                        uninstallMessage
+                        uninstallUrl
+                        webhookApiVersion
+                    }
+                    appBridge{
+                        createPath
+                        detailsPath
+                    }
+                    appKey
+                    description
+                    discountClass
+                    functionId
+                    targetType
+                    title
+                }
+                appliesOnSubscription
+                asyncUsageCount
+                combinesWith{
+                    orderDiscounts
+                    productDiscounts
+                    shippingDiscounts
+                }
+                createdAt
+                discountClass
+                discountId
+                endsAt
+                errorHistory{
+                    errorsFirstOccurredAt
+                    firstOccurredAt
+                    hasBeenSharedSinceLastError
+                    hasSharedRecentErrors
+                }
+                recurringCycleLimit
+                startsAt
+                status
+                title
+                updatedAt
+            }
+            ... on DiscountAutomaticBasic {
+                asyncUsageCount
+                combinesWith{
+                    orderDiscounts
+                    productDiscounts
+                    shippingDiscounts
+                }
+                createdAt
+                customerGets{
+                    appliesOnOneTimePurchase
+                    appliesOnSubscription
+                    items{
+                        __typename
+                        ... on AllDiscountItems {
+                            allItems
+                        }
+                    }
+                    value{
+                        __typename
+                        ... on DiscountAmount {
+                            appliesOnEachItem
+                        }
+                        ... on DiscountOnQuantity {
+                            effect{
+                                __typename
+                                ... on DiscountAmount {
+                                    appliesOnEachItem
+                                }
+                                ... on DiscountPercentage {
+                                    percentage
+                                }
+                            }
+                        }
+                        ... on DiscountPercentage {
+                            percentage
+                        }
+                    }
+                }
+                discountClass
+                endsAt
+                minimumRequirement{
+                    __typename
+                    ... on DiscountMinimumQuantity {
+                        greaterThanOrEqualToQuantity
+                    }
+                    ... on DiscountMinimumSubtotal {
+                        greaterThanOrEqualToSubtotal{
+                            amount
+                            currencyCode
+                        }
+                    }
+                }
+                recurringCycleLimit
+                shortSummary
+                startsAt
+                status
+                summary
+                title
+                updatedAt
+                usageCount
+            }
+            ... on DiscountAutomaticBxgy {
+                asyncUsageCount
+                combinesWith{
+                    orderDiscounts
+                    productDiscounts
+                    shippingDiscounts
+                }
+                createdAt
+                customerBuys{
+                    items{
+                        __typename
+                        ... on AllDiscountItems {
+                            allItems
+                        }
+                    }
+                    value{
+                        __typename
+                        ... on DiscountPurchaseAmount {
+                            amount
+                        }
+                        ... on DiscountQuantity {
+                            quantity
+                        }
+                    }
+                }
+                customerGets{
+                    appliesOnOneTimePurchase
+                    appliesOnSubscription
+                    items{
+                        __typename
+                        ... on AllDiscountItems {
+                            allItems
+                        }
+                    }
+                    value{
+                        __typename
+                        ... on DiscountAmount {
+                            appliesOnEachItem
+                        }
+                        ... on DiscountOnQuantity {
+                            effect{
+                                __typename
+                                ... on DiscountAmount {
+                                    appliesOnEachItem
+                                }
+                                ... on DiscountPercentage {
+                                    percentage
+                                }
+                            }
+                        }
+                        ... on DiscountPercentage {
+                            percentage
+                        }
+                    }
+                }
+                discountClass
+                endsAt
+                events(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1, sortKey: $sortKey1, query: $query1){
+                    edges{
+                        cursor
+                        node{
+                            action
+                            appTitle
+                            attributeToApp
+                            attributeToUser
+                            createdAt
+                            criticalAlert
+                            id
+                            message
+                        }
+                    }
+                    nodes{
+                        action
+                        appTitle
+                        attributeToApp
+                        attributeToUser
+                        createdAt
+                        criticalAlert
+                        id
+                        message
+                    }
+                    pageInfo{
+                        endCursor
+                        hasNextPage
+                        hasPreviousPage
+                        startCursor
+                    }
+                }
+                id
+                startsAt
+                status
+                summary
+                title
+                updatedAt
+                usageCount
+                usesPerOrderLimit
+            }
+            ... on DiscountAutomaticFreeShipping {
+                appliesOnOneTimePurchase
+                appliesOnSubscription
+                asyncUsageCount
+                combinesWith{
+                    orderDiscounts
+                    productDiscounts
+                    shippingDiscounts
+                }
+                createdAt
+                destinationSelection{
+                    __typename
+                    ... on DiscountCountries {
+                        countries
+                        includeRestOfWorld
+                    }
+                    ... on DiscountCountryAll {
+                        allCountries
+                    }
+                }
+                discountClass
+                endsAt
+                hasTimelineComment
+                maximumShippingPrice{
+                    amount
+                    currencyCode
+                }
+                minimumRequirement{
+                    __typename
+                    ... on DiscountMinimumQuantity {
+                        greaterThanOrEqualToQuantity
+                    }
+                    ... on DiscountMinimumSubtotal {
+                        greaterThanOrEqualToSubtotal{
+                            amount
+                            currencyCode
+                        }
+                    }
+                }
+                recurringCycleLimit
+                shortSummary
+                startsAt
+                status
+                summary
+                title
+                totalSales{
+                    amount
+                    currencyCode
+                }
+                updatedAt
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

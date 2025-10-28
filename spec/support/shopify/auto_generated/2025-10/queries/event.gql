@@ -1,0 +1,12 @@
+query event($id: ID!){
+    event(id: $id){
+        action
+        appTitle
+        attributeToApp
+        attributeToUser
+        createdAt
+        criticalAlert
+        id
+        message
+    }
+}

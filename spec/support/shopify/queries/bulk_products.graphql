@@ -1,0 +1,172 @@
+mutation {
+  bulkOperationRunQuery(
+    query: """
+    {
+      products$arguments {
+        edges {
+            node {
+                category {
+                    ancestorIds
+                    childrenIds
+                    fullName
+                    id
+                    isArchived
+                    isLeaf
+                    isRoot
+                    level
+                    name
+                    parentId
+                }
+                createdAt
+                description
+                featuredMedia {
+                    alt
+                    id
+                    mediaContentType
+                    status
+                }
+                feedback {
+                    summary
+                }
+                giftCardTemplateSuffix
+                handle
+                hasOnlyDefaultVariant
+                hasOutOfStockVariants
+                hasVariantsThatRequiresComponents
+                id
+                isGiftCard
+                mediaCount {
+                    count
+                    precision
+                }
+                onlineStorePreviewUrl
+                onlineStoreUrl
+                options {
+                    id
+                    name
+                    position
+                    values
+                }
+                productType
+                publishedAt
+                requiresSellingPlan
+                sellingPlanGroupsCount {
+                    count
+                    precision
+                }
+                seo {
+                    description
+                    title
+                }
+                status
+                tags
+                templateSuffix
+                title
+                totalInventory
+                tracksInventory
+                updatedAt
+                variantsCount {
+                    count
+                    precision
+                }
+                vendor
+
+                images {
+                    edges {
+                        node {
+                            id
+                            width
+                            url
+                            height
+                            altText
+                        }
+                    }
+                }
+
+                variants {
+                    edges {
+                        node {
+                            id
+                            availableForSale
+                            barcode
+                            compareAtPrice
+                            displayName
+                            inventoryPolicy
+                            inventoryQuantity
+                            position
+                            price
+                            requiresComponents
+                            selectedOptions {
+                                name
+                                value
+                            }
+                            sellableOnlineQuantity
+                            sellingPlanGroupsCount {
+                                count
+                                precision
+                            }
+                            sku
+                            taxCode
+                            taxable
+                            title
+                            createdAt
+                            updatedAt
+
+                            image {
+                                id
+                                width
+                                url
+                                height
+                                altText
+                            }
+                            inventoryItem {
+                                id
+                                countryCodeOfOrigin
+                                duplicateSkuCount
+                                harmonizedSystemCode
+                                inventoryHistoryUrl
+                                locationsCount {
+                                count
+                                precision
+                                }
+                                measurement {
+                                id
+                                weight {
+                                    value
+                                    unit
+                                }
+                                }
+                                provinceCodeOfOrigin
+                                requiresShipping
+                                sku
+                                tracked
+                                trackedEditable {
+                                locked
+                                reason
+                                }
+                                unitCost {
+                                amount
+                                currencyCode
+                                }
+                                updatedAt
+                                createdAt
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      }
+    }
+    """
+  ) {
+    bulkOperation {
+      id
+      status
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

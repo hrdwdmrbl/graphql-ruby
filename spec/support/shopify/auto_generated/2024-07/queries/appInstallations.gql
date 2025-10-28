@@ -1,0 +1,18 @@
+query appInstallations($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: AppInstallationSortKeys, $category: AppInstallationCategory, $privacy: AppInstallationPrivacy){
+    appInstallations(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, category: $category, privacy: $privacy){
+        edges{
+            cursor
+        }
+        nodes{
+            id
+            launchUrl
+            uninstallUrl
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

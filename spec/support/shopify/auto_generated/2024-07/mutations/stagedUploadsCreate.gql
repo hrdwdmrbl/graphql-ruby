@@ -1,0 +1,12 @@
+mutation stagedUploadsCreate($input: [StagedUploadInput!]!){
+    stagedUploadsCreate(input: $input){
+        stagedTargets{
+            resourceUrl
+            url
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

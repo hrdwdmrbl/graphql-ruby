@@ -1,0 +1,31 @@
+mutation marketingActivityCreateExternal($input: MarketingActivityCreateExternalInput!){
+    marketingActivityCreateExternal(input: $input){
+        marketingActivity{
+            activityListUrl
+            createdAt
+            formData
+            hierarchyLevel
+            id
+            inMainWorkflowVersion
+            isExternal
+            marketingChannelType
+            parentActivityId
+            parentRemoteId
+            sourceAndMedium
+            status
+            statusBadgeTypeV2
+            statusLabel
+            statusTransitionedAt
+            tactic
+            targetStatus
+            title
+            updatedAt
+            urlParameterValue
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

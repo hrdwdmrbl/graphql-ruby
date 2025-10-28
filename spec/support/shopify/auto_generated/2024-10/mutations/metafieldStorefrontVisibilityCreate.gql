@@ -1,0 +1,17 @@
+mutation metafieldStorefrontVisibilityCreate($input: MetafieldStorefrontVisibilityInput!){
+    metafieldStorefrontVisibilityCreate(input: $input){
+        metafieldStorefrontVisibility{
+            createdAt
+            id
+            key
+            legacyResourceId
+            namespace
+            ownerType
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

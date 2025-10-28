@@ -1,0 +1,13 @@
+mutation productReorderMedia($id: ID!, $moves: [MoveInput!]!){
+    productReorderMedia(id: $id, moves: $moves){
+        job{
+            done
+            id
+        }
+        mediaUserErrors{
+            code
+            field
+            message
+        }
+    }
+}

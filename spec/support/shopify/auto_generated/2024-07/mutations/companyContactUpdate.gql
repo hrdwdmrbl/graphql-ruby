@@ -1,0 +1,18 @@
+mutation companyContactUpdate($companyContactId: ID!, $input: CompanyContactInput!){
+    companyContactUpdate(companyContactId: $companyContactId, input: $input){
+        companyContact{
+            createdAt
+            id
+            isMainContact
+            lifetimeDuration
+            locale
+            title
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

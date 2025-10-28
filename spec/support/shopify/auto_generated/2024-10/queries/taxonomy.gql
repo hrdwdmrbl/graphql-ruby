@@ -1,0 +1,55 @@
+query taxonomy($first: Int, $after: String, $last: Int, $before: String, $search: String, $childrenOf: ID, $siblingsOf: ID, $descendantsOf: ID, $first1: Int, $after1: String, $last1: Int, $before1: String){
+    taxonomy{
+        categories(search: $search, childrenOf: $childrenOf, siblingsOf: $siblingsOf, descendantsOf: $descendantsOf, first: $first1, after: $after1, last: $last1, before: $before1){
+            edges{
+                cursor
+                node{
+                    ancestorIds
+                    childrenIds
+                    fullName
+                    id
+                    isArchived
+                    isLeaf
+                    isRoot
+                    level
+                    name
+                    parentId
+                }
+            }
+            nodes{
+                ancestorIds
+                attributes(first: $first, after: $after, last: $last, before: $before){
+                    nodes{
+                        __typename
+                        ... on TaxonomyAttribute {
+                            id
+                        }
+                        ... on TaxonomyChoiceListAttribute {
+                            id
+                            name
+                        }
+                        ... on TaxonomyMeasurementAttribute {
+                            id
+                            name
+                        }
+                    }
+                }
+                childrenIds
+                fullName
+                id
+                isArchived
+                isLeaf
+                isRoot
+                level
+                name
+                parentId
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+    }
+}

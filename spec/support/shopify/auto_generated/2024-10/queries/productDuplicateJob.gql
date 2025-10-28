@@ -1,0 +1,6 @@
+query productDuplicateJob($id: ID!){
+    productDuplicateJob(id: $id){
+        done
+        id
+    }
+}

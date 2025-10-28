@@ -1,0 +1,20 @@
+mutation priceListUpdate($id: ID!, $input: PriceListUpdateInput!){
+    priceListUpdate(id: $id, input: $input){
+        priceList{
+            catalog{
+                id
+                status
+                title
+            }
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

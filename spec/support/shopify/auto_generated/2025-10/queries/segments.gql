@@ -1,0 +1,27 @@
+query segments($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: SegmentSortKeys, $query: String){
+    segments(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                creationDate
+                id
+                lastEditDate
+                name
+                query
+            }
+        }
+        nodes{
+            creationDate
+            id
+            lastEditDate
+            name
+            query
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

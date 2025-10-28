@@ -1,0 +1,2779 @@
+mutation metafieldDefinitionUpdate($truncateAt: Int, $id: ID!, $onlyPublished: Boolean, $channelId: ID!, $publicationId: ID!, $truncateAt1: Int, $id1: ID!, $onlyPublished1: Boolean, $context: ContextualPublicationContext!, $channelId1: ID!, $publicationId1: ID!, $validationStatus: MetafieldValidationStatus, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $validationStatus1: MetafieldValidationStatus, $query: String, $savedSearchId: ID, $limit: Int, $id2: ID!, $abandonedCheckoutId: ID!, $id3: ID, $handle: String!, $apiKey: String!, $functionId: String!, $id4: ID, $id5: ID!, $sort: ArticleTagSort, $limit1: Int!, $id6: ID!, $id7: ID!, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $sortKey: AutomaticDiscountSortKeys, $query1: String, $savedSearchId1: ID, $id8: ID!, $query2: String, $id9: ID, $id10: ID!, $id11: ID!, $id12: ID!, $type: CatalogType, $query3: String, $id13: ID!, $id14: ID!, $id15: ID!, $id16: ID!, $code: String!, $truncateAt2: Int, $id17: ID!, $onlyPublished2: Boolean, $channelId2: ID!, $publicationId2: ID!, $id18: ID!, $truncateAt3: Int, $id19: ID!, $onlyPublished3: Boolean, $channelId3: ID!, $publicationId3: ID!, $handle1: String!, $query4: String, $savedSearchId2: ID, $id20: ID!, $id21: ID!, $id22: ID!, $id23: ID!, $catalogId: ID!, $id24: ID!, $type1: BulkOperationType, $id25: ID!, $id26: ID!, $jobId: ID!, $customerOneId: ID!, $customerTwoId: ID!, $overrideFields: CustomerMergeOverrideFields, $id27: ID!, $showRevoked: Boolean, $segmentId: ID, $query5: String, $queryId: ID, $timezone: String, $reverse2: Boolean, $sortKey1: String, $first2: Int, $after2: String, $last2: Int, $before2: String, $id28: ID!, $query6: String, $id29: ID!, $id30: ID!, $locationId: ID!, $query7: String, $id31: ID!, $query8: String, $savedSearchId3: ID, $id32: ID!, $id33: ID!, $id34: ID!, $id35: ID!, $id36: ID!, $id37: ID!, $id38: ID!, $query9: String, $id39: ID!, $id40: ID!, $id41: ID!, $id42: ID!, $query10: String, $savedSearchId4: ID, $id43: ID!, $id44: ID!, $id45: ID!, $id46: ID, $query11: String, $id47: ID!, $countryCode: CountryCode!, $resourceId: ID!, $id48: ID!, $id49: ID!, $id50: ID!, $validationStatus2: MetafieldValidationStatus, $id51: ID!, $id52: ID!, $id53: ID!, $handle2: MetaobjectHandleInput!, $id54: ID!, $type2: String!, $id55: ID!, $first3: Int, $after3: String, $last3: Int, $before3: String, $reverse3: Boolean, $id56: ID!, $ids: [ID!]!, $id57: ID!, $paymentReferenceId: String!, $orderId: ID!, $query12: String, $savedSearchId5: ID, $limit2: Int, $id58: ID!, $id59: ID!, $paymentTermsType: PaymentTermsType, $id60: ID!, $id61: ID!, $truncateAt4: Int, $id62: ID!, $onlyPublished4: Boolean, $context1: ContextualPublicationContext!, $channelId4: ID!, $publicationId4: ID!, $id63: ID!, $truncateAt5: Int, $id64: ID!, $onlyPublished5: Boolean, $context2: ContextualPublicationContext!, $channelId5: ID!, $publicationId5: ID!, $handle3: String!, $id65: ID!, $id66: ID!, $id67: ID!, $id68: ID!, $id69: ID!, $query13: String, $query14: String, $savedSearchId6: ID, $limit3: Int, $id70: ID!, $id71: ID!, $catalogType: CatalogType, $publicationId6: ID!, $id72: ID!, $id73: ID!, $input: CalculateReturnInput!, $id74: ID!, $id75: ID!, $id76: ID!, $id77: ID!, $id78: ID!, $productId: ID!, $productVariantId: ID!, $productId1: ID!, $id79: ID!, $published: Boolean, $id80: String!, $id81: ID, $id82: ID!, $id83: ID!, $billingCycleInput: SubscriptionBillingCycleInput!, $id84: ID!, $deliveryAddress: MailingAddressInput, $deliveryAddress1: MailingAddressInput, $id85: ID!, $id86: ID!, $resourceId1: ID!, $id87: ID!, $id88: ID!, $query15: String, $savedSearchId7: ID, $id89: ID!, $id90: ID, $id91: ID!, $query16: String, $definition: MetafieldDefinitionUpdateInput!){
+    metafieldDefinitionUpdate(definition: $definition){
+        updatedDefinition{
+            access{
+                admin
+                customerAccount
+                grants{
+                    access
+                    grantee
+                }
+                storefront
+            }
+            capabilities{
+                adminFilterable{
+                    eligible
+                    enabled
+                    status
+                }
+                smartCollectionCondition{
+                    eligible
+                    enabled
+                }
+            }
+            constraints{
+                key
+            }
+            description
+            id
+            key
+            metafields(validationStatus: $validationStatus, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+                edges{
+                    cursor
+                }
+                nodes{
+                    compareDigest
+                    createdAt
+                    description
+                    id
+                    jsonValue
+                    key
+                    legacyResourceId
+                    namespace
+                    ownerType
+                    reference{
+                        __typename
+                        ... on Collection {
+                            description(truncateAt: $truncateAt)
+                            descriptionHtml
+                            handle
+                            hasProduct(id: $id)
+                            id
+                            legacyResourceId
+                            publicationCount(onlyPublished: $onlyPublished)
+                            publishedOnChannel(channelId: $channelId)
+                            publishedOnCurrentChannel
+                            publishedOnCurrentPublication
+                            publishedOnPublication(publicationId: $publicationId)
+                            sortOrder
+                            storefrontId
+                            templateSuffix
+                            title
+                            updatedAt
+                        }
+                        ... on Company {
+                            contactCount
+                            createdAt
+                            customerSince
+                            defaultCursor
+                            externalId
+                            hasTimelineComment
+                            id
+                            lifetimeDuration
+                            name
+                            note
+                            updatedAt
+                        }
+                        ... on Customer {
+                            canDelete
+                            createdAt
+                            dataSaleOptOut
+                            displayName
+                            email
+                            firstName
+                            hasTimelineComment
+                            id
+                            lastName
+                            legacyResourceId
+                            lifetimeDuration
+                            locale
+                            multipassIdentifier
+                            note
+                            numberOfOrders
+                            phone
+                            productSubscriberStatus
+                            state
+                            tags
+                            taxExempt
+                            taxExemptions
+                            unsubscribeUrl
+                            updatedAt
+                            validEmailAddress
+                            verifiedEmail
+                        }
+                        ... on GenericFile {
+                            alt
+                            createdAt
+                            fileStatus
+                            id
+                            mimeType
+                            originalFileSize
+                            updatedAt
+                            url
+                        }
+                        ... on MediaImage {
+                            alt
+                            createdAt
+                            fileStatus
+                            id
+                            mediaContentType
+                            mimeType
+                            status
+                            updatedAt
+                        }
+                        ... on Metaobject {
+                            displayName
+                            handle
+                            id
+                            type
+                            updatedAt
+                        }
+                        ... on Model3d {
+                            alt
+                            createdAt
+                            fileStatus
+                            filename
+                            id
+                            mediaContentType
+                            status
+                            updatedAt
+                        }
+                        ... on Order {
+                            billingAddressMatchesShippingAddress
+                            canMarkAsPaid
+                            canNotifyCustomer
+                            cancelReason
+                            cancelledAt
+                            capturable
+                            cartDiscountAmount
+                            clientIp
+                            closed
+                            closedAt
+                            confirmationNumber
+                            confirmed
+                            createdAt
+                            currencyCode
+                            currentSubtotalLineItemsQuantity
+                            currentTotalWeight
+                            customerAcceptsMarketing
+                            customerLocale
+                            discountCode
+                            discountCodes
+                            displayFinancialStatus
+                            displayFulfillmentStatus
+                            dutiesIncluded
+                            edited
+                            email
+                            estimatedTaxes
+                            fulfillable
+                            fullyPaid
+                            hasTimelineComment
+                            id
+                            landingPageDisplayText
+                            landingPageUrl
+                            legacyResourceId
+                            merchantEditable
+                            merchantEditableErrors
+                            name
+                            netPayment
+                            note
+                            paymentGatewayNames
+                            phone
+                            poNumber
+                            presentmentCurrencyCode
+                            processedAt
+                            purchasingEntity{
+                                __typename
+                                ... on Customer {
+                                    canDelete
+                                    createdAt
+                                    dataSaleOptOut
+                                    displayName
+                                    email
+                                    firstName
+                                    hasTimelineComment
+                                    id
+                                    lastName
+                                    legacyResourceId
+                                    lifetimeDuration
+                                    locale
+                                    multipassIdentifier
+                                    note
+                                    numberOfOrders
+                                    phone
+                                    productSubscriberStatus
+                                    state
+                                    tags
+                                    taxExempt
+                                    taxExemptions
+                                    unsubscribeUrl
+                                    updatedAt
+                                    validEmailAddress
+                                    verifiedEmail
+                                }
+                            }
+                            referralCode
+                            referrerDisplayText
+                            referrerUrl
+                            refundable
+                            registeredSourceUrl
+                            requiresShipping
+                            restockable
+                            returnStatus
+                            riskLevel
+                            sourceIdentifier
+                            sourceName
+                            statusPageUrl
+                            subtotalLineItemsQuantity
+                            subtotalPrice
+                            tags
+                            taxExempt
+                            taxesIncluded
+                            test
+                            totalCapturable
+                            totalDiscounts
+                            totalPrice
+                            totalReceived
+                            totalRefunded
+                            totalShippingPrice
+                            totalTax
+                            totalWeight
+                            unpaid
+                            updatedAt
+                        }
+                        ... on Page {
+                            body
+                            bodySummary
+                            createdAt
+                            defaultCursor
+                            handle
+                            id
+                            isPublished
+                            publishedAt
+                            templateSuffix
+                            title
+                            updatedAt
+                        }
+                        ... on Product {
+                            bodyHtml
+                            combinedListingRole
+                            createdAt
+                            customProductType
+                            defaultCursor
+                            description(truncateAt: $truncateAt1)
+                            descriptionHtml
+                            descriptionPlainSummary
+                            giftCardTemplateSuffix
+                            handle
+                            hasOnlyDefaultVariant
+                            hasOutOfStockVariants
+                            hasVariantsThatRequiresComponents
+                            id
+                            inCollection(id: $id1)
+                            isGiftCard
+                            legacyResourceId
+                            onlineStorePreviewUrl
+                            onlineStoreUrl
+                            productType
+                            publicationCount(onlyPublished: $onlyPublished1)
+                            publishedAt
+                            publishedInContext(context: $context)
+                            publishedOnChannel(channelId: $channelId1)
+                            publishedOnCurrentChannel
+                            publishedOnCurrentPublication
+                            publishedOnPublication(publicationId: $publicationId1)
+                            requiresSellingPlan
+                            sellingPlanGroupCount
+                            status
+                            storefrontId
+                            tags
+                            templateSuffix
+                            title
+                            totalInventory
+                            totalVariants
+                            tracksInventory
+                            updatedAt
+                            vendor
+                        }
+                        ... on ProductVariant {
+                            availableForSale
+                            barcode
+                            compareAtPrice
+                            createdAt
+                            defaultCursor
+                            displayName
+                            id
+                            inventoryPolicy
+                            inventoryQuantity
+                            legacyResourceId
+                            position
+                            price
+                            requiresComponents
+                            sellableOnlineQuantity
+                            sellingPlanGroupCount
+                            sku
+                            storefrontId
+                            taxCode
+                            taxable
+                            title
+                            updatedAt
+                        }
+                        ... on TaxonomyValue {
+                            id
+                            name
+                        }
+                        ... on Video {
+                            alt
+                            createdAt
+                            duration
+                            fileStatus
+                            filename
+                            id
+                            mediaContentType
+                            status
+                            updatedAt
+                        }
+                    }
+                    type
+                    updatedAt
+                    value
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            metafieldsCount(validationStatus: $validationStatus1)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            standardTemplate{
+                description
+                id
+                key
+                name
+                namespace
+                ownerTypes
+                type{
+                    category
+                    name
+                    supportsDefinitionMigrations
+                    valueType
+                }
+                validations{
+                    name
+                    type
+                    value
+                }
+                visibleToStorefrontApi
+            }
+            type{
+                category
+                name
+                supportedValidations{
+                    name
+                    type
+                }
+                supportsDefinitionMigrations
+                valueType
+            }
+            useAsCollectionCondition
+            validationStatus
+            validations{
+                name
+                type
+                value
+            }
+            visibleToStorefrontApi
+        }
+        userErrors{
+            code
+            elementIndex
+            field
+            message
+        }
+        validationJob{
+            done
+            id
+            query{
+                abandonedCheckoutsCount(query: $query, savedSearchId: $savedSearchId, limit: $limit){
+                    count
+                    precision
+                }
+                abandonment(id: $id2){
+                    abandonmentType
+                    cartUrl
+                    createdAt
+                    customerHasNoDraftOrderSinceAbandonment
+                    customerHasNoOrderSinceAbandonment
+                    daysSinceLastAbandonmentEmail
+                    emailSentAt
+                    emailState
+                    hoursSinceLastAbandonedCheckout
+                    id
+                    inventoryAvailable
+                    isFromCustomStorefront
+                    isFromOnlineStore
+                    isFromShopApp
+                    isFromShopPay
+                    isMostSignificantAbandonment
+                    lastBrowseAbandonmentDate
+                    lastCartAbandonmentDate
+                    lastCheckoutAbandonmentDate
+                    mostRecentStep
+                    visitStartedAt
+                }
+                abandonmentByAbandonedCheckoutId(abandonedCheckoutId: $abandonedCheckoutId){
+                    abandonmentType
+                    cartUrl
+                    createdAt
+                    customerHasNoDraftOrderSinceAbandonment
+                    customerHasNoOrderSinceAbandonment
+                    daysSinceLastAbandonmentEmail
+                    emailSentAt
+                    emailState
+                    hoursSinceLastAbandonedCheckout
+                    id
+                    inventoryAvailable
+                    isFromCustomStorefront
+                    isFromOnlineStore
+                    isFromShopApp
+                    isFromShopPay
+                    isMostSignificantAbandonment
+                    lastBrowseAbandonmentDate
+                    lastCartAbandonmentDate
+                    lastCheckoutAbandonmentDate
+                    mostRecentStep
+                    visitStartedAt
+                }
+                app(id: $id3){
+                    apiKey
+                    appStoreAppUrl
+                    appStoreDeveloperUrl
+                    description
+                    developerName
+                    developerType
+                    developerUrl
+                    embedded
+                    features
+                    handle
+                    id
+                    installUrl
+                    isPostPurchaseAppInUse
+                    launchUrl
+                    previouslyInstalled
+                    pricingDetails
+                    pricingDetailsSummary
+                    privacyPolicyUrl
+                    publicCategory
+                    published
+                    shopifyDeveloped
+                    title
+                    uninstallMessage
+                    uninstallUrl
+                    webhookApiVersion
+                }
+                appByHandle(handle: $handle){
+                    apiKey
+                    appStoreAppUrl
+                    appStoreDeveloperUrl
+                    description
+                    developerName
+                    developerType
+                    developerUrl
+                    embedded
+                    features
+                    handle
+                    id
+                    installUrl
+                    isPostPurchaseAppInUse
+                    launchUrl
+                    previouslyInstalled
+                    pricingDetails
+                    pricingDetailsSummary
+                    privacyPolicyUrl
+                    publicCategory
+                    published
+                    shopifyDeveloped
+                    title
+                    uninstallMessage
+                    uninstallUrl
+                    webhookApiVersion
+                }
+                appByKey(apiKey: $apiKey){
+                    apiKey
+                    appStoreAppUrl
+                    appStoreDeveloperUrl
+                    description
+                    developerName
+                    developerType
+                    developerUrl
+                    embedded
+                    features
+                    handle
+                    id
+                    installUrl
+                    isPostPurchaseAppInUse
+                    launchUrl
+                    previouslyInstalled
+                    pricingDetails
+                    pricingDetailsSummary
+                    privacyPolicyUrl
+                    publicCategory
+                    published
+                    shopifyDeveloped
+                    title
+                    uninstallMessage
+                    uninstallUrl
+                    webhookApiVersion
+                }
+                appDiscountType(functionId: $functionId){
+                    appKey
+                    description
+                    discountClass
+                    functionId
+                    targetType
+                    title
+                }
+                appDiscountTypes{
+                    appKey
+                    description
+                    discountClass
+                    functionId
+                    targetType
+                    title
+                }
+                appInstallation(id: $id4){
+                    id
+                    launchUrl
+                    uninstallUrl
+                }
+                article(id: $id5){
+                    body
+                    createdAt
+                    defaultCursor
+                    handle
+                    id
+                    isPublished
+                    publishedAt
+                    summary
+                    tags
+                    templateSuffix
+                    title
+                    updatedAt
+                }
+                articleTags(sort: $sort, limit: $limit1)
+                automaticDiscount(id: $id6){
+                    __typename
+                    ... on DiscountAutomaticApp {
+                        appDiscountType{
+                            appKey
+                            description
+                            discountClass
+                            functionId
+                            targetType
+                            title
+                        }
+                        appliesOnSubscription
+                        asyncUsageCount
+                        combinesWith{
+                            orderDiscounts
+                            productDiscounts
+                            shippingDiscounts
+                        }
+                        createdAt
+                        discountClass
+                        discountId
+                        endsAt
+                        errorHistory{
+                            errorsFirstOccurredAt
+                            firstOccurredAt
+                            hasBeenSharedSinceLastError
+                            hasSharedRecentErrors
+                        }
+                        recurringCycleLimit
+                        startsAt
+                        status
+                        title
+                        updatedAt
+                    }
+                    ... on DiscountAutomaticBasic {
+                        asyncUsageCount
+                        combinesWith{
+                            orderDiscounts
+                            productDiscounts
+                            shippingDiscounts
+                        }
+                        createdAt
+                        customerGets{
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            items{
+                                __typename
+                                ... on AllDiscountItems {
+                                    allItems
+                                }
+                            }
+                            value{
+                                __typename
+                                ... on DiscountAmount {
+                                    appliesOnEachItem
+                                }
+                                ... on DiscountOnQuantity {
+                                    effect{
+                                        __typename
+                                        ... on DiscountAmount {
+                                            appliesOnEachItem
+                                        }
+                                        ... on DiscountPercentage {
+                                            percentage
+                                        }
+                                    }
+                                }
+                                ... on DiscountPercentage {
+                                    percentage
+                                }
+                            }
+                        }
+                        discountClass
+                        endsAt
+                        minimumRequirement{
+                            __typename
+                            ... on DiscountMinimumQuantity {
+                                greaterThanOrEqualToQuantity
+                            }
+                        }
+                        recurringCycleLimit
+                        shortSummary
+                        startsAt
+                        status
+                        summary
+                        title
+                        updatedAt
+                        usageCount
+                    }
+                    ... on DiscountAutomaticBxgy {
+                        asyncUsageCount
+                        combinesWith{
+                            orderDiscounts
+                            productDiscounts
+                            shippingDiscounts
+                        }
+                        createdAt
+                        customerBuys{
+                            items{
+                                __typename
+                                ... on AllDiscountItems {
+                                    allItems
+                                }
+                            }
+                            value{
+                                __typename
+                                ... on DiscountPurchaseAmount {
+                                    amount
+                                }
+                                ... on DiscountQuantity {
+                                    quantity
+                                }
+                            }
+                        }
+                        customerGets{
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            items{
+                                __typename
+                                ... on AllDiscountItems {
+                                    allItems
+                                }
+                            }
+                            value{
+                                __typename
+                                ... on DiscountAmount {
+                                    appliesOnEachItem
+                                }
+                                ... on DiscountOnQuantity {
+                                    effect{
+                                        __typename
+                                        ... on DiscountAmount {
+                                            appliesOnEachItem
+                                        }
+                                        ... on DiscountPercentage {
+                                            percentage
+                                        }
+                                    }
+                                }
+                                ... on DiscountPercentage {
+                                    percentage
+                                }
+                            }
+                        }
+                        discountClass
+                        endsAt
+                        id
+                        startsAt
+                        status
+                        summary
+                        title
+                        updatedAt
+                        usageCount
+                        usesPerOrderLimit
+                    }
+                    ... on DiscountAutomaticFreeShipping {
+                        appliesOnOneTimePurchase
+                        appliesOnSubscription
+                        asyncUsageCount
+                        combinesWith{
+                            orderDiscounts
+                            productDiscounts
+                            shippingDiscounts
+                        }
+                        createdAt
+                        destinationSelection{
+                            __typename
+                            ... on DiscountCountries {
+                                countries
+                                includeRestOfWorld
+                            }
+                            ... on DiscountCountryAll {
+                                allCountries
+                            }
+                        }
+                        discountClass
+                        endsAt
+                        hasTimelineComment
+                        maximumShippingPrice{
+                            amount
+                            currencyCode
+                        }
+                        minimumRequirement{
+                            __typename
+                            ... on DiscountMinimumQuantity {
+                                greaterThanOrEqualToQuantity
+                            }
+                        }
+                        recurringCycleLimit
+                        shortSummary
+                        startsAt
+                        status
+                        summary
+                        title
+                        totalSales{
+                            amount
+                            currencyCode
+                        }
+                        updatedAt
+                    }
+                }
+                automaticDiscountNode(id: $id7){
+                    automaticDiscount{
+                        __typename
+                        ... on DiscountAutomaticApp {
+                            appliesOnSubscription
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            discountId
+                            endsAt
+                            recurringCycleLimit
+                            startsAt
+                            status
+                            title
+                            updatedAt
+                        }
+                        ... on DiscountAutomaticBasic {
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            endsAt
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageCount
+                        }
+                        ... on DiscountAutomaticBxgy {
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            endsAt
+                            id
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageCount
+                            usesPerOrderLimit
+                        }
+                        ... on DiscountAutomaticFreeShipping {
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            asyncUsageCount
+                            createdAt
+                            destinationSelection{
+                                __typename
+                                ... on DiscountCountries {
+                                    countries
+                                    includeRestOfWorld
+                                }
+                                ... on DiscountCountryAll {
+                                    allCountries
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                        }
+                    }
+                    id
+                }
+                automaticDiscounts(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1, sortKey: $sortKey, query: $query1, savedSearchId: $savedSearchId1){
+                    nodes{
+                        __typename
+                        ... on DiscountAutomaticApp {
+                            appliesOnSubscription
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            discountId
+                            endsAt
+                            recurringCycleLimit
+                            startsAt
+                            status
+                            title
+                            updatedAt
+                        }
+                        ... on DiscountAutomaticBasic {
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            endsAt
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageCount
+                        }
+                        ... on DiscountAutomaticBxgy {
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            endsAt
+                            id
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageCount
+                            usesPerOrderLimit
+                        }
+                        ... on DiscountAutomaticFreeShipping {
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            asyncUsageCount
+                            createdAt
+                            destinationSelection{
+                                __typename
+                                ... on DiscountCountries {
+                                    countries
+                                    includeRestOfWorld
+                                }
+                                ... on DiscountCountryAll {
+                                    allCountries
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                        }
+                    }
+                }
+                availableLocales{
+                    isoCode
+                    name
+                }
+                blog(id: $id8){
+                    commentPolicy
+                    createdAt
+                    handle
+                    id
+                    tags
+                    templateSuffix
+                    title
+                    updatedAt
+                }
+                blogsCount(query: $query2){
+                    count
+                    precision
+                }
+                businessEntities{
+                    companyName
+                    displayName
+                    id
+                    primary
+                }
+                businessEntity(id: $id9){
+                    companyName
+                    displayName
+                    id
+                    primary
+                }
+                carrierService(id: $id10){
+                    active
+                    callbackUrl
+                    formattedName
+                    id
+                    name
+                    supportsServiceDiscovery
+                }
+                cashTrackingSession(id: $id11){
+                    cashTrackingEnabled
+                    closingNote
+                    closingTime
+                    id
+                    openingNote
+                    openingTime
+                    registerName
+                }
+                catalog(id: $id12){
+                    id
+                    status
+                    title
+                }
+                catalogOperations{
+                    id
+                    processedRowCount
+                    status
+                }
+                catalogsCount(type: $type, query: $query3){
+                    count
+                    precision
+                }
+                channel(id: $id14){
+                    handle
+                    hasCollection(id: $id13)
+                    id
+                    name
+                    overviewPath
+                    supportsFuturePublishing
+                }
+                checkoutProfile(id: $id15){
+                    createdAt
+                    editedAt
+                    id
+                    isPublished
+                    name
+                    typOspPagesActive
+                    updatedAt
+                }
+                codeDiscountNode(id: $id16){
+                    codeDiscount{
+                        __typename
+                        ... on DiscountCodeApp {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            discountId
+                            endsAt
+                            hasTimelineComment
+                            recurringCycleLimit
+                            startsAt
+                            status
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                        ... on DiscountCodeBasic {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                        ... on DiscountCodeBxgy {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                            usesPerOrderLimit
+                        }
+                        ... on DiscountCodeFreeShipping {
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            destinationSelection{
+                                __typename
+                                ... on DiscountCountries {
+                                    countries
+                                    includeRestOfWorld
+                                }
+                                ... on DiscountCountryAll {
+                                    allCountries
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                    }
+                    id
+                }
+                codeDiscountNodeByCode(code: $code){
+                    codeDiscount{
+                        __typename
+                        ... on DiscountCodeApp {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            discountId
+                            endsAt
+                            hasTimelineComment
+                            recurringCycleLimit
+                            startsAt
+                            status
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                        ... on DiscountCodeBasic {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                        ... on DiscountCodeBxgy {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                            usesPerOrderLimit
+                        }
+                        ... on DiscountCodeFreeShipping {
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            destinationSelection{
+                                __typename
+                                ... on DiscountCountries {
+                                    countries
+                                    includeRestOfWorld
+                                }
+                                ... on DiscountCountryAll {
+                                    allCountries
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                    }
+                    id
+                }
+                collection(id: $id18){
+                    description(truncateAt: $truncateAt2)
+                    descriptionHtml
+                    handle
+                    hasProduct(id: $id17)
+                    id
+                    legacyResourceId
+                    publicationCount(onlyPublished: $onlyPublished2)
+                    publishedOnChannel(channelId: $channelId2)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId2)
+                    sortOrder
+                    storefrontId
+                    templateSuffix
+                    title
+                    updatedAt
+                }
+                collectionByHandle(handle: $handle1){
+                    description(truncateAt: $truncateAt3)
+                    descriptionHtml
+                    handle
+                    hasProduct(id: $id19)
+                    id
+                    legacyResourceId
+                    publicationCount(onlyPublished: $onlyPublished3)
+                    publishedOnChannel(channelId: $channelId3)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId3)
+                    sortOrder
+                    storefrontId
+                    templateSuffix
+                    title
+                    updatedAt
+                }
+                collectionRulesConditions{
+                    allowedRelations
+                    defaultRelation
+                    ruleObject{
+                        __typename
+                    }
+                    ruleType
+                }
+                collectionsCount(query: $query4, savedSearchId: $savedSearchId2){
+                    count
+                    precision
+                }
+                comment(id: $id20){
+                    body
+                    bodyHtml
+                    createdAt
+                    id
+                    ip
+                    isPublished
+                    publishedAt
+                    status
+                    updatedAt
+                    userAgent
+                }
+                companiesCount{
+                    count
+                    precision
+                }
+                company(id: $id21){
+                    contactCount
+                    createdAt
+                    customerSince
+                    defaultCursor
+                    externalId
+                    hasTimelineComment
+                    id
+                    lifetimeDuration
+                    name
+                    note
+                    updatedAt
+                }
+                companyContact(id: $id22){
+                    createdAt
+                    id
+                    isMainContact
+                    lifetimeDuration
+                    locale
+                    title
+                    updatedAt
+                }
+                companyContactRole(id: $id23){
+                    id
+                    name
+                    note
+                }
+                companyLocation(id: $id24){
+                    createdAt
+                    currency
+                    defaultCursor
+                    externalId
+                    hasTimelineComment
+                    id
+                    inCatalog(catalogId: $catalogId)
+                    locale
+                    name
+                    note
+                    orderCount
+                    phone
+                    taxExemptions
+                    taxRegistrationId
+                    updatedAt
+                }
+                currentAppInstallation{
+                    id
+                    launchUrl
+                    uninstallUrl
+                }
+                currentBulkOperation(type: $type1){
+                    completedAt
+                    createdAt
+                    errorCode
+                    fileSize
+                    id
+                    objectCount
+                    partialDataUrl
+                    query
+                    rootObjectCount
+                    status
+                    type
+                    url
+                }
+                currentStaffMember{
+                    accountType
+                    active
+                    email
+                    exists
+                    firstName
+                    id
+                    initials
+                    isShopOwner
+                    lastName
+                    locale
+                    name
+                    phone
+                }
+                customer(id: $id25){
+                    canDelete
+                    createdAt
+                    dataSaleOptOut
+                    displayName
+                    email
+                    firstName
+                    hasTimelineComment
+                    id
+                    lastName
+                    legacyResourceId
+                    lifetimeDuration
+                    locale
+                    multipassIdentifier
+                    note
+                    numberOfOrders
+                    phone
+                    productSubscriberStatus
+                    state
+                    tags
+                    taxExempt
+                    taxExemptions
+                    unsubscribeUrl
+                    updatedAt
+                    validEmailAddress
+                    verifiedEmail
+                }
+                customerAccountPage(id: $id26){
+                    defaultCursor
+                    handle
+                    id
+                    title
+                }
+                customerMergeJobStatus(jobId: $jobId){
+                    jobId
+                    resultingCustomerId
+                    status
+                }
+                customerMergePreview(customerOneId: $customerOneId, customerTwoId: $customerTwoId, overrideFields: $overrideFields){
+                    resultingCustomerId
+                }
+                customerPaymentMethod(id: $id27, showRevoked: $showRevoked){
+                    id
+                    instrument{
+                        __typename
+                        ... on CustomerCreditCard {
+                            brand
+                            expiresSoon
+                            expiryMonth
+                            expiryYear
+                            firstDigits
+                            isRevocable
+                            lastDigits
+                            maskedNumber
+                            name
+                            source
+                            virtualLastDigits
+                        }
+                        ... on CustomerPaypalBillingAgreement {
+                            inactive
+                            isRevocable
+                            paypalAccountEmail
+                        }
+                        ... on CustomerShopPayAgreement {
+                            expiresSoon
+                            expiryMonth
+                            expiryYear
+                            inactive
+                            isRevocable
+                            lastDigits
+                            maskedNumber
+                            name
+                        }
+                    }
+                    revokedAt
+                    revokedReason
+                }
+                customerSegmentMembers(segmentId: $segmentId, query: $query5, queryId: $queryId, timezone: $timezone, reverse: $reverse2, sortKey: $sortKey1, first: $first2, after: $after2, last: $last2, before: $before2){
+                    totalCount
+                }
+                customerSegmentMembersQuery(id: $id28){
+                    currentCount
+                    done
+                    id
+                }
+                customersCount(query: $query6){
+                    count
+                    precision
+                }
+                deliveryCustomization(id: $id29){
+                    enabled
+                    functionId
+                    id
+                    title
+                }
+                deliveryProfile(id: $id30){
+                    activeMethodDefinitionsCount
+                    default
+                    id
+                    legacyMode
+                    locationsWithoutRatesCount
+                    name
+                    originLocationCount
+                    zoneCountryCount
+                }
+                deliveryPromiseProvider(locationId: $locationId){
+                    active
+                    fulfillmentDelay
+                    id
+                    timeZone
+                }
+                deliverySettings{
+                    legacyModeProfiles
+                }
+                discountCodesCount(query: $query7){
+                    count
+                    precision
+                }
+                discountNode(id: $id31){
+                    discount{
+                        __typename
+                        ... on DiscountAutomaticApp {
+                            appliesOnSubscription
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            discountId
+                            endsAt
+                            recurringCycleLimit
+                            startsAt
+                            status
+                            title
+                            updatedAt
+                        }
+                        ... on DiscountAutomaticBasic {
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            endsAt
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageCount
+                        }
+                        ... on DiscountAutomaticBxgy {
+                            asyncUsageCount
+                            createdAt
+                            discountClass
+                            endsAt
+                            id
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageCount
+                            usesPerOrderLimit
+                        }
+                        ... on DiscountAutomaticFreeShipping {
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            asyncUsageCount
+                            createdAt
+                            destinationSelection{
+                                __typename
+                                ... on DiscountCountries {
+                                    countries
+                                    includeRestOfWorld
+                                }
+                                ... on DiscountCountryAll {
+                                    allCountries
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                        }
+                        ... on DiscountCodeApp {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            discountId
+                            endsAt
+                            hasTimelineComment
+                            recurringCycleLimit
+                            startsAt
+                            status
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                        ... on DiscountCodeBasic {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                        ... on DiscountCodeBxgy {
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                            usesPerOrderLimit
+                        }
+                        ... on DiscountCodeFreeShipping {
+                            appliesOnOneTimePurchase
+                            appliesOnSubscription
+                            appliesOncePerCustomer
+                            asyncUsageCount
+                            createdAt
+                            customerSelection{
+                                __typename
+                                ... on DiscountCustomerAll {
+                                    allCustomers
+                                }
+                            }
+                            destinationSelection{
+                                __typename
+                                ... on DiscountCountries {
+                                    countries
+                                    includeRestOfWorld
+                                }
+                                ... on DiscountCountryAll {
+                                    allCountries
+                                }
+                            }
+                            discountClass
+                            endsAt
+                            hasTimelineComment
+                            minimumRequirement{
+                                __typename
+                                ... on DiscountMinimumQuantity {
+                                    greaterThanOrEqualToQuantity
+                                }
+                            }
+                            recurringCycleLimit
+                            shortSummary
+                            startsAt
+                            status
+                            summary
+                            title
+                            updatedAt
+                            usageLimit
+                        }
+                    }
+                    id
+                }
+                discountNodesCount(query: $query8, savedSearchId: $savedSearchId3){
+                    count
+                    precision
+                }
+                discountRedeemCodeBulkCreation(id: $id32){
+                    codesCount
+                    createdAt
+                    done
+                    failedCount
+                    id
+                    importedCount
+                }
+                dispute(id: $id33){
+                    evidenceDueBy
+                    evidenceSentOn
+                    finalizedOn
+                    id
+                    initiatedAt
+                    legacyResourceId
+                    status
+                    type
+                }
+                disputeEvidence(id: $id34){
+                    accessActivityLog
+                    cancellationPolicyDisclosure
+                    cancellationRebuttal
+                    customerEmailAddress
+                    customerFirstName
+                    customerLastName
+                    customerPurchaseIp
+                    id
+                    productDescription
+                    refundPolicyDisclosure
+                    refundRefusalExplanation
+                    submitted
+                    uncategorizedText
+                }
+                domain(id: $id35){
+                    host
+                    id
+                    sslEnabled
+                    url
+                }
+                draftOrder(id: $id36){
+                    acceptAutomaticDiscounts
+                    allowDiscountCodesInCheckout
+                    billingAddressMatchesShippingAddress
+                    completedAt
+                    createdAt
+                    currencyCode
+                    defaultCursor
+                    discountCodes
+                    email
+                    hasTimelineComment
+                    id
+                    invoiceEmailTemplateSubject
+                    invoiceSentAt
+                    invoiceUrl
+                    legacyResourceId
+                    marketName
+                    marketRegionCountryCode
+                    name
+                    note2
+                    phone
+                    poNumber
+                    presentmentCurrencyCode
+                    purchasingEntity{
+                        __typename
+                        ... on Customer {
+                            canDelete
+                            createdAt
+                            dataSaleOptOut
+                            displayName
+                            email
+                            firstName
+                            hasTimelineComment
+                            id
+                            lastName
+                            legacyResourceId
+                            lifetimeDuration
+                            locale
+                            multipassIdentifier
+                            note
+                            numberOfOrders
+                            phone
+                            productSubscriberStatus
+                            state
+                            tags
+                            taxExempt
+                            taxExemptions
+                            unsubscribeUrl
+                            updatedAt
+                            validEmailAddress
+                            verifiedEmail
+                        }
+                    }
+                    ready
+                    reserveInventoryUntil
+                    status
+                    subtotalPrice
+                    tags
+                    taxExempt
+                    taxesIncluded
+                    totalPrice
+                    totalQuantityOfLineItems
+                    totalShippingPrice
+                    totalTax
+                    totalWeight
+                    transformerFingerprint
+                    updatedAt
+                    visibleToCustomer
+                }
+                draftOrderTag(id: $id37){
+                    handle
+                    id
+                    title
+                }
+                event(id: $id38){
+                    action
+                    appTitle
+                    attributeToApp
+                    attributeToUser
+                    createdAt
+                    criticalAlert
+                    id
+                    message
+                }
+                eventsCount(query: $query9){
+                    count
+                    precision
+                }
+                fulfillment(id: $id39){
+                    createdAt
+                    deliveredAt
+                    displayStatus
+                    estimatedDeliveryAt
+                    id
+                    inTransitAt
+                    legacyResourceId
+                    name
+                    requiresShipping
+                    status
+                    totalQuantity
+                    updatedAt
+                }
+                fulfillmentConstraintRules{
+                    deliveryMethodTypes
+                    id
+                }
+                fulfillmentOrder(id: $id40){
+                    channelId
+                    createdAt
+                    fulfillAt
+                    fulfillBy
+                    id
+                    orderId
+                    orderName
+                    orderProcessedAt
+                    requestStatus
+                    status
+                    updatedAt
+                }
+                fulfillmentService(id: $id41){
+                    callbackUrl
+                    fulfillmentOrdersOptIn
+                    handle
+                    id
+                    inventoryManagement
+                    permitsSkuSharing
+                    serviceName
+                    trackingSupport
+                    type
+                }
+                giftCard(id: $id42){
+                    createdAt
+                    deactivatedAt
+                    enabled
+                    expiresOn
+                    id
+                    lastCharacters
+                    maskedCode
+                    note
+                    templateSuffix
+                    updatedAt
+                }
+                giftCardsCount(query: $query10, savedSearchId: $savedSearchId4){
+                    count
+                    precision
+                }
+                inventoryItem(id: $id43){
+                    countryCodeOfOrigin
+                    createdAt
+                    duplicateSkuCount
+                    harmonizedSystemCode
+                    id
+                    inventoryHistoryUrl
+                    legacyResourceId
+                    provinceCodeOfOrigin
+                    requiresShipping
+                    sku
+                    tracked
+                    updatedAt
+                }
+                inventoryLevel(id: $id44){
+                    canDeactivate
+                    createdAt
+                    deactivationAlert
+                    id
+                    updatedAt
+                }
+                job(id: $id45){
+                    done
+                    id
+                }
+                location(id: $id46){
+                    activatable
+                    addressVerified
+                    createdAt
+                    deactivatable
+                    deactivatedAt
+                    deletable
+                    fulfillsOnlineOrders
+                    hasActiveInventory
+                    hasUnfulfilledOrders
+                    id
+                    isActive
+                    isFulfillmentService
+                    isPrimary
+                    legacyResourceId
+                    name
+                    shipsInventory
+                    updatedAt
+                }
+                locationsAvailableForDeliveryProfiles{
+                    activatable
+                    addressVerified
+                    createdAt
+                    deactivatable
+                    deactivatedAt
+                    deletable
+                    fulfillsOnlineOrders
+                    hasActiveInventory
+                    hasUnfulfilledOrders
+                    id
+                    isActive
+                    isFulfillmentService
+                    isPrimary
+                    legacyResourceId
+                    name
+                    shipsInventory
+                    updatedAt
+                }
+                locationsCount(query: $query11){
+                    count
+                    precision
+                }
+                market(id: $id47){
+                    enabled
+                    handle
+                    id
+                    name
+                    primary
+                }
+                marketByGeography(countryCode: $countryCode){
+                    enabled
+                    handle
+                    id
+                    name
+                    primary
+                }
+                marketLocalizableResource(resourceId: $resourceId){
+                    resourceId
+                }
+                marketingActivity(id: $id48){
+                    activityListUrl
+                    createdAt
+                    formData
+                    hierarchyLevel
+                    id
+                    inMainWorkflowVersion
+                    isExternal
+                    marketingChannel
+                    marketingChannelType
+                    parentActivityId
+                    parentRemoteId
+                    sourceAndMedium
+                    status
+                    statusBadgeType
+                    statusBadgeTypeV2
+                    statusLabel
+                    statusTransitionedAt
+                    tactic
+                    targetStatus
+                    title
+                    updatedAt
+                    urlParameterValue
+                }
+                marketingEvent(id: $id49){
+                    channel
+                    channelHandle
+                    description
+                    endedAt
+                    id
+                    legacyResourceId
+                    manageUrl
+                    marketingChannelType
+                    previewUrl
+                    remoteId
+                    scheduledToEndAt
+                    sourceAndMedium
+                    startedAt
+                    targetTypeDisplayText
+                    type
+                    utmCampaign
+                    utmMedium
+                    utmSource
+                }
+                menu(id: $id50){
+                    handle
+                    id
+                    isDefault
+                    title
+                }
+                metafieldDefinition(id: $id51){
+                    description
+                    id
+                    key
+                    metafieldsCount(validationStatus: $validationStatus2)
+                    name
+                    namespace
+                    ownerType
+                    pinnedPosition
+                    useAsCollectionCondition
+                    validationStatus
+                    visibleToStorefrontApi
+                }
+                metafieldDefinitionTypes{
+                    category
+                    name
+                    supportsDefinitionMigrations
+                    valueType
+                }
+                metafieldStorefrontVisibility(id: $id52){
+                    createdAt
+                    id
+                    key
+                    legacyResourceId
+                    namespace
+                    ownerType
+                    updatedAt
+                }
+                metaobject(id: $id53){
+                    displayName
+                    handle
+                    id
+                    type
+                    updatedAt
+                }
+                metaobjectByHandle(handle: $handle2){
+                    displayName
+                    handle
+                    id
+                    type
+                    updatedAt
+                }
+                metaobjectDefinition(id: $id54){
+                    description
+                    displayNameKey
+                    hasThumbnailField
+                    id
+                    metaobjectsCount
+                    name
+                    type
+                }
+                metaobjectDefinitionByType(type: $type2){
+                    description
+                    displayNameKey
+                    hasThumbnailField
+                    id
+                    metaobjectsCount
+                    name
+                    type
+                }
+                mobilePlatformApplication(id: $id55){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+                mobilePlatformApplications(first: $first3, after: $after3, last: $last3, before: $before3, reverse: $reverse3){
+                    nodes{
+                        __typename
+                        ... on AndroidApplication {
+                            appLinksEnabled
+                            applicationId
+                            id
+                            sha256CertFingerprints
+                        }
+                        ... on AppleApplication {
+                            appClipApplicationId
+                            appClipsEnabled
+                            appId
+                            id
+                            sharedWebCredentialsEnabled
+                            universalLinksEnabled
+                        }
+                    }
+                }
+                node(id: $id56){
+                    id
+                }
+                nodes(ids: $ids){
+                    id
+                }
+                order(id: $id57){
+                    billingAddressMatchesShippingAddress
+                    canMarkAsPaid
+                    canNotifyCustomer
+                    cancelReason
+                    cancelledAt
+                    capturable
+                    cartDiscountAmount
+                    clientIp
+                    closed
+                    closedAt
+                    confirmationNumber
+                    confirmed
+                    createdAt
+                    currencyCode
+                    currentSubtotalLineItemsQuantity
+                    currentTotalWeight
+                    customerAcceptsMarketing
+                    customerLocale
+                    discountCode
+                    discountCodes
+                    displayFinancialStatus
+                    displayFulfillmentStatus
+                    dutiesIncluded
+                    edited
+                    email
+                    estimatedTaxes
+                    fulfillable
+                    fullyPaid
+                    hasTimelineComment
+                    id
+                    landingPageDisplayText
+                    landingPageUrl
+                    legacyResourceId
+                    merchantEditable
+                    merchantEditableErrors
+                    name
+                    netPayment
+                    note
+                    paymentGatewayNames
+                    phone
+                    poNumber
+                    presentmentCurrencyCode
+                    processedAt
+                    purchasingEntity{
+                        __typename
+                        ... on Customer {
+                            canDelete
+                            createdAt
+                            dataSaleOptOut
+                            displayName
+                            email
+                            firstName
+                            hasTimelineComment
+                            id
+                            lastName
+                            legacyResourceId
+                            lifetimeDuration
+                            locale
+                            multipassIdentifier
+                            note
+                            numberOfOrders
+                            phone
+                            productSubscriberStatus
+                            state
+                            tags
+                            taxExempt
+                            taxExemptions
+                            unsubscribeUrl
+                            updatedAt
+                            validEmailAddress
+                            verifiedEmail
+                        }
+                    }
+                    referralCode
+                    referrerDisplayText
+                    referrerUrl
+                    refundable
+                    registeredSourceUrl
+                    requiresShipping
+                    restockable
+                    returnStatus
+                    riskLevel
+                    sourceIdentifier
+                    sourceName
+                    statusPageUrl
+                    subtotalLineItemsQuantity
+                    subtotalPrice
+                    tags
+                    taxExempt
+                    taxesIncluded
+                    test
+                    totalCapturable
+                    totalDiscounts
+                    totalPrice
+                    totalReceived
+                    totalRefunded
+                    totalShippingPrice
+                    totalTax
+                    totalWeight
+                    unpaid
+                    updatedAt
+                }
+                orderPaymentStatus(paymentReferenceId: $paymentReferenceId, orderId: $orderId){
+                    errorMessage
+                    paymentReferenceId
+                    status
+                    translatedErrorMessage
+                }
+                ordersCount(query: $query12, savedSearchId: $savedSearchId5, limit: $limit2){
+                    count
+                    precision
+                }
+                page(id: $id58){
+                    body
+                    bodySummary
+                    createdAt
+                    defaultCursor
+                    handle
+                    id
+                    isPublished
+                    publishedAt
+                    templateSuffix
+                    title
+                    updatedAt
+                }
+                pagesCount{
+                    count
+                    precision
+                }
+                paymentCustomization(id: $id59){
+                    enabled
+                    functionId
+                    id
+                    title
+                }
+                paymentTermsTemplates(paymentTermsType: $paymentTermsType){
+                    description
+                    dueInDays
+                    id
+                    name
+                    paymentTermsType
+                    translatedName
+                }
+                pendingOrdersCount{
+                    count
+                    precision
+                }
+                priceList(id: $id60){
+                    currency
+                    fixedPricesCount
+                    id
+                    name
+                }
+                primaryMarket{
+                    enabled
+                    handle
+                    id
+                    name
+                    primary
+                }
+                privateMetafield(id: $id61){
+                    createdAt
+                    id
+                    key
+                    namespace
+                    updatedAt
+                    value
+                    valueType
+                }
+                product(id: $id63){
+                    bodyHtml
+                    combinedListingRole
+                    createdAt
+                    customProductType
+                    defaultCursor
+                    description(truncateAt: $truncateAt4)
+                    descriptionHtml
+                    descriptionPlainSummary
+                    giftCardTemplateSuffix
+                    handle
+                    hasOnlyDefaultVariant
+                    hasOutOfStockVariants
+                    hasVariantsThatRequiresComponents
+                    id
+                    inCollection(id: $id62)
+                    isGiftCard
+                    legacyResourceId
+                    onlineStorePreviewUrl
+                    onlineStoreUrl
+                    productType
+                    publicationCount(onlyPublished: $onlyPublished4)
+                    publishedAt
+                    publishedInContext(context: $context1)
+                    publishedOnChannel(channelId: $channelId4)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId4)
+                    requiresSellingPlan
+                    sellingPlanGroupCount
+                    status
+                    storefrontId
+                    tags
+                    templateSuffix
+                    title
+                    totalInventory
+                    totalVariants
+                    tracksInventory
+                    updatedAt
+                    vendor
+                }
+                productByHandle(handle: $handle3){
+                    bodyHtml
+                    combinedListingRole
+                    createdAt
+                    customProductType
+                    defaultCursor
+                    description(truncateAt: $truncateAt5)
+                    descriptionHtml
+                    descriptionPlainSummary
+                    giftCardTemplateSuffix
+                    handle
+                    hasOnlyDefaultVariant
+                    hasOutOfStockVariants
+                    hasVariantsThatRequiresComponents
+                    id
+                    inCollection(id: $id64)
+                    isGiftCard
+                    legacyResourceId
+                    onlineStorePreviewUrl
+                    onlineStoreUrl
+                    productType
+                    publicationCount(onlyPublished: $onlyPublished5)
+                    publishedAt
+                    publishedInContext(context: $context2)
+                    publishedOnChannel(channelId: $channelId5)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId5)
+                    requiresSellingPlan
+                    sellingPlanGroupCount
+                    status
+                    storefrontId
+                    tags
+                    templateSuffix
+                    title
+                    totalInventory
+                    totalVariants
+                    tracksInventory
+                    updatedAt
+                    vendor
+                }
+                productDuplicateJob(id: $id65){
+                    done
+                    id
+                }
+                productFeed(id: $id66){
+                    country
+                    id
+                    language
+                    status
+                }
+                productOperation(id: $id67){
+                    status
+                }
+                productResourceFeedback(id: $id68){
+                    feedbackGeneratedAt
+                    messages
+                    productId
+                    productUpdatedAt
+                    state
+                }
+                productVariant(id: $id69){
+                    availableForSale
+                    barcode
+                    compareAtPrice
+                    createdAt
+                    defaultCursor
+                    displayName
+                    id
+                    inventoryPolicy
+                    inventoryQuantity
+                    legacyResourceId
+                    position
+                    price
+                    requiresComponents
+                    sellableOnlineQuantity
+                    sellingPlanGroupCount
+                    sku
+                    storefrontId
+                    taxCode
+                    taxable
+                    title
+                    updatedAt
+                }
+                productVariantsCount(query: $query13){
+                    count
+                    precision
+                }
+                productsCount(query: $query14, savedSearchId: $savedSearchId6, limit: $limit3){
+                    count
+                    precision
+                }
+                publicApiVersions{
+                    displayName
+                    handle
+                    supported
+                }
+                publication(id: $id71){
+                    autoPublish
+                    hasCollection(id: $id70)
+                    id
+                    name
+                    operation{
+                        __typename
+                        ... on AddAllProductsOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on CatalogCsvOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on PublicationResourceOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                    }
+                    supportsFuturePublishing
+                }
+                publicationsCount(catalogType: $catalogType){
+                    count
+                    precision
+                }
+                publishedProductsCount(publicationId: $publicationId6){
+                    count
+                    precision
+                }
+                refund(id: $id72){
+                    createdAt
+                    id
+                    legacyResourceId
+                    note
+                    updatedAt
+                }
+                return(id: $id73){
+                    id
+                    name
+                    status
+                    totalQuantity
+                }
+                returnCalculate(input: $input){
+                    id
+                }
+                returnableFulfillment(id: $id74){
+                    id
+                }
+                reverseDelivery(id: $id75){
+                    deliverable{
+                        __typename
+                    }
+                    id
+                }
+                reverseFulfillmentOrder(id: $id76){
+                    id
+                    status
+                }
+                scriptTag(id: $id77){
+                    cache
+                    createdAt
+                    displayScope
+                    id
+                    legacyResourceId
+                    src
+                    updatedAt
+                }
+                segment(id: $id78){
+                    creationDate
+                    id
+                    lastEditDate
+                    name
+                    query
+                }
+                segmentsCount{
+                    count
+                    precision
+                }
+                sellingPlanGroup(id: $id79){
+                    appId
+                    appliesToProduct(productId: $productId)
+                    appliesToProductVariant(productVariantId: $productVariantId)
+                    appliesToProductVariants(productId: $productId1)
+                    createdAt
+                    description
+                    id
+                    merchantCode
+                    name
+                    options
+                    position
+                    summary
+                }
+                serverPixel{
+                    id
+                    status
+                    webhookEndpointAddress
+                }
+                shop{
+                    analyticsToken
+                    checkoutApiSupported
+                    contactEmail
+                    createdAt
+                    currencyCode
+                    customerAccounts
+                    description
+                    email
+                    enabledPresentmentCurrencies
+                    ianaTimezone
+                    id
+                    marketingSmsConsentEnabledAtCheckout
+                    myshopifyDomain
+                    name
+                    orderNumberFormatPrefix
+                    orderNumberFormatSuffix
+                    publicationCount
+                    richTextEditorUrl
+                    setupRequired
+                    shipsToCountries
+                    shopOwnerName
+                    storefrontUrl
+                    taxShipping
+                    taxesIncluded
+                    timezoneAbbreviation
+                    timezoneOffset
+                    timezoneOffsetMinutes
+                    transactionalSmsDisabled
+                    unitSystem
+                    updatedAt
+                    url
+                    weightUnit
+                }
+                shopBillingPreferences{
+                    currency
+                }
+                shopLocales(published: $published){
+                    locale
+                    name
+                    primary
+                    published
+                }
+                shopifyFunction(id: $id80){
+                    apiType
+                    apiVersion
+                    appKey
+                    description
+                    id
+                    inputQuery
+                    title
+                    useCreationUi
+                }
+                shopifyPaymentsAccount{
+                    activated
+                    chargeStatementDescriptor
+                    country
+                    defaultCurrency
+                    id
+                    onboardable
+                    payoutStatementDescriptor
+                }
+                staffMember(id: $id81){
+                    accountType
+                    active
+                    email
+                    exists
+                    firstName
+                    id
+                    initials
+                    isShopOwner
+                    lastName
+                    locale
+                    name
+                    phone
+                }
+                storeCreditAccount(id: $id82){
+                    id
+                }
+                subscriptionBillingAttempt(id: $id83){
+                    completedAt
+                    createdAt
+                    errorCode
+                    errorMessage
+                    id
+                    idempotencyKey
+                    nextActionUrl
+                    originTime
+                    paymentGroupId
+                    paymentSessionId
+                    ready
+                }
+                subscriptionBillingCycle(billingCycleInput: $billingCycleInput){
+                    billingAttemptExpectedDate
+                    cycleEndAt
+                    cycleIndex
+                    cycleStartAt
+                    edited
+                    skipped
+                    status
+                }
+                subscriptionContract(id: $id84){
+                    appAdminUrl
+                    createdAt
+                    currencyCode
+                    deliveryMethod{
+                        __typename
+                    }
+                    id
+                    lastBillingAttemptErrorType
+                    lastPaymentStatus
+                    lineCount
+                    nextBillingDate
+                    note
+                    revisionId
+                    status
+                    updatedAt
+                }
+                subscriptionDraft(id: $id85){
+                    currencyCode
+                    deliveryMethod{
+                        __typename
+                    }
+                    deliveryOptions(deliveryAddress: $deliveryAddress){
+                        __typename
+                        ... on SubscriptionDeliveryOptionResultFailure {
+                            message
+                        }
+                        ... on SubscriptionDeliveryOptionResultSuccess {
+                            deliveryOptions{
+                                __typename
+                                ... on SubscriptionLocalDeliveryOption {
+                                    code
+                                    description
+                                    phoneRequired
+                                    presentmentTitle
+                                    title
+                                }
+                                ... on SubscriptionPickupOption {
+                                    code
+                                    description
+                                    phoneRequired
+                                    pickupTime
+                                    presentmentTitle
+                                    title
+                                }
+                                ... on SubscriptionShippingOption {
+                                    code
+                                    description
+                                    phoneRequired
+                                    presentmentTitle
+                                    title
+                                }
+                            }
+                        }
+                    }
+                    id
+                    nextBillingDate
+                    note
+                    shippingOptions(deliveryAddress: $deliveryAddress1){
+                        __typename
+                        ... on SubscriptionShippingOptionResultFailure {
+                            message
+                        }
+                    }
+                    status
+                }
+                theme(id: $id86){
+                    createdAt
+                    id
+                    name
+                    prefix
+                    processing
+                    processingFailed
+                    role
+                    themeStoreId
+                    updatedAt
+                }
+                translatableResource(resourceId: $resourceId1){
+                    resourceId
+                }
+                urlRedirect(id: $id87){
+                    id
+                    path
+                    target
+                }
+                urlRedirectImport(id: $id88){
+                    count
+                    createdCount
+                    failedCount
+                    finished
+                    finishedAt
+                    id
+                    updatedCount
+                }
+                urlRedirectsCount(query: $query15, savedSearchId: $savedSearchId7){
+                    count
+                    precision
+                }
+                validation(id: $id89){
+                    blockOnFailure
+                    enabled
+                    id
+                    title
+                }
+                webPixel(id: $id90){
+                    id
+                    settings
+                }
+                webhookSubscription(id: $id91){
+                    callbackUrl
+                    createdAt
+                    endpoint{
+                        __typename
+                        ... on WebhookEventBridgeEndpoint {
+                            arn
+                        }
+                        ... on WebhookHttpEndpoint {
+                            callbackUrl
+                        }
+                        ... on WebhookPubSubEndpoint {
+                            pubSubProject
+                            pubSubTopic
+                        }
+                    }
+                    filter
+                    format
+                    id
+                    includeFields
+                    legacyResourceId
+                    metafieldNamespaces
+                    privateMetafieldNamespaces
+                    topic
+                    updatedAt
+                }
+                webhookSubscriptionsCount(query: $query16){
+                    count
+                    precision
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+mutation storefrontAccessTokenCreate($input: StorefrontAccessTokenInput!){
+    storefrontAccessTokenCreate(input: $input){
+        shop{
+            checkoutApiSupported
+            contactEmail
+            createdAt
+            currencyCode
+            customerAccounts
+            description
+            email
+            enabledPresentmentCurrencies
+            ianaTimezone
+            id
+            marketingSmsConsentEnabledAtCheckout
+            myshopifyDomain
+            name
+            orderNumberFormatPrefix
+            orderNumberFormatSuffix
+            richTextEditorUrl
+            setupRequired
+            shipsToCountries
+            taxShipping
+            taxesIncluded
+            timezoneAbbreviation
+            timezoneOffset
+            timezoneOffsetMinutes
+            transactionalSmsDisabled
+            unitSystem
+            updatedAt
+            url
+            weightUnit
+        }
+        storefrontAccessToken{
+            accessToken
+            createdAt
+            id
+            title
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,25 @@
+fragment InventoryLevelPart on InventoryLevel {
+  id
+  quantities(
+    names: [
+      "available"
+      "incoming"
+      "on_hand"
+      "committed"
+      "reserved"
+      "damaged"
+      "safety_stock"
+      "quality_control"
+    ]
+  ) {
+    name
+    quantity
+  }
+  location {
+    id
+  }
+  item {
+    id
+  }
+  updatedAt
+}

@@ -1,0 +1,30 @@
+mutation inventoryBulkToggleActivation($inventoryItemId: ID!, $inventoryItemUpdates: [InventoryBulkToggleActivationInput!]!){
+    inventoryBulkToggleActivation(inventoryItemId: $inventoryItemId, inventoryItemUpdates: $inventoryItemUpdates){
+        inventoryItem{
+            countryCodeOfOrigin
+            createdAt
+            duplicateSkuCount
+            harmonizedSystemCode
+            id
+            inventoryHistoryUrl
+            legacyResourceId
+            provinceCodeOfOrigin
+            requiresShipping
+            sku
+            tracked
+            updatedAt
+        }
+        inventoryLevels{
+            canDeactivate
+            createdAt
+            deactivationAlert
+            id
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

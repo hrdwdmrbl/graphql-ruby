@@ -1,0 +1,15 @@
+mutation metaobjectBulkDelete($where: MetaobjectBulkDeleteWhereCondition!){
+    metaobjectBulkDelete(where: $where){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            elementIndex
+            elementKey
+            field
+            message
+        }
+    }
+}

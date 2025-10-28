@@ -1,0 +1,50 @@
+{
+  "data": {
+    "location": {
+      "activatable": true,
+      "address": {
+        "address1": "6-223 Rue Saint Viateur Ouest",
+        "address2": "",
+        "city": "Montreal",
+        "country": "Canada",
+        "countryCode": "CA",
+        "formatted": ["6-223 Rue Saint Viateur Ouest", "Montreal QC H2T2L6", "Canada"],
+        "latitude": 45.5255269,
+        "longitude": -73.59895999999999,
+        "phone": "",
+        "province": "Quebec",
+        "provinceCode": "QC",
+        "zip": "H2T2L6"
+      },
+      "addressVerified": true,
+      "createdAt": "2020-03-06T00:11:00Z",
+      "deactivatable": false,
+      "deactivatedAt": null,
+      "deletable": false,
+      "fulfillmentService": null,
+      "fulfillsOnlineOrders": true,
+      "hasActiveInventory": true,
+      "hasUnfulfilledOrders": true,
+      "id": "gid://shopify/Location/41733292170",
+      "isActive": true,
+      "isFulfillmentService": false,
+      "legacyResourceId": "41733292170",
+      "localPickupSettingsV2": null,
+      "name": "Primary Warehouse",
+      "shipsInventory": true,
+      "suggestedAddresses": [],
+      "updatedAt": "2021-05-13T14:54:44Z"
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 4,
+      "actualQueryCost": 4,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1996,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

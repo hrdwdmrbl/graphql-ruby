@@ -1,0 +1,28 @@
+query files($first: Int!, $after: String) {
+  files(first: $first, after: $after) {
+    nodes {
+      alt
+      createdAt
+      fileStatus
+      id
+      updatedAt
+      ... on MediaImage {
+        image {
+          width
+          url
+          src
+          originalSrc
+          id
+          height
+          altText
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

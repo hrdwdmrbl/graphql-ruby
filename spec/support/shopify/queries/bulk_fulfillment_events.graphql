@@ -1,0 +1,50 @@
+# Doesn't work because of "Queries that contain a connection field within a list field are not currently supported."
+# Whatever that means 🤷‍♂️
+mutation {
+  bulkOperationRunQuery(
+    query: """
+    {
+      orders {
+        edges {
+          node {
+            fulfillments {
+              id
+              edges {
+                node {
+                  events {
+                    edges {
+                      nodes {
+                        address1
+                        city
+                        country
+                        estimatedDeliveryAt
+                        happenedAt
+                        id
+                        latitude
+                        longitude
+                        status
+                        zip
+                        province
+                        message
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+  ) {
+    bulkOperation {
+      id
+      status
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

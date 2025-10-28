@@ -1,0 +1,22 @@
+query subscriptionBillingCycles($contractId: ID!, $billingCyclesDateRangeSelector: SubscriptionBillingCyclesDateRangeSelector, $billingCyclesIndexRangeSelector: SubscriptionBillingCyclesIndexRangeSelector, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: SubscriptionBillingCyclesSortKeys){
+    subscriptionBillingCycles(contractId: $contractId, billingCyclesDateRangeSelector: $billingCyclesDateRangeSelector, billingCyclesIndexRangeSelector: $billingCyclesIndexRangeSelector, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey){
+        edges{
+            cursor
+        }
+        nodes{
+            billingAttemptExpectedDate
+            cycleEndAt
+            cycleIndex
+            cycleStartAt
+            edited
+            skipped
+            status
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

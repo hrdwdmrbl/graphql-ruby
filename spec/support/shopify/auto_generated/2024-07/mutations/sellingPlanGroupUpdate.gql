@@ -1,0 +1,24 @@
+mutation sellingPlanGroupUpdate($productId: ID!, $productVariantId: ID!, $productId1: ID!, $id: ID!, $input: SellingPlanGroupInput!){
+    sellingPlanGroupUpdate(id: $id, input: $input){
+        deletedSellingPlanIds
+        sellingPlanGroup{
+            appId
+            appliesToProduct(productId: $productId)
+            appliesToProductVariant(productVariantId: $productVariantId)
+            appliesToProductVariants(productId: $productId1)
+            createdAt
+            description
+            id
+            merchantCode
+            name
+            options
+            position
+            summary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

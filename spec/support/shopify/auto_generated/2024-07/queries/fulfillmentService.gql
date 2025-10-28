@@ -1,0 +1,30 @@
+query fulfillmentService($id: ID!){
+    fulfillmentService(id: $id){
+        callbackUrl
+        handle
+        id
+        inventoryManagement
+        location{
+            activatable
+            addressVerified
+            createdAt
+            deactivatable
+            deactivatedAt
+            deletable
+            fulfillsOnlineOrders
+            hasActiveInventory
+            hasUnfulfilledOrders
+            id
+            isActive
+            isFulfillmentService
+            legacyResourceId
+            name
+            shipsInventory
+            updatedAt
+        }
+        permitsSkuSharing
+        serviceName
+        trackingSupport
+        type
+    }
+}

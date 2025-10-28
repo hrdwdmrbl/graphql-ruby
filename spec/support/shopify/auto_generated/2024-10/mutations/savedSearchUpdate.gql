@@ -1,0 +1,20 @@
+mutation savedSearchUpdate($input: SavedSearchUpdateInput!){
+    savedSearchUpdate(input: $input){
+        savedSearch{
+            filters{
+                key
+                value
+            }
+            id
+            legacyResourceId
+            name
+            query
+            resourceType
+            searchTerms
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

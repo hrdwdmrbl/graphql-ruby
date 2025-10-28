@@ -1,0 +1,10 @@
+mutation companyContactsDelete($companyContactIds: [ID!]!){
+    companyContactsDelete(companyContactIds: $companyContactIds){
+        deletedCompanyContactIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,23 @@
+query webhookSubscription($id: ID!){
+    webhookSubscription(id: $id){
+        apiVersion{
+            displayName
+            handle
+            supported
+        }
+        createdAt
+        filter
+        format
+        id
+        includeFields
+        legacyResourceId
+        metafieldNamespaces
+        metafields{
+            key
+            namespace
+        }
+        topic
+        updatedAt
+        uri
+    }
+}

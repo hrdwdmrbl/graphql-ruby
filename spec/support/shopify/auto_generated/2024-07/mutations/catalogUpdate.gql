@@ -1,0 +1,14 @@
+mutation catalogUpdate($id: ID!, $input: CatalogUpdateInput!){
+    catalogUpdate(id: $id, input: $input){
+        catalog{
+            id
+            status
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

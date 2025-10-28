@@ -1,0 +1,14 @@
+mutation urlRedirectCreate($urlRedirect: UrlRedirectInput!){
+    urlRedirectCreate(urlRedirect: $urlRedirect){
+        urlRedirect{
+            id
+            path
+            target
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

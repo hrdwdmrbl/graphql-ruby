@@ -1,0 +1,20 @@
+query carrierService($origins: [ID!], $countryCodes: [CountryCode!], $restOfWorld: Boolean!, $transform: ImageTransformInput, $id: ID!){
+    carrierService(id: $id){
+        active
+        availableServicesForCountries(origins: $origins, countryCodes: $countryCodes, restOfWorld: $restOfWorld){
+            name
+        }
+        callbackUrl
+        formattedName
+        icon{
+            altText
+            height
+            id
+            url(transform: $transform)
+            width
+        }
+        id
+        name
+        supportsServiceDiscovery
+    }
+}

@@ -1,0 +1,77 @@
+mutation orderEditAddLineItemDiscount($id: ID!, $lineItemId: ID!, $discount: OrderEditAppliedDiscountInput!){
+    orderEditAddLineItemDiscount(id: $id, lineItemId: $lineItemId, discount: $discount){
+        addedDiscountStagedChange{
+            description
+            id
+            value{
+                __typename
+                ... on MoneyV2 {
+                    amount
+                    currencyCode
+                }
+                ... on PricingPercentageValue {
+                    percentage
+                }
+            }
+        }
+        calculatedLineItem{
+            editableQuantity
+            editableQuantityBeforeChanges
+            hasStagedLineItemDiscount
+            id
+            quantity
+            restockable
+            restocking
+            sku
+            stagedChanges{
+                __typename
+                ... on OrderStagedChangeAddCustomItem {
+                    quantity
+                    title
+                }
+                ... on OrderStagedChangeAddLineItemDiscount {
+                    description
+                    id
+                    value{
+                        __typename
+                        ... on MoneyV2 {
+                            amount
+                            currencyCode
+                        }
+                        ... on PricingPercentageValue {
+                            percentage
+                        }
+                    }
+                }
+                ... on OrderStagedChangeAddShippingLine {
+                    phone
+                    presentmentTitle
+                    title
+                }
+                ... on OrderStagedChangeAddVariant {
+                    quantity
+                }
+                ... on OrderStagedChangeDecrementItem {
+                    delta
+                    restock
+                }
+                ... on OrderStagedChangeIncrementItem {
+                    delta
+                }
+            }
+            title
+            variantTitle
+        }
+        calculatedOrder{
+            committed
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            subtotalLineItemsQuantity
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,15 @@
+mutation returnLineItemRemoveFromReturn($returnId: ID!, $returnLineItems: [ReturnLineItemRemoveFromReturnInput!]!){
+    returnLineItemRemoveFromReturn(returnId: $returnId, returnLineItems: $returnLineItems){
+        return{
+            id
+            name
+            status
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

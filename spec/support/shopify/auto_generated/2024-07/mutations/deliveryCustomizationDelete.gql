@@ -1,0 +1,10 @@
+mutation deliveryCustomizationDelete($id: ID!){
+    deliveryCustomizationDelete(id: $id){
+        deletedId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

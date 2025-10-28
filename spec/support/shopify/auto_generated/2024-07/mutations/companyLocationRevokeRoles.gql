@@ -1,0 +1,10 @@
+mutation companyLocationRevokeRoles($companyLocationId: ID!, $rolesToRevoke: [ID!]!){
+    companyLocationRevokeRoles(companyLocationId: $companyLocationId, rolesToRevoke: $rolesToRevoke){
+        revokedRoleAssignmentIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

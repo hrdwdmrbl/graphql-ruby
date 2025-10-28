@@ -1,0 +1,7 @@
+query VariantsExistQuery ($query: String!, $first: Int!) {
+  productVariants(query: $query, first: $first) {
+    nodes {
+      id
+    }
+  }
+}

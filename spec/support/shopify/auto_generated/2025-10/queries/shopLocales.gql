@@ -1,0 +1,34 @@
+query shopLocales($published: Boolean){
+    shopLocales(published: $published){
+        locale
+        marketWebPresences{
+            alternateLocales{
+                locale
+                name
+                primary
+                published
+            }
+            defaultLocale{
+                locale
+                name
+                primary
+                published
+            }
+            domain{
+                host
+                id
+                sslEnabled
+                url
+            }
+            id
+            rootUrls{
+                locale
+                url
+            }
+            subfolderSuffix
+        }
+        name
+        primary
+        published
+    }
+}

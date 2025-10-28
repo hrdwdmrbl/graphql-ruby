@@ -1,0 +1,29 @@
+mutation companyLocationAssignAddress($withName: Boolean, $withCompanyName: Boolean, $locationId: ID!, $address: CompanyAddressInput!, $addressTypes: [CompanyAddressType!]!){
+    companyLocationAssignAddress(locationId: $locationId, address: $address, addressTypes: $addressTypes){
+        addresses{
+            address1
+            address2
+            city
+            companyName
+            country
+            countryCode
+            createdAt
+            firstName
+            formattedAddress(withName: $withName, withCompanyName: $withCompanyName)
+            formattedArea
+            id
+            lastName
+            phone
+            province
+            recipient
+            updatedAt
+            zip
+            zoneCode
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

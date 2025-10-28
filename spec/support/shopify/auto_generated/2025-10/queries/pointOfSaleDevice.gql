@@ -1,0 +1,5 @@
+query pointOfSaleDevice($id: ID!){
+    pointOfSaleDevice(id: $id){
+        id
+    }
+}

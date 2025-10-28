@@ -1,0 +1,12 @@
+mutation orderRiskAssessmentCreate($orderRiskAssessmentInput: OrderRiskAssessmentCreateInput!){
+    orderRiskAssessmentCreate(orderRiskAssessmentInput: $orderRiskAssessmentInput){
+        orderRiskAssessment{
+            riskLevel
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

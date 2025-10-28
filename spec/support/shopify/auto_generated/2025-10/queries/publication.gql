@@ -1,0 +1,215 @@
+query publication($id: ID!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $truncateAt: Int, $id1: ID!, $publicationId: ID!, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $id2: ID!, $truncateAt1: Int, $id3: ID!, $context: ContextualPublicationContext!, $publicationId1: ID!, $first2: Int, $after2: String, $last2: Int, $before2: String, $reverse2: Boolean, $sortKey: ProductSortKeys, $query: String, $savedSearchId: ID, $query1: String, $savedSearchId1: ID, $limit: Int, $first3: Int, $after3: String, $last3: Int, $before3: String, $reverse3: Boolean, $truncateAt2: Int, $id4: ID!, $context1: ContextualPublicationContext!, $publicationId2: ID!, $first4: Int, $after4: String, $last4: Int, $before4: String, $reverse4: Boolean, $sortKey1: ProductSortKeys, $query2: String, $savedSearchId2: ID, $id5: ID!){
+    publication(id: $id5){
+        autoPublish
+        catalog{
+            id
+            operations{
+                id
+                processedRowCount
+                status
+            }
+            priceList{
+                currency
+                fixedPricesCount
+                id
+                name
+            }
+            publication{
+                autoPublish
+                hasCollection(id: $id)
+                id
+                operation{
+                    __typename
+                    ... on AddAllProductsOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on CatalogCsvOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on PublicationResourceOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                }
+                supportsFuturePublishing
+            }
+            status
+            title
+        }
+        collectionPublicationsV3(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+            edges{
+                cursor
+            }
+            nodes{
+                isPublished
+                publishDate
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        collections(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+            edges{
+                cursor
+            }
+            nodes{
+                description(truncateAt: $truncateAt)
+                descriptionHtml
+                handle
+                hasProduct(id: $id1)
+                id
+                legacyResourceId
+                publishedOnCurrentPublication
+                publishedOnPublication(publicationId: $publicationId)
+                sortOrder
+                templateSuffix
+                title
+                updatedAt
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        hasCollection(id: $id2)
+        id
+        includedProducts(first: $first2, after: $after2, last: $last2, before: $before2, reverse: $reverse2, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+            edges{
+                cursor
+            }
+            nodes{
+                combinedListingRole
+                createdAt
+                defaultCursor
+                description(truncateAt: $truncateAt1)
+                descriptionHtml
+                giftCardTemplateSuffix
+                handle
+                hasOnlyDefaultVariant
+                hasOutOfStockVariants
+                hasVariantsThatRequiresComponents
+                id
+                inCollection(id: $id3)
+                isGiftCard
+                legacyResourceId
+                onlineStorePreviewUrl
+                onlineStoreUrl
+                productType
+                publishedAt
+                publishedInContext(context: $context)
+                publishedOnCurrentPublication
+                publishedOnPublication(publicationId: $publicationId1)
+                requiresSellingPlan
+                status
+                tags
+                templateSuffix
+                title
+                totalInventory
+                tracksInventory
+                updatedAt
+                vendor
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        includedProductsCount(query: $query1, savedSearchId: $savedSearchId1, limit: $limit){
+            count
+            precision
+        }
+        operation{
+            __typename
+            ... on AddAllProductsOperation {
+                id
+                processedRowCount
+                rowCount{
+                    count
+                    exceedsMax
+                }
+                status
+            }
+            ... on CatalogCsvOperation {
+                id
+                processedRowCount
+                status
+            }
+            ... on PublicationResourceOperation {
+                id
+                processedRowCount
+                status
+            }
+        }
+        productPublicationsV3(first: $first3, after: $after3, last: $last3, before: $before3, reverse: $reverse3){
+            edges{
+                cursor
+            }
+            nodes{
+                isPublished
+                publishDate
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        products(first: $first4, after: $after4, last: $last4, before: $before4, reverse: $reverse4, sortKey: $sortKey1, query: $query2, savedSearchId: $savedSearchId2){
+            edges{
+                cursor
+            }
+            nodes{
+                combinedListingRole
+                createdAt
+                defaultCursor
+                description(truncateAt: $truncateAt2)
+                descriptionHtml
+                giftCardTemplateSuffix
+                handle
+                hasOnlyDefaultVariant
+                hasOutOfStockVariants
+                hasVariantsThatRequiresComponents
+                id
+                inCollection(id: $id4)
+                isGiftCard
+                legacyResourceId
+                onlineStorePreviewUrl
+                onlineStoreUrl
+                productType
+                publishedAt
+                publishedInContext(context: $context1)
+                publishedOnCurrentPublication
+                publishedOnPublication(publicationId: $publicationId2)
+                requiresSellingPlan
+                status
+                tags
+                templateSuffix
+                title
+                totalInventory
+                tracksInventory
+                updatedAt
+                vendor
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        supportsFuturePublishing
+    }
+}

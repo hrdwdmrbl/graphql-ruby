@@ -1,0 +1,15 @@
+mutation inventoryActivate($inventoryItemId: ID!, $locationId: ID!, $available: Int, $onHand: Int){
+    inventoryActivate(inventoryItemId: $inventoryItemId, locationId: $locationId, available: $available, onHand: $onHand){
+        inventoryLevel{
+            canDeactivate
+            createdAt
+            deactivationAlert
+            id
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

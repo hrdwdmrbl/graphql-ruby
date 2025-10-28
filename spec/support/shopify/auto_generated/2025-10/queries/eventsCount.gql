@@ -1,0 +1,6 @@
+query eventsCount($query: String){
+    eventsCount(query: $query){
+        count
+        precision
+    }
+}

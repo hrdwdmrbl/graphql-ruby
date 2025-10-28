@@ -1,0 +1,13 @@
+mutation storeCreditAccountDebit($id: ID!, $debitInput: StoreCreditAccountDebitInput!){
+    storeCreditAccountDebit(id: $id, debitInput: $debitInput){
+        storeCreditAccountTransaction{
+            createdAt
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

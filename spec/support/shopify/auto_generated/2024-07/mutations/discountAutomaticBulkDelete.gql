@@ -1,0 +1,14 @@
+mutation discountAutomaticBulkDelete($search: String, $savedSearchId: ID, $ids: [ID!]){
+    discountAutomaticBulkDelete(search: $search, savedSearchId: $savedSearchId, ids: $ids){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

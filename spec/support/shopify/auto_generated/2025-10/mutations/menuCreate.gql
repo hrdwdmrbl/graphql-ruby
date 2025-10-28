@@ -1,0 +1,30 @@
+mutation menuCreate($limit: Int, $locale: String!, $marketId: ID, $title: String!, $handle: String!, $items: [MenuItemCreateInput!]!){
+    menuCreate(title: $title, handle: $handle, items: $items){
+        menu{
+            handle
+            id
+            isDefault
+            items(limit: $limit){
+                id
+                resourceId
+                tags
+                title
+                type
+                url
+            }
+            title
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

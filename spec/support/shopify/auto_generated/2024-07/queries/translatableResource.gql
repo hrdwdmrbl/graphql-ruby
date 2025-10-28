@@ -1,0 +1,19 @@
+query translatableResource($locale: String!, $outdated: Boolean, $marketId: ID, $resourceId: ID!){
+    translatableResource(resourceId: $resourceId){
+        resourceId
+        translatableContent{
+            digest
+            key
+            locale
+            type
+            value
+        }
+        translations(locale: $locale, outdated: $outdated, marketId: $marketId){
+            key
+            locale
+            outdated
+            updatedAt
+            value
+        }
+    }
+}

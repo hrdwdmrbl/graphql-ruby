@@ -1,0 +1,10 @@
+mutation companiesDelete($companyIds: [ID!]!){
+    companiesDelete(companyIds: $companyIds){
+        deletedCompanyIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

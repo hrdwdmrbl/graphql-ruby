@@ -1,0 +1,20 @@
+query markets($first: Int!, $after: String) {
+  markets(first: $first, after: $after) {
+    edges {
+      cursor
+    }
+    nodes {
+      enabled
+      handle
+      id
+      name
+      primary
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

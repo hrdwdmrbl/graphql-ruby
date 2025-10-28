@@ -1,0 +1,74 @@
+mutation productDuplicate($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $productId: ID!, $newTitle: String!, $newStatus: ProductStatus, $includeImages: Boolean, $includeTranslations: Boolean){
+    productDuplicate(productId: $productId, newTitle: $newTitle, newStatus: $newStatus, includeImages: $includeImages, includeTranslations: $includeTranslations){
+        imageJob{
+            done
+            id
+        }
+        newProduct{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+        shop{
+            checkoutApiSupported
+            contactEmail
+            createdAt
+            currencyCode
+            customerAccounts
+            description
+            email
+            enabledPresentmentCurrencies
+            ianaTimezone
+            id
+            marketingSmsConsentEnabledAtCheckout
+            myshopifyDomain
+            name
+            orderNumberFormatPrefix
+            orderNumberFormatSuffix
+            richTextEditorUrl
+            setupRequired
+            shipsToCountries
+            taxShipping
+            taxesIncluded
+            timezoneAbbreviation
+            timezoneOffset
+            timezoneOffsetMinutes
+            transactionalSmsDisabled
+            unitSystem
+            updatedAt
+            url
+            weightUnit
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

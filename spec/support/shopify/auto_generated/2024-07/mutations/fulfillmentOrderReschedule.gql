@@ -1,0 +1,22 @@
+mutation fulfillmentOrderReschedule($id: ID!, $fulfillAt: DateTime!){
+    fulfillmentOrderReschedule(id: $id, fulfillAt: $fulfillAt){
+        fulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

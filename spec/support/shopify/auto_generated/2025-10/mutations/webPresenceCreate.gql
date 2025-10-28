@@ -1,0 +1,35 @@
+mutation webPresenceCreate($input: WebPresenceCreateInput!){
+    webPresenceCreate(input: $input){
+        userErrors{
+            code
+            field
+            message
+        }
+        webPresence{
+            alternateLocales{
+                locale
+                name
+                primary
+                published
+            }
+            defaultLocale{
+                locale
+                name
+                primary
+                published
+            }
+            domain{
+                host
+                id
+                sslEnabled
+                url
+            }
+            id
+            rootUrls{
+                locale
+                url
+            }
+            subfolderSuffix
+        }
+    }
+}

@@ -1,0 +1,24 @@
+mutation translationsRegister($customizationId: ID!, $resourceId: ID!, $translations: [TranslationInput!]!){
+    translationsRegister(resourceId: $resourceId, translations: $translations){
+        translations{
+            key
+            locale
+            market{
+                assignedCustomization(customizationId: $customizationId)
+                handle
+                id
+                name
+                status
+                type
+            }
+            outdated
+            updatedAt
+            value
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

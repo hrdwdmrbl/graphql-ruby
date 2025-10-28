@@ -1,0 +1,15 @@
+mutation deliverySettingUpdate($setting: DeliverySettingInput!){
+    deliverySettingUpdate(setting: $setting){
+        setting{
+            legacyModeBlocked{
+                blocked
+                reasons
+            }
+            legacyModeProfiles
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

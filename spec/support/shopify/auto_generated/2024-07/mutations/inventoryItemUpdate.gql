@@ -1,0 +1,22 @@
+mutation inventoryItemUpdate($id: ID!, $input: InventoryItemInput!){
+    inventoryItemUpdate(id: $id, input: $input){
+        inventoryItem{
+            countryCodeOfOrigin
+            createdAt
+            duplicateSkuCount
+            harmonizedSystemCode
+            id
+            inventoryHistoryUrl
+            legacyResourceId
+            provinceCodeOfOrigin
+            requiresShipping
+            sku
+            tracked
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

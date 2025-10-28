@@ -1,0 +1,60 @@
+query app($id: ID) {
+  app(id: $id) {
+    apiKey
+    appStoreAppUrl
+    appStoreDeveloperUrl
+    availableAccessScopes {
+      description
+      handle
+    }
+    banner {
+      altText
+      height
+      id
+      width
+    }
+    description
+    developerName
+    developerType
+    embedded
+    failedRequirements {
+      message
+    }
+    features
+    handle
+    icon {
+      altText
+      height
+      id
+      width
+    }
+    id
+    installUrl
+    installation {
+      id
+      launchUrl
+      uninstallUrl
+    }
+    isPostPurchaseAppInUse
+    previouslyInstalled
+    pricingDetails
+    pricingDetailsSummary
+    privacyPolicyUrl
+    publicCategory
+    published
+    requestedAccessScopes {
+      description
+      handle
+    }
+    screenshots {
+      altText
+      height
+      id
+      width
+    }
+    shopifyDeveloped
+    title
+    uninstallMessage
+    webhookApiVersion
+  }
+}

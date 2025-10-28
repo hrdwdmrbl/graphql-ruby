@@ -1,0 +1,34 @@
+mutation customerAddTaxExemptions($customerId: ID!, $taxExemptions: [TaxExemption!]!){
+    customerAddTaxExemptions(customerId: $customerId, taxExemptions: $taxExemptions){
+        customer{
+            canDelete
+            createdAt
+            dataSaleOptOut
+            displayName
+            email
+            firstName
+            id
+            lastName
+            legacyResourceId
+            lifetimeDuration
+            locale
+            multipassIdentifier
+            note
+            numberOfOrders
+            phone
+            productSubscriberStatus
+            state
+            tags
+            taxExempt
+            taxExemptions
+            unsubscribeUrl
+            updatedAt
+            validEmailAddress
+            verifiedEmail
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

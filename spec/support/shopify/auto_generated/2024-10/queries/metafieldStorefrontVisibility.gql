@@ -1,0 +1,11 @@
+query metafieldStorefrontVisibility($id: ID!){
+    metafieldStorefrontVisibility(id: $id){
+        createdAt
+        id
+        key
+        legacyResourceId
+        namespace
+        ownerType
+        updatedAt
+    }
+}

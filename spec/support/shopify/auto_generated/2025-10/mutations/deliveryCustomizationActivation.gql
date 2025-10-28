@@ -1,0 +1,10 @@
+mutation deliveryCustomizationActivation($ids: [ID!]!, $enabled: Boolean!){
+    deliveryCustomizationActivation(ids: $ids, enabled: $enabled){
+        ids
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

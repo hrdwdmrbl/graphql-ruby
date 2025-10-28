@@ -1,0 +1,33 @@
+mutation publicationUpdate($id: ID!, $id1: ID!, $input: PublicationUpdateInput!){
+    publicationUpdate(id: $id1, input: $input){
+        publication{
+            autoPublish
+            hasCollection(id: $id)
+            id
+            operation{
+                __typename
+                ... on AddAllProductsOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on CatalogCsvOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on PublicationResourceOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+            }
+            supportsFuturePublishing
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

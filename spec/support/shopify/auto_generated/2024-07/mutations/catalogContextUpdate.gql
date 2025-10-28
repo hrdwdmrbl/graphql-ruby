@@ -1,0 +1,14 @@
+mutation catalogContextUpdate($catalogId: ID!, $contextsToAdd: CatalogContextInput, $contextsToRemove: CatalogContextInput){
+    catalogContextUpdate(catalogId: $catalogId, contextsToAdd: $contextsToAdd, contextsToRemove: $contextsToRemove){
+        catalog{
+            id
+            status
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

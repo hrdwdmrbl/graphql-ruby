@@ -1,0 +1,13 @@
+mutation collectionAddProductsV2($id: ID!, $productIds: [ID!]!){
+    collectionAddProductsV2(id: $id, productIds: $productIds){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

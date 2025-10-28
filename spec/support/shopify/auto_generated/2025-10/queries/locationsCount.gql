@@ -1,0 +1,6 @@
+query locationsCount($query: String, $limit: Int){
+    locationsCount(query: $query, limit: $limit){
+        count
+        precision
+    }
+}

@@ -1,0 +1,31 @@
+query locations($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: LocationSortKeys, $query: String, $includeLegacy: Boolean, $includeInactive: Boolean){
+    locations(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, includeLegacy: $includeLegacy, includeInactive: $includeInactive){
+        edges{
+            cursor
+        }
+        nodes{
+            activatable
+            addressVerified
+            createdAt
+            deactivatable
+            deactivatedAt
+            deletable
+            fulfillsOnlineOrders
+            hasActiveInventory
+            hasUnfulfilledOrders
+            id
+            isActive
+            isFulfillmentService
+            legacyResourceId
+            name
+            shipsInventory
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

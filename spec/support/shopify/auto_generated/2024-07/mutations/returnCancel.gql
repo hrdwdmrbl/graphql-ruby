@@ -1,0 +1,15 @@
+mutation returnCancel($id: ID!){
+    returnCancel(id: $id){
+        return{
+            id
+            name
+            status
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

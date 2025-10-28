@@ -1,0 +1,39 @@
+query customers($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CustomerSortKeys, $query: String){
+    customers(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            canDelete
+            createdAt
+            dataSaleOptOut
+            displayName
+            email
+            firstName
+            id
+            lastName
+            legacyResourceId
+            lifetimeDuration
+            locale
+            multipassIdentifier
+            note
+            numberOfOrders
+            phone
+            productSubscriberStatus
+            state
+            tags
+            taxExempt
+            taxExemptions
+            unsubscribeUrl
+            updatedAt
+            validEmailAddress
+            verifiedEmail
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

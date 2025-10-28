@@ -1,0 +1,14 @@
+mutation companyContactAssignRoles($companyContactId: ID!, $rolesToAssign: [CompanyContactRoleAssign!]!){
+    companyContactAssignRoles(companyContactId: $companyContactId, rolesToAssign: $rolesToAssign){
+        roleAssignments{
+            createdAt
+            id
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

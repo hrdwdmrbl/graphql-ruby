@@ -1,0 +1,319 @@
+mutation subscriptionDraftDiscountCodeApply($showRevoked: Boolean, $withName: Boolean, $withCompany: Boolean, $deliveryAddress: MailingAddressInput, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $first2: Int, $after2: String, $last2: Int, $before2: String, $reverse2: Boolean, $first3: Int, $after3: String, $last3: Int, $before3: String, $reverse3: Boolean, $draftId: ID!, $redeemCode: String!){
+    subscriptionDraftDiscountCodeApply(draftId: $draftId, redeemCode: $redeemCode){
+        appliedDiscount{
+            id
+            redeemCode
+            rejectionReason
+        }
+        draft{
+            billingCycle{
+                billingAttemptExpectedDate
+                cycleEndAt
+                cycleIndex
+                cycleStartAt
+                edited
+                skipped
+                status
+            }
+            billingPolicy{
+                interval
+                intervalCount
+                maxCycles
+                minCycles
+            }
+            currencyCode
+            customAttributes{
+                key
+                value
+            }
+            customer{
+                canDelete
+                createdAt
+                dataSaleOptOut
+                displayName
+                firstName
+                id
+                lastName
+                legacyResourceId
+                lifetimeDuration
+                locale
+                multipassIdentifier
+                note
+                numberOfOrders
+                productSubscriberStatus
+                state
+                tags
+                taxExempt
+                taxExemptions
+                updatedAt
+                verifiedEmail
+            }
+            customerPaymentMethod(showRevoked: $showRevoked){
+                id
+                instrument{
+                    __typename
+                    ... on CustomerCreditCard {
+                        brand
+                        expiresSoon
+                        expiryMonth
+                        expiryYear
+                        firstDigits
+                        isRevocable
+                        lastDigits
+                        maskedNumber
+                        name
+                        source
+                        virtualLastDigits
+                    }
+                    ... on CustomerPaypalBillingAgreement {
+                        inactive
+                        isRevocable
+                        paypalAccountEmail
+                    }
+                    ... on CustomerShopPayAgreement {
+                        expiresSoon
+                        expiryMonth
+                        expiryYear
+                        inactive
+                        isRevocable
+                        lastDigits
+                        maskedNumber
+                        name
+                    }
+                }
+                revokedAt
+                revokedReason
+            }
+            deliveryMethod{
+                __typename
+                ... on SubscriptionDeliveryMethodLocalDelivery {
+                    address{
+                        address1
+                        address2
+                        city
+                        company
+                        coordinatesValidated
+                        country
+                        countryCodeV2
+                        firstName
+                        formatted(withName: $withName, withCompany: $withCompany)
+                        formattedArea
+                        id
+                        lastName
+                        latitude
+                        longitude
+                        name
+                        phone
+                        province
+                        provinceCode
+                        timeZone
+                        validationResultSummary
+                        zip
+                    }
+                    localDeliveryOption{
+                        code
+                        description
+                        instructions
+                        phone
+                        presentmentTitle
+                        title
+                    }
+                }
+                ... on SubscriptionDeliveryMethodPickup {
+                    pickupOption{
+                        code
+                        description
+                        presentmentTitle
+                        title
+                    }
+                }
+                ... on SubscriptionDeliveryMethodShipping {
+                    shippingOption{
+                        code
+                        description
+                        presentmentTitle
+                        title
+                    }
+                }
+            }
+            deliveryOptions(deliveryAddress: $deliveryAddress){
+                __typename
+                ... on SubscriptionDeliveryOptionResultFailure {
+                    message
+                }
+                ... on SubscriptionDeliveryOptionResultSuccess {
+                    deliveryOptions{
+                        __typename
+                        ... on SubscriptionLocalDeliveryOption {
+                            code
+                            description
+                            phoneRequired
+                            presentmentTitle
+                            title
+                        }
+                        ... on SubscriptionPickupOption {
+                            code
+                            description
+                            phoneRequired
+                            pickupTime
+                            presentmentTitle
+                            title
+                        }
+                        ... on SubscriptionShippingOption {
+                            code
+                            description
+                            phoneRequired
+                            presentmentTitle
+                            title
+                        }
+                    }
+                }
+            }
+            deliveryPolicy{
+                interval
+                intervalCount
+            }
+            deliveryPrice{
+                amount
+                currencyCode
+            }
+            discounts(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+                nodes{
+                    __typename
+                    ... on SubscriptionAppliedCodeDiscount {
+                        id
+                        redeemCode
+                        rejectionReason
+                    }
+                    ... on SubscriptionManualDiscount {
+                        id
+                        recurringCycleLimit
+                        rejectionReason
+                        targetType
+                        title
+                        type
+                        usageCount
+                        value{
+                            __typename
+                            ... on SubscriptionDiscountFixedAmountValue {
+                                appliesOnEachItem
+                            }
+                            ... on SubscriptionDiscountPercentageValue {
+                                percentage
+                            }
+                        }
+                    }
+                }
+            }
+            discountsAdded(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+                nodes{
+                    __typename
+                    ... on SubscriptionAppliedCodeDiscount {
+                        id
+                        redeemCode
+                        rejectionReason
+                    }
+                    ... on SubscriptionManualDiscount {
+                        id
+                        recurringCycleLimit
+                        rejectionReason
+                        targetType
+                        title
+                        type
+                        usageCount
+                        value{
+                            __typename
+                            ... on SubscriptionDiscountFixedAmountValue {
+                                appliesOnEachItem
+                            }
+                            ... on SubscriptionDiscountPercentageValue {
+                                percentage
+                            }
+                        }
+                    }
+                }
+            }
+            discountsRemoved(first: $first2, after: $after2, last: $last2, before: $before2, reverse: $reverse2){
+                nodes{
+                    __typename
+                    ... on SubscriptionAppliedCodeDiscount {
+                        id
+                        redeemCode
+                        rejectionReason
+                    }
+                    ... on SubscriptionManualDiscount {
+                        id
+                        recurringCycleLimit
+                        rejectionReason
+                        targetType
+                        title
+                        type
+                        usageCount
+                        value{
+                            __typename
+                            ... on SubscriptionDiscountFixedAmountValue {
+                                appliesOnEachItem
+                            }
+                            ... on SubscriptionDiscountPercentageValue {
+                                percentage
+                            }
+                        }
+                    }
+                }
+            }
+            discountsUpdated(first: $first3, after: $after3, last: $last3, before: $before3, reverse: $reverse3){
+                nodes{
+                    __typename
+                    ... on SubscriptionAppliedCodeDiscount {
+                        id
+                        redeemCode
+                        rejectionReason
+                    }
+                    ... on SubscriptionManualDiscount {
+                        id
+                        recurringCycleLimit
+                        rejectionReason
+                        targetType
+                        title
+                        type
+                        usageCount
+                        value{
+                            __typename
+                            ... on SubscriptionDiscountFixedAmountValue {
+                                appliesOnEachItem
+                            }
+                            ... on SubscriptionDiscountPercentageValue {
+                                percentage
+                            }
+                        }
+                    }
+                }
+            }
+            id
+            nextBillingDate
+            note
+            originalContract{
+                appAdminUrl
+                createdAt
+                currencyCode
+                deliveryMethod{
+                    __typename
+                }
+                id
+                lastBillingAttemptErrorType
+                lastPaymentStatus
+                nextBillingDate
+                note
+                revisionId
+                status
+                updatedAt
+            }
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

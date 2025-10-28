@@ -1,0 +1,16 @@
+mutation orderEditRemoveShippingLine($id: ID!, $shippingLineId: ID!){
+    orderEditRemoveShippingLine(id: $id, shippingLineId: $shippingLineId){
+        calculatedOrder{
+            committed
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            subtotalLineItemsQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,57 @@
+query ProductMedias($id: ID!) {
+  product(id: $id) {
+    media {
+      nodes {
+        id
+        mediaContentType
+        alt
+        previewImage {
+          width
+          url
+          id
+          height
+          altText
+        }
+        presentation {
+          id
+        }
+        ... on Video {
+          sources {
+            width
+            url
+            mimeType
+            height
+            format
+          }
+        }
+        ... on Model3d {
+          sources {
+            url
+            mimeType
+            format
+            filesize
+          }
+        }
+        ... on ExternalVideo {
+          embedUrl
+          embeddedUrl
+          host
+          originUrl
+        }
+        ... on MediaImage {
+          image {
+            width
+            url
+            id
+            height
+            altText
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

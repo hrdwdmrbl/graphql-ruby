@@ -1,0 +1,42 @@
+query themes($locale: String!, $marketId: ID, $roles: [ThemeRole!], $names: [String!], $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    themes(roles: $roles, names: $names, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                createdAt
+                id
+                name
+                prefix
+                processing
+                processingFailed
+                role
+                themeStoreId
+                updatedAt
+            }
+        }
+        nodes{
+            createdAt
+            id
+            name
+            prefix
+            processing
+            processingFailed
+            role
+            themeStoreId
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

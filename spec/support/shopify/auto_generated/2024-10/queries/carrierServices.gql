@@ -1,0 +1,375 @@
+query carrierServices($origins: [ID!], $countryCodes: [CountryCode!], $restOfWorld: Boolean!, $maxWidth: Int, $maxHeight: Int, $crop: CropRegion, $scale: Int, $preferredContentType: ImageContentType, $transform: ImageTransformInput, $origins1: [ID!], $countryCodes1: [CountryCode!], $restOfWorld1: Boolean!, $truncateAt: Int, $id: ID!, $onlyPublished: Boolean, $channelId: ID!, $publicationId: ID!, $truncateAt1: Int, $id1: ID!, $onlyPublished1: Boolean, $context: ContextualPublicationContext!, $channelId1: ID!, $publicationId1: ID!, $namespace: String, $key: String!, $namespace1: String!, $key1: String!, $maxWidth1: Int, $maxHeight1: Int, $crop1: CropRegion, $scale1: Int, $preferredContentType1: ImageContentType, $transform1: ImageTransformInput, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CarrierServiceSortKeys, $query: String){
+    carrierServices(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                active
+                availableServicesForCountries(origins: $origins, countryCodes: $countryCodes, restOfWorld: $restOfWorld){
+                    name
+                }
+                callbackUrl
+                formattedName
+                icon{
+                    altText
+                    height
+                    id
+                    originalSrc
+                    src
+                    transformedSrc(maxWidth: $maxWidth, maxHeight: $maxHeight, crop: $crop, scale: $scale, preferredContentType: $preferredContentType)
+                    url(transform: $transform)
+                    width
+                }
+                id
+                name
+                supportsServiceDiscovery
+            }
+        }
+        nodes{
+            active
+            availableServicesForCountries(origins: $origins1, countryCodes: $countryCodes1, restOfWorld: $restOfWorld1){
+                countries{
+                    countryCodes
+                    restOfWorld
+                }
+                name
+            }
+            callbackUrl
+            formattedName
+            icon{
+                altText
+                height
+                id
+                metafield(namespace: $namespace, key: $key){
+                    compareDigest
+                    createdAt
+                    description
+                    id
+                    jsonValue
+                    key
+                    legacyResourceId
+                    namespace
+                    ownerType
+                    reference{
+                        __typename
+                        ... on Collection {
+                            description(truncateAt: $truncateAt)
+                            descriptionHtml
+                            handle
+                            hasProduct(id: $id)
+                            id
+                            legacyResourceId
+                            publicationCount(onlyPublished: $onlyPublished)
+                            publishedOnChannel(channelId: $channelId)
+                            publishedOnCurrentChannel
+                            publishedOnCurrentPublication
+                            publishedOnPublication(publicationId: $publicationId)
+                            sortOrder
+                            storefrontId
+                            templateSuffix
+                            title
+                            updatedAt
+                        }
+                        ... on Company {
+                            contactCount
+                            createdAt
+                            customerSince
+                            defaultCursor
+                            externalId
+                            hasTimelineComment
+                            id
+                            lifetimeDuration
+                            name
+                            note
+                            updatedAt
+                        }
+                        ... on Customer {
+                            canDelete
+                            createdAt
+                            dataSaleOptOut
+                            displayName
+                            email
+                            firstName
+                            hasTimelineComment
+                            id
+                            lastName
+                            legacyResourceId
+                            lifetimeDuration
+                            locale
+                            multipassIdentifier
+                            note
+                            numberOfOrders
+                            phone
+                            productSubscriberStatus
+                            state
+                            tags
+                            taxExempt
+                            taxExemptions
+                            unsubscribeUrl
+                            updatedAt
+                            validEmailAddress
+                            verifiedEmail
+                        }
+                        ... on GenericFile {
+                            alt
+                            createdAt
+                            fileStatus
+                            id
+                            mimeType
+                            originalFileSize
+                            updatedAt
+                            url
+                        }
+                        ... on MediaImage {
+                            alt
+                            createdAt
+                            fileStatus
+                            id
+                            mediaContentType
+                            mimeType
+                            status
+                            updatedAt
+                        }
+                        ... on Metaobject {
+                            displayName
+                            handle
+                            id
+                            type
+                            updatedAt
+                        }
+                        ... on Model3d {
+                            alt
+                            createdAt
+                            fileStatus
+                            filename
+                            id
+                            mediaContentType
+                            status
+                            updatedAt
+                        }
+                        ... on Order {
+                            billingAddressMatchesShippingAddress
+                            canMarkAsPaid
+                            canNotifyCustomer
+                            cancelReason
+                            cancelledAt
+                            capturable
+                            cartDiscountAmount
+                            clientIp
+                            closed
+                            closedAt
+                            confirmationNumber
+                            confirmed
+                            createdAt
+                            currencyCode
+                            currentSubtotalLineItemsQuantity
+                            currentTotalWeight
+                            customerAcceptsMarketing
+                            customerLocale
+                            discountCode
+                            discountCodes
+                            displayFinancialStatus
+                            displayFulfillmentStatus
+                            dutiesIncluded
+                            edited
+                            email
+                            estimatedTaxes
+                            fulfillable
+                            fullyPaid
+                            hasTimelineComment
+                            id
+                            landingPageDisplayText
+                            landingPageUrl
+                            legacyResourceId
+                            merchantEditable
+                            merchantEditableErrors
+                            name
+                            netPayment
+                            note
+                            paymentGatewayNames
+                            phone
+                            poNumber
+                            presentmentCurrencyCode
+                            processedAt
+                            purchasingEntity{
+                                __typename
+                                ... on Customer {
+                                    canDelete
+                                    createdAt
+                                    dataSaleOptOut
+                                    displayName
+                                    email
+                                    firstName
+                                    hasTimelineComment
+                                    id
+                                    lastName
+                                    legacyResourceId
+                                    lifetimeDuration
+                                    locale
+                                    multipassIdentifier
+                                    note
+                                    numberOfOrders
+                                    phone
+                                    productSubscriberStatus
+                                    state
+                                    tags
+                                    taxExempt
+                                    taxExemptions
+                                    unsubscribeUrl
+                                    updatedAt
+                                    validEmailAddress
+                                    verifiedEmail
+                                }
+                            }
+                            referralCode
+                            referrerDisplayText
+                            referrerUrl
+                            refundable
+                            registeredSourceUrl
+                            requiresShipping
+                            restockable
+                            returnStatus
+                            riskLevel
+                            sourceIdentifier
+                            sourceName
+                            statusPageUrl
+                            subtotalLineItemsQuantity
+                            subtotalPrice
+                            tags
+                            taxExempt
+                            taxesIncluded
+                            test
+                            totalCapturable
+                            totalDiscounts
+                            totalPrice
+                            totalReceived
+                            totalRefunded
+                            totalShippingPrice
+                            totalTax
+                            totalWeight
+                            unpaid
+                            updatedAt
+                        }
+                        ... on Page {
+                            body
+                            bodySummary
+                            createdAt
+                            defaultCursor
+                            handle
+                            id
+                            isPublished
+                            publishedAt
+                            templateSuffix
+                            title
+                            updatedAt
+                        }
+                        ... on Product {
+                            bodyHtml
+                            combinedListingRole
+                            createdAt
+                            customProductType
+                            defaultCursor
+                            description(truncateAt: $truncateAt1)
+                            descriptionHtml
+                            descriptionPlainSummary
+                            giftCardTemplateSuffix
+                            handle
+                            hasOnlyDefaultVariant
+                            hasOutOfStockVariants
+                            hasVariantsThatRequiresComponents
+                            id
+                            inCollection(id: $id1)
+                            isGiftCard
+                            legacyResourceId
+                            onlineStorePreviewUrl
+                            onlineStoreUrl
+                            productType
+                            publicationCount(onlyPublished: $onlyPublished1)
+                            publishedAt
+                            publishedInContext(context: $context)
+                            publishedOnChannel(channelId: $channelId1)
+                            publishedOnCurrentChannel
+                            publishedOnCurrentPublication
+                            publishedOnPublication(publicationId: $publicationId1)
+                            requiresSellingPlan
+                            sellingPlanGroupCount
+                            status
+                            storefrontId
+                            tags
+                            templateSuffix
+                            title
+                            totalInventory
+                            totalVariants
+                            tracksInventory
+                            updatedAt
+                            vendor
+                        }
+                        ... on ProductVariant {
+                            availableForSale
+                            barcode
+                            compareAtPrice
+                            createdAt
+                            defaultCursor
+                            displayName
+                            id
+                            inventoryPolicy
+                            inventoryQuantity
+                            legacyResourceId
+                            position
+                            price
+                            requiresComponents
+                            sellableOnlineQuantity
+                            sellingPlanGroupCount
+                            sku
+                            storefrontId
+                            taxCode
+                            taxable
+                            title
+                            updatedAt
+                        }
+                        ... on TaxonomyValue {
+                            id
+                            name
+                        }
+                        ... on Video {
+                            alt
+                            createdAt
+                            duration
+                            fileStatus
+                            filename
+                            id
+                            mediaContentType
+                            status
+                            updatedAt
+                        }
+                    }
+                    type
+                    updatedAt
+                    value
+                }
+                originalSrc
+                privateMetafield(namespace: $namespace1, key: $key1){
+                    createdAt
+                    id
+                    key
+                    namespace
+                    updatedAt
+                    value
+                    valueType
+                }
+                src
+                transformedSrc(maxWidth: $maxWidth1, maxHeight: $maxHeight1, crop: $crop1, scale: $scale1, preferredContentType: $preferredContentType1)
+                url(transform: $transform1)
+                width
+            }
+            id
+            name
+            supportsServiceDiscovery
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

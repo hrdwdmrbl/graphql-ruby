@@ -1,0 +1,41 @@
+mutation themeFilesUpsert($sort: ArticleTagSort, $limit: Int!, $id: ID!, $themeId: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!){
+    themeFilesUpsert(themeId: $themeId, files: $files){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        upsertedThemeFiles{
+            checksumMd5
+            createdAt
+            filename
+            size
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            filename
+            message
+        }
+    }
+}

@@ -1,0 +1,26 @@
+mutation mobilePlatformApplicationCreate($input: MobilePlatformApplicationCreateInput!){
+    mobilePlatformApplicationCreate(input: $input){
+        mobilePlatformApplication{
+            __typename
+            ... on AndroidApplication {
+                appLinksEnabled
+                applicationId
+                id
+                sha256CertFingerprints
+            }
+            ... on AppleApplication {
+                appClipApplicationId
+                appClipsEnabled
+                appId
+                id
+                sharedWebCredentialsEnabled
+                universalLinksEnabled
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

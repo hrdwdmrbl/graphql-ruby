@@ -1,0 +1,15 @@
+mutation inventorySetQuantities($input: InventorySetQuantitiesInput!){
+    inventorySetQuantities(input: $input){
+        inventoryAdjustmentGroup{
+            createdAt
+            id
+            reason
+            referenceDocumentUri
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

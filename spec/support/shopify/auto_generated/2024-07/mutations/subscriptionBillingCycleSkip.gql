@@ -1,0 +1,18 @@
+mutation subscriptionBillingCycleSkip($billingCycleInput: SubscriptionBillingCycleInput!){
+    subscriptionBillingCycleSkip(billingCycleInput: $billingCycleInput){
+        billingCycle{
+            billingAttemptExpectedDate
+            cycleEndAt
+            cycleIndex
+            cycleStartAt
+            edited
+            skipped
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

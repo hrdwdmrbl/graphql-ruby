@@ -1,0 +1,24 @@
+mutation subscriptionContractCancel($subscriptionContractId: ID!){
+    subscriptionContractCancel(subscriptionContractId: $subscriptionContractId){
+        contract{
+            appAdminUrl
+            createdAt
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            id
+            lastPaymentStatus
+            nextBillingDate
+            note
+            revisionId
+            status
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

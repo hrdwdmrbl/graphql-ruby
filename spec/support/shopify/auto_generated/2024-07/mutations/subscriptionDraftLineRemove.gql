@@ -1,0 +1,83 @@
+mutation subscriptionDraftLineRemove($deliveryAddress: MailingAddressInput, $draftId: ID!, $lineId: ID!){
+    subscriptionDraftLineRemove(draftId: $draftId, lineId: $lineId){
+        discountsUpdated{
+            id
+            recurringCycleLimit
+            rejectionReason
+            targetType
+            title
+            type
+            usageCount
+            value{
+                __typename
+                ... on SubscriptionDiscountFixedAmountValue {
+                    appliesOnEachItem
+                }
+                ... on SubscriptionDiscountPercentageValue {
+                    percentage
+                }
+            }
+        }
+        draft{
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            deliveryOptions(deliveryAddress: $deliveryAddress){
+                __typename
+                ... on SubscriptionDeliveryOptionResultFailure {
+                    message
+                }
+                ... on SubscriptionDeliveryOptionResultSuccess {
+                    deliveryOptions{
+                        __typename
+                        ... on SubscriptionLocalDeliveryOption {
+                            code
+                            description
+                            phoneRequired
+                            presentmentTitle
+                            title
+                        }
+                        ... on SubscriptionPickupOption {
+                            code
+                            description
+                            phoneRequired
+                            pickupTime
+                            presentmentTitle
+                            title
+                        }
+                        ... on SubscriptionShippingOption {
+                            code
+                            description
+                            phoneRequired
+                            presentmentTitle
+                            title
+                        }
+                    }
+                }
+            }
+            id
+            nextBillingDate
+            note
+            status
+        }
+        lineRemoved{
+            id
+            productId
+            quantity
+            requiresShipping
+            sellingPlanId
+            sellingPlanName
+            sku
+            taxable
+            title
+            variantId
+            variantTitle
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

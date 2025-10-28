@@ -1,0 +1,21 @@
+mutation metafieldDefinitionPin($validationStatus: MetafieldValidationStatus, $definitionId: ID!){
+    metafieldDefinitionPin(definitionId: $definitionId){
+        pinnedDefinition{
+            description
+            id
+            key
+            metafieldsCount(validationStatus: $validationStatus)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            useAsCollectionCondition
+            validationStatus
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

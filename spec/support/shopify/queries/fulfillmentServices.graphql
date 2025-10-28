@@ -1,0 +1,17 @@
+query FulfillmentServices {
+  shop {
+    fulfillmentServices {
+      id
+      fulfillmentOrdersOptIn
+      inventoryManagement
+      location {
+        id
+      }
+      permitsSkuSharing
+      requiresShippingMethod
+      serviceName
+      trackingSupport
+      type
+    }
+  }
+}

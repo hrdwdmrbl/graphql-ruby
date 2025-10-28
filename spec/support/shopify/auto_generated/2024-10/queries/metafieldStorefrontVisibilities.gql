@@ -1,0 +1,31 @@
+query metafieldStorefrontVisibilities($namespace: String, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    metafieldStorefrontVisibilities(namespace: $namespace, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                createdAt
+                id
+                key
+                legacyResourceId
+                namespace
+                ownerType
+                updatedAt
+            }
+        }
+        nodes{
+            createdAt
+            id
+            key
+            legacyResourceId
+            namespace
+            ownerType
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

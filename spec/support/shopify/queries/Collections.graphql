@@ -1,0 +1,21 @@
+query Collections($query: String, $first: Int!, $after: String) {
+  collections(query: $query, first: $first, after: $after) {
+    nodes {
+      id
+      title
+      description
+      updatedAt
+      ruleSet {
+        rules {
+          column
+          condition
+          relation
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

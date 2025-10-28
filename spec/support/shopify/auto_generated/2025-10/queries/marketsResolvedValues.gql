@@ -1,0 +1,40 @@
+query marketsResolvedValues($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $buyerSignal: BuyerSignalInput!){
+    marketsResolvedValues(buyerSignal: $buyerSignal){
+        catalogs(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+            edges{
+                cursor
+            }
+            nodes{
+                id
+                status
+                title
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        currencyCode
+        priceInclusivity{
+            dutiesIncluded
+            taxesIncluded
+        }
+        webPresences(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+            edges{
+                cursor
+            }
+            nodes{
+                id
+                subfolderSuffix
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+    }
+}

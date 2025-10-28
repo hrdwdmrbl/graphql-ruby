@@ -1,0 +1,10 @@
+mutation marketingActivityDeleteExternal($marketingActivityId: ID, $remoteId: String){
+    marketingActivityDeleteExternal(marketingActivityId: $marketingActivityId, remoteId: $remoteId){
+        deletedMarketingActivityId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

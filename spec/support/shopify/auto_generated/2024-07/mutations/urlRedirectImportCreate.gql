@@ -1,0 +1,18 @@
+mutation urlRedirectImportCreate($url: URL!){
+    urlRedirectImportCreate(url: $url){
+        urlRedirectImport{
+            count
+            createdCount
+            failedCount
+            finished
+            finishedAt
+            id
+            updatedCount
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

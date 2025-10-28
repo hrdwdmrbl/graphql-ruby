@@ -1,0 +1,15 @@
+mutation validationCreate($validation: ValidationCreateInput!){
+    validationCreate(validation: $validation){
+        userErrors{
+            code
+            field
+            message
+        }
+        validation{
+            blockOnFailure
+            enabled
+            id
+            title
+        }
+    }
+}

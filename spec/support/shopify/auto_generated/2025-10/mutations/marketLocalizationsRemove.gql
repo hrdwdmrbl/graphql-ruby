@@ -1,0 +1,23 @@
+mutation marketLocalizationsRemove($customizationId: ID!, $resourceId: ID!, $marketLocalizationKeys: [String!]!, $marketIds: [ID!]!){
+    marketLocalizationsRemove(resourceId: $resourceId, marketLocalizationKeys: $marketLocalizationKeys, marketIds: $marketIds){
+        marketLocalizations{
+            key
+            market{
+                assignedCustomization(customizationId: $customizationId)
+                handle
+                id
+                name
+                status
+                type
+            }
+            outdated
+            updatedAt
+            value
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

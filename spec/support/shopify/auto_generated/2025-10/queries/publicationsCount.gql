@@ -1,0 +1,6 @@
+query publicationsCount($catalogType: CatalogType, $limit: Int){
+    publicationsCount(catalogType: $catalogType, limit: $limit){
+        count
+        precision
+    }
+}

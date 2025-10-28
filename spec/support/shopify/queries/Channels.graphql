@@ -1,0 +1,12 @@
+query Channels {
+  channels(first: 250) {
+    nodes {
+      id
+      name
+      app {
+        id
+        title
+      }
+    }
+  }
+}

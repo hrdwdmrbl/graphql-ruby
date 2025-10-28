@@ -1,0 +1,6 @@
+query backupRegion{
+    backupRegion{
+        id
+        name
+    }
+}

@@ -1,0 +1,10 @@
+mutation mobilePlatformApplicationDelete($id: ID!){
+    mobilePlatformApplicationDelete(id: $id){
+        deletedMobilePlatformApplicationId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

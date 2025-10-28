@@ -1,0 +1,39 @@
+query menu($limit: Int, $customizationId: ID!, $locale: String!, $marketId: ID, $id: ID!){
+    menu(id: $id){
+        handle
+        id
+        isDefault
+        items(limit: $limit){
+            id
+            items{
+                id
+                resourceId
+                tags
+                title
+                type
+                url
+            }
+            resourceId
+            tags
+            title
+            type
+            url
+        }
+        title
+        translations(locale: $locale, marketId: $marketId){
+            key
+            locale
+            market{
+                assignedCustomization(customizationId: $customizationId)
+                handle
+                id
+                name
+                status
+                type
+            }
+            outdated
+            updatedAt
+            value
+        }
+    }
+}

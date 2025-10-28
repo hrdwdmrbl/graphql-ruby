@@ -1,0 +1,49 @@
+query Products($query: String!, $first: Int!) {
+  products(query: $query, first: $first) {
+    nodes {
+      id
+      category {
+        ancestorIds
+        childrenIds
+        fullName
+        id
+        isArchived
+        isLeaf
+        isRoot
+        level
+        name
+        parentId
+      }
+      createdAt
+      hasOnlyDefaultVariant
+      hasOutOfStockVariants
+      hasVariantsThatRequiresComponents
+      isGiftCard
+      options {
+        id
+        name
+        position
+        values
+      }
+      productType
+      publishedAt
+      status
+      tags
+      title
+      totalInventory
+      tracksInventory
+      updatedAt
+      vendor
+
+      images(first: 5) {
+        nodes {
+          id
+          width
+          url
+          height
+          altText
+        }
+      }
+    }
+  }
+}

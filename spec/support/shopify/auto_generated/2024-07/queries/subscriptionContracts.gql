@@ -1,0 +1,28 @@
+query subscriptionContracts($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $query: String){
+    subscriptionContracts(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            appAdminUrl
+            createdAt
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            id
+            lastPaymentStatus
+            nextBillingDate
+            note
+            revisionId
+            status
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

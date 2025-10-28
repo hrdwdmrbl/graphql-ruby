@@ -1,0 +1,25 @@
+query productFeeds($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    productFeeds(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                country
+                id
+                language
+                status
+            }
+        }
+        nodes{
+            country
+            id
+            language
+            status
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

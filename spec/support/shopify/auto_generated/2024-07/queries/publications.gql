@@ -1,0 +1,34 @@
+query publications {
+  publications(first: 250) {
+    nodes {
+      autoPublish
+      hasCollection(id: $id)
+      id
+      operation {
+        __typename
+        ... on AddAllProductsOperation {
+          id
+          processedRowCount
+          status
+        }
+        ... on CatalogCsvOperation {
+          id
+          processedRowCount
+          status
+        }
+        ... on PublicationResourceOperation {
+          id
+          processedRowCount
+          status
+        }
+      }
+      supportsFuturePublishing
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

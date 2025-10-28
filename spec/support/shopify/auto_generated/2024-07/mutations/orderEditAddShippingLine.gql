@@ -1,0 +1,21 @@
+mutation orderEditAddShippingLine($id: ID!, $shippingLine: OrderEditAddShippingLineInput!){
+    orderEditAddShippingLine(id: $id, shippingLine: $shippingLine){
+        calculatedOrder{
+            committed
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            subtotalLineItemsQuantity
+        }
+        calculatedShippingLine{
+            id
+            stagedStatus
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

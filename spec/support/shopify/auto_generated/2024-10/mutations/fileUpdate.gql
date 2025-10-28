@@ -1,0 +1,34 @@
+mutation fileUpdate($maxWidth: Int, $maxHeight: Int, $crop: CropRegion, $scale: Int, $preferredContentType: ImageContentType, $transform: ImageTransformInput, $files: [FileUpdateInput!]!){
+    fileUpdate(files: $files){
+        files{
+            alt
+            createdAt
+            fileErrors{
+                code
+                details
+                message
+            }
+            fileStatus
+            id
+            preview{
+                image{
+                    altText
+                    height
+                    id
+                    originalSrc
+                    src
+                    transformedSrc(maxWidth: $maxWidth, maxHeight: $maxHeight, crop: $crop, scale: $scale, preferredContentType: $preferredContentType)
+                    url(transform: $transform)
+                    width
+                }
+                status
+            }
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

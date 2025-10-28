@@ -1,0 +1,29 @@
+query DispositionHunter($after: String) {
+  orders(first: 250, after: $after, reverse: true) {
+    nodes {
+      id
+      returns(first: 1) {
+        nodes {
+          id
+          reverseFulfillmentOrders(first: 1) {
+            nodes {
+              id
+              lineItems(first: 1) {
+                nodes {
+                  id
+                  dispositions {
+                    id
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

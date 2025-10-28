@@ -1,0 +1,70 @@
+fragment VariantParts on ProductVariant {
+  id
+  availableForSale
+  barcode
+  compareAtPrice
+  displayName
+  inventoryPolicy
+  inventoryQuantity
+  position
+  price
+  requiresComponents
+  selectedOptions {
+    name
+    value
+  }
+  sellableOnlineQuantity
+  sellingPlanGroupsCount {
+    count
+    precision
+  }
+  sku
+  taxCode
+  taxable
+  title
+  createdAt
+  updatedAt
+
+  image {
+    id
+    width
+    url
+    height
+    altText
+  }
+  inventoryItem {
+    id
+    countryCodeOfOrigin
+    duplicateSkuCount
+    harmonizedSystemCode
+    inventoryHistoryUrl
+    locationsCount {
+      count
+      precision
+    }
+    measurement {
+      id
+      weight {
+        value
+        unit
+      }
+    }
+    provinceCodeOfOrigin
+    requiresShipping
+    sku
+    tracked
+    trackedEditable {
+      locked
+      reason
+    }
+    unitCost {
+      amount
+      currencyCode
+    }
+    updatedAt
+    createdAt
+  }
+  product {
+    id
+  }
+}

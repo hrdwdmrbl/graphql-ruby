@@ -1,0 +1,33 @@
+query events($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: EventSortKeys, $query: String){
+    events(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                action
+                appTitle
+                attributeToApp
+                attributeToUser
+                createdAt
+                criticalAlert
+                id
+                message
+            }
+        }
+        nodes{
+            action
+            appTitle
+            attributeToApp
+            attributeToUser
+            createdAt
+            criticalAlert
+            id
+            message
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,15 @@
+mutation orderEditBegin($id: ID!){
+    orderEditBegin(id: $id){
+        calculatedOrder{
+            committed
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            subtotalLineItemsQuantity
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

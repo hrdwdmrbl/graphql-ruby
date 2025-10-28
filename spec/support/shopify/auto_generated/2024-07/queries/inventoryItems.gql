@@ -1,0 +1,27 @@
+query inventoryItems($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $query: String){
+    inventoryItems(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            countryCodeOfOrigin
+            createdAt
+            duplicateSkuCount
+            harmonizedSystemCode
+            id
+            inventoryHistoryUrl
+            legacyResourceId
+            provinceCodeOfOrigin
+            requiresShipping
+            sku
+            tracked
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

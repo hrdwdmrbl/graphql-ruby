@@ -1,0 +1,796 @@
+{
+  "data": {
+    "app": {
+      "apiKey": "650f1a14fa979ec5c74d063e968411d4",
+      "appStoreAppUrl": null,
+      "appStoreDeveloperUrl": null,
+      "availableAccessScopes": [
+        {
+          "description": "Read sales channels",
+          "handle": "read_channels"
+        },
+        {
+          "description": "Modify sales channels",
+          "handle": "write_channels"
+        },
+        {
+          "description": "Read publications",
+          "handle": "read_publications"
+        },
+        {
+          "description": "Modify publications",
+          "handle": "write_publications"
+        },
+        {
+          "description": "Read privacy settings of the shop",
+          "handle": "read_privacy_settings"
+        },
+        {
+          "description": "Modify privacy settings of the shop",
+          "handle": "write_privacy_settings"
+        },
+        {
+          "description": "Read store content like articles, blogs, comments, pages, and redirects",
+          "handle": "read_content"
+        },
+        {
+          "description": "Modify store content like articles, blogs, comments, pages, and redirects",
+          "handle": "write_content"
+        },
+        {
+          "description": "Read store content like articles, blogs, comments, pages, and redirects",
+          "handle": "unauthenticated_read_content"
+        },
+        {
+          "description": "Read metaobjects",
+          "handle": "read_metaobjects"
+        },
+        {
+          "description": "Write metaobjects",
+          "handle": "write_metaobjects"
+        },
+        {
+          "description": "Read metaobjects",
+          "handle": "unauthenticated_read_metaobjects"
+        },
+        {
+          "description": "Read metaobject definitions",
+          "handle": "read_metaobject_definitions"
+        },
+        {
+          "description": "Write metaobject definitions",
+          "handle": "write_metaobject_definitions"
+        },
+        {
+          "description": "Read customer details and customer groups",
+          "handle": "read_customers"
+        },
+        {
+          "description": "Modify customer details and customer groups",
+          "handle": "write_customers"
+        },
+        {
+          "description": "Read access for customer merge",
+          "handle": "read_customer_merge"
+        },
+        {
+          "description": "Write access for customer merge",
+          "handle": "write_customer_merge"
+        },
+        {
+          "description": "Read customer tags",
+          "handle": "unauthenticated_read_customer_tags"
+        },
+        {
+          "description": "Read access for customer data erasure",
+          "handle": "read_customer_data_erasure"
+        },
+        {
+          "description": "Write access for customer data erasure",
+          "handle": "write_customer_data_erasure"
+        },
+        {
+          "description": "Read fulfillment services",
+          "handle": "read_fulfillments"
+        },
+        {
+          "description": "Modify fulfillment services",
+          "handle": "write_fulfillments"
+        },
+        {
+          "description": "Read assigned fulfillment",
+          "handle": "read_assigned_fulfillment_orders"
+        },
+        {
+          "description": "Modify assigned fulfillment",
+          "handle": "write_assigned_fulfillment_orders"
+        },
+        {
+          "description": "Read fulfillment assigned to fulfillment services",
+          "handle": "read_third_party_fulfillment_orders"
+        },
+        {
+          "description": "Modify fulfillment assigned to fulfillment services",
+          "handle": "write_third_party_fulfillment_orders"
+        },
+        {
+          "description": "Read fulfillment for merchant-managed locations",
+          "handle": "read_merchant_managed_fulfillment_orders"
+        },
+        {
+          "description": "Action fulfillment for merchant-managed locations",
+          "handle": "write_merchant_managed_fulfillment_orders"
+        },
+        {
+          "description": "Read access for gates",
+          "handle": "read_gates"
+        },
+        {
+          "description": "Write access for gates",
+          "handle": "write_gates"
+        },
+        {
+          "description": "Read access for gates",
+          "handle": "unauthenticated_read_gates"
+        },
+        {
+          "description": "Write access for gates",
+          "handle": "unauthenticated_write_gates"
+        },
+        {
+          "description": "Read gift card transactions",
+          "handle": "read_gift_card_transactions"
+        },
+        {
+          "description": "Credit and debit gift cards",
+          "handle": "write_gift_card_transactions"
+        },
+        {
+          "description": "Read gift cards",
+          "handle": "read_gift_cards"
+        },
+        {
+          "description": "Modify gift cards",
+          "handle": "write_gift_cards"
+        },
+        {
+          "description": "Read orders, transactions, and fulfillments",
+          "handle": "read_orders"
+        },
+        {
+          "description": "Modify orders, transactions, and fulfillments",
+          "handle": "write_orders"
+        },
+        {
+          "description": "Modify orders",
+          "handle": "write_order_edits"
+        },
+        {
+          "description": "Read order edits",
+          "handle": "read_order_edits"
+        },
+        {
+          "description": "Read products, variants, and collections",
+          "handle": "read_products"
+        },
+        {
+          "description": "Modify products, variants, and collections",
+          "handle": "write_products"
+        },
+        {
+          "description": "Read product feeds",
+          "handle": "read_product_feeds"
+        },
+        {
+          "description": "Modify product feeds",
+          "handle": "write_product_feeds"
+        },
+        {
+          "description": "Read product tags",
+          "handle": "unauthenticated_read_product_tags"
+        },
+        {
+          "description": "Read inventory of products and their variants",
+          "handle": "unauthenticated_read_product_inventory"
+        },
+        {
+          "description": "Modify inventory",
+          "handle": "write_inventory"
+        },
+        {
+          "description": "Read inventory",
+          "handle": "read_inventory"
+        },
+        {
+          "description": "Modify locations",
+          "handle": "write_locations"
+        },
+        {
+          "description": "Read locations",
+          "handle": "read_locations"
+        },
+        {
+          "description": "Read script tags in your store's theme template files",
+          "handle": "read_script_tags"
+        },
+        {
+          "description": "Modify script tags in your store's theme template files",
+          "handle": "write_script_tags"
+        },
+        {
+          "description": "Read shipping rates, countries, and provinces",
+          "handle": "read_shipping"
+        },
+        {
+          "description": "Modify shipping rates, countries, and provinces",
+          "handle": "write_shipping"
+        },
+        {
+          "description": "Read store credit account balance and currency.",
+          "handle": "read_store_credit_accounts"
+        },
+        {
+          "description": "Read store credit account balance and currency.",
+          "handle": "customer_read_store_credit_accounts"
+        },
+        {
+          "description": "Read store credit account transactions.",
+          "handle": "read_store_credit_account_transactions"
+        },
+        {
+          "description": "Credit and debit store credit accounts.",
+          "handle": "write_store_credit_account_transactions"
+        },
+        {
+          "description": "Read store credit account transactions.",
+          "handle": "customer_read_store_credit_account_transactions"
+        },
+        {
+          "description": "Read theme templates and theme assets",
+          "handle": "read_themes"
+        },
+        {
+          "description": "Modify theme templates and theme assets",
+          "handle": "write_themes"
+        },
+        {
+          "description": "Write access for theme code",
+          "handle": "write_theme_code"
+        },
+        {
+          "description": "Read product information",
+          "handle": "read_product_listings"
+        },
+        {
+          "description": "Modify product information",
+          "handle": "write_product_listings"
+        },
+        {
+          "description": "Read analytics",
+          "handle": "read_analytics"
+        },
+        {
+          "description": "Read product information",
+          "handle": "unauthenticated_read_product_listings"
+        },
+        {
+          "description": "Modify checkouts",
+          "handle": "write_checkouts"
+        },
+        {
+          "description": "Read checkouts",
+          "handle": "read_checkouts"
+        },
+        {
+          "description": "Modify checkouts",
+          "handle": "unauthenticated_write_checkouts"
+        },
+        {
+          "description": "Read checkouts",
+          "handle": "unauthenticated_read_checkouts"
+        },
+        {
+          "description": "Modify customer details and customer groups",
+          "handle": "unauthenticated_write_customers"
+        },
+        {
+          "description": "Read customer details and customer groups",
+          "handle": "unauthenticated_read_customers"
+        },
+        {
+          "description": "Modify customer details and customer groups",
+          "handle": "customer_write_customers"
+        },
+        {
+          "description": "Read customer details and customer groups",
+          "handle": "customer_read_customers"
+        },
+        {
+          "description": "Read draft orders",
+          "handle": "customer_read_draft_orders"
+        },
+        {
+          "description": "Read orders, transactions, and fulfillments",
+          "handle": "customer_read_orders"
+        },
+        {
+          "description": "Modify orders, transactions, and fulfillments",
+          "handle": "customer_write_orders"
+        },
+        {
+          "description": "Read access for Shopify Markets API",
+          "handle": "customer_read_markets"
+        },
+        {
+          "description": "Modify marketing events and related marketing engagement data",
+          "handle": "write_marketing_events"
+        },
+        {
+          "description": "Read marketing events and related marketing engagement data",
+          "handle": "read_marketing_events"
+        },
+        {
+          "description": "Modify draft orders",
+          "handle": "write_draft_orders"
+        },
+        {
+          "description": "Read draft orders",
+          "handle": "read_draft_orders"
+        },
+        {
+          "description": "Read resource feedback",
+          "handle": "read_resource_feedbacks"
+        },
+        {
+          "description": "Modify resource feedback",
+          "handle": "write_resource_feedbacks"
+        },
+        {
+          "description": "Read price rules",
+          "handle": "read_price_rules"
+        },
+        {
+          "description": "Modify price rules",
+          "handle": "write_price_rules"
+        },
+        {
+          "description": "Modify reports",
+          "handle": "write_reports"
+        },
+        {
+          "description": "Read reports",
+          "handle": "read_reports"
+        },
+        {
+          "description": "Read files",
+          "handle": "read_files"
+        },
+        {
+          "description": "Write files",
+          "handle": "write_files"
+        },
+        {
+          "description": "Read Shopify Payments balance and payouts",
+          "handle": "read_shopify_payments_payouts"
+        },
+        {
+          "description": "Read Shopify Payments account, settings, and banking details",
+          "handle": "read_shopify_payments_accounts"
+        },
+        {
+          "description": "Read Shopify Payments bank account details",
+          "handle": "read_shopify_payments_bank_accounts"
+        },
+        {
+          "description": "Read Shopify Payments disputes",
+          "handle": "read_shopify_payments_disputes"
+        },
+        {
+          "description": "Modify Shopify Payments disputes",
+          "handle": "write_shopify_payments_disputes"
+        },
+        {
+          "description": "Read sensitive information of Shopify Payments provider accounts",
+          "handle": "read_shopify_payments_provider_accounts_sensitive"
+        },
+        {
+          "description": "Read shop locales",
+          "handle": "read_locales"
+        },
+        {
+          "description": "Modify shop locales",
+          "handle": "write_locales"
+        },
+        {
+          "description": "Read dynamic content translations",
+          "handle": "read_translations"
+        },
+        {
+          "description": "Write dynamic content translations",
+          "handle": "write_translations"
+        },
+        {
+          "description": "Read data from Online Store Navigation GraphQL API",
+          "handle": "read_online_store_navigation"
+        },
+        {
+          "description": "Write data from Online Store Navigation GraphQL API",
+          "handle": "write_online_store_navigation"
+        },
+        {
+          "description": "Read Online Store Pages GraphQL API",
+          "handle": "read_online_store_pages"
+        },
+        {
+          "description": "Write Online Store Pages GraphQL API",
+          "handle": "write_online_store_pages"
+        },
+        {
+          "description": "Read discounts",
+          "handle": "read_discounts"
+        },
+        {
+          "description": "Modify discounts",
+          "handle": "write_discounts"
+        },
+        {
+          "description": "Read discounts allocator functions",
+          "handle": "read_discounts_allocator_functions"
+        },
+        {
+          "description": "Modify discounts allocator functions",
+          "handle": "write_discounts_allocator_functions"
+        },
+        {
+          "description": "Read cash balance tracking for retail cash registers",
+          "handle": "read_cash_tracking"
+        },
+        {
+          "description": "Read legal policies",
+          "handle": "read_legal_policies"
+        },
+        {
+          "description": "Write legal policies",
+          "handle": "write_legal_policies"
+        },
+        {
+          "description": "Read payment terms",
+          "handle": "read_payment_terms"
+        },
+        {
+          "description": "Write payment terms",
+          "handle": "write_payment_terms"
+        },
+        {
+          "description": "Read browsing behavior",
+          "handle": "read_customer_events"
+        },
+        {
+          "description": "Read access to the Shop Pay installments pricing API",
+          "handle": "unauthenticated_read_shop_pay_installments_pricing"
+        },
+        {
+          "description": "Read selling plans",
+          "handle": "unauthenticated_read_selling_plans"
+        },
+        {
+          "description": "Read bundles",
+          "handle": "unauthenticated_read_bundles"
+        },
+        {
+          "description": "Read product in-store pickup availability and locations",
+          "handle": "unauthenticated_read_product_pickup_locations"
+        },
+        {
+          "description": "Read access to Checkout branding settings API",
+          "handle": "read_checkout_branding_settings"
+        },
+        {
+          "description": "Write access to Checkout branding settings API",
+          "handle": "write_checkout_branding_settings"
+        },
+        {
+          "description": "Read access for payment customizations",
+          "handle": "read_payment_customizations"
+        },
+        {
+          "description": "Write access for payment customizations",
+          "handle": "write_payment_customizations"
+        },
+        {
+          "description": "Read access for delivery customizations",
+          "handle": "read_delivery_customizations"
+        },
+        {
+          "description": "Write access for delivery customizations",
+          "handle": "write_delivery_customizations"
+        },
+        {
+          "description": "Read access for order submission rules",
+          "handle": "read_order_submission_rules"
+        },
+        {
+          "description": "Write access for order submission rules",
+          "handle": "write_order_submission_rules"
+        },
+        {
+          "description": "Read cart transforms.",
+          "handle": "read_cart_transforms"
+        },
+        {
+          "description": "Write cart transforms.",
+          "handle": "write_cart_transforms"
+        },
+        {
+          "description": "Read cart transforms.",
+          "handle": "read_all_cart_transforms"
+        },
+        {
+          "description": "Read access for all checkout completion target customizations",
+          "handle": "read_all_checkout_completion_target_customizations"
+        },
+        {
+          "description": "Write access for all checkout completion target customizations",
+          "handle": "write_all_checkout_completion_target_customizations"
+        },
+        {
+          "description": "Read cart and checkout validations.",
+          "handle": "read_validations"
+        },
+        {
+          "description": "Write cart and checkout validations.",
+          "handle": "write_validations"
+        },
+        {
+          "description": "Read access for Discovery API",
+          "handle": "read_discovery"
+        },
+        {
+          "description": "Write access for Discovery API",
+          "handle": "write_discovery"
+        },
+        {
+          "description": "Read access for Shopify Markets API",
+          "handle": "read_markets"
+        },
+        {
+          "description": "Write access for Shopify Markets API",
+          "handle": "write_markets"
+        },
+        {
+          "description": "App can read their own purchase options",
+          "handle": "read_purchase_options"
+        },
+        {
+          "description": "App can manage their own purchase options",
+          "handle": "write_purchase_options"
+        },
+        {
+          "description": "Initiate and edit bulk operations",
+          "handle": "unauthenticated_write_bulk_operations"
+        },
+        {
+          "description": "Read bulk operations",
+          "handle": "unauthenticated_read_bulk_operations"
+        },
+        {
+          "description": "Read access for pixels",
+          "handle": "read_pixels"
+        },
+        {
+          "description": "Write access for pixels",
+          "handle": "write_pixels"
+        },
+        {
+          "description": "Read access for custom pixels",
+          "handle": "read_custom_pixels"
+        },
+        {
+          "description": "Write access for custom pixels",
+          "handle": "write_custom_pixels"
+        },
+        {
+          "description": "Read access for returns",
+          "handle": "read_returns"
+        },
+        {
+          "description": "Write access for returns",
+          "handle": "write_returns"
+        },
+        {
+          "description": "Modify packing slip template",
+          "handle": "write_packing_slip_templates"
+        },
+        {
+          "description": "Read packing slip template",
+          "handle": "read_packing_slip_templates"
+        },
+        {
+          "description": "Read access for fulfillment constraint rules",
+          "handle": "read_fulfillment_constraint_rules"
+        },
+        {
+          "description": "Write access for fulfillment constraint rules",
+          "handle": "write_fulfillment_constraint_rules"
+        },
+        {
+          "description": "Read custom fulfillment services",
+          "handle": "read_custom_fulfillment_services"
+        },
+        {
+          "description": "Manage custom fulfillment services",
+          "handle": "write_custom_fulfillment_services"
+        },
+        {
+          "description": "Read access for companies and company locations",
+          "handle": "read_companies"
+        },
+        {
+          "description": "Write access for companies and company locations",
+          "handle": "write_companies"
+        },
+        {
+          "description": "Read access for companies and company locations",
+          "handle": "customer_read_companies"
+        },
+        {
+          "description": "Write access for companies and company locations",
+          "handle": "customer_write_companies"
+        },
+        {
+          "description": "Read access for local pickup delivery option generators",
+          "handle": "read_delivery_option_generators"
+        },
+        {
+          "description": "Write access for local pickup delivery option generators",
+          "handle": "write_delivery_option_generators"
+        },
+        {
+          "description": "Read access for Shopify Markets API",
+          "handle": "read_markets_home"
+        },
+        {
+          "description": "Write access for Shopify Markets API",
+          "handle": "write_markets_home"
+        },
+        {
+          "description": "Read applications",
+          "handle": "read_apps"
+        },
+        {
+          "description": "Modify home",
+          "handle": "write_home"
+        },
+        {
+          "description": "Read all orders",
+          "handle": "read_all_orders"
+        },
+        {
+          "description": "Read gift card adjustments",
+          "handle": "read_gift_card_adjustments"
+        },
+        {
+          "description": "Modify gift card adjustments",
+          "handle": "write_gift_card_adjustments"
+        },
+        {
+          "description": "Read users",
+          "handle": "read_users"
+        },
+        {
+          "description": "Read your online store preferences",
+          "handle": "read_online_store_preferences"
+        },
+        {
+          "description": "Modify your online store preferences",
+          "handle": "write_online_store_preferences"
+        },
+        {
+          "description": "Schedule bot protection",
+          "handle": "write_online_store_bot_protection"
+        },
+        {
+          "description": "Modify images",
+          "handle": "write_images"
+        },
+        {
+          "description": "Read images",
+          "handle": "read_images"
+        },
+        {
+          "description": "Modify online store",
+          "handle": "write_online_store"
+        },
+        {
+          "description": "Read access to Brand settings API",
+          "handle": "read_brand"
+        },
+        {
+          "description": "Write access to Brand settings API",
+          "handle": "write_brand"
+        },
+        {
+          "description": "Read home",
+          "handle": "read_home"
+        },
+        {
+          "description": "Read bot protection",
+          "handle": "read_online_store_bot_protection"
+        },
+        {
+          "description": "Read online store",
+          "handle": "read_online_store"
+        }
+      ],
+      "banner": {
+        "altText": null,
+        "height": null,
+        "id": null,
+        "width": null
+      },
+      "description": "Build a home for your brand with a beautiful and secure online store. Easily customize your store with apps and themes.",
+      "developerName": "Shopify",
+      "developerType": "SHOPIFY",
+      "embedded": true,
+      "failedRequirements": [],
+      "features": [
+        "Choose from hundreds of themes that fit with what you sell",
+        "Accept payments on one of more than 70 payment gateways",
+        "Get 24/7 support through a variety of channels"
+      ],
+      "handle": "online_store",
+      "icon": {
+        "altText": null,
+        "height": null,
+        "id": null,
+        "width": null
+      },
+      "id": "gid://shopify/App/580111",
+      "installUrl": null,
+      "installation": null,
+      "isPostPurchaseAppInUse": false,
+      "previouslyInstalled": false,
+      "pricingDetails": "Free to install",
+      "pricingDetailsSummary": "Free to add. Online Store fees may apply.",
+      "privacyPolicyUrl": null,
+      "publicCategory": "PUBLIC",
+      "published": false,
+      "requestedAccessScopes": [],
+      "screenshots": [
+        {
+          "altText": null,
+          "height": null,
+          "id": null,
+          "width": null
+        },
+        {
+          "altText": null,
+          "height": null,
+          "id": null,
+          "width": null
+        },
+        {
+          "altText": null,
+          "height": null,
+          "id": null,
+          "width": null
+        }
+      ],
+      "shopifyDeveloped": true,
+      "title": "Online Store",
+      "uninstallMessage": "Removing this sales channel could make some of your apps stop working. Your Shopify plan rate will be $0/month. Your new transaction processing rates will be: 2.9% + 30¢ (domestic), 3.5% + 30¢ (international + Amex), 2.7% + 0¢ (in person).",
+      "webhookApiVersion": "2021-07"
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 8,
+      "actualQueryCost": 8,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1992,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

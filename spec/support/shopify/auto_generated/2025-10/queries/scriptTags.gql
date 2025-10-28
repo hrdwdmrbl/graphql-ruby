@@ -1,0 +1,31 @@
+query scriptTags($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $query: String, $src: URL){
+    scriptTags(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, query: $query, src: $src){
+        edges{
+            cursor
+            node{
+                cache
+                createdAt
+                displayScope
+                id
+                legacyResourceId
+                src
+                updatedAt
+            }
+        }
+        nodes{
+            cache
+            createdAt
+            displayScope
+            id
+            legacyResourceId
+            src
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,47 @@
+mutation fulfillmentOrderSubmitFulfillmentRequest($id: ID!, $message: String, $notifyCustomer: Boolean, $fulfillmentOrderLineItems: [FulfillmentOrderLineItemInput!]){
+    fulfillmentOrderSubmitFulfillmentRequest(id: $id, message: $message, notifyCustomer: $notifyCustomer, fulfillmentOrderLineItems: $fulfillmentOrderLineItems){
+        originalFulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        submittedFulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        unsubmittedFulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

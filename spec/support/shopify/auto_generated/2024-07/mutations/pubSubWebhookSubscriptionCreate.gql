@@ -1,0 +1,33 @@
+mutation pubSubWebhookSubscriptionCreate($topic: WebhookSubscriptionTopic!, $webhookSubscription: PubSubWebhookSubscriptionInput!){
+    pubSubWebhookSubscriptionCreate(topic: $topic, webhookSubscription: $webhookSubscription){
+        userErrors{
+            code
+            field
+            message
+        }
+        webhookSubscription{
+            createdAt
+            endpoint{
+                __typename
+                ... on WebhookEventBridgeEndpoint {
+                    arn
+                }
+                ... on WebhookHttpEndpoint {
+                    callbackUrl
+                }
+                ... on WebhookPubSubEndpoint {
+                    pubSubProject
+                    pubSubTopic
+                }
+            }
+            filter
+            format
+            id
+            includeFields
+            legacyResourceId
+            metafieldNamespaces
+            topic
+            updatedAt
+        }
+    }
+}

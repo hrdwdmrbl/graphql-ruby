@@ -1,0 +1,15 @@
+mutation priceListCreate($input: PriceListCreateInput!){
+    priceListCreate(input: $input){
+        priceList{
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

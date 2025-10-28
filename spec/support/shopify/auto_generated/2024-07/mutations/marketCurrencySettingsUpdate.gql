@@ -1,0 +1,16 @@
+mutation marketCurrencySettingsUpdate($marketId: ID!, $input: MarketCurrencySettingsUpdateInput!){
+    marketCurrencySettingsUpdate(marketId: $marketId, input: $input){
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

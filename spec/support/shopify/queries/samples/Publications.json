@@ -1,0 +1,49 @@
+{
+  "data": {
+    "publications": {
+      "nodes": [
+        {
+          "autoPublish": false,
+          "id": "gid://shopify/Publication/49838686346",
+          "operation": null,
+          "supportsFuturePublishing": true
+        },
+        {
+          "autoPublish": false,
+          "id": "gid://shopify/Publication/54844653706",
+          "operation": null,
+          "supportsFuturePublishing": false
+        },
+        {
+          "autoPublish": false,
+          "id": "gid://shopify/Publication/74771726474",
+          "operation": null,
+          "supportsFuturePublishing": false
+        },
+        {
+          "autoPublish": false,
+          "id": "gid://shopify/Publication/141770686602",
+          "operation": null,
+          "supportsFuturePublishing": false
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "eyJsYXN0X2lkIjoxNDE3NzA2ODY2MDIsImxhc3RfdmFsdWUiOjE0MTc3MDY4NjYwMn0=",
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+        "startCursor": "eyJsYXN0X2lkIjo0OTgzODY4NjM0NiwibGFzdF92YWx1ZSI6NDk4Mzg2ODYzNDZ9"
+      }
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 24,
+      "actualQueryCost": 6,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1994,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

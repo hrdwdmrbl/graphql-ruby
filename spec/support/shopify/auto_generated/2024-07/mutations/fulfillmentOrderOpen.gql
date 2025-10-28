@@ -1,0 +1,21 @@
+mutation fulfillmentOrderOpen($id: ID!){
+    fulfillmentOrderOpen(id: $id){
+        fulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

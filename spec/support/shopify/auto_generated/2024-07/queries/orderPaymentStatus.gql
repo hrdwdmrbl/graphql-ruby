@@ -1,0 +1,46 @@
+query orderPaymentStatus($paymentReferenceId: String!, $orderId: ID!){
+    orderPaymentStatus(paymentReferenceId: $paymentReferenceId, orderId: $orderId){
+        errorMessage
+        paymentReferenceId
+        status
+        transactions{
+            accountNumber
+            authorizationCode
+            authorizationExpiresAt
+            createdAt
+            errorCode
+            formattedGateway
+            gateway
+            id
+            kind
+            manuallyCapturable
+            multiCapturable
+            paymentDetails{
+                __typename
+                ... on CardPaymentDetails {
+                    avsResultCode
+                    bin
+                    company
+                    cvvResultCode
+                    expirationMonth
+                    expirationYear
+                    name
+                    number
+                    paymentMethodName
+                    wallet
+                }
+                ... on ShopPayInstallmentsPaymentDetails {
+                    paymentMethodName
+                }
+            }
+            paymentId
+            processedAt
+            receiptJson
+            settlementCurrency
+            settlementCurrencyRate
+            status
+            test
+        }
+        translatedErrorMessage
+    }
+}

@@ -1,0 +1,85 @@
+mutation {
+  bulkOperationRunQuery(
+    query: """
+    {
+      orders(query: "created_at:>='2024-07-02' AND created_at:<='2025-07-03'") {
+        edges {
+          node {
+            id
+            returns {
+              edges {
+                node {
+                  id
+                  name
+                  status
+                  totalQuantity
+                  returnLineItems {
+                    edges {
+                      node {
+                        ... on ReturnLineItem {
+                          fulfillmentLineItem {
+                            id
+                            lineItem {
+                              id
+                            }
+                          }
+                        }
+                        id
+                        quantity
+                        refundableQuantity
+                        refundedQuantity
+                        returnReason
+                        returnReasonNote
+                      }
+                    }
+                  }
+                  reverseFulfillmentOrders {
+                    edges {
+                      node {
+                        id
+                        status
+                        lineItems {
+                          edges {
+                            node {
+                              id
+                              totalQuantity
+                              dispositions {
+                                id
+                                quantity
+                                type
+                                createdAt
+                                location {
+                                  id
+                                }
+                              }
+                              fulfillmentLineItem {
+                                id
+                                lineItem {
+                                  id
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+  ) {
+    bulkOperation {
+      id
+      status
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

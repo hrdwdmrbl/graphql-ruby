@@ -1,0 +1,14 @@
+mutation appUsageRecordCreate($subscriptionLineItemId: ID!, $price: MoneyInput!, $description: String!, $idempotencyKey: String){
+    appUsageRecordCreate(subscriptionLineItemId: $subscriptionLineItemId, price: $price, description: $description, idempotencyKey: $idempotencyKey){
+        appUsageRecord{
+            createdAt
+            description
+            id
+            idempotencyKey
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

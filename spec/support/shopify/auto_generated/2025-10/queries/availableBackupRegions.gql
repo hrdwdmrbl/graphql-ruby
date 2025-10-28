@@ -1,0 +1,6 @@
+query availableBackupRegions{
+    availableBackupRegions{
+        id
+        name
+    }
+}

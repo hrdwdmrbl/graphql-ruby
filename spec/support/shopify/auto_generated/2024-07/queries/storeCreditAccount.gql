@@ -1,0 +1,9 @@
+query storeCreditAccount($id: ID!){
+    storeCreditAccount(id: $id){
+        balance{
+            amount
+            currencyCode
+        }
+        id
+    }
+}

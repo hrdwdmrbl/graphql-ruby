@@ -1,0 +1,18 @@
+mutation fulfillmentServiceCreate($name: String!, $callbackUrl: URL!, $trackingSupport: Boolean, $inventoryManagement: Boolean){
+    fulfillmentServiceCreate(name: $name, callbackUrl: $callbackUrl, trackingSupport: $trackingSupport, inventoryManagement: $inventoryManagement){
+        fulfillmentService{
+            callbackUrl
+            handle
+            id
+            inventoryManagement
+            permitsSkuSharing
+            serviceName
+            trackingSupport
+            type
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

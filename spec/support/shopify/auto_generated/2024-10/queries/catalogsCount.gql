@@ -1,0 +1,6 @@
+query catalogsCount($type: CatalogType, $query: String){
+    catalogsCount(type: $type, query: $query){
+        count
+        precision
+    }
+}

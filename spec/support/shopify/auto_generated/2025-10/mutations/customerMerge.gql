@@ -1,0 +1,34 @@
+mutation customerMerge($sort: ArticleTagSort, $limit: Int!, $id: ID!, $customerOneId: ID!, $customerTwoId: ID!, $overrideFields: CustomerMergeOverrideFields){
+    customerMerge(customerOneId: $customerOneId, customerTwoId: $customerTwoId, overrideFields: $overrideFields){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        resultingCustomerId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

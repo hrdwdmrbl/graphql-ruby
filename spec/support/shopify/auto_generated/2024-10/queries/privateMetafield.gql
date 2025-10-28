@@ -1,0 +1,11 @@
+query privateMetafield($id: ID!){
+    privateMetafield(id: $id){
+        createdAt
+        id
+        key
+        namespace
+        updatedAt
+        value
+        valueType
+    }
+}

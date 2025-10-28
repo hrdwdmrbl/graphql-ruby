@@ -1,0 +1,126 @@
+mutation discountCodeBasicUpdate($id: ID!, $basicCodeDiscount: DiscountCodeBasicInput!){
+    discountCodeBasicUpdate(id: $id, basicCodeDiscount: $basicCodeDiscount){
+        codeDiscountNode{
+            codeDiscount{
+                __typename
+                ... on DiscountCodeApp {
+                    appliesOncePerCustomer
+                    asyncUsageCount
+                    createdAt
+                    customerSelection{
+                        __typename
+                        ... on DiscountCustomerAll {
+                            allCustomers
+                        }
+                    }
+                    discountClass
+                    discountId
+                    endsAt
+                    hasTimelineComment
+                    recurringCycleLimit
+                    startsAt
+                    status
+                    title
+                    updatedAt
+                    usageLimit
+                }
+                ... on DiscountCodeBasic {
+                    appliesOncePerCustomer
+                    asyncUsageCount
+                    createdAt
+                    customerSelection{
+                        __typename
+                        ... on DiscountCustomerAll {
+                            allCustomers
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    hasTimelineComment
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageLimit
+                }
+                ... on DiscountCodeBxgy {
+                    appliesOncePerCustomer
+                    asyncUsageCount
+                    createdAt
+                    customerSelection{
+                        __typename
+                        ... on DiscountCustomerAll {
+                            allCustomers
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    hasTimelineComment
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageLimit
+                    usesPerOrderLimit
+                }
+                ... on DiscountCodeFreeShipping {
+                    appliesOnOneTimePurchase
+                    appliesOnSubscription
+                    appliesOncePerCustomer
+                    asyncUsageCount
+                    createdAt
+                    customerSelection{
+                        __typename
+                        ... on DiscountCustomerAll {
+                            allCustomers
+                        }
+                    }
+                    destinationSelection{
+                        __typename
+                        ... on DiscountCountries {
+                            countries
+                            includeRestOfWorld
+                        }
+                        ... on DiscountCountryAll {
+                            allCountries
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    hasTimelineComment
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageLimit
+                }
+            }
+            id
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

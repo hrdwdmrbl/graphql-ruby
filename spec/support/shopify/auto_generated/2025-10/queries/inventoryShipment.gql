@@ -1,0 +1,42 @@
+query inventoryShipment($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: ShipmentLineItemSortKeys, $query: String, $query1: String, $limit: Int, $id: ID!){
+    inventoryShipment(id: $id){
+        dateCreated
+        dateReceived
+        dateShipped
+        id
+        lineItemTotalQuantity
+        lineItems(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+            edges{
+                cursor
+            }
+            nodes{
+                acceptedQuantity
+                id
+                quantity
+                rejectedQuantity
+                unreceivedQuantity
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+        lineItemsCount(query: $query1, limit: $limit){
+            count
+            precision
+        }
+        name
+        status
+        totalAcceptedQuantity
+        totalReceivedQuantity
+        totalRejectedQuantity
+        tracking{
+            arrivesAt
+            company
+            trackingNumber
+            trackingUrl
+        }
+    }
+}

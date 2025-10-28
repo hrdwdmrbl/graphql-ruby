@@ -1,0 +1,6 @@
+query customersCount($query: String, $limit: Int){
+    customersCount(query: $query, limit: $limit){
+        count
+        precision
+    }
+}

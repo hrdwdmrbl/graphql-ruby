@@ -1,0 +1,20 @@
+query ProductsImages($productId: ID!, $first: Int!, $after: String) {
+  products(query: $query, first: 50) {
+    nodes {
+      id
+      images(first: $first, after: $after) {
+        nodes {
+          id
+          width
+          url
+          height
+          altText
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
+    }
+  }
+}

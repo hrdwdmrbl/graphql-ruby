@@ -1,0 +1,37 @@
+query orderSavedSearches($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    orderSavedSearches(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                filters{
+                    key
+                    value
+                }
+                id
+                legacyResourceId
+                name
+                query
+                resourceType
+                searchTerms
+            }
+        }
+        nodes{
+            filters{
+                key
+                value
+            }
+            id
+            legacyResourceId
+            name
+            query
+            resourceType
+            searchTerms
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

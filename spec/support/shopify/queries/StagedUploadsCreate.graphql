@@ -1,0 +1,18 @@
+mutation StagedUploadsCreate($filename: String!) {
+  stagedUploadsCreate(
+    input: [{ resource: BULK_MUTATION_VARIABLES, filename: $filename, mimeType: "text/jsonl", httpMethod: PUT }]
+  ) {
+    userErrors {
+      field
+      message
+    }
+    stagedTargets {
+      url
+      resourceUrl
+      parameters {
+        name
+        value
+      }
+    }
+  }
+}

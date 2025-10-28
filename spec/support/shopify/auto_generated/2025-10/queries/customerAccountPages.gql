@@ -1,0 +1,25 @@
+query customerAccountPages($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    customerAccountPages(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                defaultCursor
+                handle
+                id
+                title
+            }
+        }
+        nodes{
+            defaultCursor
+            handle
+            id
+            title
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

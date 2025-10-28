@@ -1,0 +1,10 @@
+mutation customerPaymentMethodGetDuplicationData($customerPaymentMethodId: ID!, $targetShopId: ID!, $targetCustomerId: ID!){
+    customerPaymentMethodGetDuplicationData(customerPaymentMethodId: $customerPaymentMethodId, targetShopId: $targetShopId, targetCustomerId: $targetCustomerId){
+        encryptedDuplicationData
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

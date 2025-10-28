@@ -1,0 +1,30 @@
+query priceLists($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: PriceListSortKeys){
+    priceLists(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey){
+        edges{
+            cursor
+            node{
+                currency
+                fixedPricesCount
+                id
+                name
+            }
+        }
+        nodes{
+            catalog{
+                id
+                status
+                title
+            }
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

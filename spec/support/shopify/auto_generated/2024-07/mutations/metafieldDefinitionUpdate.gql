@@ -1,0 +1,26 @@
+mutation metafieldDefinitionUpdate($validationStatus: MetafieldValidationStatus, $definition: MetafieldDefinitionUpdateInput!){
+    metafieldDefinitionUpdate(definition: $definition){
+        updatedDefinition{
+            description
+            id
+            key
+            metafieldsCount(validationStatus: $validationStatus)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            useAsCollectionCondition
+            validationStatus
+        }
+        userErrors{
+            code
+            elementIndex
+            field
+            message
+        }
+        validationJob{
+            done
+            id
+        }
+    }
+}

@@ -1,0 +1,22 @@
+mutation fulfillmentOrderReleaseHold($id: ID!, $externalId: String){
+    fulfillmentOrderReleaseHold(id: $id, externalId: $externalId){
+        fulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

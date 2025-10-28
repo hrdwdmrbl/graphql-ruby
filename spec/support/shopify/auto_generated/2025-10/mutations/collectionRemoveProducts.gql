@@ -1,0 +1,32 @@
+mutation collectionRemoveProducts($sort: ArticleTagSort, $limit: Int!, $id: ID!, $id1: ID!, $productIds: [ID!]!){
+    collectionRemoveProducts(id: $id1, productIds: $productIds){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

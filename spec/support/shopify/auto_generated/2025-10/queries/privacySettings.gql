@@ -1,0 +1,22 @@
+query privacySettings($locale: String!, $marketId: ID){
+    privacySettings{
+        banner{
+            autoManaged
+            enabled
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+        }
+        dataSaleOptOutPage{
+            autoManaged
+        }
+        privacyPolicy{
+            autoManaged
+            supportedLocales
+        }
+    }
+}

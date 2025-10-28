@@ -1,0 +1,5 @@
+query ProductsCount($query: String) {
+  productsCount(query: $query) {
+    count
+  }
+}

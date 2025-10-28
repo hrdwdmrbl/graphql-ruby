@@ -1,0 +1,17 @@
+mutation marketWebPresenceDelete($webPresenceId: ID!){
+    marketWebPresenceDelete(webPresenceId: $webPresenceId){
+        deletedId
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

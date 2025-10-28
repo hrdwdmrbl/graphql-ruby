@@ -1,0 +1,21 @@
+mutation standardMetafieldDefinitionEnable($validationStatus: MetafieldValidationStatus, $ownerType: MetafieldOwnerType!, $id: ID, $namespace: String, $key: String, $pin: Boolean!, $visibleToStorefrontApi: Boolean, $useAsCollectionCondition: Boolean){
+    standardMetafieldDefinitionEnable(ownerType: $ownerType, id: $id, namespace: $namespace, key: $key, pin: $pin, visibleToStorefrontApi: $visibleToStorefrontApi, useAsCollectionCondition: $useAsCollectionCondition){
+        createdDefinition{
+            description
+            id
+            key
+            metafieldsCount(validationStatus: $validationStatus)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            useAsCollectionCondition
+            validationStatus
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

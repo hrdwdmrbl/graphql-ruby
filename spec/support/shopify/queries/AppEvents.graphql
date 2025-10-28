@@ -1,0 +1,21 @@
+query getAppEvents($id: ID!, $after: String, $occurredAtMin: DateTime) {
+  app(id: $id) {
+    events(first: 100, types: [RELATIONSHIP_INSTALLED, RELATIONSHIP_UNINSTALLED, RELATIONSHIP_DEACTIVATED, RELATIONSHIP_REACTIVATED], after: $after, occurredAtMin: $occurredAtMin) {
+      edges {
+        node {
+          occurredAt
+          shop {
+            name
+            id
+            myshopifyDomain
+          }
+          type
+        }
+        cursor
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}

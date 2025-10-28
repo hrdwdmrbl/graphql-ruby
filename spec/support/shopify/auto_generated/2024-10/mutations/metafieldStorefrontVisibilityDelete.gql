@@ -1,0 +1,9 @@
+mutation metafieldStorefrontVisibilityDelete($id: ID!){
+    metafieldStorefrontVisibilityDelete(id: $id){
+        deletedMetafieldStorefrontVisibilityId
+        userErrors{
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,14 @@
+mutation companyLocationAssignRoles($companyLocationId: ID!, $rolesToAssign: [CompanyLocationRoleAssign!]!){
+    companyLocationAssignRoles(companyLocationId: $companyLocationId, rolesToAssign: $rolesToAssign){
+        roleAssignments{
+            createdAt
+            id
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

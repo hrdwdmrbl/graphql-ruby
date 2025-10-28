@@ -1,0 +1,17 @@
+query Publications($id: ID!) {
+  channel(id: $id) {
+    productPublicationsV3 {
+      nodes {
+        isPublished
+        publishDate
+        product {
+          id
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

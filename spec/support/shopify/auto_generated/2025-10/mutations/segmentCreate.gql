@@ -1,0 +1,15 @@
+mutation segmentCreate($name: String!, $query: String!){
+    segmentCreate(name: $name, query: $query){
+        segment{
+            creationDate
+            id
+            lastEditDate
+            name
+            query
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

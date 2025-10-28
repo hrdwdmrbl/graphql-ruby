@@ -1,0 +1,10 @@
+mutation privacyFeaturesDisable($featuresToDisable: [PrivacyFeaturesEnum!]!){
+    privacyFeaturesDisable(featuresToDisable: $featuresToDisable){
+        featuresDisabled
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,53 @@
+mutation inventoryActivate($names: [String!]!, $inventoryItemId: ID!, $locationId: ID!, $available: Int, $onHand: Int, $stockAtLegacyLocation: Boolean){
+    inventoryActivate(inventoryItemId: $inventoryItemId, locationId: $locationId, available: $available, onHand: $onHand, stockAtLegacyLocation: $stockAtLegacyLocation){
+        inventoryLevel{
+            canDeactivate
+            createdAt
+            deactivationAlert
+            id
+            item{
+                countryCodeOfOrigin
+                createdAt
+                duplicateSkuCount
+                harmonizedSystemCode
+                id
+                inventoryHistoryUrl
+                legacyResourceId
+                provinceCodeOfOrigin
+                requiresShipping
+                sku
+                tracked
+                updatedAt
+            }
+            location{
+                activatable
+                addressVerified
+                createdAt
+                deactivatable
+                deactivatedAt
+                deletable
+                fulfillsOnlineOrders
+                hasActiveInventory
+                hasUnfulfilledOrders
+                id
+                isActive
+                isFulfillmentService
+                legacyResourceId
+                name
+                shipsInventory
+                updatedAt
+            }
+            quantities(names: $names){
+                id
+                name
+                quantity
+                updatedAt
+            }
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

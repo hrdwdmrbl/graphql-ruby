@@ -1,0 +1,17 @@
+mutation paymentTermsCreate($referenceId: ID!, $paymentTermsAttributes: PaymentTermsCreateInput!){
+    paymentTermsCreate(referenceId: $referenceId, paymentTermsAttributes: $paymentTermsAttributes){
+        paymentTerms{
+            dueInDays
+            id
+            overdue
+            paymentTermsName
+            paymentTermsType
+            translatedName
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

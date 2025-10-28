@@ -1,0 +1,9 @@
+mutation scriptTagDelete($id: ID!){
+    scriptTagDelete(id: $id){
+        deletedScriptTagId
+        userErrors{
+            field
+            message
+        }
+    }
+}

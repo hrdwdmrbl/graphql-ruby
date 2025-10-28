@@ -1,0 +1,31 @@
+query checkoutProfiles($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CheckoutProfileSortKeys, $query: String){
+    checkoutProfiles(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                createdAt
+                editedAt
+                id
+                isPublished
+                name
+                typOspPagesActive
+                updatedAt
+            }
+        }
+        nodes{
+            createdAt
+            editedAt
+            id
+            isPublished
+            name
+            typOspPagesActive
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

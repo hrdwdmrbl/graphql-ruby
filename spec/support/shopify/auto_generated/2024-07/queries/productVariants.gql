@@ -1,0 +1,34 @@
+query productVariants($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: ProductVariantSortKeys, $query: String, $savedSearchId: ID){
+    productVariants(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+        }
+        nodes{
+            availableForSale
+            barcode
+            compareAtPrice
+            createdAt
+            defaultCursor
+            displayName
+            id
+            inventoryPolicy
+            inventoryQuantity
+            legacyResourceId
+            position
+            price
+            requiresComponents
+            sellableOnlineQuantity
+            sku
+            taxCode
+            taxable
+            title
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

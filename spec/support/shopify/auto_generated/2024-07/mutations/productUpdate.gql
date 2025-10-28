@@ -1,0 +1,40 @@
+mutation productUpdate($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $input: ProductInput!, $media: [CreateMediaInput!]){
+    productUpdate(input: $input, media: $media){
+        product{
+            combinedListingRole
+            createdAt
+            defaultCursor
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            giftCardTemplateSuffix
+            handle
+            hasOnlyDefaultVariant
+            hasOutOfStockVariants
+            hasVariantsThatRequiresComponents
+            id
+            inCollection(id: $id)
+            isGiftCard
+            legacyResourceId
+            onlineStorePreviewUrl
+            onlineStoreUrl
+            productType
+            publishedAt
+            publishedInContext(context: $context)
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            requiresSellingPlan
+            status
+            tags
+            templateSuffix
+            title
+            totalInventory
+            tracksInventory
+            updatedAt
+            vendor
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

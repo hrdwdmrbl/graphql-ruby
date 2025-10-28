@@ -1,0 +1,46 @@
+query webhookSubscriptions($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: WebhookSubscriptionSortKeys, $query: String, $uri: String, $format: WebhookSubscriptionFormat, $topics: [WebhookSubscriptionTopic!]){
+    webhookSubscriptions(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, uri: $uri, format: $format, topics: $topics){
+        edges{
+            cursor
+            node{
+                createdAt
+                filter
+                format
+                id
+                includeFields
+                legacyResourceId
+                metafieldNamespaces
+                topic
+                updatedAt
+                uri
+            }
+        }
+        nodes{
+            apiVersion{
+                displayName
+                handle
+                supported
+            }
+            createdAt
+            filter
+            format
+            id
+            includeFields
+            legacyResourceId
+            metafieldNamespaces
+            metafields{
+                key
+                namespace
+            }
+            topic
+            updatedAt
+            uri
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,68 @@
+query RefundReturn($returnId: ID!) {
+  return(id: $returnId) {
+    id
+    name
+    status
+    totalQuantity
+    returnLineItems(first: 128) {
+      nodes {
+        ... on ReturnLineItem {
+          fulfillmentLineItem {
+            id
+            lineItem {
+              id
+            }
+          }
+        }
+        id
+        quantity
+        refundableQuantity
+        refundedQuantity
+        returnReason
+        returnReasonNote
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+    reverseFulfillmentOrders(first: 50) {
+      nodes {
+        id
+        status
+        lineItems(first: 250) {
+          nodes {
+            id
+            totalQuantity
+            dispositions {
+              id
+              quantity
+              type
+              createdAt
+              location {
+                id
+              }
+            }
+            fulfillmentLineItem {
+              id
+              lineItem {
+                id
+              }
+            }
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+        order {
+          id
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

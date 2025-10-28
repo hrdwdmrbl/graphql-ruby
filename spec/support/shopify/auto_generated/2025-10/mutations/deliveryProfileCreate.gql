@@ -1,0 +1,41 @@
+mutation deliveryProfileCreate($profile: DeliveryProfileInput!){
+    deliveryProfileCreate(profile: $profile){
+        profile{
+            activeMethodDefinitionsCount
+            default
+            id
+            legacyMode
+            locationsWithoutRatesCount
+            name
+            originLocationCount
+            productVariantsCount{
+                count
+                precision
+            }
+            unassignedLocations{
+                activatable
+                addressVerified
+                createdAt
+                deactivatable
+                deactivatedAt
+                deletable
+                fulfillsOnlineOrders
+                hasActiveInventory
+                hasUnfulfilledOrders
+                id
+                isActive
+                isFulfillmentService
+                legacyResourceId
+                name
+                shipsInventory
+                updatedAt
+            }
+            version
+            zoneCountryCount
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

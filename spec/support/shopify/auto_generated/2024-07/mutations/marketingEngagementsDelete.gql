@@ -1,0 +1,10 @@
+mutation marketingEngagementsDelete($channelHandle: String, $deleteEngagementsForAllChannels: Boolean){
+    marketingEngagementsDelete(channelHandle: $channelHandle, deleteEngagementsForAllChannels: $deleteEngagementsForAllChannels){
+        result
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

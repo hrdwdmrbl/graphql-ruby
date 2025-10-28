@@ -1,0 +1,14 @@
+mutation customerMerge($customerOneId: ID!, $customerTwoId: ID!, $overrideFields: CustomerMergeOverrideFields){
+    customerMerge(customerOneId: $customerOneId, customerTwoId: $customerTwoId, overrideFields: $overrideFields){
+        job{
+            done
+            id
+        }
+        resultingCustomerId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

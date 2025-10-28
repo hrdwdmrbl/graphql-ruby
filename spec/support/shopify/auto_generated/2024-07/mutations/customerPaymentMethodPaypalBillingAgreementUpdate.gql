@@ -1,0 +1,45 @@
+mutation customerPaymentMethodPaypalBillingAgreementUpdate($id: ID!, $billingAddress: MailingAddressInput!){
+    customerPaymentMethodPaypalBillingAgreementUpdate(id: $id, billingAddress: $billingAddress){
+        customerPaymentMethod{
+            id
+            instrument{
+                __typename
+                ... on CustomerCreditCard {
+                    brand
+                    expiresSoon
+                    expiryMonth
+                    expiryYear
+                    firstDigits
+                    isRevocable
+                    lastDigits
+                    maskedNumber
+                    name
+                    source
+                    virtualLastDigits
+                }
+                ... on CustomerPaypalBillingAgreement {
+                    inactive
+                    isRevocable
+                    paypalAccountEmail
+                }
+                ... on CustomerShopPayAgreement {
+                    expiresSoon
+                    expiryMonth
+                    expiryYear
+                    inactive
+                    isRevocable
+                    lastDigits
+                    maskedNumber
+                    name
+                }
+            }
+            revokedAt
+            revokedReason
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

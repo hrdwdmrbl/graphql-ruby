@@ -1,0 +1,18 @@
+mutation fulfillmentServiceUpdate($id: ID!, $name: String, $callbackUrl: URL, $trackingSupport: Boolean, $inventoryManagement: Boolean){
+    fulfillmentServiceUpdate(id: $id, name: $name, callbackUrl: $callbackUrl, trackingSupport: $trackingSupport, inventoryManagement: $inventoryManagement){
+        fulfillmentService{
+            callbackUrl
+            handle
+            id
+            inventoryManagement
+            permitsSkuSharing
+            serviceName
+            trackingSupport
+            type
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

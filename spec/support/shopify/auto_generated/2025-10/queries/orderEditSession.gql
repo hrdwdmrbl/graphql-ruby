@@ -1,0 +1,5 @@
+query orderEditSession($id: ID!){
+    orderEditSession(id: $id){
+        id
+    }
+}

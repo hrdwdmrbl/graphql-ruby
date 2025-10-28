@@ -1,0 +1,13 @@
+mutation subscriptionBillingCycleBulkCharge($billingAttemptExpectedDateRange: SubscriptionBillingCyclesDateRangeSelector!, $filters: SubscriptionBillingCycleBulkFilters){
+    subscriptionBillingCycleBulkCharge(billingAttemptExpectedDateRange: $billingAttemptExpectedDateRange, filters: $filters){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

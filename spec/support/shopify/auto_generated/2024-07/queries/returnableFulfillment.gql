@@ -1,0 +1,19 @@
+query returnableFulfillment($id: ID!){
+    returnableFulfillment(id: $id){
+        fulfillment{
+            createdAt
+            deliveredAt
+            displayStatus
+            estimatedDeliveryAt
+            id
+            inTransitAt
+            legacyResourceId
+            name
+            requiresShipping
+            status
+            totalQuantity
+            updatedAt
+        }
+        id
+    }
+}

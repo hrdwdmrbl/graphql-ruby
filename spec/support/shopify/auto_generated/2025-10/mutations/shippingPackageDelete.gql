@@ -1,0 +1,9 @@
+mutation shippingPackageDelete($id: ID!){
+    shippingPackageDelete(id: $id){
+        deletedId
+        userErrors{
+            field
+            message
+        }
+    }
+}

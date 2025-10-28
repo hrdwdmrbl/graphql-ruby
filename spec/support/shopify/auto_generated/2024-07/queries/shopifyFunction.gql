@@ -1,0 +1,40 @@
+query shopifyFunction($id: String!){
+    shopifyFunction(id: $id){
+        apiType
+        apiVersion
+        app{
+            apiKey
+            appStoreAppUrl
+            appStoreDeveloperUrl
+            description
+            developerName
+            developerType
+            embedded
+            features
+            handle
+            id
+            installUrl
+            isPostPurchaseAppInUse
+            previouslyInstalled
+            pricingDetails
+            pricingDetailsSummary
+            privacyPolicyUrl
+            publicCategory
+            published
+            shopifyDeveloped
+            title
+            uninstallMessage
+            webhookApiVersion
+        }
+        appBridge{
+            createPath
+            detailsPath
+        }
+        appKey
+        description
+        id
+        inputQuery
+        title
+        useCreationUi
+    }
+}

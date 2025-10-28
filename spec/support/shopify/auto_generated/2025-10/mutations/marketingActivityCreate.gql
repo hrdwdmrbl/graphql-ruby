@@ -1,0 +1,8 @@
+mutation marketingActivityCreate($input: MarketingActivityCreateInput!){
+    marketingActivityCreate(input: $input){
+        userErrors{
+            field
+            message
+        }
+    }
+}

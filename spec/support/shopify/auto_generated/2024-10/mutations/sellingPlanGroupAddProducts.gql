@@ -1,0 +1,216 @@
+mutation sellingPlanGroupAddProducts($productId: ID!, $productVariantId: ID!, $productId1: ID!, $productId2: ID, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $productId3: ID, $truncateAt: Int, $id: ID!, $onlyPublished: Boolean, $context: ContextualPublicationContext!, $channelId: ID!, $publicationId: ID!, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $first2: Int, $after2: String, $last2: Int, $before2: String, $reverse2: Boolean, $locale: String!, $marketId: ID, $id1: ID!, $productIds: [ID!]!){
+    sellingPlanGroupAddProducts(id: $id1, productIds: $productIds){
+        sellingPlanGroup{
+            appId
+            appliesToProduct(productId: $productId)
+            appliesToProductVariant(productVariantId: $productVariantId)
+            appliesToProductVariants(productId: $productId1)
+            createdAt
+            description
+            id
+            merchantCode
+            name
+            options
+            position
+            productVariants(productId: $productId2, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+                edges{
+                    cursor
+                }
+                nodes{
+                    availableForSale
+                    barcode
+                    compareAtPrice
+                    createdAt
+                    defaultCursor
+                    displayName
+                    id
+                    inventoryPolicy
+                    inventoryQuantity
+                    legacyResourceId
+                    position
+                    price
+                    requiresComponents
+                    sellableOnlineQuantity
+                    sellingPlanGroupCount
+                    sku
+                    storefrontId
+                    taxCode
+                    taxable
+                    title
+                    updatedAt
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            productVariantsCount(productId: $productId3){
+                count
+                precision
+            }
+            products(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+                edges{
+                    cursor
+                }
+                nodes{
+                    bodyHtml
+                    combinedListingRole
+                    createdAt
+                    customProductType
+                    defaultCursor
+                    description(truncateAt: $truncateAt)
+                    descriptionHtml
+                    descriptionPlainSummary
+                    giftCardTemplateSuffix
+                    handle
+                    hasOnlyDefaultVariant
+                    hasOutOfStockVariants
+                    hasVariantsThatRequiresComponents
+                    id
+                    inCollection(id: $id)
+                    isGiftCard
+                    legacyResourceId
+                    onlineStorePreviewUrl
+                    onlineStoreUrl
+                    productType
+                    publicationCount(onlyPublished: $onlyPublished)
+                    publishedAt
+                    publishedInContext(context: $context)
+                    publishedOnChannel(channelId: $channelId)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId)
+                    requiresSellingPlan
+                    sellingPlanGroupCount
+                    status
+                    storefrontId
+                    tags
+                    templateSuffix
+                    title
+                    totalInventory
+                    totalVariants
+                    tracksInventory
+                    updatedAt
+                    vendor
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            productsCount{
+                count
+                precision
+            }
+            sellingPlans(first: $first2, after: $after2, last: $last2, before: $before2, reverse: $reverse2){
+                edges{
+                    cursor
+                }
+                nodes{
+                    billingPolicy{
+                        __typename
+                        ... on SellingPlanFixedBillingPolicy {
+                            remainingBalanceChargeExactTime
+                            remainingBalanceChargeTimeAfterCheckout
+                            remainingBalanceChargeTrigger
+                        }
+                        ... on SellingPlanRecurringBillingPolicy {
+                            createdAt
+                            interval
+                            intervalCount
+                            maxCycles
+                            minCycles
+                        }
+                    }
+                    category
+                    createdAt
+                    deliveryPolicy{
+                        __typename
+                        ... on SellingPlanFixedDeliveryPolicy {
+                            cutoff
+                            fulfillmentExactTime
+                            fulfillmentTrigger
+                            intent
+                            preAnchorBehavior
+                        }
+                        ... on SellingPlanRecurringDeliveryPolicy {
+                            createdAt
+                            cutoff
+                            intent
+                            interval
+                            intervalCount
+                            preAnchorBehavior
+                        }
+                    }
+                    description
+                    id
+                    name
+                    options
+                    position
+                    pricingPolicies{
+                        __typename
+                        ... on SellingPlanFixedPricingPolicy {
+                            adjustmentType
+                            adjustmentValue{
+                                __typename
+                                ... on MoneyV2 {
+                                    amount
+                                    currencyCode
+                                }
+                                ... on SellingPlanPricingPolicyPercentageValue {
+                                    percentage
+                                }
+                            }
+                            createdAt
+                        }
+                        ... on SellingPlanRecurringPricingPolicy {
+                            adjustmentType
+                            adjustmentValue{
+                                __typename
+                                ... on MoneyV2 {
+                                    amount
+                                    currencyCode
+                                }
+                                ... on SellingPlanPricingPolicyPercentageValue {
+                                    percentage
+                                }
+                            }
+                            afterCycle
+                            createdAt
+                        }
+                    }
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            summary
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                market{
+                    enabled
+                    handle
+                    id
+                    name
+                    primary
+                }
+                outdated
+                updatedAt
+                value
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

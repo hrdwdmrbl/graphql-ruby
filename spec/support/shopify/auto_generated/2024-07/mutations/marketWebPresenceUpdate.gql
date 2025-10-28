@@ -1,0 +1,16 @@
+mutation marketWebPresenceUpdate($webPresenceId: ID!, $webPresence: MarketWebPresenceUpdateInput!){
+    marketWebPresenceUpdate(webPresenceId: $webPresenceId, webPresence: $webPresence){
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

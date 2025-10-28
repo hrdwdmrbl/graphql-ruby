@@ -1,0 +1,22 @@
+query giftCards($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: GiftCardSortKeys, $query: String, $savedSearchId: ID){
+    giftCards(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+        }
+        nodes{
+            createdAt
+            enabled
+            expiresOn
+            id
+            lastCharacters
+            maskedCode
+            note
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

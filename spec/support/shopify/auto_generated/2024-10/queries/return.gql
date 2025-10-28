@@ -1,0 +1,122 @@
+query return() {
+  return(id: $id57) {
+    decline {
+      note
+      reason
+    }
+    exchangeLineItems(
+      includeRemovedItems: $includeRemovedItems
+      first: $first
+      after: $after
+      last: $last
+      before: $before
+      reverse: $reverse
+    ) {
+      nodes {
+        id
+        lineItem {
+          canRestock
+          currentQuantity
+          discountedTotal
+          discountedUnitPrice
+          fulfillableQuantity
+          fulfillmentStatus
+          id
+          isGiftCard
+          merchantEditable
+          name
+          nonFulfillableQuantity
+          originalTotal
+          originalUnitPrice
+          quantity
+          refundableQuantity
+          requiresShipping
+          restockable
+          sku
+          taxable
+          title
+          totalDiscount
+          unfulfilledDiscountedTotal
+          unfulfilledOriginalTotal
+          unfulfilledQuantity
+          variantTitle
+          vendor
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }
+    }
+    id
+    name
+    returnLineItems(first: $first43, after: $after26, last: $last26, before: $before26, reverse: $reverse23) {
+      edges {
+        cursor
+        node {
+          customerNote
+          id
+          quantity
+          refundableQuantity
+          refundedQuantity
+          returnReason
+          returnReasonNote
+        }
+      }
+      nodes {
+        customerNote
+        id
+        quantity
+        refundableQuantity
+        refundedQuantity
+        returnReason
+        returnReasonNote
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }
+    }
+    returnShippingFees {
+      amountSet {
+        presentmentMoney {
+          amount
+          currencyCode
+        }
+        shopMoney {
+          amount
+          currencyCode
+        }
+      }
+      id
+    }
+    reverseFulfillmentOrders(first: $first44, after: $after27, last: $last27, before: $before27, reverse: $reverse24) {
+      edges {
+        cursor
+        node {
+          id
+          status
+        }
+      }
+      nodes {
+        id
+        status
+        thirdPartyConfirmation {
+          status
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }
+    }
+    status
+    totalQuantity
+  }
+}

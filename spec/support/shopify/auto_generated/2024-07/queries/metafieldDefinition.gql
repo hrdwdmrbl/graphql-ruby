@@ -1,0 +1,41 @@
+query metafieldDefinition($validationStatus: MetafieldValidationStatus, $id: ID!){
+    metafieldDefinition(id: $id){
+        access{
+            admin
+            customerAccount
+            storefront
+        }
+        constraints{
+            key
+        }
+        description
+        id
+        key
+        metafieldsCount(validationStatus: $validationStatus)
+        name
+        namespace
+        ownerType
+        pinnedPosition
+        standardTemplate{
+            description
+            id
+            key
+            name
+            namespace
+            ownerTypes
+            visibleToStorefrontApi
+        }
+        type{
+            category
+            name
+            supportsDefinitionMigrations
+        }
+        useAsCollectionCondition
+        validationStatus
+        validations{
+            name
+            type
+            value
+        }
+    }
+}

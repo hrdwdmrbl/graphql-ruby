@@ -1,0 +1,16 @@
+mutation marketWebPresenceCreate($marketId: ID!, $webPresence: MarketWebPresenceCreateInput!){
+    marketWebPresenceCreate(marketId: $marketId, webPresence: $webPresence){
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

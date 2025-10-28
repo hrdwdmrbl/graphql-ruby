@@ -1,0 +1,13 @@
+query FulfillmentFulfillmentOrders($fulfillmentId: ID!, $first: Int!, $afterFulfillmentOrdersCursor: String) {
+  fulfillment(id: $fulfillmentId) {
+    fulfillmentOrders(first: $first, after: $afterFulfillmentOrdersCursor) {
+      nodes {
+        id
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

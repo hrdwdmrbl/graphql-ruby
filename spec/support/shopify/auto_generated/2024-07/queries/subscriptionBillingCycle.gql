@@ -1,0 +1,36 @@
+query subscriptionBillingCycle($billingCycleInput: SubscriptionBillingCycleInput!){
+    subscriptionBillingCycle(billingCycleInput: $billingCycleInput){
+        billingAttemptExpectedDate
+        cycleEndAt
+        cycleIndex
+        cycleStartAt
+        edited
+        editedContract{
+            appAdminUrl
+            createdAt
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            note
+            updatedAt
+        }
+        skipped
+        sourceContract{
+            appAdminUrl
+            createdAt
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            id
+            lastPaymentStatus
+            nextBillingDate
+            note
+            revisionId
+            status
+            updatedAt
+        }
+        status
+    }
+}

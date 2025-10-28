@@ -1,0 +1,12 @@
+mutation urlRedirectBulkDeleteAll{
+    urlRedirectBulkDeleteAll{
+        job{
+            done
+            id
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

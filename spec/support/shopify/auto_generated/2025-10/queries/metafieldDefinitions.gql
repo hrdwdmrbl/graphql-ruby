@@ -1,0 +1,64 @@
+query metafieldDefinitions($validationStatus: MetafieldValidationStatus, $validationStatus1: MetafieldValidationStatus, $key: String, $namespace: String, $ownerType: MetafieldOwnerType!, $pinnedStatus: MetafieldDefinitionPinnedStatus, $constraintSubtype: MetafieldDefinitionConstraintSubtypeIdentifier, $constraintStatus: MetafieldDefinitionConstraintStatus, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: MetafieldDefinitionSortKeys, $query: String){
+    metafieldDefinitions(key: $key, namespace: $namespace, ownerType: $ownerType, pinnedStatus: $pinnedStatus, constraintSubtype: $constraintSubtype, constraintStatus: $constraintStatus, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                description
+                id
+                key
+                metafieldsCount(validationStatus: $validationStatus)
+                name
+                namespace
+                ownerType
+                pinnedPosition
+                useAsCollectionCondition
+                validationStatus
+            }
+        }
+        nodes{
+            access{
+                admin
+                customerAccount
+                storefront
+            }
+            constraints{
+                key
+            }
+            description
+            id
+            key
+            metafieldsCount(validationStatus: $validationStatus1)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            standardTemplate{
+                description
+                id
+                key
+                name
+                namespace
+                ownerTypes
+                visibleToStorefrontApi
+            }
+            type{
+                category
+                name
+                supportsDefinitionMigrations
+            }
+            useAsCollectionCondition
+            validationStatus
+            validations{
+                name
+                type
+                value
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

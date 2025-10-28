@@ -1,0 +1,39 @@
+query businessEntity($id: ID){
+    businessEntity(id: $id){
+        address{
+            address1
+            address2
+            city
+            countryCode
+            province
+            zip
+        }
+        archived
+        companyName
+        displayName
+        id
+        primary
+        shopifyPaymentsAccount{
+            accountOpenerName
+            activated
+            balance{
+                amount
+                currencyCode
+            }
+            chargeStatementDescriptors{
+                default
+                prefix
+            }
+            country
+            defaultCurrency
+            id
+            onboardable
+            payoutSchedule{
+                interval
+                monthlyAnchor
+                weeklyAnchor
+            }
+            payoutStatementDescriptor
+        }
+    }
+}

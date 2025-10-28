@@ -1,0 +1,58 @@
+query catalogs($id: ID!, $type: CatalogType, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CatalogSortKeys, $query: String){
+    catalogs(type: $type, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                id
+                status
+                title
+            }
+        }
+        nodes{
+            id
+            operations{
+                id
+                processedRowCount
+                status
+            }
+            priceList{
+                currency
+                fixedPricesCount
+                id
+                name
+            }
+            publication{
+                autoPublish
+                hasCollection(id: $id)
+                id
+                operation{
+                    __typename
+                    ... on AddAllProductsOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on CatalogCsvOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on PublicationResourceOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                }
+                supportsFuturePublishing
+            }
+            status
+            title
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,36 @@
+mutation fulfillmentServiceUpdate($id: ID!, $name: String, $callbackUrl: URL, $trackingSupport: Boolean, $inventoryManagement: Boolean, $requiresShippingMethod: Boolean){
+    fulfillmentServiceUpdate(id: $id, name: $name, callbackUrl: $callbackUrl, trackingSupport: $trackingSupport, inventoryManagement: $inventoryManagement, requiresShippingMethod: $requiresShippingMethod){
+        fulfillmentService{
+            callbackUrl
+            handle
+            id
+            inventoryManagement
+            location{
+                activatable
+                addressVerified
+                createdAt
+                deactivatable
+                deactivatedAt
+                deletable
+                fulfillsOnlineOrders
+                hasActiveInventory
+                hasUnfulfilledOrders
+                id
+                isActive
+                isFulfillmentService
+                legacyResourceId
+                name
+                shipsInventory
+                updatedAt
+            }
+            requiresShippingMethod
+            serviceName
+            trackingSupport
+            type
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

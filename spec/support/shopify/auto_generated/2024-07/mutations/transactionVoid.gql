@@ -1,0 +1,47 @@
+mutation transactionVoid($parentTransactionId: ID!){
+    transactionVoid(parentTransactionId: $parentTransactionId){
+        transaction{
+            accountNumber
+            authorizationCode
+            authorizationExpiresAt
+            createdAt
+            errorCode
+            formattedGateway
+            gateway
+            id
+            kind
+            manuallyCapturable
+            multiCapturable
+            paymentDetails{
+                __typename
+                ... on CardPaymentDetails {
+                    avsResultCode
+                    bin
+                    company
+                    cvvResultCode
+                    expirationMonth
+                    expirationYear
+                    name
+                    number
+                    paymentMethodName
+                    wallet
+                }
+                ... on ShopPayInstallmentsPaymentDetails {
+                    paymentMethodName
+                }
+            }
+            paymentId
+            processedAt
+            receiptJson
+            settlementCurrency
+            settlementCurrencyRate
+            status
+            test
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

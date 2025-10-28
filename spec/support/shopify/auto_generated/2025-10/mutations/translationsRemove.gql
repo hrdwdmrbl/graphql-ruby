@@ -1,0 +1,24 @@
+mutation translationsRemove($customizationId: ID!, $resourceId: ID!, $translationKeys: [String!]!, $locales: [String!]!, $marketIds: [ID!]){
+    translationsRemove(resourceId: $resourceId, translationKeys: $translationKeys, locales: $locales, marketIds: $marketIds){
+        translations{
+            key
+            locale
+            market{
+                assignedCustomization(customizationId: $customizationId)
+                handle
+                id
+                name
+                status
+                type
+            }
+            outdated
+            updatedAt
+            value
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

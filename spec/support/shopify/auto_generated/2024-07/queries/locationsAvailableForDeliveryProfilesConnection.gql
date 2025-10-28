@@ -1,0 +1,31 @@
+query locationsAvailableForDeliveryProfilesConnection($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    locationsAvailableForDeliveryProfilesConnection(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            activatable
+            addressVerified
+            createdAt
+            deactivatable
+            deactivatedAt
+            deletable
+            fulfillsOnlineOrders
+            hasActiveInventory
+            hasUnfulfilledOrders
+            id
+            isActive
+            isFulfillmentService
+            legacyResourceId
+            name
+            shipsInventory
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

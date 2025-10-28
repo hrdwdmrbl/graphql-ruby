@@ -1,0 +1,6 @@
+query deliveryPromiseSettings{
+    deliveryPromiseSettings{
+        deliveryDatesEnabled
+        processingTime
+    }
+}

@@ -1,0 +1,20 @@
+mutation subscriptionBillingAttemptCreate($subscriptionContractId: ID!, $subscriptionBillingAttemptInput: SubscriptionBillingAttemptInput!){
+    subscriptionBillingAttemptCreate(subscriptionContractId: $subscriptionContractId, subscriptionBillingAttemptInput: $subscriptionBillingAttemptInput){
+        subscriptionBillingAttempt{
+            completedAt
+            createdAt
+            errorCode
+            errorMessage
+            id
+            idempotencyKey
+            nextActionUrl
+            originTime
+            ready
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

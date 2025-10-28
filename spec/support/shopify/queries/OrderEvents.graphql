@@ -1,0 +1,16 @@
+query OrderEvents($orderId: ID!) {
+  order(id: $orderId) {
+    events(first: $first, after: $after) {
+      nodes {
+        id
+        action
+        appTitle
+        attributeToApp
+        attributeToUser
+        createdAt
+        criticalAlert
+        message
+      }
+    }
+  }
+}

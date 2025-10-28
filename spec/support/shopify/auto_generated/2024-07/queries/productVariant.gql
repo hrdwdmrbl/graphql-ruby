@@ -1,0 +1,61 @@
+query productVariant($id: Id!) {
+  productVariant(id: $id) {
+    availableForSale
+    barcode
+    compareAtPrice
+    createdAt
+    defaultCursor
+    deliveryProfile {
+      activeMethodDefinitionsCount
+      default
+      id
+      legacyMode
+      locationsWithoutRatesCount
+      name
+      originLocationCount
+      zoneCountryCount
+    }
+    displayName
+    id
+    image {
+      altText
+      height
+      id
+      width
+    }
+    inventoryItem {
+      countryCodeOfOrigin
+      createdAt
+      duplicateSkuCount
+      harmonizedSystemCode
+      id
+      inventoryHistoryUrl
+      legacyResourceId
+      provinceCodeOfOrigin
+      requiresShipping
+      sku
+      tracked
+      updatedAt
+    }
+    inventoryPolicy
+    inventoryQuantity
+    legacyResourceId
+    position
+    price
+    requiresComponents
+    selectedOptions {
+      name
+      value
+    }
+    sellableOnlineQuantity
+    sellingPlanGroupsCount {
+      count
+      precision
+    }
+    sku
+    taxCode
+    taxable
+    title
+    updatedAt
+  }
+}

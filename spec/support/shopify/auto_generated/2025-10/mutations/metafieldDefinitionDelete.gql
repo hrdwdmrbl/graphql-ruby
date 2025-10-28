@@ -1,0 +1,15 @@
+mutation metafieldDefinitionDelete($id: ID, $identifier: MetafieldDefinitionIdentifierInput, $deleteAllAssociatedMetafields: Boolean){
+    metafieldDefinitionDelete(id: $id, identifier: $identifier, deleteAllAssociatedMetafields: $deleteAllAssociatedMetafields){
+        deletedDefinition{
+            key
+            namespace
+            ownerType
+        }
+        deletedDefinitionId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

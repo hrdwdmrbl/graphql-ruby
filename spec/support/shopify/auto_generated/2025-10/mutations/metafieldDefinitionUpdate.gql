@@ -1,0 +1,73 @@
+mutation metafieldDefinitionUpdate($validationStatus: MetafieldValidationStatus, $sort: ArticleTagSort, $limit: Int!, $id: ID!, $definition: MetafieldDefinitionUpdateInput!){
+    metafieldDefinitionUpdate(definition: $definition){
+        updatedDefinition{
+            access{
+                admin
+                customerAccount
+                storefront
+            }
+            constraints{
+                key
+            }
+            description
+            id
+            key
+            metafieldsCount(validationStatus: $validationStatus)
+            name
+            namespace
+            ownerType
+            pinnedPosition
+            standardTemplate{
+                description
+                id
+                key
+                name
+                namespace
+                ownerTypes
+                visibleToStorefrontApi
+            }
+            type{
+                category
+                name
+                supportsDefinitionMigrations
+            }
+            useAsCollectionCondition
+            validationStatus
+            validations{
+                name
+                type
+                value
+            }
+        }
+        userErrors{
+            code
+            elementIndex
+            field
+            message
+        }
+        validationJob{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+    }
+}

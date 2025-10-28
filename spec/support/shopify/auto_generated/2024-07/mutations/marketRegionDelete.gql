@@ -1,0 +1,17 @@
+mutation marketRegionDelete($id: ID!){
+    marketRegionDelete(id: $id){
+        deletedId
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,9 @@
+mutation segmentDelete($id: ID!){
+    segmentDelete(id: $id){
+        deletedSegmentId
+        userErrors{
+            field
+            message
+        }
+    }
+}

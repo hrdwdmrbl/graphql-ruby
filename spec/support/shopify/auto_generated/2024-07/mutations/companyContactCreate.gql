@@ -1,0 +1,18 @@
+mutation companyContactCreate($companyId: ID!, $input: CompanyContactInput!){
+    companyContactCreate(companyId: $companyId, input: $input){
+        companyContact{
+            createdAt
+            id
+            isMainContact
+            lifetimeDuration
+            locale
+            title
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

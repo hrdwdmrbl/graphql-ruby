@@ -1,0 +1,29 @@
+query customerSegmentMembers($attributeName: String!, $segmentId: ID, $query: String, $queryId: ID, $timezone: String, $reverse: Boolean, $sortKey: String, $first: Int, $after: String, $last: Int, $before: String){
+    customerSegmentMembers(segmentId: $segmentId, query: $query, queryId: $queryId, timezone: $timezone, reverse: $reverse, sortKey: $sortKey, first: $first, after: $after, last: $last, before: $before){
+        edges{
+            cursor
+            node{
+                displayName
+                firstName
+                id
+                lastName
+                lastOrderId
+                note
+                numberOfOrders
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+        statistics{
+            attributeStatistics(attributeName: $attributeName){
+                average
+                sum
+            }
+        }
+        totalCount
+    }
+}

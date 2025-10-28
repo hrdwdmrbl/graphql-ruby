@@ -1,0 +1,45 @@
+query returnCalculate($input: CalculateReturnInput!){
+    returnCalculate(input: $input){
+        exchangeLineItems{
+            id
+            quantity
+            variant{
+                availableForSale
+                barcode
+                compareAtPrice
+                createdAt
+                defaultCursor
+                displayName
+                id
+                inventoryPolicy
+                inventoryQuantity
+                legacyResourceId
+                position
+                price
+                requiresComponents
+                sellableOnlineQuantity
+                showUnitPrice
+                sku
+                taxable
+                title
+                updatedAt
+            }
+        }
+        id
+        returnLineItems{
+            fulfillmentLineItem{
+                id
+                quantity
+            }
+            id
+            quantity
+            restockingFee{
+                id
+                percentage
+            }
+        }
+        returnShippingFee{
+            id
+        }
+    }
+}

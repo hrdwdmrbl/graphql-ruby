@@ -1,0 +1,32 @@
+query Refund($refundId: ID!, $first: Int!, $after: String) {
+  refund(id: $refundId) {
+    createdAt
+    id
+    note
+    # return {
+    #   id
+    # }
+    updatedAt
+    refundLineItems(first: $first, after: $after) {
+      nodes {
+        id
+        quantity
+        restockType
+        restocked
+        lineItem {
+          id
+        }
+        location {
+          id
+          fulfillmentService {
+            id
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

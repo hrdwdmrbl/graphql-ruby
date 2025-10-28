@@ -1,0 +1,16 @@
+mutation orderEditUpdateDiscount($id: ID!, $discount: OrderEditAppliedDiscountInput!, $discountApplicationId: ID!){
+    orderEditUpdateDiscount(id: $id, discount: $discount, discountApplicationId: $discountApplicationId){
+        calculatedOrder{
+            committed
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            subtotalLineItemsQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

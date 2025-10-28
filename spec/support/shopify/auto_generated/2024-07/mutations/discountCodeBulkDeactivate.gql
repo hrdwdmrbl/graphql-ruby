@@ -1,0 +1,14 @@
+mutation discountCodeBulkDeactivate($search: String, $savedSearchId: ID, $ids: [ID!]){
+    discountCodeBulkDeactivate(search: $search, savedSearchId: $savedSearchId, ids: $ids){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

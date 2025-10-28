@@ -1,0 +1,143 @@
+query shop {
+  shop {
+    alerts {
+      description
+    }
+    allProductCategoriesList {
+      ancestorIds
+      childrenIds
+      fullName
+      id
+      isArchived
+      isLeaf
+      isRoot
+      level
+      name
+      parentId
+    }
+    billingAddress {
+      address1
+      address2
+      city
+      company
+      coordinatesValidated
+      country
+      countryCodeV2
+      formattedArea
+      id
+      latitude
+      longitude
+      phone
+      province
+      provinceCode
+      zip
+    }
+    channelDefinitionsForInstalledChannels {
+      channelName
+      channelDefinitions {
+        id
+        subChannelName
+        svgIcon
+        isMarketplace
+      }
+    }
+    checkoutApiSupported
+    contactEmail
+    countriesInShippingZones {
+      countryCodes
+      includeRestOfWorld
+    }
+    createdAt
+    currencyCode
+    currencyFormats {
+      moneyFormat
+      moneyInEmailsFormat
+      moneyWithCurrencyFormat
+      moneyWithCurrencyInEmailsFormat
+    }
+    customerAccounts
+    customerAccountsV2 {
+      customerAccountsVersion
+      loginLinksVisibleOnStorefrontAndCheckout
+      loginRequiredAtCheckout
+      url
+    }
+    description
+    email
+    enabledPresentmentCurrencies
+    features {
+      avalaraAvatax
+      branding
+      captcha
+      dynamicRemarketing
+      eligibleForSubscriptionMigration
+      eligibleForSubscriptions
+      giftCards
+      harmonizedSystemCode
+      internationalPriceOverrides
+      internationalPriceRules
+      legacySubscriptionGatewayEnabled
+      liveView
+      paypalExpressSubscriptionGatewayStatus
+      reports
+      sellsSubscriptions
+      showMetrics
+      storefront
+    }
+    fulfillmentServices {
+      callbackUrl
+      handle
+      id
+      inventoryManagement
+      permitsSkuSharing
+      serviceName
+      trackingSupport
+      type
+    }
+    ianaTimezone
+    id
+    marketingSmsConsentEnabledAtCheckout
+    myshopifyDomain
+    name
+    navigationSettings {
+      id
+      title
+      url
+    }
+    orderNumberFormatPrefix
+    orderNumberFormatSuffix
+    paymentSettings {
+      supportedDigitalWallets
+    }
+    plan {
+      displayName
+      partnerDevelopment
+      shopifyPlus
+    }
+    primaryDomain {
+      host
+      id
+      sslEnabled
+      url
+    }
+    resourceLimits {
+      locationLimit
+      maxProductOptions
+      maxProductVariants
+      redirectLimitReached
+    }
+    richTextEditorUrl
+    setupRequired
+    shipsToCountries
+    taxShipping
+    taxesIncluded
+    timezoneAbbreviation
+    timezoneOffset
+    timezoneOffsetMinutes
+    transactionalSmsDisabled
+    unitSystem
+    updatedAt
+    url
+    weightUnit
+  }
+}

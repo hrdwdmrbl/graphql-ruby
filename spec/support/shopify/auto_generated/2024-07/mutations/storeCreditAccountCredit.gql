@@ -1,0 +1,14 @@
+mutation storeCreditAccountCredit($id: ID!, $creditInput: StoreCreditAccountCreditInput!){
+    storeCreditAccountCredit(id: $id, creditInput: $creditInput){
+        storeCreditAccountTransaction{
+            createdAt
+            expiresAt
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

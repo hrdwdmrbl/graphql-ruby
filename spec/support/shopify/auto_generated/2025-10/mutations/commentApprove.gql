@@ -1,0 +1,39 @@
+mutation commentApprove($id: ID!){
+    commentApprove(id: $id){
+        comment{
+            article{
+                body
+                createdAt
+                defaultCursor
+                handle
+                id
+                isPublished
+                publishedAt
+                summary
+                tags
+                templateSuffix
+                title
+                updatedAt
+            }
+            author{
+                email
+                name
+            }
+            body
+            bodyHtml
+            createdAt
+            id
+            ip
+            isPublished
+            publishedAt
+            status
+            updatedAt
+            userAgent
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

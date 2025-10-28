@@ -1,0 +1,13 @@
+mutation webPixelUpdate($id: ID!, $webPixel: WebPixelInput!){
+    webPixelUpdate(id: $id, webPixel: $webPixel){
+        userErrors{
+            code
+            field
+            message
+        }
+        webPixel{
+            id
+            settings
+        }
+    }
+}

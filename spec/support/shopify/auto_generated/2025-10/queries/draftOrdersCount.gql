@@ -1,0 +1,6 @@
+query draftOrdersCount($query: String, $savedSearchId: ID, $limit: Int){
+    draftOrdersCount(query: $query, savedSearchId: $savedSearchId, limit: $limit){
+        count
+        precision
+    }
+}

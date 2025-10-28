@@ -1,0 +1,35 @@
+query FulfillmentOrders($query: String, $first: Int!, $after: String) {
+  fulfillmentOrders(query: $query, first: $first, includeClosed: true, after: $after) {
+    nodes {
+      id
+      orderId
+      createdAt
+      updatedAt
+      status
+      requestStatus
+      assignedLocation {
+        location {
+          id
+        }
+      }
+      lineItems(first: 8) {
+        nodes {
+          id
+          totalQuantity
+          remainingQuantity
+          lineItem {
+            id
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

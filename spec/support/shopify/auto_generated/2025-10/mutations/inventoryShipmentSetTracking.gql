@@ -1,0 +1,31 @@
+mutation inventoryShipmentSetTracking($query: String, $limit: Int, $id: ID!, $tracking: InventoryShipmentTrackingInput!){
+    inventoryShipmentSetTracking(id: $id, tracking: $tracking){
+        inventoryShipment{
+            dateCreated
+            dateReceived
+            dateShipped
+            id
+            lineItemTotalQuantity
+            lineItemsCount(query: $query, limit: $limit){
+                count
+                precision
+            }
+            name
+            status
+            totalAcceptedQuantity
+            totalReceivedQuantity
+            totalRejectedQuantity
+            tracking{
+                arrivesAt
+                company
+                trackingNumber
+                trackingUrl
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

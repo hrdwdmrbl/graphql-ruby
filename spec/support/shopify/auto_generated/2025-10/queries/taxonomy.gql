@@ -1,0 +1,27 @@
+query taxonomy($search: String, $childrenOf: ID, $siblingsOf: ID, $descendantsOf: ID, $first: Int, $after: String, $last: Int, $before: String){
+    taxonomy{
+        categories(search: $search, childrenOf: $childrenOf, siblingsOf: $siblingsOf, descendantsOf: $descendantsOf, first: $first, after: $after, last: $last, before: $before){
+            edges{
+                cursor
+            }
+            nodes{
+                ancestorIds
+                childrenIds
+                fullName
+                id
+                isArchived
+                isLeaf
+                isRoot
+                level
+                name
+                parentId
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+    }
+}

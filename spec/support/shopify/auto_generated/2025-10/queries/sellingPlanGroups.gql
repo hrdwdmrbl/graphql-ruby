@@ -1,0 +1,56 @@
+query sellingPlanGroups($productId: ID!, $productVariantId: ID!, $productId1: ID!, $productId2: ID!, $productVariantId1: ID!, $productId3: ID!, $productId4: ID, $locale: String!, $marketId: ID, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: SellingPlanGroupSortKeys, $query: String){
+    sellingPlanGroups(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                appId
+                appliesToProduct(productId: $productId)
+                appliesToProductVariant(productVariantId: $productVariantId)
+                appliesToProductVariants(productId: $productId1)
+                createdAt
+                description
+                id
+                merchantCode
+                name
+                options
+                position
+                summary
+            }
+        }
+        nodes{
+            appId
+            appliesToProduct(productId: $productId2)
+            appliesToProductVariant(productVariantId: $productVariantId1)
+            appliesToProductVariants(productId: $productId3)
+            createdAt
+            description
+            id
+            merchantCode
+            name
+            options
+            position
+            productVariantsCount(productId: $productId4){
+                count
+                precision
+            }
+            productsCount{
+                count
+                precision
+            }
+            summary
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,8 @@
+mutation flowTriggerReceive($handle: String, $payload: JSON){
+    flowTriggerReceive(handle: $handle, payload: $payload){
+        userErrors{
+            field
+            message
+        }
+    }
+}

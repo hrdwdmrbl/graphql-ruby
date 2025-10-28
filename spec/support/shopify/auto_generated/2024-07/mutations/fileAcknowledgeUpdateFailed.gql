@@ -1,0 +1,16 @@
+mutation fileAcknowledgeUpdateFailed($fileIds: [ID!]!){
+    fileAcknowledgeUpdateFailed(fileIds: $fileIds){
+        files{
+            alt
+            createdAt
+            fileStatus
+            id
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

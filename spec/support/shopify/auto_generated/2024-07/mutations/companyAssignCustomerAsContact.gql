@@ -1,0 +1,18 @@
+mutation companyAssignCustomerAsContact($companyId: ID!, $customerId: ID!){
+    companyAssignCustomerAsContact(companyId: $companyId, customerId: $customerId){
+        companyContact{
+            createdAt
+            id
+            isMainContact
+            lifetimeDuration
+            locale
+            title
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

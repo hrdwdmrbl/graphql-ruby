@@ -1,0 +1,22 @@
+mutation appSubscriptionCreate($name: String!, $lineItems: [AppSubscriptionLineItemInput!]!, $test: Boolean, $trialDays: Int, $returnUrl: URL!, $replacementBehavior: AppSubscriptionReplacementBehavior){
+    appSubscriptionCreate(name: $name, lineItems: $lineItems, test: $test, trialDays: $trialDays, returnUrl: $returnUrl, replacementBehavior: $replacementBehavior){
+        appSubscription{
+            createdAt
+            currentPeriodEnd
+            id
+            lineItems{
+                id
+            }
+            name
+            returnUrl
+            status
+            test
+            trialDays
+        }
+        confirmationUrl
+        userErrors{
+            field
+            message
+        }
+    }
+}

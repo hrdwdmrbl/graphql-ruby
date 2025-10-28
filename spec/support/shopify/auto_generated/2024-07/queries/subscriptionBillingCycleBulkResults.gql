@@ -1,0 +1,22 @@
+query subscriptionBillingCycleBulkResults($jobId: ID!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    subscriptionBillingCycleBulkResults(jobId: $jobId, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            billingAttemptExpectedDate
+            cycleEndAt
+            cycleIndex
+            cycleStartAt
+            edited
+            skipped
+            status
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

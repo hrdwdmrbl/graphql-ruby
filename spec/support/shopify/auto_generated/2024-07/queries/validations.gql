@@ -1,0 +1,19 @@
+query validations($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: ValidationSortKeys){
+    validations(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey){
+        edges{
+            cursor
+        }
+        nodes{
+            blockOnFailure
+            enabled
+            id
+            title
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

@@ -1,0 +1,63 @@
+mutation orderEditAddVariant($id: ID!, $variantId: ID!, $locationId: ID, $quantity: Int!, $allowDuplicates: Boolean){
+    orderEditAddVariant(id: $id, variantId: $variantId, locationId: $locationId, quantity: $quantity, allowDuplicates: $allowDuplicates){
+        calculatedLineItem{
+            editableQuantity
+            editableQuantityBeforeChanges
+            hasStagedLineItemDiscount
+            id
+            quantity
+            restockable
+            restocking
+            sku
+            stagedChanges{
+                __typename
+                ... on OrderStagedChangeAddCustomItem {
+                    quantity
+                    title
+                }
+                ... on OrderStagedChangeAddLineItemDiscount {
+                    description
+                    id
+                    value{
+                        __typename
+                        ... on MoneyV2 {
+                            amount
+                            currencyCode
+                        }
+                        ... on PricingPercentageValue {
+                            percentage
+                        }
+                    }
+                }
+                ... on OrderStagedChangeAddShippingLine {
+                    phone
+                    presentmentTitle
+                    title
+                }
+                ... on OrderStagedChangeAddVariant {
+                    quantity
+                }
+                ... on OrderStagedChangeDecrementItem {
+                    delta
+                    restock
+                }
+                ... on OrderStagedChangeIncrementItem {
+                    delta
+                }
+            }
+            title
+            variantTitle
+        }
+        calculatedOrder{
+            committed
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            subtotalLineItemsQuantity
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

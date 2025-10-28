@@ -1,0 +1,23 @@
+mutation sellingPlanGroupCreate($productId: ID!, $productVariantId: ID!, $productId1: ID!, $input: SellingPlanGroupInput!, $resources: SellingPlanGroupResourceInput){
+    sellingPlanGroupCreate(input: $input, resources: $resources){
+        sellingPlanGroup{
+            appId
+            appliesToProduct(productId: $productId)
+            appliesToProductVariant(productVariantId: $productVariantId)
+            appliesToProductVariants(productId: $productId1)
+            createdAt
+            description
+            id
+            merchantCode
+            name
+            options
+            position
+            summary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

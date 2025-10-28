@@ -1,0 +1,11 @@
+mutation deliverySettingUpdate($setting: DeliverySettingInput!){
+    deliverySettingUpdate(setting: $setting){
+        setting{
+            legacyModeProfiles
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

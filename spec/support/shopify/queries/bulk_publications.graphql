@@ -1,0 +1,33 @@
+mutation {
+  bulkOperationRunQuery(
+    query: """
+    channels {
+      edges {
+        node {
+          id
+          productPublicationsV3 {
+            edges {
+              node {
+                isPublished
+                publishDate
+                product {
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+  ) {
+    bulkOperation {
+      id
+      status
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

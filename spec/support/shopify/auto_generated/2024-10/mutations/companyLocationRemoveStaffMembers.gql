@@ -1,0 +1,10 @@
+mutation companyLocationRemoveStaffMembers($companyLocationStaffMemberAssignmentIds: [ID!]!){
+    companyLocationRemoveStaffMembers(companyLocationStaffMemberAssignmentIds: $companyLocationStaffMemberAssignmentIds){
+        deletedCompanyLocationStaffMemberAssignmentIds
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,37 @@
+mutation subscriptionContractProductChange($subscriptionContractId: ID!, $lineId: ID!, $input: SubscriptionContractProductChangeInput!){
+    subscriptionContractProductChange(subscriptionContractId: $subscriptionContractId, lineId: $lineId, input: $input){
+        contract{
+            appAdminUrl
+            createdAt
+            currencyCode
+            deliveryMethod{
+                __typename
+            }
+            id
+            lastPaymentStatus
+            nextBillingDate
+            note
+            revisionId
+            status
+            updatedAt
+        }
+        lineUpdated{
+            id
+            productId
+            quantity
+            requiresShipping
+            sellingPlanId
+            sellingPlanName
+            sku
+            taxable
+            title
+            variantId
+            variantTitle
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

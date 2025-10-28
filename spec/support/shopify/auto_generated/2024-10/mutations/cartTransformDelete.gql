@@ -1,0 +1,10 @@
+mutation cartTransformDelete($id: ID!){
+    cartTransformDelete(id: $id){
+        deletedId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

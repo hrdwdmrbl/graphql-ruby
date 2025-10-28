@@ -1,0 +1,19 @@
+query mobilePlatformApplication($id: ID!){
+    mobilePlatformApplication(id: $id){
+        __typename
+        ... on AndroidApplication {
+            appLinksEnabled
+            applicationId
+            id
+            sha256CertFingerprints
+        }
+        ... on AppleApplication {
+            appClipApplicationId
+            appClipsEnabled
+            appId
+            id
+            sharedWebCredentialsEnabled
+            universalLinksEnabled
+        }
+    }
+}

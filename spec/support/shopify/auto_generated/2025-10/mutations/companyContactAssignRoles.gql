@@ -1,0 +1,54 @@
+mutation companyContactAssignRoles($catalogId: ID!, $companyContactId: ID!, $rolesToAssign: [CompanyContactRoleAssign!]!){
+    companyContactAssignRoles(companyContactId: $companyContactId, rolesToAssign: $rolesToAssign){
+        roleAssignments{
+            company{
+                createdAt
+                customerSince
+                defaultCursor
+                externalId
+                hasTimelineComment
+                id
+                lifetimeDuration
+                name
+                note
+                updatedAt
+            }
+            companyContact{
+                createdAt
+                id
+                isMainContact
+                lifetimeDuration
+                locale
+                title
+                updatedAt
+            }
+            companyLocation{
+                createdAt
+                currency
+                defaultCursor
+                externalId
+                hasTimelineComment
+                id
+                inCatalog(catalogId: $catalogId)
+                locale
+                name
+                note
+                phone
+                updatedAt
+            }
+            createdAt
+            id
+            role{
+                id
+                name
+                note
+            }
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

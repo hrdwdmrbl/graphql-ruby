@@ -1,0 +1,25 @@
+mutation companyLocationUpdate($catalogId: ID!, $companyLocationId: ID!, $input: CompanyLocationUpdateInput!){
+    companyLocationUpdate(companyLocationId: $companyLocationId, input: $input){
+        companyLocation{
+            createdAt
+            currency
+            defaultCursor
+            externalId
+            hasTimelineComment
+            id
+            inCatalog(catalogId: $catalogId)
+            locale
+            name
+            note
+            phone
+            taxExemptions
+            taxRegistrationId
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,21 @@
+mutation discountAutomaticAppUpdate($id: ID!, $automaticAppDiscount: DiscountAutomaticAppInput!){
+    discountAutomaticAppUpdate(id: $id, automaticAppDiscount: $automaticAppDiscount){
+        automaticAppDiscount{
+            asyncUsageCount
+            createdAt
+            discountClass
+            discountId
+            endsAt
+            startsAt
+            status
+            title
+            updatedAt
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

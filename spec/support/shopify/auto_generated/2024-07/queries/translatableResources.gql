@@ -1,0 +1,16 @@
+query translatableResources($resourceType: TranslatableResourceType!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    translatableResources(resourceType: $resourceType, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            resourceId
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

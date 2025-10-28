@@ -1,0 +1,33 @@
+query automaticDiscountSavedSearches($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    automaticDiscountSavedSearches(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                id
+                legacyResourceId
+                name
+                query
+                resourceType
+                searchTerms
+            }
+        }
+        nodes{
+            filters{
+                key
+                value
+            }
+            id
+            legacyResourceId
+            name
+            query
+            resourceType
+            searchTerms
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

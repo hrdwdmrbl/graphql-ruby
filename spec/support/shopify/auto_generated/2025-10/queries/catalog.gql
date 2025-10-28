@@ -1,0 +1,64 @@
+query catalog($id: ID!, $query: String, $savedSearchId: ID, $limit: Int, $id1: ID!){
+    catalog(id: $id1){
+        id
+        operations{
+            id
+            processedRowCount
+            rowCount{
+                count
+                exceedsMax
+            }
+            status
+        }
+        priceList{
+            catalog{
+                id
+                status
+                title
+            }
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        publication{
+            autoPublish
+            catalog{
+                id
+                status
+                title
+            }
+            hasCollection(id: $id)
+            id
+            includedProductsCount(query: $query, savedSearchId: $savedSearchId, limit: $limit){
+                count
+                precision
+            }
+            operation{
+                __typename
+                ... on AddAllProductsOperation {
+                    id
+                    processedRowCount
+                    rowCount{
+                        count
+                        exceedsMax
+                    }
+                    status
+                }
+                ... on CatalogCsvOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on PublicationResourceOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+            }
+            supportsFuturePublishing
+        }
+        status
+        title
+    }
+}

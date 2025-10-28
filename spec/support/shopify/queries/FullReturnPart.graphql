@@ -1,0 +1,63 @@
+fragment FullReturnPart on Return {
+  id
+  name
+  status
+  totalQuantity
+  returnLineItems(first: 1) {
+    nodes {
+      ... on ReturnLineItem {
+        fulfillmentLineItem {
+          id
+          lineItem {
+            id
+          }
+        }
+      }
+      id
+      quantity
+      refundableQuantity
+      refundedQuantity
+      returnReason
+      returnReasonNote
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+  reverseFulfillmentOrders(first: 1) {
+    nodes {
+      id
+      status
+      lineItems(first: 1) {
+        nodes {
+          id
+          totalQuantity
+          dispositions {
+            id
+            quantity
+            type
+            createdAt
+            location {
+              id
+            }
+          }
+          fulfillmentLineItem {
+            id
+            lineItem {
+              id
+            }
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

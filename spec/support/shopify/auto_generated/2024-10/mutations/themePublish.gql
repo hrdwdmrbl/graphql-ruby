@@ -1,0 +1,69 @@
+mutation themePublish($filenames: [String!], $first: Int, $after: String, $locale: String!, $marketId: ID, $id: ID!){
+    themePublish(id: $id){
+        theme{
+            createdAt
+            files(filenames: $filenames, first: $first, after: $after){
+                edges{
+                    cursor
+                }
+                nodes{
+                    body{
+                        __typename
+                        ... on OnlineStoreThemeFileBodyBase64 {
+                            contentBase64
+                        }
+                        ... on OnlineStoreThemeFileBodyText {
+                            content
+                        }
+                        ... on OnlineStoreThemeFileBodyUrl {
+                            url
+                        }
+                    }
+                    checksumMd5
+                    contentType
+                    createdAt
+                    filename
+                    size
+                    updatedAt
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+                userErrors{
+                    code
+                    filename
+                }
+            }
+            id
+            name
+            prefix
+            processing
+            processingFailed
+            role
+            themeStoreId
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                market{
+                    enabled
+                    handle
+                    id
+                    name
+                    primary
+                }
+                outdated
+                updatedAt
+                value
+            }
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

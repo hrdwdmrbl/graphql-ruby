@@ -1,0 +1,26 @@
+query staffMember($transform: ImageTransformInput, $fallback: StaffMemberDefaultImage, $id: ID){
+    staffMember(id: $id){
+        active
+        avatar(fallback: $fallback){
+            altText
+            height
+            id
+            url(transform: $transform)
+            width
+        }
+        email
+        exists
+        firstName
+        id
+        initials
+        isShopOwner
+        lastName
+        locale
+        name
+        phone
+        privateData{
+            accountSettingsUrl
+            createdAt
+        }
+    }
+}

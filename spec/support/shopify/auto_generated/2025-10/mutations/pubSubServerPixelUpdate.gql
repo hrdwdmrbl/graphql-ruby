@@ -1,0 +1,14 @@
+mutation pubSubServerPixelUpdate($pubSubProject: String!, $pubSubTopic: String!){
+    pubSubServerPixelUpdate(pubSubProject: $pubSubProject, pubSubTopic: $pubSubTopic){
+        serverPixel{
+            id
+            status
+            webhookEndpointAddress
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

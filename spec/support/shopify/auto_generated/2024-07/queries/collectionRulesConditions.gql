@@ -1,0 +1,24 @@
+query collectionRulesConditions($validationStatus: MetafieldValidationStatus){
+    collectionRulesConditions{
+        allowedRelations
+        defaultRelation
+        ruleObject{
+            __typename
+            ... on CollectionRuleMetafieldCondition {
+                metafieldDefinition{
+                    description
+                    id
+                    key
+                    metafieldsCount(validationStatus: $validationStatus)
+                    name
+                    namespace
+                    ownerType
+                    pinnedPosition
+                    useAsCollectionCondition
+                    validationStatus
+                }
+            }
+        }
+        ruleType
+    }
+}

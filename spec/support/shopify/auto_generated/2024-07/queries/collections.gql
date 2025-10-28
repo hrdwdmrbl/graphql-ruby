@@ -1,0 +1,27 @@
+query collections($truncateAt: Int, $id: ID!, $publicationId: ID!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CollectionSortKeys, $query: String, $savedSearchId: ID){
+    collections(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+        }
+        nodes{
+            description(truncateAt: $truncateAt)
+            descriptionHtml
+            handle
+            hasProduct(id: $id)
+            id
+            legacyResourceId
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+            sortOrder
+            templateSuffix
+            title
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

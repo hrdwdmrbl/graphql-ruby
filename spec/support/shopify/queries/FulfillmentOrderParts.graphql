@@ -1,0 +1,11 @@
+fragment FulfillmentPart on Fulfillment {
+  id
+  fulfillmentOrders(first: 100) {
+    nodes {
+      ...FulfillmentOrderParts
+    }
+  }
+}
+fragment FulfillmentOrderParts on FulfillmentOrder {
+  id
+}

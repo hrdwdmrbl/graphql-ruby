@@ -1,0 +1,13 @@
+mutation reverseFulfillmentOrderDispose($dispositionInputs: [ReverseFulfillmentOrderDisposeInput!]!){
+    reverseFulfillmentOrderDispose(dispositionInputs: $dispositionInputs){
+        reverseFulfillmentOrderLineItems{
+            id
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,14 @@
+mutation customerSegmentMembersQueryCreate($input: CustomerSegmentMembersQueryInput!){
+    customerSegmentMembersQueryCreate(input: $input){
+        customerSegmentMembersQuery{
+            currentCount
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

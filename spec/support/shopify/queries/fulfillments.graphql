@@ -1,0 +1,54 @@
+query Fulfillments($orderId: ID!) {
+  order(id: $orderId) {
+    fulfillments {
+      id
+      createdAt
+      updatedAt
+      deliveredAt
+      displayStatus
+      inTransitAt
+      name
+      status
+      requiresShipping
+      service {
+        id
+        serviceName
+        type
+        location {
+          id
+        }
+      }
+      totalQuantity
+      location {
+        id
+      }
+      trackingInfo {
+        company
+        number
+        url
+      }
+      fulfillmentLineItems(first: 250) {
+        nodes {
+          id
+          quantity
+          lineItem {
+            id
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+      fulfillmentOrders(first: 250) {
+        nodes {
+          id
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+  }
+}

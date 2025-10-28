@@ -1,0 +1,49 @@
+mutation productBundleCreate($truncateAt: Int, $id: ID!, $context: ContextualPublicationContext!, $publicationId: ID!, $input: ProductBundleCreateInput!){
+    productBundleCreate(input: $input){
+        productBundleOperation{
+            id
+            product{
+                combinedListingRole
+                createdAt
+                defaultCursor
+                description(truncateAt: $truncateAt)
+                descriptionHtml
+                giftCardTemplateSuffix
+                handle
+                hasOnlyDefaultVariant
+                hasOutOfStockVariants
+                hasVariantsThatRequiresComponents
+                id
+                inCollection(id: $id)
+                isGiftCard
+                legacyResourceId
+                onlineStorePreviewUrl
+                onlineStoreUrl
+                productType
+                publishedAt
+                publishedInContext(context: $context)
+                publishedOnCurrentPublication
+                publishedOnPublication(publicationId: $publicationId)
+                requiresSellingPlan
+                status
+                tags
+                templateSuffix
+                title
+                totalInventory
+                tracksInventory
+                updatedAt
+                vendor
+            }
+            status
+            userErrors{
+                code
+                field
+                message
+            }
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

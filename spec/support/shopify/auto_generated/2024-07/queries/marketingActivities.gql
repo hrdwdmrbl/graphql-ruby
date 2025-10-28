@@ -1,0 +1,35 @@
+query marketingActivities($marketingActivityIds: [ID!], $remoteIds: [String!], $utm: UTMInput, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: MarketingActivitySortKeys, $query: String, $savedSearchId: ID){
+    marketingActivities(marketingActivityIds: $marketingActivityIds, remoteIds: $remoteIds, utm: $utm, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+        }
+        nodes{
+            activityListUrl
+            createdAt
+            formData
+            hierarchyLevel
+            id
+            inMainWorkflowVersion
+            isExternal
+            marketingChannelType
+            parentActivityId
+            parentRemoteId
+            sourceAndMedium
+            status
+            statusBadgeTypeV2
+            statusLabel
+            statusTransitionedAt
+            tactic
+            targetStatus
+            title
+            updatedAt
+            urlParameterValue
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

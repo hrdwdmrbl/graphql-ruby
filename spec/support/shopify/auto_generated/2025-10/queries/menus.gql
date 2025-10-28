@@ -1,0 +1,40 @@
+query menus($limit: Int, $locale: String!, $marketId: ID, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: MenuSortKeys, $query: String){
+    menus(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                handle
+                id
+                isDefault
+                title
+            }
+        }
+        nodes{
+            handle
+            id
+            isDefault
+            items(limit: $limit){
+                id
+                resourceId
+                tags
+                title
+                type
+                url
+            }
+            title
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

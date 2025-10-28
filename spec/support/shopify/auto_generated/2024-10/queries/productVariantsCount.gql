@@ -1,0 +1,6 @@
+query productVariantsCount($query: String){
+    productVariantsCount(query: $query){
+        count
+        precision
+    }
+}

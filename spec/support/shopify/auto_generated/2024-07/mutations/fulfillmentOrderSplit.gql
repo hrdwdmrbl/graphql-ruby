@@ -1,0 +1,9 @@
+mutation fulfillmentOrderSplit($fulfillmentOrderSplits: [FulfillmentOrderSplitInput!]!){
+    fulfillmentOrderSplit(fulfillmentOrderSplits: $fulfillmentOrderSplits){
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

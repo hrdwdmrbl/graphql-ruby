@@ -1,0 +1,97 @@
+mutation priceListCreate($id: ID!, $originType: PriceListPriceOriginType, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $query: String, $originType1: QuantityRuleOriginType, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $input: PriceListCreateInput!){
+    priceListCreate(input: $input){
+        priceList{
+            catalog{
+                id
+                operations{
+                    id
+                    processedRowCount
+                    status
+                }
+                priceList{
+                    currency
+                    fixedPricesCount
+                    id
+                    name
+                }
+                publication{
+                    autoPublish
+                    hasCollection(id: $id)
+                    id
+                    name
+                    operation{
+                        __typename
+                        ... on AddAllProductsOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on CatalogCsvOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on PublicationResourceOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                    }
+                    supportsFuturePublishing
+                }
+                status
+                title
+            }
+            currency
+            fixedPricesCount
+            id
+            name
+            parent{
+                adjustment{
+                    type
+                    value
+                }
+                settings{
+                    compareAtMode
+                }
+            }
+            prices(originType: $originType, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, query: $query){
+                edges{
+                    cursor
+                }
+                nodes{
+                    originType
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            quantityRules(originType: $originType1, first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+                edges{
+                    cursor
+                }
+                nodes{
+                    increment
+                    isDefault
+                    maximum
+                    minimum
+                    originType
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

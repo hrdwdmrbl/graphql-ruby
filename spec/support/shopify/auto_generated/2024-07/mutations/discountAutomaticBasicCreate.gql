@@ -1,0 +1,93 @@
+mutation discountAutomaticBasicCreate($automaticBasicDiscount: DiscountAutomaticBasicInput!){
+    discountAutomaticBasicCreate(automaticBasicDiscount: $automaticBasicDiscount){
+        automaticDiscountNode{
+            automaticDiscount{
+                __typename
+                ... on DiscountAutomaticApp {
+                    asyncUsageCount
+                    createdAt
+                    discountClass
+                    discountId
+                    endsAt
+                    startsAt
+                    status
+                    title
+                    updatedAt
+                }
+                ... on DiscountAutomaticBasic {
+                    asyncUsageCount
+                    createdAt
+                    discountClass
+                    endsAt
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageCount
+                }
+                ... on DiscountAutomaticBxgy {
+                    asyncUsageCount
+                    createdAt
+                    discountClass
+                    endsAt
+                    id
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageCount
+                    usesPerOrderLimit
+                }
+                ... on DiscountAutomaticFreeShipping {
+                    appliesOnOneTimePurchase
+                    appliesOnSubscription
+                    asyncUsageCount
+                    createdAt
+                    destinationSelection{
+                        __typename
+                        ... on DiscountCountries {
+                            countries
+                            includeRestOfWorld
+                        }
+                        ... on DiscountCountryAll {
+                            allCountries
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    hasTimelineComment
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                }
+            }
+            id
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

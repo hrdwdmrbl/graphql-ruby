@@ -1,0 +1,74 @@
+query publications($id: ID!, $id1: ID!, $query: String, $savedSearchId: ID, $limit: Int, $catalogType: CatalogType, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    publications(catalogType: $catalogType, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                autoPublish
+                hasCollection(id: $id)
+                id
+                operation{
+                    __typename
+                    ... on AddAllProductsOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on CatalogCsvOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                    ... on PublicationResourceOperation {
+                        id
+                        processedRowCount
+                        status
+                    }
+                }
+                supportsFuturePublishing
+            }
+        }
+        nodes{
+            autoPublish
+            catalog{
+                id
+                status
+                title
+            }
+            hasCollection(id: $id1)
+            id
+            includedProductsCount(query: $query, savedSearchId: $savedSearchId, limit: $limit){
+                count
+                precision
+            }
+            operation{
+                __typename
+                ... on AddAllProductsOperation {
+                    id
+                    processedRowCount
+                    rowCount{
+                        count
+                        exceedsMax
+                    }
+                    status
+                }
+                ... on CatalogCsvOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+                ... on PublicationResourceOperation {
+                    id
+                    processedRowCount
+                    status
+                }
+            }
+            supportsFuturePublishing
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

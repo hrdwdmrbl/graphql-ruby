@@ -1,0 +1,28 @@
+mutation storeCreditAccountDebit($id: ID!, $debitInput: StoreCreditAccountDebitInput!){
+    storeCreditAccountDebit(id: $id, debitInput: $debitInput){
+        storeCreditAccountTransaction{
+            account{
+                balance{
+                    amount
+                    currencyCode
+                }
+                id
+            }
+            amount{
+                amount
+                currencyCode
+            }
+            balanceAfterTransaction{
+                amount
+                currencyCode
+            }
+            createdAt
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

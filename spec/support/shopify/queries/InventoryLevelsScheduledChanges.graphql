@@ -1,0 +1,25 @@
+query InventoryLevels($locationId: ID!, $query: String!, $queryLength: Int!, $count: Int!, $after: String) {
+  location(id: $locationId) {
+    inventoryLevels(query: $query, first: $queryLength) {
+      nodes {
+        id
+        item {
+          id
+        }
+        scheduledChanges(first: $count, after: $after) {
+          nodes {
+            expectedAt
+            fromName
+            ledgerDocumentUri
+            quantity
+            toName
+          }
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
+        }
+      }
+    }
+  }
+}

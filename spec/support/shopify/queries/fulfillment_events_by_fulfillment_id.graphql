@@ -1,0 +1,24 @@
+query FulfillmentEventsByFulfillmentIdQuery($fulfillmentId: ID!, $first: Int!, $after: String) {
+  fulfillment(id: $fulfillmentId) {
+    events(first: $first, after: $after) {
+      nodes {
+        address1
+        city
+        country
+        estimatedDeliveryAt
+        happenedAt
+        id
+        latitude
+        longitude
+        status
+        zip
+        province
+        message
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

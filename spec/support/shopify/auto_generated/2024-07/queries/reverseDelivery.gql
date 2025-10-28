@@ -1,0 +1,24 @@
+query reverseDelivery($id: ID!){
+    reverseDelivery(id: $id){
+        deliverable{
+            __typename
+            ... on ReverseDeliveryShippingDeliverable {
+                label{
+                    createdAt
+                    publicFileUrl
+                    updatedAt
+                }
+                tracking{
+                    carrierName
+                    number
+                    url
+                }
+            }
+        }
+        id
+        reverseFulfillmentOrder{
+            id
+            status
+        }
+    }
+}

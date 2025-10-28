@@ -1,0 +1,47 @@
+query mobilePlatformApplications($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    mobilePlatformApplications(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                __typename
+                ... on AndroidApplication {
+                    appLinksEnabled
+                    applicationId
+                    id
+                    sha256CertFingerprints
+                }
+                ... on AppleApplication {
+                    appClipApplicationId
+                    appClipsEnabled
+                    appId
+                    id
+                    sharedWebCredentialsEnabled
+                    universalLinksEnabled
+                }
+            }
+        }
+        nodes{
+            __typename
+            ... on AndroidApplication {
+                appLinksEnabled
+                applicationId
+                id
+                sha256CertFingerprints
+            }
+            ... on AppleApplication {
+                appClipApplicationId
+                appClipsEnabled
+                appId
+                id
+                sharedWebCredentialsEnabled
+                universalLinksEnabled
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

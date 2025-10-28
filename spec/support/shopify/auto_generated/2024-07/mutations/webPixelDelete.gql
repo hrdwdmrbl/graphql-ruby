@@ -1,0 +1,10 @@
+mutation webPixelDelete($id: ID!){
+    webPixelDelete(id: $id){
+        deletedWebPixelId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,18 @@
+query cartTransforms($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    cartTransforms(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            blockOnFailure
+            functionId
+            id
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

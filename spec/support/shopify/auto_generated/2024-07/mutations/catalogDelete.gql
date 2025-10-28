@@ -1,0 +1,10 @@
+mutation catalogDelete($id: ID!, $deleteDependentResources: Boolean){
+    catalogDelete(id: $id, deleteDependentResources: $deleteDependentResources){
+        deletedId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

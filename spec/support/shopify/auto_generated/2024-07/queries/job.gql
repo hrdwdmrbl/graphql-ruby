@@ -1,0 +1,25 @@
+query job($id: ID!, $id1: ID!){
+    job(id: $id1){
+        done
+        id
+        query{
+            mobilePlatformApplication(id: $id){
+                __typename
+                ... on AndroidApplication {
+                    appLinksEnabled
+                    applicationId
+                    id
+                    sha256CertFingerprints
+                }
+                ... on AppleApplication {
+                    appClipApplicationId
+                    appClipsEnabled
+                    appId
+                    id
+                    sharedWebCredentialsEnabled
+                    universalLinksEnabled
+                }
+            }
+        }
+    }
+}

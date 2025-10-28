@@ -1,0 +1,175 @@
+{
+  "data": {
+    "product": {
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/32681179381898",
+            "availableForSale": true,
+            "barcode": "87_test_barcode",
+            "compareAtPrice": "99.99",
+            "createdAt": "2020-03-06T00:12:50Z",
+            "defaultCursor": "eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjozMjY4MTE3OTM4MTg5OCwibGFzdF92YWx1ZSI6MzI2ODExNzkzODE4OTgsImRpcmVjdGlvbiI6Im5leHQifQ==",
+            "deliveryProfile": {
+              "activeMethodDefinitionsCount": 13,
+              "default": true,
+              "id": "gid://shopify/DeliveryProfile/52877951114",
+              "legacyMode": false,
+              "locationsWithoutRatesCount": 1,
+              "name": "General Profile",
+              "originLocationCount": 2,
+              "zoneCountryCount": 244
+            },
+            "displayName": "AA Batteries - 4-Pack",
+            "image": null,
+            "inventoryItem": {
+              "id": "gid://shopify/InventoryItem/34362030227594",
+              "countryCodeOfOrigin": "CN",
+              "duplicateSkuCount": 1,
+              "harmonizedSystemCode": "610831",
+              "inventoryHistoryUrl": "https://horse-dev.myshopify.com/admin/products/inventory/34362030227594/inventory_history",
+              "legacyResourceId": "34362030227594",
+              "locationsCount": {
+                "count": 3,
+                "precision": "EXACT"
+              },
+              "measurement": {
+                "id": "gid://shopify/InventoryItemMeasurement/33320297234570",
+                "weight": {
+                  "unit": "GRAMS",
+                  "value": 88.0
+                }
+              },
+              "provinceCodeOfOrigin": null,
+              "requiresShipping": true,
+              "sku": "ABC-123-L",
+              "tracked": true,
+              "trackedEditable": {
+                "locked": true,
+                "reason": "Quantity tracking can't be changed because it has incoming inventory."
+              },
+              "unitCost": {
+                "amount": "511.0",
+                "currencyCode": "CAD"
+              },
+              "updatedAt": "2024-01-03T18:24:35Z",
+              "createdAt": "2020-03-06T00:12:50Z"
+            },
+            "inventoryPolicy": "DENY",
+            "inventoryQuantity": 637,
+            "legacyResourceId": "32681179381898",
+            "position": 1,
+            "price": "90.00",
+            "requiresComponents": false,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "4-Pack"
+              }
+            ],
+            "sellableOnlineQuantity": 144,
+            "sellingPlanGroupsCount": {
+              "count": 0,
+              "precision": "EXACT"
+            },
+            "sku": "ABC-123-L",
+            "taxCode": "",
+            "taxable": true,
+            "title": "4-Pack",
+            "updatedAt": "2024-05-29T16:44:56Z"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/32681179414666",
+            "availableForSale": true,
+            "barcode": "1112344",
+            "compareAtPrice": null,
+            "createdAt": "2020-03-06T00:12:50Z",
+            "defaultCursor": "eyJsaW1pdCI6MSwib3JkZXIiOiJpZCBhc2MiLCJsYXN0X2lkIjozMjY4MTE3OTQxNDY2NiwibGFzdF92YWx1ZSI6MzI2ODExNzk0MTQ2NjYsImRpcmVjdGlvbiI6Im5leHQifQ==",
+            "deliveryProfile": {
+              "activeMethodDefinitionsCount": 13,
+              "default": true,
+              "id": "gid://shopify/DeliveryProfile/52877951114",
+              "legacyMode": false,
+              "locationsWithoutRatesCount": 1,
+              "name": "General Profile",
+              "originLocationCount": 2,
+              "zoneCountryCount": 244
+            },
+            "displayName": "AA Batteries - 8-Pack",
+            "image": null,
+            "inventoryItem": {
+              "id": "gid://shopify/InventoryItem/34362030260362",
+              "countryCodeOfOrigin": null,
+              "duplicateSkuCount": 0,
+              "harmonizedSystemCode": null,
+              "inventoryHistoryUrl": "https://horse-dev.myshopify.com/admin/products/inventory/34362030260362/inventory_history",
+              "legacyResourceId": "34362030260362",
+              "locationsCount": {
+                "count": 3,
+                "precision": "EXACT"
+              },
+              "measurement": {
+                "id": "gid://shopify/InventoryItemMeasurement/33320297267338",
+                "weight": {
+                  "unit": "KILOGRAMS",
+                  "value": 1.0
+                }
+              },
+              "provinceCodeOfOrigin": null,
+              "requiresShipping": true,
+              "sku": "SKU-A-2",
+              "tracked": true,
+              "trackedEditable": {
+                "locked": false,
+                "reason": null
+              },
+              "unitCost": {
+                "amount": "1.34",
+                "currencyCode": "CAD"
+              },
+              "updatedAt": "2024-01-10T16:59:41Z",
+              "createdAt": "2020-03-06T00:12:50Z"
+            },
+            "inventoryPolicy": "DENY",
+            "inventoryQuantity": 157,
+            "legacyResourceId": "32681179414666",
+            "position": 2,
+            "price": "99.99",
+            "requiresComponents": false,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "8-Pack"
+              }
+            ],
+            "sellableOnlineQuantity": 0,
+            "sellingPlanGroupsCount": {
+              "count": 0,
+              "precision": "EXACT"
+            },
+            "sku": "SKU-A-2",
+            "taxCode": "",
+            "taxable": true,
+            "title": "8-Pack",
+            "updatedAt": "2024-08-21T14:23:25Z"
+          }
+        ],
+        "pageInfo": {
+          "endCursor": "eyJsYXN0X2lkIjozMjY4MTE3OTQxNDY2NiwibGFzdF92YWx1ZSI6IjIifQ==",
+          "hasNextPage": false
+        }
+      }
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 113,
+      "actualQueryCost": 13,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1987,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

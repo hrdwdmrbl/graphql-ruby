@@ -1,0 +1,15 @@
+mutation returnCreate($returnInput: ReturnInput!){
+    returnCreate(returnInput: $returnInput){
+        return{
+            id
+            name
+            status
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

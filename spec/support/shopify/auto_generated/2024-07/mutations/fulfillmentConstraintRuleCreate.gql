@@ -1,0 +1,12 @@
+mutation fulfillmentConstraintRuleCreate($functionId: String!, $metafields: [MetafieldInput!]){
+    fulfillmentConstraintRuleCreate(functionId: $functionId, metafields: $metafields){
+        fulfillmentConstraintRule{
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

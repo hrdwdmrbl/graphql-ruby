@@ -1,0 +1,14 @@
+mutation cartTransformCreate($functionId: String!, $blockOnFailure: Boolean){
+    cartTransformCreate(functionId: $functionId, blockOnFailure: $blockOnFailure){
+        cartTransform{
+            blockOnFailure
+            functionId
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

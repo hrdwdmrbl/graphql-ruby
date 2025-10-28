@@ -1,0 +1,6 @@
+query segmentsCount($limit: Int){
+    segmentsCount(limit: $limit){
+        count
+        precision
+    }
+}

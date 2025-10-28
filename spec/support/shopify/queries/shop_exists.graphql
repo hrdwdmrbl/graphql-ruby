@@ -1,0 +1,14 @@
+query shop {
+  shop {
+    alerts {
+      description
+    }
+    id
+    name
+    plan {
+      displayName
+      partnerDevelopment
+      shopifyPlus
+    }
+  }
+}

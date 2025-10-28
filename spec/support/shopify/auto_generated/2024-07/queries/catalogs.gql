@@ -1,0 +1,15 @@
+query catalogs {
+  catalogs(first: $first) {
+    nodes {
+      id
+      status
+      title
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

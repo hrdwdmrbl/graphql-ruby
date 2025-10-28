@@ -1,0 +1,34 @@
+mutation discountCodeBulkDelete($sort: ArticleTagSort, $limit: Int!, $id: ID!, $search: String, $savedSearchId: ID, $ids: [ID!]){
+    discountCodeBulkDelete(search: $search, savedSearchId: $savedSearchId, ids: $ids){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

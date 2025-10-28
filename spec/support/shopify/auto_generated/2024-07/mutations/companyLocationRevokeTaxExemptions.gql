@@ -1,0 +1,25 @@
+mutation companyLocationRevokeTaxExemptions($catalogId: ID!, $companyLocationId: ID!, $taxExemptions: [TaxExemption!]!){
+    companyLocationRevokeTaxExemptions(companyLocationId: $companyLocationId, taxExemptions: $taxExemptions){
+        companyLocation{
+            createdAt
+            currency
+            defaultCursor
+            externalId
+            hasTimelineComment
+            id
+            inCatalog(catalogId: $catalogId)
+            locale
+            name
+            note
+            phone
+            taxExemptions
+            taxRegistrationId
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,12 @@
+mutation metaobjectDefinitionDelete($id: ID!){
+    metaobjectDefinitionDelete(id: $id){
+        deletedId
+        userErrors{
+            code
+            elementIndex
+            elementKey
+            field
+            message
+        }
+    }
+}

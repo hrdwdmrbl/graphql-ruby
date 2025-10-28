@@ -1,0 +1,17 @@
+mutation themeFilesCopy($themeId: ID!, $files: [ThemeFilesCopyFileInput!]!){
+    themeFilesCopy(themeId: $themeId, files: $files){
+        copiedThemeFiles{
+            checksumMd5
+            createdAt
+            filename
+            size
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            filename
+            message
+        }
+    }
+}

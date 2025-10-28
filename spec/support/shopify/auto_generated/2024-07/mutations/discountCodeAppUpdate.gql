@@ -1,0 +1,31 @@
+mutation discountCodeAppUpdate($id: ID!, $codeAppDiscount: DiscountCodeAppInput!){
+    discountCodeAppUpdate(id: $id, codeAppDiscount: $codeAppDiscount){
+        codeAppDiscount{
+            appliesOncePerCustomer
+            asyncUsageCount
+            createdAt
+            customerSelection{
+                __typename
+                ... on DiscountCustomerAll {
+                    allCustomers
+                }
+            }
+            discountClass
+            discountId
+            endsAt
+            hasTimelineComment
+            recurringCycleLimit
+            startsAt
+            status
+            title
+            updatedAt
+            usageLimit
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

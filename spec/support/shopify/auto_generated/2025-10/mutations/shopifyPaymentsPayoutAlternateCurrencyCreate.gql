@@ -1,0 +1,20 @@
+mutation shopifyPaymentsPayoutAlternateCurrencyCreate($accountId: ID, $currency: CurrencyCode!){
+    shopifyPaymentsPayoutAlternateCurrencyCreate(accountId: $accountId, currency: $currency){
+        payout{
+            amount{
+                amount
+                currencyCode
+            }
+            arrivalDate
+            createdAt
+            currency
+            remoteId
+        }
+        success
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,9 @@
+mutation shopResourceFeedbackCreate($input: ResourceFeedbackCreateInput!){
+    shopResourceFeedbackCreate(input: $input){
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

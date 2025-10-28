@@ -1,0 +1,10 @@
+mutation inventorySetQuantities($input: InventorySetQuantitiesInput!) {
+  inventorySetQuantities(input: $input) {
+    ...
+    userErrors {
+      code
+      field
+      message
+    }
+  }
+}

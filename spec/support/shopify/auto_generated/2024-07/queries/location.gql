@@ -1,0 +1,59 @@
+query location($id: ID!) {
+  location(id: $id) {
+    activatable
+    address {
+      address1
+      address2
+      city
+      country
+      countryCode
+      formatted
+      latitude
+      longitude
+      phone
+      province
+      provinceCode
+      zip
+    }
+    addressVerified
+    createdAt
+    deactivatable
+    deactivatedAt
+    deletable
+    fulfillmentService {
+      callbackUrl
+      handle
+      id
+      inventoryManagement
+      permitsSkuSharing
+      serviceName
+      trackingSupport
+      type
+    }
+    fulfillsOnlineOrders
+    hasActiveInventory
+    hasUnfulfilledOrders
+    id
+    isActive
+    isFulfillmentService
+    legacyResourceId
+    localPickupSettingsV2 {
+      instructions
+      pickupTime
+    }
+    name
+    shipsInventory
+    suggestedAddresses {
+      address1
+      address2
+      city
+      country
+      countryCode
+      formatted
+      province
+      provinceCode
+      zip
+    }
+    updatedAt
+  }
+}

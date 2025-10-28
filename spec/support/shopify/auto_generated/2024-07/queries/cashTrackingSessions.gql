@@ -1,0 +1,22 @@
+query cashTrackingSessions($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CashTrackingSessionsSortKeys, $query: String){
+    cashTrackingSessions(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            cashTrackingEnabled
+            closingNote
+            closingTime
+            id
+            openingNote
+            openingTime
+            registerName
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

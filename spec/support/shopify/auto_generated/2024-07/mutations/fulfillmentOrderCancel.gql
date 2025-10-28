@@ -1,0 +1,34 @@
+mutation fulfillmentOrderCancel($id: ID!){
+    fulfillmentOrderCancel(id: $id){
+        fulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        replacementFulfillmentOrder{
+            channelId
+            createdAt
+            fulfillAt
+            fulfillBy
+            id
+            orderId
+            orderName
+            orderProcessedAt
+            requestStatus
+            status
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

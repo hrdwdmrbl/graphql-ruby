@@ -1,0 +1,34 @@
+mutation discountCodeRedeemCodeBulkDelete($sort: ArticleTagSort, $limit: Int!, $id: ID!, $discountId: ID!, $search: String, $savedSearchId: ID, $ids: [ID!]){
+    discountCodeRedeemCodeBulkDelete(discountId: $discountId, search: $search, savedSearchId: $savedSearchId, ids: $ids){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        userErrors{
+            code
+            extraInfo
+            field
+            message
+        }
+    }
+}

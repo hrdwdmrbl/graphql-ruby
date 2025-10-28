@@ -1,0 +1,6 @@
+query giftCardsCount($query: String, $savedSearchId: ID, $limit: Int){
+    giftCardsCount(query: $query, savedSearchId: $savedSearchId, limit: $limit){
+        count
+        precision
+    }
+}

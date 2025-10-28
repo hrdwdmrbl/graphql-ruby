@@ -1,0 +1,6 @@
+query urlRedirectsCount($query: String, $savedSearchId: ID){
+    urlRedirectsCount(query: $query, savedSearchId: $savedSearchId){
+        count
+        precision
+    }
+}

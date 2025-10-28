@@ -1,0 +1,14 @@
+mutation orderCreateMandatePayment($id: ID!, $paymentScheduleId: ID, $idempotencyKey: String!, $mandateId: ID!, $amount: MoneyInput, $autoCapture: Boolean){
+    orderCreateMandatePayment(id: $id, paymentScheduleId: $paymentScheduleId, idempotencyKey: $idempotencyKey, mandateId: $mandateId, amount: $amount, autoCapture: $autoCapture){
+        job{
+            done
+            id
+        }
+        paymentReferenceId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

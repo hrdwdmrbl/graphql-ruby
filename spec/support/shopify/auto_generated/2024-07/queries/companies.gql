@@ -1,0 +1,25 @@
+query companies($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CompanySortKeys, $query: String){
+    companies(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            createdAt
+            customerSince
+            defaultCursor
+            externalId
+            hasTimelineComment
+            id
+            lifetimeDuration
+            name
+            note
+            updatedAt
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

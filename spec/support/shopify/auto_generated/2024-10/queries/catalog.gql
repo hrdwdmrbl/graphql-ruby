@@ -1,0 +1,379 @@
+query catalog($id: ID!, $originType: PriceListPriceOriginType, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $query: String, $originType1: QuantityRuleOriginType, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse1: Boolean, $maxWidth: Int, $maxHeight: Int, $crop: CropRegion, $scale: Int, $preferredContentType: ImageContentType, $transform: ImageTransformInput, $maxWidth1: Int, $maxHeight1: Int, $crop1: CropRegion, $scale1: Int, $preferredContentType1: ImageContentType, $transform1: ImageTransformInput, $maxWidth2: Int, $maxHeight2: Int, $crop2: CropRegion, $scale2: Int, $preferredContentType2: ImageContentType, $transform2: ImageTransformInput, $id1: ID!, $first2: Int, $after2: String, $last2: Int, $before2: String, $reverse2: Boolean, $truncateAt: Int, $id2: ID!, $onlyPublished: Boolean, $channelId: ID!, $publicationId: ID!, $first3: Int, $after3: String, $last3: Int, $before3: String, $reverse3: Boolean, $id3: ID!, $first4: Int, $after4: String, $last4: Int, $before4: String, $reverse4: Boolean, $truncateAt1: Int, $id4: ID!, $onlyPublished1: Boolean, $context: ContextualPublicationContext!, $channelId1: ID!, $publicationId1: ID!, $first5: Int, $after5: String, $last5: Int, $before5: String, $reverse5: Boolean, $id5: ID!){
+    catalog(id: $id5){
+        id
+        operations{
+            id
+            processedRowCount
+            rowCount{
+                count
+                exceedsMax
+            }
+            status
+        }
+        priceList{
+            catalog{
+                id
+                operations{
+                    id
+                    processedRowCount
+                    status
+                }
+                priceList{
+                    currency
+                    fixedPricesCount
+                    id
+                    name
+                }
+                publication{
+                    autoPublish
+                    hasCollection(id: $id)
+                    id
+                    name
+                    operation{
+                        __typename
+                        ... on AddAllProductsOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on CatalogCsvOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on PublicationResourceOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                    }
+                    supportsFuturePublishing
+                }
+                status
+                title
+            }
+            currency
+            fixedPricesCount
+            id
+            name
+            parent{
+                adjustment{
+                    type
+                    value
+                }
+                settings{
+                    compareAtMode
+                }
+            }
+            prices(originType: $originType, first: $first, after: $after, last: $last, before: $before, reverse: $reverse, query: $query){
+                edges{
+                    cursor
+                }
+                nodes{
+                    originType
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            quantityRules(originType: $originType1, first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse1){
+                edges{
+                    cursor
+                }
+                nodes{
+                    increment
+                    isDefault
+                    maximum
+                    minimum
+                    originType
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+        }
+        publication{
+            app{
+                apiKey
+                appStoreAppUrl
+                appStoreDeveloperUrl
+                availableAccessScopes{
+                    description
+                    handle
+                }
+                banner{
+                    altText
+                    height
+                    id
+                    originalSrc
+                    src
+                    transformedSrc(maxWidth: $maxWidth, maxHeight: $maxHeight, crop: $crop, scale: $scale, preferredContentType: $preferredContentType)
+                    url(transform: $transform)
+                    width
+                }
+                description
+                developerName
+                developerType
+                developerUrl
+                embedded
+                failedRequirements{
+                    message
+                }
+                features
+                feedback{
+                    feedbackGeneratedAt
+                    state
+                }
+                handle
+                icon{
+                    altText
+                    height
+                    id
+                    originalSrc
+                    src
+                    transformedSrc(maxWidth: $maxWidth1, maxHeight: $maxHeight1, crop: $crop1, scale: $scale1, preferredContentType: $preferredContentType1)
+                    url(transform: $transform1)
+                    width
+                }
+                id
+                installUrl
+                installation{
+                    id
+                    launchUrl
+                    uninstallUrl
+                }
+                isPostPurchaseAppInUse
+                launchUrl
+                navigationItems{
+                    id
+                    title
+                    url
+                }
+                optionalAccessScopes{
+                    description
+                    handle
+                }
+                previouslyInstalled
+                pricingDetails
+                pricingDetailsSummary
+                privacyPolicyUrl
+                publicCategory
+                published
+                requestedAccessScopes{
+                    description
+                    handle
+                }
+                screenshots{
+                    altText
+                    height
+                    id
+                    originalSrc
+                    src
+                    transformedSrc(maxWidth: $maxWidth2, maxHeight: $maxHeight2, crop: $crop2, scale: $scale2, preferredContentType: $preferredContentType2)
+                    url(transform: $transform2)
+                    width
+                }
+                shopifyDeveloped
+                title
+                uninstallMessage
+                uninstallUrl
+                webhookApiVersion
+            }
+            autoPublish
+            catalog{
+                id
+                operations{
+                    id
+                    processedRowCount
+                    status
+                }
+                priceList{
+                    currency
+                    fixedPricesCount
+                    id
+                    name
+                }
+                publication{
+                    autoPublish
+                    hasCollection(id: $id1)
+                    id
+                    name
+                    operation{
+                        __typename
+                        ... on AddAllProductsOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on CatalogCsvOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                        ... on PublicationResourceOperation {
+                            id
+                            processedRowCount
+                            status
+                        }
+                    }
+                    supportsFuturePublishing
+                }
+                status
+                title
+            }
+            collectionPublicationsV3(first: $first2, after: $after2, last: $last2, before: $before2, reverse: $reverse2){
+                edges{
+                    cursor
+                }
+                nodes{
+                    isPublished
+                    publishDate
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            collections(first: $first3, after: $after3, last: $last3, before: $before3, reverse: $reverse3){
+                edges{
+                    cursor
+                }
+                nodes{
+                    description(truncateAt: $truncateAt)
+                    descriptionHtml
+                    handle
+                    hasProduct(id: $id2)
+                    id
+                    legacyResourceId
+                    publicationCount(onlyPublished: $onlyPublished)
+                    publishedOnChannel(channelId: $channelId)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId)
+                    sortOrder
+                    storefrontId
+                    templateSuffix
+                    title
+                    updatedAt
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            hasCollection(id: $id3)
+            id
+            name
+            operation{
+                __typename
+                ... on AddAllProductsOperation {
+                    id
+                    processedRowCount
+                    rowCount{
+                        count
+                        exceedsMax
+                    }
+                    status
+                }
+                ... on CatalogCsvOperation {
+                    id
+                    processedRowCount
+                    rowCount{
+                        count
+                        exceedsMax
+                    }
+                    status
+                }
+                ... on PublicationResourceOperation {
+                    id
+                    processedRowCount
+                    rowCount{
+                        count
+                        exceedsMax
+                    }
+                    status
+                }
+            }
+            productPublicationsV3(first: $first4, after: $after4, last: $last4, before: $before4, reverse: $reverse4){
+                edges{
+                    cursor
+                }
+                nodes{
+                    isPublished
+                    publishDate
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            products(first: $first5, after: $after5, last: $last5, before: $before5, reverse: $reverse5){
+                edges{
+                    cursor
+                }
+                nodes{
+                    bodyHtml
+                    combinedListingRole
+                    createdAt
+                    customProductType
+                    defaultCursor
+                    description(truncateAt: $truncateAt1)
+                    descriptionHtml
+                    descriptionPlainSummary
+                    giftCardTemplateSuffix
+                    handle
+                    hasOnlyDefaultVariant
+                    hasOutOfStockVariants
+                    hasVariantsThatRequiresComponents
+                    id
+                    inCollection(id: $id4)
+                    isGiftCard
+                    legacyResourceId
+                    onlineStorePreviewUrl
+                    onlineStoreUrl
+                    productType
+                    publicationCount(onlyPublished: $onlyPublished1)
+                    publishedAt
+                    publishedInContext(context: $context)
+                    publishedOnChannel(channelId: $channelId1)
+                    publishedOnCurrentChannel
+                    publishedOnCurrentPublication
+                    publishedOnPublication(publicationId: $publicationId1)
+                    requiresSellingPlan
+                    sellingPlanGroupCount
+                    status
+                    storefrontId
+                    tags
+                    templateSuffix
+                    title
+                    totalInventory
+                    totalVariants
+                    tracksInventory
+                    updatedAt
+                    vendor
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+            supportsFuturePublishing
+        }
+        status
+        title
+    }
+}

@@ -1,0 +1,28 @@
+mutation carrierServiceUpdate($origins: [ID!], $countryCodes: [CountryCode!], $restOfWorld: Boolean!, $transform: ImageTransformInput, $input: DeliveryCarrierServiceUpdateInput!){
+    carrierServiceUpdate(input: $input){
+        carrierService{
+            active
+            availableServicesForCountries(origins: $origins, countryCodes: $countryCodes, restOfWorld: $restOfWorld){
+                name
+            }
+            callbackUrl
+            formattedName
+            icon{
+                altText
+                height
+                id
+                thumbhash
+                url(transform: $transform)
+                width
+            }
+            id
+            name
+            supportsServiceDiscovery
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

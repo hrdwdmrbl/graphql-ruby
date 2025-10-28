@@ -1,0 +1,34 @@
+query deliveryProfile($id: ID!){
+    deliveryProfile(id: $id){
+        activeMethodDefinitionsCount
+        default
+        id
+        legacyMode
+        locationsWithoutRatesCount
+        name
+        originLocationCount
+        productVariantsCount{
+            count
+            precision
+        }
+        unassignedLocations{
+            activatable
+            addressVerified
+            createdAt
+            deactivatable
+            deactivatedAt
+            deletable
+            fulfillsOnlineOrders
+            hasActiveInventory
+            hasUnfulfilledOrders
+            id
+            isActive
+            isFulfillmentService
+            legacyResourceId
+            name
+            shipsInventory
+            updatedAt
+        }
+        zoneCountryCount
+    }
+}

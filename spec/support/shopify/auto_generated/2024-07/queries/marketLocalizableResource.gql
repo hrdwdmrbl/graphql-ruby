@@ -1,0 +1,16 @@
+query marketLocalizableResource($marketId: ID!, $resourceId: ID!){
+    marketLocalizableResource(resourceId: $resourceId){
+        marketLocalizableContent{
+            digest
+            key
+            value
+        }
+        marketLocalizations(marketId: $marketId){
+            key
+            outdated
+            updatedAt
+            value
+        }
+        resourceId
+    }
+}

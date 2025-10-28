@@ -1,0 +1,17 @@
+mutation paymentTermsUpdate($input: PaymentTermsUpdateInput!){
+    paymentTermsUpdate(input: $input){
+        paymentTerms{
+            dueInDays
+            id
+            overdue
+            paymentTermsName
+            paymentTermsType
+            translatedName
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

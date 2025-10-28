@@ -1,0 +1,63 @@
+query theme($filenames: [String!], $first: Int, $after: String, $customizationId: ID!, $locale: String!, $marketId: ID, $id: ID!){
+    theme(id: $id){
+        createdAt
+        files(filenames: $filenames, first: $first, after: $after){
+            edges{
+                cursor
+            }
+            nodes{
+                body{
+                    __typename
+                    ... on OnlineStoreThemeFileBodyBase64 {
+                        contentBase64
+                    }
+                    ... on OnlineStoreThemeFileBodyText {
+                        content
+                    }
+                    ... on OnlineStoreThemeFileBodyUrl {
+                        url
+                    }
+                }
+                checksumMd5
+                contentType
+                createdAt
+                filename
+                size
+                updatedAt
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+            userErrors{
+                code
+                filename
+            }
+        }
+        id
+        name
+        prefix
+        processing
+        processingFailed
+        role
+        themeStoreId
+        translations(locale: $locale, marketId: $marketId){
+            key
+            locale
+            market{
+                assignedCustomization(customizationId: $customizationId)
+                handle
+                id
+                name
+                status
+                type
+            }
+            outdated
+            updatedAt
+            value
+        }
+        updatedAt
+    }
+}

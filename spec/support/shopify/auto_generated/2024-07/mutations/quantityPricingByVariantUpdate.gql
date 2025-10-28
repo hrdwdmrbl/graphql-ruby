@@ -1,0 +1,30 @@
+mutation quantityPricingByVariantUpdate($priceListId: ID!, $input: QuantityPricingByVariantUpdateInput!){
+    quantityPricingByVariantUpdate(priceListId: $priceListId, input: $input){
+        productVariants{
+            availableForSale
+            barcode
+            compareAtPrice
+            createdAt
+            defaultCursor
+            displayName
+            id
+            inventoryPolicy
+            inventoryQuantity
+            legacyResourceId
+            position
+            price
+            requiresComponents
+            sellableOnlineQuantity
+            sku
+            taxCode
+            taxable
+            title
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

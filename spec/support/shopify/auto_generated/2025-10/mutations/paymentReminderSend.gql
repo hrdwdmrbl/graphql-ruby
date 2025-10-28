@@ -1,0 +1,10 @@
+mutation paymentReminderSend($paymentScheduleId: ID!){
+    paymentReminderSend(paymentScheduleId: $paymentScheduleId){
+        success
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,96 @@
+query automaticDiscountNodes($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: AutomaticDiscountSortKeys, $query: String, $savedSearchId: ID){
+    automaticDiscountNodes(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query, savedSearchId: $savedSearchId){
+        edges{
+            cursor
+        }
+        nodes{
+            automaticDiscount{
+                __typename
+                ... on DiscountAutomaticApp {
+                    asyncUsageCount
+                    createdAt
+                    discountClass
+                    discountId
+                    endsAt
+                    startsAt
+                    status
+                    title
+                    updatedAt
+                }
+                ... on DiscountAutomaticBasic {
+                    asyncUsageCount
+                    createdAt
+                    discountClass
+                    endsAt
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageCount
+                }
+                ... on DiscountAutomaticBxgy {
+                    asyncUsageCount
+                    createdAt
+                    discountClass
+                    endsAt
+                    id
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                    usageCount
+                    usesPerOrderLimit
+                }
+                ... on DiscountAutomaticFreeShipping {
+                    appliesOnOneTimePurchase
+                    appliesOnSubscription
+                    asyncUsageCount
+                    createdAt
+                    destinationSelection{
+                        __typename
+                        ... on DiscountCountries {
+                            countries
+                            includeRestOfWorld
+                        }
+                        ... on DiscountCountryAll {
+                            allCountries
+                        }
+                    }
+                    discountClass
+                    endsAt
+                    hasTimelineComment
+                    minimumRequirement{
+                        __typename
+                        ... on DiscountMinimumQuantity {
+                            greaterThanOrEqualToQuantity
+                        }
+                    }
+                    recurringCycleLimit
+                    shortSummary
+                    startsAt
+                    status
+                    summary
+                    title
+                    updatedAt
+                }
+            }
+            id
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

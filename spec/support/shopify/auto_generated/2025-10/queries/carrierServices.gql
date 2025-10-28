@@ -1,0 +1,40 @@
+query carrierServices($origins: [ID!], $countryCodes: [CountryCode!], $restOfWorld: Boolean!, $transform: ImageTransformInput, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CarrierServiceSortKeys, $query: String){
+    carrierServices(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                active
+                callbackUrl
+                formattedName
+                id
+                name
+                supportsServiceDiscovery
+            }
+        }
+        nodes{
+            active
+            availableServicesForCountries(origins: $origins, countryCodes: $countryCodes, restOfWorld: $restOfWorld){
+                name
+            }
+            callbackUrl
+            formattedName
+            icon{
+                altText
+                height
+                id
+                thumbhash
+                url(transform: $transform)
+                width
+            }
+            id
+            name
+            supportsServiceDiscovery
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

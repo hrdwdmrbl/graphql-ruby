@@ -1,0 +1,6 @@
+query blogsCount($query: String){
+    blogsCount(query: $query){
+        count
+        precision
+    }
+}

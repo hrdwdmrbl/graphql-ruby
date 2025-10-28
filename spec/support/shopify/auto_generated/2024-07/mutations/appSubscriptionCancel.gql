@@ -1,0 +1,18 @@
+mutation appSubscriptionCancel($id: ID!, $prorate: Boolean){
+    appSubscriptionCancel(id: $id, prorate: $prorate){
+        appSubscription{
+            createdAt
+            currentPeriodEnd
+            id
+            name
+            returnUrl
+            status
+            test
+            trialDays
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

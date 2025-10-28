@@ -1,0 +1,9 @@
+query productResourceFeedback($id: ID!){
+    productResourceFeedback(id: $id){
+        feedbackGeneratedAt
+        messages
+        productId
+        productUpdatedAt
+        state
+    }
+}

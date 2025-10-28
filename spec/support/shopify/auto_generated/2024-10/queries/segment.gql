@@ -1,0 +1,9 @@
+query segment($id: ID!){
+    segment(id: $id){
+        creationDate
+        id
+        lastEditDate
+        name
+        query
+    }
+}

@@ -1,0 +1,51 @@
+{
+  "data": {
+    "channels": {
+      "nodes": [
+        {
+          "app": {
+            "id": "gid://shopify/App/580111",
+            "title": "Online Store"
+          },
+          "id": "gid://shopify/Channel/49838686346",
+          "name": "Online Store"
+        },
+        {
+          "app": {
+            "id": "gid://shopify/App/129785",
+            "title": "Point of Sale"
+          },
+          "id": "gid://shopify/Channel/54844653706",
+          "name": "Point of Sale"
+        },
+        {
+          "app": {
+            "id": "gid://shopify/App/3026047",
+            "title": "Inbox"
+          },
+          "id": "gid://shopify/Channel/74771726474",
+          "name": "Inbox"
+        },
+        {
+          "app": {
+            "id": "gid://shopify/App/4254155",
+            "title": "Horse Tests"
+          },
+          "id": "gid://shopify/Channel/141770686602",
+          "name": "Horse Tests"
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 24,
+      "actualQueryCost": 6,
+      "throttleStatus": {
+        "maximumAvailable": 2000.0,
+        "currentlyAvailable": 1994,
+        "restoreRate": 100.0
+      }
+    }
+  }
+}

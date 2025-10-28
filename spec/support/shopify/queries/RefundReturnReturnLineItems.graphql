@@ -1,0 +1,27 @@
+query RefundReturnReturnLineItems($returnId: ID!, $first: Int!, $after: String) {
+  return(id: $returnId) {
+    id
+    returnLineItems(first: $first, after: $after) {
+      nodes {
+        ... on ReturnLineItem {
+          fulfillmentLineItem {
+            id
+            lineItem {
+              id
+            }
+          }
+        }
+        id
+        quantity
+        refundableQuantity
+        refundedQuantity
+        returnReason
+        returnReasonNote
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

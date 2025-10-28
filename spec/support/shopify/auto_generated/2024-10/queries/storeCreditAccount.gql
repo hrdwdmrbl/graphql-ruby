@@ -1,0 +1,53 @@
+query storeCreditAccount($first: Int, $after: String, $last: Int, $before: String, $query: String, $first1: Int, $after1: String, $last1: Int, $before1: String, $reverse: Boolean, $sortKey: TransactionSortKeys, $query1: String, $id: ID!){
+    storeCreditAccount(id: $id){
+        balance{
+            amount
+            currencyCode
+        }
+        id
+        owner{
+            storeCreditAccounts(first: $first, after: $after, last: $last, before: $before, query: $query){
+                edges{
+                    cursor
+                }
+                nodes{
+                    id
+                }
+                pageInfo{
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+            }
+        }
+        transactions(first: $first1, after: $after1, last: $last1, before: $before1, reverse: $reverse, sortKey: $sortKey, query: $query1){
+            edges{
+                cursor
+                node{
+                    createdAt
+                }
+            }
+            nodes{
+                account{
+                    id
+                }
+                amount{
+                    amount
+                    currencyCode
+                }
+                balanceAfterTransaction{
+                    amount
+                    currencyCode
+                }
+                createdAt
+            }
+            pageInfo{
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+            }
+        }
+    }
+}

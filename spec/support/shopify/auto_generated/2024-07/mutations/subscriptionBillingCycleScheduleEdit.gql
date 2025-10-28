@@ -1,0 +1,18 @@
+mutation subscriptionBillingCycleScheduleEdit($billingCycleInput: SubscriptionBillingCycleInput!, $input: SubscriptionBillingCycleScheduleEditInput!){
+    subscriptionBillingCycleScheduleEdit(billingCycleInput: $billingCycleInput, input: $input){
+        billingCycle{
+            billingAttemptExpectedDate
+            cycleEndAt
+            cycleIndex
+            cycleStartAt
+            edited
+            skipped
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

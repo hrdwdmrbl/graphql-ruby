@@ -1,0 +1,15 @@
+mutation deliveryPromiseProviderUpsert($active: Boolean, $fulfillmentDelay: Int, $timeZone: String, $locationId: ID!){
+    deliveryPromiseProviderUpsert(active: $active, fulfillmentDelay: $fulfillmentDelay, timeZone: $timeZone, locationId: $locationId){
+        deliveryPromiseProvider{
+            active
+            fulfillmentDelay
+            id
+            timeZone
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

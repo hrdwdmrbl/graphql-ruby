@@ -1,0 +1,13 @@
+mutation urlRedirectBulkDeleteBySearch($search: String!){
+    urlRedirectBulkDeleteBySearch(search: $search){
+        job{
+            done
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

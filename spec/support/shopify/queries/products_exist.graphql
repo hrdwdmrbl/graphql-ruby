@@ -1,0 +1,7 @@
+query ProductsExistQuery ($query: String!, $first: Int!) {
+  products(query: $query, first: $first) {
+    nodes {
+      id
+    }
+  }
+}

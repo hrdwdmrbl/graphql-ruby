@@ -1,0 +1,41 @@
+mutation deliveryProfileUpdate($id: ID!, $profile: DeliveryProfileInput!, $leaveLegacyModeProfiles: Boolean){
+    deliveryProfileUpdate(id: $id, profile: $profile, leaveLegacyModeProfiles: $leaveLegacyModeProfiles){
+        profile{
+            activeMethodDefinitionsCount
+            default
+            id
+            legacyMode
+            locationsWithoutRatesCount
+            name
+            originLocationCount
+            productVariantsCount{
+                count
+                precision
+            }
+            unassignedLocations{
+                activatable
+                addressVerified
+                createdAt
+                deactivatable
+                deactivatedAt
+                deletable
+                fulfillsOnlineOrders
+                hasActiveInventory
+                hasUnfulfilledOrders
+                id
+                isActive
+                isFulfillmentService
+                legacyResourceId
+                name
+                shipsInventory
+                updatedAt
+            }
+            version
+            zoneCountryCount
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

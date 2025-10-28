@@ -1,0 +1,55 @@
+query SlimProducts($query: String!, $first: Int!) {
+  products(query: $query, first: $first) {
+    nodes {
+      id
+      createdAt
+      options {
+        id
+        name
+        position
+        values
+      }
+      productType
+      publishedAt
+      status
+      title
+      tracksInventory
+      updatedAt
+      vendor
+
+      variants(first: 8) {
+        nodes {
+          id
+          barcode
+          price
+          compareAtPrice
+          requiresComponents
+          selectedOptions {
+            name
+            value
+          }
+          sku
+          title
+          createdAt
+          updatedAt
+
+          image {
+            id
+            url
+          }
+          inventoryItem {
+            id
+            sku
+            tracked
+            unitCost {
+              amount
+              currencyCode
+            }
+            updatedAt
+            createdAt
+          }
+        }
+      }
+    }
+  }
+}

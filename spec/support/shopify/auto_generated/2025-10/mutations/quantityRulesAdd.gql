@@ -1,0 +1,37 @@
+mutation quantityRulesAdd($priceListId: ID!, $quantityRules: [QuantityRuleInput!]!){
+    quantityRulesAdd(priceListId: $priceListId, quantityRules: $quantityRules){
+        quantityRules{
+            increment
+            isDefault
+            maximum
+            minimum
+            originType
+            productVariant{
+                availableForSale
+                barcode
+                compareAtPrice
+                createdAt
+                defaultCursor
+                displayName
+                id
+                inventoryPolicy
+                inventoryQuantity
+                legacyResourceId
+                position
+                price
+                requiresComponents
+                sellableOnlineQuantity
+                showUnitPrice
+                sku
+                taxable
+                title
+                updatedAt
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

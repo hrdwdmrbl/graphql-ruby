@@ -1,0 +1,7 @@
+mutation inventoryDeactivate($inventoryLevelId: ID!) {
+  inventoryDeactivate(inventoryLevelId: $inventoryLevelId) {
+    userErrors {
+      message
+    }
+  }
+}

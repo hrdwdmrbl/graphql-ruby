@@ -1,0 +1,17 @@
+mutation scriptTagCreate($input: ScriptTagInput!){
+    scriptTagCreate(input: $input){
+        scriptTag{
+            cache
+            createdAt
+            displayScope
+            id
+            legacyResourceId
+            src
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

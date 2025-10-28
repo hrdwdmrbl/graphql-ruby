@@ -1,0 +1,17 @@
+mutation consentPolicyUpdate($consentPolicies: [ConsentPolicyInput!]!){
+    consentPolicyUpdate(consentPolicies: $consentPolicies){
+        updatedPolicies{
+            consentRequired
+            countryCode
+            dataSaleOptOutRequired
+            id
+            regionCode
+            shopId
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

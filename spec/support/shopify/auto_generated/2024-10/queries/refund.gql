@@ -1,0 +1,51 @@
+query refund() {
+  refund(id: $id65) {
+    createdAt
+    duties {
+      amountSet {
+        presentmentMoney {
+          amount
+          currencyCode
+        }
+        shopMoney {
+          amount
+          currencyCode
+        }
+      }
+      originalDuty {
+        countryCodeOfOrigin
+        harmonizedSystemCode
+        id
+        taxLines {
+          channelLiable
+          price
+          rate
+          ratePercentage
+          source
+          title
+        }
+      }
+    }
+    id
+    legacyResourceId
+    note
+    return {
+      id
+    }
+    totalRefunded {
+      amount
+      currencyCode
+    }
+    totalRefundedSet {
+      presentmentMoney {
+        amount
+        currencyCode
+      }
+      shopMoney {
+        amount
+        currencyCode
+      }
+    }
+    updatedAt
+  }
+}

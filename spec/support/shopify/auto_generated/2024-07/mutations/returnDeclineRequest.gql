@@ -1,0 +1,15 @@
+mutation returnDeclineRequest($input: ReturnDeclineRequestInput!){
+    returnDeclineRequest(input: $input){
+        return{
+            id
+            name
+            status
+            totalQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

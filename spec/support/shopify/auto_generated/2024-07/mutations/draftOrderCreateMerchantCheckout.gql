@@ -1,0 +1,8 @@
+mutation draftOrderCreateMerchantCheckout($id: ID!){
+    draftOrderCreateMerchantCheckout(id: $id){
+        userErrors{
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,10 @@
+mutation urlRedirectDelete($id: ID!){
+    urlRedirectDelete(id: $id){
+        deletedUrlRedirectId
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

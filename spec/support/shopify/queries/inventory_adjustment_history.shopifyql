@@ -1,0 +1,10 @@
+FROM inventory_adjustment_history
+SHOW inventory_adjustment_change
+$where_clause
+GROUP BY minute, inventory_adjustment_group_id, inventory_adjustment_id,
+  inventory_location_name, inventory_group_id, inventory_app_name,
+  inventory_app_id, inventory_item_id, product_variant_id, inventory_state,
+  reference_document_uri, reference_document_id, inventory_change_reason
+$date_period_clause
+ORDER BY minute DESC
+LIMIT 11739

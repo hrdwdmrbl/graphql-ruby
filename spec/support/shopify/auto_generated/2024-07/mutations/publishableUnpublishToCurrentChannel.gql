@@ -1,0 +1,42 @@
+mutation publishableUnpublishToCurrentChannel($publicationId: ID!, $id: ID!){
+    publishableUnpublishToCurrentChannel(id: $id){
+        publishable{
+            publishedOnCurrentPublication
+            publishedOnPublication(publicationId: $publicationId)
+        }
+        shop{
+            checkoutApiSupported
+            contactEmail
+            createdAt
+            currencyCode
+            customerAccounts
+            description
+            email
+            enabledPresentmentCurrencies
+            ianaTimezone
+            id
+            marketingSmsConsentEnabledAtCheckout
+            myshopifyDomain
+            name
+            orderNumberFormatPrefix
+            orderNumberFormatSuffix
+            richTextEditorUrl
+            setupRequired
+            shipsToCountries
+            taxShipping
+            taxesIncluded
+            timezoneAbbreviation
+            timezoneOffset
+            timezoneOffsetMinutes
+            transactionalSmsDisabled
+            unitSystem
+            updatedAt
+            url
+            weightUnit
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

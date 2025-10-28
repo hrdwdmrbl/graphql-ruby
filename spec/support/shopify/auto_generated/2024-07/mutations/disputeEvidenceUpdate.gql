@@ -1,0 +1,24 @@
+mutation disputeEvidenceUpdate($id: ID!, $input: ShopifyPaymentsDisputeEvidenceUpdateInput!){
+    disputeEvidenceUpdate(id: $id, input: $input){
+        disputeEvidence{
+            accessActivityLog
+            cancellationPolicyDisclosure
+            cancellationRebuttal
+            customerEmailAddress
+            customerFirstName
+            customerLastName
+            customerPurchaseIp
+            id
+            productDescription
+            refundPolicyDisclosure
+            refundRefusalExplanation
+            submitted
+            uncategorizedText
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

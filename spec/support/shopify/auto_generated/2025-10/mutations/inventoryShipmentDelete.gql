@@ -1,0 +1,10 @@
+mutation inventoryShipmentDelete($id: ID!){
+    inventoryShipmentDelete(id: $id){
+        id
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

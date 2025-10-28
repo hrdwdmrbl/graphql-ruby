@@ -1,0 +1,53 @@
+query staffMembers($transform: ImageTransformInput, $fallback: StaffMemberDefaultImage, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: StaffMembersSortKeys, $query: String){
+    staffMembers(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+            node{
+                accountType
+                active
+                email
+                exists
+                firstName
+                id
+                initials
+                isShopOwner
+                lastName
+                locale
+                name
+                phone
+            }
+        }
+        nodes{
+            accountType
+            active
+            avatar(fallback: $fallback){
+                altText
+                height
+                id
+                thumbhash
+                url(transform: $transform)
+                width
+            }
+            email
+            exists
+            firstName
+            id
+            initials
+            isShopOwner
+            lastName
+            locale
+            name
+            phone
+            privateData{
+                accountSettingsUrl
+                createdAt
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

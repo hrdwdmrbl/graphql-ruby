@@ -1,0 +1,82 @@
+query FulfillmentOrder($fulfillmentOrderId: ID!, $first: Int!, $after: String) {
+  fulfillmentOrder(id: $fulfillmentOrderId) {
+    id
+    channelId
+    createdAt
+    updatedAt
+    fulfillAt
+    fulfillBy
+    status
+    requestStatus
+    orderId
+    orderName
+    orderProcessedAt
+    supportedActions {
+      action
+      externalUrl
+    }
+    assignedLocation {
+      name
+      location {
+        id
+        fulfillmentService {
+          id
+        }
+      }
+    }
+    deliveryMethod {
+      id
+      maxDeliveryDateTime
+      methodType
+      minDeliveryDateTime
+      presentedName
+      serviceCode
+      sourceReference
+    }
+    destination {
+      address1
+      address2
+      city
+      company
+      countryCode
+      email
+      firstName
+      id
+      lastName
+      phone
+      province
+      zip
+    }
+    fulfillmentHolds {
+      displayReason
+      # heldByApp
+      heldByRequestingApp
+      id
+      reason
+      reasonNotes
+    }
+    internationalDuties {
+      incoterm
+    }
+    lineItems(first: $first, after: $after) {
+      nodes {
+        id
+        inventoryItemId
+        productTitle
+        remainingQuantity
+        requiresShipping
+        sku
+        totalQuantity
+        variantTitle
+        vendor
+        lineItem {
+          id
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

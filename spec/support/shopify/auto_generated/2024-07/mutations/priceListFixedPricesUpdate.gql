@@ -1,0 +1,19 @@
+mutation priceListFixedPricesUpdate($priceListId: ID!, $pricesToAdd: [PriceListPriceInput!]!, $variantIdsToDelete: [ID!]!){
+    priceListFixedPricesUpdate(priceListId: $priceListId, pricesToAdd: $pricesToAdd, variantIdsToDelete: $variantIdsToDelete){
+        deletedFixedPriceVariantIds
+        priceList{
+            currency
+            fixedPricesCount
+            id
+            name
+        }
+        pricesAdded{
+            originType
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

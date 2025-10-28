@@ -1,0 +1,8 @@
+query customerAccountPage($id: ID!){
+    customerAccountPage(id: $id){
+        defaultCursor
+        handle
+        id
+        title
+    }
+}

@@ -1,0 +1,17 @@
+mutation scriptTagUpdate($id: ID!, $input: ScriptTagInput!){
+    scriptTagUpdate(id: $id, input: $input){
+        scriptTag{
+            cache
+            createdAt
+            displayScope
+            id
+            legacyResourceId
+            src
+            updatedAt
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

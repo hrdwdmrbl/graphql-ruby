@@ -1,0 +1,18 @@
+mutation deliveryProfileCreate($profile: DeliveryProfileInput!){
+    deliveryProfileCreate(profile: $profile){
+        profile{
+            activeMethodDefinitionsCount
+            default
+            id
+            legacyMode
+            locationsWithoutRatesCount
+            name
+            originLocationCount
+            zoneCountryCount
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

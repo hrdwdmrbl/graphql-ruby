@@ -1,0 +1,19 @@
+mutation giftCardCreate($input: GiftCardCreateInput!){
+    giftCardCreate(input: $input){
+        giftCard{
+            createdAt
+            enabled
+            expiresOn
+            id
+            lastCharacters
+            maskedCode
+            note
+        }
+        giftCardCode
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

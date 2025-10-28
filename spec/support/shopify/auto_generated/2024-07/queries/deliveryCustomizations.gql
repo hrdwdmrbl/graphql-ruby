@@ -1,0 +1,19 @@
+query deliveryCustomizations($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $query: String){
+    deliveryCustomizations(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            enabled
+            functionId
+            id
+            title
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

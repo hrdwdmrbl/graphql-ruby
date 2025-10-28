@@ -1,0 +1,9 @@
+mutation customerPaymentMethodRevoke($customerPaymentMethodId: ID!){
+    customerPaymentMethodRevoke(customerPaymentMethodId: $customerPaymentMethodId){
+        revokedCustomerPaymentMethodId
+        userErrors{
+            field
+            message
+        }
+    }
+}

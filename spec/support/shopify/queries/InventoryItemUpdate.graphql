@@ -1,0 +1,7 @@
+mutation inventoryItemUpdate($id: ID!, $input: InventoryItemInput!) {
+  inventoryItemUpdate(id: $id, input: $input) {
+    userErrors {
+      message
+    }
+  }
+}

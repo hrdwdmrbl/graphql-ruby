@@ -1,0 +1,6 @@
+query discountNodesCount($query: String, $savedSearchId: ID){
+    discountNodesCount(query: $query, savedSearchId: $savedSearchId){
+        count
+        precision
+    }
+}

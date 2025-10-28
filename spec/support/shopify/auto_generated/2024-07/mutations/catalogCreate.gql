@@ -1,0 +1,14 @@
+mutation catalogCreate($input: CatalogCreateInput!){
+    catalogCreate(input: $input){
+        catalog{
+            id
+            status
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,14 @@
+mutation serverPixelCreate{
+    serverPixelCreate{
+        serverPixel{
+            id
+            status
+            webhookEndpointAddress
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

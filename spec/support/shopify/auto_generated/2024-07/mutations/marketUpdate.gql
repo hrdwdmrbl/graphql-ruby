@@ -1,0 +1,16 @@
+mutation marketUpdate($id: ID!, $input: MarketUpdateInput!){
+    marketUpdate(id: $id, input: $input){
+        market{
+            enabled
+            handle
+            id
+            name
+            primary
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

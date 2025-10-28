@@ -1,0 +1,52 @@
+mutation inventoryShipmentUpdateItemQuantities($query: String, $limit: Int, $id: ID!, $items: [InventoryShipmentUpdateItemQuantitiesInput!]){
+    inventoryShipmentUpdateItemQuantities(id: $id, items: $items){
+        shipment{
+            dateCreated
+            dateReceived
+            dateShipped
+            id
+            lineItemTotalQuantity
+            lineItemsCount(query: $query, limit: $limit){
+                count
+                precision
+            }
+            name
+            status
+            totalAcceptedQuantity
+            totalReceivedQuantity
+            totalRejectedQuantity
+            tracking{
+                arrivesAt
+                company
+                trackingNumber
+                trackingUrl
+            }
+        }
+        updatedLineItems{
+            acceptedQuantity
+            id
+            inventoryItem{
+                countryCodeOfOrigin
+                createdAt
+                duplicateSkuCount
+                harmonizedSystemCode
+                id
+                inventoryHistoryUrl
+                legacyResourceId
+                provinceCodeOfOrigin
+                requiresShipping
+                sku
+                tracked
+                updatedAt
+            }
+            quantity
+            rejectedQuantity
+            unreceivedQuantity
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

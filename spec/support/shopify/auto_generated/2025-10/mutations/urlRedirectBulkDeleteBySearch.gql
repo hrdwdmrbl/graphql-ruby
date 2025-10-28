@@ -1,0 +1,33 @@
+mutation urlRedirectBulkDeleteBySearch($sort: ArticleTagSort, $limit: Int!, $id: ID!, $search: String!){
+    urlRedirectBulkDeleteBySearch(search: $search){
+        job{
+            done
+            id
+            query{
+                articleTags(sort: $sort, limit: $limit)
+                mobilePlatformApplication(id: $id){
+                    __typename
+                    ... on AndroidApplication {
+                        appLinksEnabled
+                        applicationId
+                        id
+                        sha256CertFingerprints
+                    }
+                    ... on AppleApplication {
+                        appClipApplicationId
+                        appClipsEnabled
+                        appId
+                        id
+                        sharedWebCredentialsEnabled
+                        universalLinksEnabled
+                    }
+                }
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,27 @@
+mutation themeUpdate($locale: String!, $marketId: ID, $id: ID!, $input: OnlineStoreThemeInput!){
+    themeUpdate(id: $id, input: $input){
+        theme{
+            createdAt
+            id
+            name
+            prefix
+            processing
+            processingFailed
+            role
+            themeStoreId
+            translations(locale: $locale, marketId: $marketId){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

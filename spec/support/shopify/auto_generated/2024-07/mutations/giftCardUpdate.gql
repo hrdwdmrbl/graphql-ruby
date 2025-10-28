@@ -1,0 +1,17 @@
+mutation giftCardUpdate($id: ID!, $input: GiftCardUpdateInput!){
+    giftCardUpdate(id: $id, input: $input){
+        giftCard{
+            createdAt
+            enabled
+            expiresOn
+            id
+            lastCharacters
+            maskedCode
+            note
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

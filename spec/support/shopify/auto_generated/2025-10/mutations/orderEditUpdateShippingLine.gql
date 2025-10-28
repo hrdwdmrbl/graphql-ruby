@@ -1,0 +1,157 @@
+mutation orderEditUpdateShippingLine($audience: Audience, $notificationUsage: NotificationUsage, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $id: ID!, $shippingLine: OrderEditUpdateShippingLineInput!, $shippingLineId: ID!){
+    orderEditUpdateShippingLine(id: $id, shippingLine: $shippingLine, shippingLineId: $shippingLineId){
+        calculatedOrder{
+            id
+            notificationPreviewHtml
+            notificationPreviewTitle
+            originalOrder{
+                billingAddressMatchesShippingAddress
+                canMarkAsPaid
+                canNotifyCustomer
+                cancelReason
+                cancelledAt
+                capturable
+                clientIp
+                closed
+                closedAt
+                confirmationNumber
+                confirmed
+                createdAt
+                currencyCode
+                currentSubtotalLineItemsQuantity
+                currentTotalWeight
+                customerAcceptsMarketing
+                customerLocale
+                discountCode
+                discountCodes
+                displayFinancialStatus
+                displayFulfillmentStatus
+                dutiesIncluded
+                edited
+                email
+                estimatedTaxes
+                fulfillable
+                fullyPaid
+                hasTimelineComment
+                id
+                legacyResourceId
+                merchantEditable
+                merchantEditableErrors
+                name
+                note
+                number
+                paymentGatewayNames
+                phone
+                poNumber
+                presentmentCurrencyCode
+                processedAt
+                productNetwork
+                purchasingEntity{
+                    __typename
+                    ... on Customer {
+                        canDelete
+                        createdAt
+                        dataSaleOptOut
+                        displayName
+                        email
+                        firstName
+                        hasTimelineComment
+                        id
+                        lastName
+                        legacyResourceId
+                        lifetimeDuration
+                        locale
+                        multipassIdentifier
+                        note
+                        numberOfOrders
+                        phone
+                        productSubscriberStatus
+                        state
+                        tags
+                        taxExempt
+                        taxExemptions
+                        unsubscribeUrl
+                        updatedAt
+                        validEmailAddress
+                        verifiedEmail
+                    }
+                }
+                refundable
+                registeredSourceUrl
+                requiresShipping
+                restockable
+                returnStatus
+                sourceIdentifier
+                sourceName
+                statusPageUrl(audience: $audience, notificationUsage: $notificationUsage)
+                subtotalLineItemsQuantity
+                tags
+                taxExempt
+                taxesIncluded
+                test
+                totalWeight
+                unpaid
+                updatedAt
+            }
+            shippingLines{
+                id
+                stagedStatus
+                title
+            }
+            stagedChanges(first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+                nodes{
+                    __typename
+                    ... on OrderStagedChangeAddCustomItem {
+                        quantity
+                        title
+                    }
+                    ... on OrderStagedChangeAddLineItemDiscount {
+                        description
+                        id
+                        value{
+                            __typename
+                            ... on MoneyV2 {
+                                amount
+                                currencyCode
+                            }
+                            ... on PricingPercentageValue {
+                                percentage
+                            }
+                        }
+                    }
+                    ... on OrderStagedChangeAddShippingLine {
+                        phone
+                        presentmentTitle
+                        title
+                    }
+                    ... on OrderStagedChangeAddVariant {
+                        quantity
+                    }
+                    ... on OrderStagedChangeDecrementItem {
+                        delta
+                        restock
+                    }
+                    ... on OrderStagedChangeIncrementItem {
+                        delta
+                    }
+                }
+            }
+            subtotalLineItemsQuantity
+            taxLines{
+                channelLiable
+                rate
+                ratePercentage
+                source
+                title
+            }
+        }
+        orderEditSession{
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

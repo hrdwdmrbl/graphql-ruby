@@ -1,0 +1,21 @@
+query carrierServices($first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean, $sortKey: CarrierServiceSortKeys, $query: String){
+    carrierServices(first: $first, after: $after, last: $last, before: $before, reverse: $reverse, sortKey: $sortKey, query: $query){
+        edges{
+            cursor
+        }
+        nodes{
+            active
+            callbackUrl
+            formattedName
+            id
+            name
+            supportsServiceDiscovery
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

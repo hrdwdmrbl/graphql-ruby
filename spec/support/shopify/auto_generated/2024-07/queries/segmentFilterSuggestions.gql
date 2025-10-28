@@ -1,0 +1,18 @@
+query segmentFilterSuggestions($search: String!, $first: Int!, $after: String){
+    segmentFilterSuggestions(search: $search, first: $first, after: $after){
+        edges{
+            cursor
+        }
+        nodes{
+            localizedName
+            multiValue
+            queryName
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

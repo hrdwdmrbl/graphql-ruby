@@ -1,0 +1,18 @@
+mutation subscriptionBillingCycleEditDelete($billingCycleInput: SubscriptionBillingCycleInput!){
+    subscriptionBillingCycleEditDelete(billingCycleInput: $billingCycleInput){
+        billingCycles{
+            billingAttemptExpectedDate
+            cycleEndAt
+            cycleIndex
+            cycleStartAt
+            edited
+            skipped
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

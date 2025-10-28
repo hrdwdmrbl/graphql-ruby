@@ -1,0 +1,18 @@
+mutation shopLocaleEnable($locale: String!, $marketWebPresenceIds: [ID!]){
+    shopLocaleEnable(locale: $locale, marketWebPresenceIds: $marketWebPresenceIds){
+        shopLocale{
+            locale
+            marketWebPresences{
+                id
+                subfolderSuffix
+            }
+            name
+            primary
+            published
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

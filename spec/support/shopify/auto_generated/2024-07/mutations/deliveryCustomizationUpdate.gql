@@ -1,0 +1,15 @@
+mutation deliveryCustomizationUpdate($id: ID!, $deliveryCustomization: DeliveryCustomizationInput!){
+    deliveryCustomizationUpdate(id: $id, deliveryCustomization: $deliveryCustomization){
+        deliveryCustomization{
+            enabled
+            functionId
+            id
+            title
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

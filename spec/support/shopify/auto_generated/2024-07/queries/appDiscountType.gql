@@ -1,0 +1,38 @@
+query appDiscountType($functionId: String!){
+    appDiscountType(functionId: $functionId){
+        app{
+            apiKey
+            appStoreAppUrl
+            appStoreDeveloperUrl
+            description
+            developerName
+            developerType
+            embedded
+            features
+            handle
+            id
+            installUrl
+            isPostPurchaseAppInUse
+            previouslyInstalled
+            pricingDetails
+            pricingDetailsSummary
+            privacyPolicyUrl
+            publicCategory
+            published
+            shopifyDeveloped
+            title
+            uninstallMessage
+            webhookApiVersion
+        }
+        appBridge{
+            createPath
+            detailsPath
+        }
+        appKey
+        description
+        discountClass
+        functionId
+        targetType
+        title
+    }
+}

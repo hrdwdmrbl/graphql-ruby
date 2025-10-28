@@ -1,0 +1,10 @@
+mutation flowGenerateSignature($id: ID!, $payload: String!){
+    flowGenerateSignature(id: $id, payload: $payload){
+        payload
+        signature
+        userErrors{
+            field
+            message
+        }
+    }
+}

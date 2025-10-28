@@ -1,0 +1,15 @@
+mutation reverseDeliveryShippingUpdate($reverseDeliveryId: ID!, $trackingInput: ReverseDeliveryTrackingInput, $labelInput: ReverseDeliveryLabelInput, $notifyCustomer: Boolean){
+    reverseDeliveryShippingUpdate(reverseDeliveryId: $reverseDeliveryId, trackingInput: $trackingInput, labelInput: $labelInput, notifyCustomer: $notifyCustomer){
+        reverseDelivery{
+            deliverable{
+                __typename
+            }
+            id
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

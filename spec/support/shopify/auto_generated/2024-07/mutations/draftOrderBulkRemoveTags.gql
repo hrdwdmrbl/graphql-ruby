@@ -1,0 +1,12 @@
+mutation draftOrderBulkRemoveTags($search: String, $savedSearchId: ID, $ids: [ID!], $tags: [String!]!){
+    draftOrderBulkRemoveTags(search: $search, savedSearchId: $savedSearchId, ids: $ids, tags: $tags){
+        job{
+            done
+            id
+        }
+        userErrors{
+            field
+            message
+        }
+    }
+}

@@ -1,0 +1,21 @@
+mutation companyUpdate($companyId: ID!, $input: CompanyInput!){
+    companyUpdate(companyId: $companyId, input: $input){
+        company{
+            createdAt
+            customerSince
+            defaultCursor
+            externalId
+            hasTimelineComment
+            id
+            lifetimeDuration
+            name
+            note
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

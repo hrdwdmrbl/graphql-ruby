@@ -1,0 +1,23 @@
+query shopifyFunctions($apiType: String, $useCreationUi: Boolean, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    shopifyFunctions(apiType: $apiType, useCreationUi: $useCreationUi, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+        }
+        nodes{
+            apiType
+            apiVersion
+            appKey
+            description
+            id
+            inputQuery
+            title
+            useCreationUi
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}

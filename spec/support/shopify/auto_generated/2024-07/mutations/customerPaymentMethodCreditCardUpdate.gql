@@ -1,0 +1,45 @@
+mutation customerPaymentMethodCreditCardUpdate($id: ID!, $billingAddress: MailingAddressInput!, $sessionId: String!){
+    customerPaymentMethodCreditCardUpdate(id: $id, billingAddress: $billingAddress, sessionId: $sessionId){
+        customerPaymentMethod{
+            id
+            instrument{
+                __typename
+                ... on CustomerCreditCard {
+                    brand
+                    expiresSoon
+                    expiryMonth
+                    expiryYear
+                    firstDigits
+                    isRevocable
+                    lastDigits
+                    maskedNumber
+                    name
+                    source
+                    virtualLastDigits
+                }
+                ... on CustomerPaypalBillingAgreement {
+                    inactive
+                    isRevocable
+                    paypalAccountEmail
+                }
+                ... on CustomerShopPayAgreement {
+                    expiresSoon
+                    expiryMonth
+                    expiryYear
+                    inactive
+                    isRevocable
+                    lastDigits
+                    maskedNumber
+                    name
+                }
+            }
+            revokedAt
+            revokedReason
+        }
+        processing
+        userErrors{
+            field
+            message
+        }
+    }
+}

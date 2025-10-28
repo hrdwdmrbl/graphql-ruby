@@ -1,0 +1,27 @@
+fragment FullRefundPart on Refund {
+  createdAt
+  id
+  note
+  updatedAt
+  refundLineItems(first: 1) {
+    nodes {
+      id
+      quantity
+      restockType
+      restocked
+      lineItem {
+        id
+      }
+      location {
+        id
+        fulfillmentService {
+          id
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

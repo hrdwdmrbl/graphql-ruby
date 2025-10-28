@@ -1,0 +1,15 @@
+mutation productFeedCreate($input: ProductFeedInput){
+    productFeedCreate(input: $input){
+        productFeed{
+            country
+            id
+            language
+            status
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

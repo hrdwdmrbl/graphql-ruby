@@ -1,0 +1,31 @@
+mutation inventoryShipmentReceive($query: String, $limit: Int, $id: ID!, $lineItems: [InventoryShipmentReceiveItemInput!], $dateReceived: DateTime, $bulkReceiveAction: InventoryShipmentReceiveLineItemReason){
+    inventoryShipmentReceive(id: $id, lineItems: $lineItems, dateReceived: $dateReceived, bulkReceiveAction: $bulkReceiveAction){
+        inventoryShipment{
+            dateCreated
+            dateReceived
+            dateShipped
+            id
+            lineItemTotalQuantity
+            lineItemsCount(query: $query, limit: $limit){
+                count
+                precision
+            }
+            name
+            status
+            totalAcceptedQuantity
+            totalReceivedQuantity
+            totalRejectedQuantity
+            tracking{
+                arrivesAt
+                company
+                trackingNumber
+                trackingUrl
+            }
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

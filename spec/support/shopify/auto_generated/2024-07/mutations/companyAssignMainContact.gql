@@ -1,0 +1,21 @@
+mutation companyAssignMainContact($companyId: ID!, $companyContactId: ID!){
+    companyAssignMainContact(companyId: $companyId, companyContactId: $companyContactId){
+        company{
+            createdAt
+            customerSince
+            defaultCursor
+            externalId
+            hasTimelineComment
+            id
+            lifetimeDuration
+            name
+            note
+            updatedAt
+        }
+        userErrors{
+            code
+            field
+            message
+        }
+    }
+}

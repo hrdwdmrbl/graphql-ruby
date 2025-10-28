@@ -1,0 +1,33 @@
+query translatableResourcesByIds($marketId: ID, $locale: String!, $outdated: Boolean, $marketId1: ID, $resourceIds: [ID!]!, $first: Int, $after: String, $last: Int, $before: String, $reverse: Boolean){
+    translatableResourcesByIds(resourceIds: $resourceIds, first: $first, after: $after, last: $last, before: $before, reverse: $reverse){
+        edges{
+            cursor
+            node{
+                resourceId
+            }
+        }
+        nodes{
+            resourceId
+            translatableContent(marketId: $marketId){
+                digest
+                key
+                locale
+                type
+                value
+            }
+            translations(locale: $locale, outdated: $outdated, marketId: $marketId1){
+                key
+                locale
+                outdated
+                updatedAt
+                value
+            }
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}
