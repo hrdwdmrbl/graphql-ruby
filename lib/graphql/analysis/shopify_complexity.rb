@@ -7,6 +7,10 @@ module GraphQL
     # A shopify complexity calculator that applies specific rules for different field types.
     class ShopifyComplexity < GraphQL::Analysis::QueryComplexity
       # This class overrides the default complexity calculation for a field.
+      # Ref: https://shopify.dev/docs/api/usage/limits#cost-calculation
+      # Ref: https://graphql-ruby.org/queries/complexity_and_depth.html#how-complexity-scoring-works
+      # Shopify says: For simplicity, that ^ summary describes all linear tally strategies.
+      #   We do incorporate logarithmic scaling into connection fields to cost them more favorably for a client.
       class ShopifyScopedTypeComplexity < ScopedTypeComplexity
         def own_complexity(child_complexity)
           field_defn = @field_definition
