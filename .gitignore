@@ -46,3 +46,7 @@ javascript_client/index*
 AGENTS.md
 *.env
 .key
+
+# Git worktrees (Crystal)
+/worktrees/
+/worktree-*/
