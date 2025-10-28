@@ -43,3 +43,5 @@ javascript_client/index*
 *.so
 # Ragel generates Ruby type hints which is great, but I'm not ready to support them
 *.ri
+AGENTS.md
+.env
