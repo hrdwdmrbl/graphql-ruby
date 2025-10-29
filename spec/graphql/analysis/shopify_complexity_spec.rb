@@ -6,7 +6,7 @@ require "graphql/analysis/shopify_complexity"
 describe GraphQL::Analysis::ShopifyComplexity do
   let(:schema_path) { "spec/support/shopify/2025-07.graphql" }
   let(:schema) { GraphQL::Schema.from_definition(schema_path) }
-  let(:query_string) { File.read("spec/support/shopify/Order.graphql") }
+  let(:query_string) { File.read("spec/support/shopify/queries/order.graphql") }
 
   it "calculates complexity 9 for the sample order query" do
     schema.complexity_cost_calculation_mode(:future)
@@ -24,7 +24,7 @@ describe GraphQL::Analysis::ShopifyComplexity do
   it "calculates complexity 629 for the Orders query" do
     schema.complexity_cost_calculation_mode(:future)
 
-    orders_query = File.read("spec/support/shopify/Orders.graphql")
+    orders_query = File.read("spec/support/shopify/queries/Orders.graphql")
     variables = {
       "query" => "(id:1)OR(id:2)",
       "first" => 250,
