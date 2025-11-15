@@ -1,3 +1,17 @@
+# Example usage of the Shopify GraphQL Cost Complexity Analysis
+
+```
+order_query = File.read("spec/support/shopify/queries/Order.graphql")
+query = GraphQL::Query.new(
+  schema,
+  order_query,
+  variables: { "id" => "gid://shopify/Order/12345" }
+)
+
+result = GraphQL::Analysis.analyze_query(query, [GraphQL::Analysis::ShopifyComplexity]).first
+```
+
+
 # graphql <img src="https://cloud.githubusercontent.com/assets/2231765/9094460/cb43861e-3b66-11e5-9fbf-71066ff3ab13.png" height="40" alt="graphql-ruby"/>
 
 [![CI Suite](https://github.com/rmosolgo/graphql-ruby/actions/workflows/ci.yaml/badge.svg)](https://github.com/rmosolgo/graphql-ruby/actions/workflows/ci.yaml)
